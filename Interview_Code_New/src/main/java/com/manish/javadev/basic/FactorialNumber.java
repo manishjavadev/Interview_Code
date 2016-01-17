@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  */
 /**
- * This program is simply printing the factorial number of entered number
+ * This program is simply printing the factorial number WithRecursion of entered number
  *
  */
 public class FactorialNumber {
@@ -21,18 +21,32 @@ public class FactorialNumber {
 		Scanner sc = new Scanner(System.in);
 		number = sc.nextInt();
 		numberTest = number;
-		factorilaNumber(number);
+		int result= factorilaNumber(number);
+		System.out.println("Result Fact = "+ result);
 	}
 
-	private static void factorilaNumber(int number) {
-		if (number < 0)
-			System.out.println("No factorial number of given number");
+	// factorilaNumber With Recursion 
+	private static int factorilaNumber(int number) {
+		if(number==0){
+			return 1;
+		}
+		else{
+			return(number*factorilaNumber(number-1));
+		}
+		
+	}
+	
+	// factorilaNumber With Non Recursion 
+	/*private static int factorilaNumber(int number) {
+		if (number== 0){
+			return 1;
+		}
 		else {
 			while (number > 1) {
 				factNumber = factNumber * number;
 				number--;
 			}
-			System.out.println("Factorial of "+ numberTest+ " is "+ factNumber);
+			return factNumber;
 		}
-	}
+	}*/
 }
