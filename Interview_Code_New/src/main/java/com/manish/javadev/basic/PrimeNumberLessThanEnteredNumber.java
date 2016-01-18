@@ -29,7 +29,7 @@ public class PrimeNumberLessThanEnteredNumber {
 	//If flag returning true then number is prime other wise non prime.
 	private static boolean isPrime(int number) {// is Prime is there
 		boolean flag = true;
-		for (int index = 2; index < number; index++) {
+		for (int index = 2; index < number/2; index++) {
 			if (number % index == 0) {
 				flag = false;
 				return flag;
