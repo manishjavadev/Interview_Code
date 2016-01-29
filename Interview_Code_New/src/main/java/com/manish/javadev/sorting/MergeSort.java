@@ -16,14 +16,13 @@ public class MergeSort {
 		int len = arr.length - 1;
 		merge_sort(0, len);
 		System.out.println("Main Array " + Arrays.toString(arr));
-		System.out.println("Temp Array " + Arrays.toString(temp));
 	}
 
 	private void merge_sort(int low, int high) {
 		if (low != high) {
 			int mid = (low + high) / 2;
 			merge_sort(low, mid);
-			merge_sort(low, mid);
+			merge_sort(mid + 1, high);
 			mergePartOfArray(low, mid, high);
 		}
 	}
@@ -31,9 +30,9 @@ public class MergeSort {
 	private void mergePartOfArray(int low, int mid, int high) {
 		int i = low;
 		int j = mid + 1;
-		int k = 0;
+		int k = low;
 		while ((i <= mid) && (j <= high)) {
-			if (arr[i] < arr[j])
+			if (arr[i] <= arr[j])
 				temp[k++] = arr[i++];
 			else
 				temp[k++] = arr[j++];
@@ -43,6 +42,9 @@ public class MergeSort {
 		}
 		while (j <= high) {
 			temp[k++] = arr[j++];
+		}
+		for (i = low; i <= high; i++) {
+			arr[i] = temp[i];
 		}
 	}
 }
