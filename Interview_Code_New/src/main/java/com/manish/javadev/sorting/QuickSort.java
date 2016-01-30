@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int arr1[] = { 234, 54, 12, 76, 11, 87, 32, 12, 45, 67, 76 };
-		quickSort(arr1, 0, arr1.length - 1);
-		System.out.println(Arrays.toString(arr1));
+		int arr[] = { 234, 54, 12, 76, 11, 87, 32, 12, 45, 67, 76 };
+		quickSort(arr, 0, arr.length - 1);
+		System.out.println(Arrays.toString(arr));
 	}
 
 	private static void quickSort(int[] arr, int p, int r) {
