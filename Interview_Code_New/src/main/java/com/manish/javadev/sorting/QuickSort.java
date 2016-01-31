@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int arr[] = { 234, 54, 12, 76, 11, 87, 32, 12, 45, 67, 76 };
+		int arr[] = { 5, 2, 6, 1, 3, 4 };
 		quickSort(arr, 0, arr.length - 1);
 		System.out.println(Arrays.toString(arr));
 	}
@@ -16,7 +16,6 @@ public class QuickSort {
 			quickSort(arr, p, q - 1);
 			quickSort(arr, q + 1, r);
 		}
-
 	}
 
 	private static int partition(int[] arr, int p, int r) {
