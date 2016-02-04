@@ -14,7 +14,8 @@ import java.util.Scanner;
  * 3. that will keep trace the status of lower limit and upper limit 
  * 4. and middle value of array. 
  * 5. How to calculate  * middle value of array 
- * 6. middle=(start+end)/2; 7. where end should be end=arr.length-1; 
+ * 6. middle=(start+end)/2;
+ * 7. where end should be end=arr.length-1; 
  * 8. and use while loop for checking
  */
 public class BinarySearch {
