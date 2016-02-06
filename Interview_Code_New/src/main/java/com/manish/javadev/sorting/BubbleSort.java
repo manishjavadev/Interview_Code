@@ -18,10 +18,10 @@ public class BubbleSort {
 		// 2nd element to 3rd to end for i=1 etc
 		for (i = 0; i < arr.length - 1; i++) {
 			for (j = 0; j < arr.length - 1 - i; j++) {
-				if (arr[j] > arr[j+1]) {
+				if (arr[j] > arr[j + 1]) {
 					temp = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = temp;
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
 				}
 			}
 		}

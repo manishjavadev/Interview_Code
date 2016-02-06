@@ -22,17 +22,17 @@ public class InsertNumberAtProperPlace {
 		System.out.println("Enter the Decimal number");
 		Scanner sc = new Scanner(System.in);
 		num = sc.nextInt();
-		
-		//Here index = length of string why -2 because last one is empty
-		//and array start with 0
-		//Here we are checking entered number with array if array index number,
-		//is grater then the entered number then move one step right
+
+		// Here index = length of string why -2 because last one is empty
+		// and array start with 0
+		// Here we are checking entered number with array if array index number,
+		// is grater then the entered number then move one step right
 		for (index = arr.length - 2; index >= 0 && arr[index] > num; index--) {
 			arr[index + 1] = arr[index];
 		}
-		
-		//Here should be [index+1] because after for 
-		//loop index decreases one more against of proper place
+
+		// Here should be [index+1] because after for
+		// loop index decreases one more against of proper place
 		arr[index + 1] = num;
 		for (int arrNumber : arr) {
 			System.out.print(arrNumber + "\t");

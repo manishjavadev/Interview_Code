@@ -19,7 +19,7 @@ public class InsertionSort {
 			//Here I am taking first element from array and will compare
 			//A previous element in array
 			num = arr[i];
-			for (index = i-1; index >= 0&&arr[index] > num; index--) {
+			for (index = i - 1; index >= 0 && arr[index] > num; index--) {
 				arr[index + 1] = arr[index];
 			}
 			//Here index is -1 for first run means i=1 so you add one in 
