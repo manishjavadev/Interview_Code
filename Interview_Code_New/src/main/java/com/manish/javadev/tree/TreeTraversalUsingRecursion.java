@@ -38,7 +38,7 @@ class MyTreeNode {
 
 }
 
-public class BinaryTreeDemo {
+public class TreeTraversalUsingRecursion {
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(30);
 		TreeNode tn2 = new TreeNode(10);
