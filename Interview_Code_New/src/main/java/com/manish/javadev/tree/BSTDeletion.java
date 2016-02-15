@@ -79,12 +79,12 @@ public class BSTDeletion {
 
 	private static BSTNodeTest delete(BSTNodeTest root, int data) {
 		start = root;
-
+		BSTNodeTest end = null;
 		while (start != null) {
 			if (start.data == data) {
 				break;
 			}
-			current = start;
+			end = start;
 			if (start.data > data) {
 				start = start.left;
 			} else {
@@ -93,28 +93,28 @@ public class BSTDeletion {
 		}
 
 		// Delete node has 2 child
-		if (current.left != null && current.right != null) {
-			BSTNodeTest y = current.left;
-			BSTNodeTest p = current;
+		if (start.left != null && start.right != null) {
+			BSTNodeTest y = start.left;
+			end = start;
 			while (y.right != null) {
-				p = y;
+				end = y;
 				y = y.right;
 			}
-			current.data = y.data;
-			current = y;
+			start.data = y.data;
+			start = y;
 		}
 		// Delete leaf or 1 child
-		if (current == null) {
+		if (end == null) {
 			if (start.left != null) {
 				return start.left;
 			} else {
 				return start.right;
 			}
 		}
-		if (current.right == start) {
-			current.right = start.right;
+		if (end.right == start) {
+			end.right = start.right;
 		} else {
-			current.left = start.left;
+			end.left = start.left;
 		}
 		return root;
 	}
