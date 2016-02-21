@@ -45,18 +45,6 @@ public class BSTDeletion {
 			return find(root.left, data);
 		}
 		// recursion end
-
-		// This is for non recursion
-
-		/*
-		 * start=root; while (start != null) { if (start.data == data) {
-		 * System.out.println("Item is already there"); } current = start; if
-		 * (start.data > data) { start = start.left; } else { start =
-		 * start.right; } } return current;
-		 */
-
-		// non recursion end
-
 	}
 
 	private static BSTNodeTest insert(BSTNodeTest root, int data) {
