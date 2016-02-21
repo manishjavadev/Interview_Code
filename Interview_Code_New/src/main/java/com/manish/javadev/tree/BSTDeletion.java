@@ -35,13 +35,12 @@ public class BSTDeletion {
 		if (root == null) {
 			return current;
 		}
+		current = root;
 		if (root.data == data) {
-			return root;
+			return current;
 		} else if (root.data < data) {
-			current = root;
 			return find(root.right, data);
 		} else {
-			current = root;
 			return find(root.left, data);
 		}
 		// recursion end
@@ -49,13 +48,12 @@ public class BSTDeletion {
 
 	private static BSTNodeTest insert(BSTNodeTest root, int data) {
 		start = root;
-		current = find(root, data);
-
 		BSTNodeTest node = new BSTNodeTest();
 		node.data = data;
 		if (root == null) {
 			return node;
 		}
+		current = find(root, data);
 
 		if (current.data > data) {
 			current.left = node;
