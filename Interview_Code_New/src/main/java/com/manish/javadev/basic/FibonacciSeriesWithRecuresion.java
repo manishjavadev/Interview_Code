@@ -20,9 +20,9 @@ public class FibonacciSeriesWithRecuresion {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Number");
 		int number = sc.nextInt();
-		for (int i = 0; i <= number; i++) {
+		for (int i = 0; i < number; i++) {
 			int result = createFibonaccki(i);
-			System.out.println(result);
+			System.out.print(result +"\t");
 		}
 	}
 
