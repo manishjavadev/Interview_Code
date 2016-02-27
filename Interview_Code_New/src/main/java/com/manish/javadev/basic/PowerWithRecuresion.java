@@ -8,9 +8,12 @@ import java.util.Scanner;
  */
 
 /**
- * This program printing FibonacciSeries using Recuresion till entered number
- * For more detail lease visit Wiki page
- * https://en.wikipedia.org/wiki/Fibonacci_number = 1 n=0 a^n = a*power(n-1) n>1
+ * This program printing Power Of Number using Recuresion till entered number
+ * Power Of number 
+ *          
+ *			= 1 			n=0 
+ * a^n
+ * 			= a*power(n-1) 	n>1
  */
 public class PowerWithRecuresion {
 
