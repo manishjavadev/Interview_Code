@@ -8,16 +8,13 @@ public class HeapSort {
 	public static void main(String[] args) {
 		HeapSort hs = new HeapSort();
 		hs.heapSort();
-
 	}
 
 	private void heapSort() {
-
 		for (int i = array.length - 1; i > 0; i--) {
 			doSorting(i);
 		}
 		System.out.println(Arrays.toString(array));
-
 	}
 
 	private void doSorting(int last) {

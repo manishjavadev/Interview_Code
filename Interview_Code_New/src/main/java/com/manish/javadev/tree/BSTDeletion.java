@@ -47,7 +47,7 @@ public class BSTDeletion {
 	}
 
 	private static BSTNodeTest insert(BSTNodeTest root, int data) {
-		
+		start = root;
 		BSTNodeTest node = new BSTNodeTest();
 		node.data = data;
 		if (root == null) {

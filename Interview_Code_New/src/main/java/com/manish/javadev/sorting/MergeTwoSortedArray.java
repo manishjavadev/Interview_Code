@@ -1,5 +1,7 @@
 package com.manish.javadev.sorting;
 
+import java.util.Arrays;
+
 /**
  * @author Manish
  *
@@ -38,9 +40,8 @@ public class MergeTwoSortedArray {
 		while (index2 < arr2.length) {
 			arr3[index3++] = arr2[index2++];
 		}
-		for (int arr3Number : arr3) {
-			System.out.print(arr3Number + "\t");
-		}
+		System.out.println("After merging these two arrya is ");
+		System.out.println(Arrays.toString(arr3));
 		System.out.println("\nDone");
 	}
 }

@@ -14,10 +14,10 @@ public class SortStringOfArray {
 		String str[] = { "Manish", "Ashish", "Ravi", "Java", "Technology" };
 		String temp = "";
 		for (int i = 0; i < str.length; i++) {
-			for (int j = i + 1; j < str.length; j++) {
+			for (int j = i + 1; j < str.length-1; j++) {
 				// If you want to sort in descending order then change the symbol
 				// to >(greater than) like if ((str[j].compareTo(str[i]) >0)) {
-				if ((str[j].compareTo(str[i]) < 0)) {
+				if ((str[i].compareTo(str[j]) > 0)) {
 					temp = str[i];
 					str[i] = str[j];
 					str[j] = temp;

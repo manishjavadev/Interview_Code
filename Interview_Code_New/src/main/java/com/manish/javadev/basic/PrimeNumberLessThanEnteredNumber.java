@@ -21,21 +21,23 @@ public class PrimeNumberLessThanEnteredNumber {
 		// prime logic is in method what i am calling from here
 		while (start <= number) {
 			if (isPrime(start))// calling is prime function
-				System.out.print(start + "\t");
+				System.out.print(start + " ,");
 			start++;
 		}
 	}
 	// This is logic for prime number debug the program and try to understand it.
 	//If flag returning true then number is prime other wise non prime.
 	private static boolean isPrime(int number) {// is Prime is there
-		for (int index = 2; index <= number / 2; index++) {
+		boolean flag = true;
+		for (int index = 2; index < number/2; index++) {
 			if (number % index == 0) {
-				return false;
+				flag = false;
+				return flag;
 			}
 		}
-		if (number > 1)
-			return true;
+		if (flag && number != 1)
+			return flag;
 		else
-			return false;
+			return flag = false;
 	}
 }

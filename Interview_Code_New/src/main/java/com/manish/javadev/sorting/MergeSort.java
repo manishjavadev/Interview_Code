@@ -14,7 +14,7 @@ public class MergeSort {
 	private void doSorting() {
 		int len = arr.length - 1;
 		merge_sort(0, len);
-		System.out.println("Main Array " + Arrays.toString(arr));
+		System.out.println("Sorted Array " + Arrays.toString(arr));
 	}
 
 	private void merge_sort(int low, int high) {

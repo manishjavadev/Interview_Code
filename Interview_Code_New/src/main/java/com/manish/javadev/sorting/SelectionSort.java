@@ -1,5 +1,7 @@
 package com.manish.javadev.sorting;
 
+import java.util.Arrays;
+
 /**
  * @author Manish
  *
@@ -26,10 +28,7 @@ public class SelectionSort {
 			}
 		}
 		System.out.println("Sorted arrya is ");
-		// Using for each loop
-		for (int arrNumber : arr) {
-			System.out.print(arrNumber + "\t");
-		}
+		System.out.println(Arrays.toString(arr));
 		System.out.println("\nDone");
 	}
 

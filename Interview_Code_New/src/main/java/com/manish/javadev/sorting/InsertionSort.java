@@ -1,5 +1,7 @@
 package com.manish.javadev.sorting;
 
+import java.util.Arrays;
+
 /**
  * @author Manish
  *
@@ -27,9 +29,8 @@ public class InsertionSort {
 			//try to understand it.
 			arr[index + 1] = num;			
 		}
-		for (int arrNumber : arr) {
-			System.out.print(arrNumber + "\t");
-		}
+		System.out.println("Sorted arrya is ");
+		System.out.println(Arrays.toString(arr));
 		System.out.println("\nDone");
 	}
 }
