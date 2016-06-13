@@ -1,5 +1,6 @@
 package com.manish.javadev.sorting;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -34,9 +35,8 @@ public class InsertNumberAtProperPlace {
 		// Here should be [index+1] because after for
 		// loop index decreases one more against of proper place
 		arr[index + 1] = num;
-		for (int arrNumber : arr) {
-			System.out.print(arrNumber + "\t");
-		}
+		System.out.println("After inserted arrya is ");
+		System.out.println(Arrays.toString(arr));
 		System.out.println("\nDone");
 
 	}
