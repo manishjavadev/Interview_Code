@@ -2,16 +2,6 @@ package com.manish.javadev.tree;
 
 import java.util.PriorityQueue;
 
-class TreeNode {
-	int data;
-	TreeNode left;
-	TreeNode right;
-
-	TreeNode(int data) {
-		this.data = data;
-	}
-}
-
 public class LevelOrderTraversal {
 
 	void doLevelOrderTraversal(TreeNode root) {
