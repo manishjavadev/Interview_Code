@@ -30,7 +30,7 @@ public class TransposeMatrix {
 			}
 		}
 
-		// Here we are taking second matrix from user
+		// Here we are transposing logic
 		for (int i = 0; i < col; i++) {
 			for (int j = 0; j < row; j++) {
 				matrix2[i][j] = matrix1[j][i];

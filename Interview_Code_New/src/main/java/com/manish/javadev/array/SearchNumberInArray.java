@@ -23,6 +23,7 @@ public class SearchNumberInArray {
 		for (index = 0; index < arr.length; index++) {
 			if(num==arr[index]){
 				System.out.println(num +" found at position "+(index+1)+" in array");
+				break;
 			}
 		}
 		
