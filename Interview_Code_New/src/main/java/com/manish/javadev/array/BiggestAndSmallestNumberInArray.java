@@ -22,7 +22,7 @@ public class BiggestAndSmallestNumberInArray {
 			if(arr[i]<minNumber){
 				minNumber=arr[i];
 			}
-		}
+		}  
 		
 		System.out.println("Biggest Number = "+maxNumber+"\nAnd Smallest Number = "+minNumber);
 		System.out.println("Done");
