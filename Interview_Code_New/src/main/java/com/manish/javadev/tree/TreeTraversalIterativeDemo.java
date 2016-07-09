@@ -23,14 +23,14 @@ public class TreeTraversalIterativeDemo {
 
 		TreeTraversalIterativeMethod ttim = new TreeTraversalIterativeMethod();
 		System.out.println("30, 10,50,5,20,40,60");
-		/*System.out.println("\n");
+		System.out.println("\n");
 		System.out.println("Preorder of above tree");
 		ttim.preOrder(root);
 		System.out.println("\n");
 		
 		System.out.println("Inorder of above tree");
 		ttim.inOrder(root);
-		System.out.println("\n");*/
+		System.out.println("\n");
 		
 		System.out.println("Inorder of above tree");
 		ttim.postOrder(root);
