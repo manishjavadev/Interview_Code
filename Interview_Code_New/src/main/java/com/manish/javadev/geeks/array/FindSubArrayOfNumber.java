@@ -1,6 +1,6 @@
 package com.manish.javadev.geeks.array;
 
-public class FindSubArrayOfZero {
+public class FindSubArrayOfNumber {
 	public static void main(String[] args) {
 		printSubArrayOfRequiredSum();
 	}
@@ -9,7 +9,6 @@ public class FindSubArrayOfZero {
 		int[] seed = new int[] { 6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 };
 		int currSum = 0;
 		
-		System.out.println("1= "+1 +"b = "+2);
 		for (int i = 0; i < seed.length; i++) {
 			String str = "[ ";
 			int sum = 0;
