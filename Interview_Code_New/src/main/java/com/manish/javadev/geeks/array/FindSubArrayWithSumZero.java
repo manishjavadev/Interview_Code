@@ -19,7 +19,7 @@ public class FindSubArrayWithSumZero {
 			} else if (sumMap.get(currSum) != null) {
 				System.out.println("subset : { " + (sumMap.get(currSum) + 1)
 						+ " - " + i + " }");
-				sumMap.put(currSum, i);
+				//sumMap.put(currSum, i);
 			} else
 				sumMap.put(currSum, i);
 		}
