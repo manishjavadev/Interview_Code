@@ -25,17 +25,18 @@ public class MaximumValueofK {
 			// in input array that are more than equal to i
 			int count = 0;
 			int dataValue;
+			set = new HashSet();
 			int j = 0;
 			System.out.println("\n");
 			// traverse the input array and find count
-			for (j = 0; j < array.length; j++)
+			for (j = 0; j < array.length; j++) {
 				if (i <= array[j]) {
 					count++;
+					set.add(array[j]);
 					System.out.print(array[j] + "\t");
 				}
-
+			}
 			if (count >= i) {
-				set.add(array[j]);
 				return i;
 			}
 
