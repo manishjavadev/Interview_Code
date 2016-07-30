@@ -4,53 +4,61 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-/* Find all subarray whose sum 0
+/*int[] arr={6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 }
+
+ 6  =0,  9  =1,  8  =2,  5  =3,  9  =1,4,  7  =5,  9  =1,4,6,  13 =7,  19 =8,  7  =5,9,  0  10
+
+
+ 6	9	8	5	9		7	9		13	19	 7  	0
+ =======================================================
+ 0	1	2	3	1,4 	5	1,4,6	7	8	5,9		10
+ */
+
+/* Find all sub-array whose sum 0
  * 
  * Input:  arr = [6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7]
-  Output:  
-  Subarray found from Index 2 to 4
-  Subarray found from Index 2 to 6          
-  Subarray found from Index 5 to 6
-  Subarray found from Index 6 to 9
-  Subarray found from Index 0 to 10*/
+ Output:  
+ Sub array found from Index 2 to 4
+ Sub array found from Index 2 to 6          
+ Sub array found from Index 5 to 6
+ Sub array found from Index 6 to 9
+ Sub array found from Index 0 to 10*/
+
+/*A simple solution is to consider all sub-arrays one by one and check if sum of every 
+ * sub-array is equal to 0 or not. The complexity of this solution would be O(n^2).
 
 
-/*A simple solution is to consider all subarrays one by one and check if sum of every 
- * subarray is equal to 0 or not. The complexity of this solution would be O(n^2).
+ A better approach is to use Hashing.
 
+ Do following for each element in the array
 
-A better approach is to use Hashing.
+ 1) Maintain sum of elements encountered so far in a variable (say sum).
+ 2) If current sum is 0, we found a sub-array starting from index 0 and ending at index current index
+ 3) Check if current sum exists in the map  or not.
+ 4) If current sum exists in the map, that means we have sub-array(s) present with 0 sum that ends at current index.
+ means in between current index sum where sum became 0 and again reached to stored element to map
+ example:
+ 9(first key)  ---some other element stores-- 9(second key)
+ 9(first key)  ---  0  -- 9(second key)(current index at this place now)
 
-Do following for each element in the array
-
-	1) Maintain sum of elements encountered so far in a variable (say sum).
-	2) If current sum is 0, we found a subarray starting from index 0 and ending at index current index
-	3) Check if current sum exists in the map  or not.
-	4) If current sum exists in the map, that means we have subarray(s) present with 0 sum that ends at current index.
-	5) Insert current sum into the map*/
+ 5) Insert current sum into the map*/
 
 /**
  * @author Manish
- *
+ * 
  */
 public class TestSubArrayWithSumZero {
 
-	/**
-	 * The main method.
-	 *
-	 * @param args the arguments
-	 */
 	public static void main(String[] args) {
-		if(displaySubarray()){
-			System.out.println("Subarray found in given array whose sum is zeror");
-		}else{
-			System.out.println("Subarray  not found in given array whose sum is zeror");
+		if (displaySubarray()) {
+			System.out
+					.println("Subarray found in given array whose sum is zeror");
+		} else {
+			System.out
+					.println("Subarray  not found in given array whose sum is zeror");
 		}
 	}
 
-	/**
-	 * Display subarray.
-	 */
 	private static boolean displaySubarray() {
 		int[] input = new int[] { 6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 };
 		LinkedHashMap<Integer, List<Integer>> map = new LinkedHashMap<Integer, List<Integer>>();
