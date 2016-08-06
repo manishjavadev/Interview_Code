@@ -1,6 +1,5 @@
 package com.manish.javadev.geeks.array;
 
-import java.sql.ResultSetMetaData;
 
 /**
  * Minimum sum of two numbers formed from digits of an array
@@ -36,7 +35,7 @@ public class MinimumPossibleSumofTwoNumber {
 	}
 
 	private int getMinimumSumOfTwoNumber(int[] inputArray) {
-		// Step1 Sort the array we are asuming that sorting you can do we just
+		// Step1 Sort the array we are assuming that sorting you can do we just
 		// puted in sorted order
 		int[] arr = { 2, 3, 4, 5, 6, 8 };
 		int oddPosition = 0;
