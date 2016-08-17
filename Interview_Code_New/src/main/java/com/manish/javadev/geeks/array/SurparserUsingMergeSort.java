@@ -39,56 +39,40 @@ public class SurparserUsingMergeSort {
 	}
 
 	private void mergePartOfArray(int[] temArr2, int low, int mid, int high) {
-		int i, j, k;
-		int n1 = mid - low + 1;
-		int n2 = high - mid;
-
-		int left[] = new int[n1];
-		int right[] = new int[n2];
-		/* Copy data to temp arrays L[] and R[] */
-		for (i = 0; i < n1; i++)
-			left[i] = arr[low + i];
-
-		for (j = 0; j < n2; j++)
-			right[j] = arr[mid + 1 + j];
-
-		/* Merge the temp arrays back into arr[l..r] */
-		i = 0;
-		j = 0;
-		k = low;
+		int i = low;
+		int j = mid + 1;
+		int k = low;
 		int c = 0;
-		while (i < n1 && j < n2) {
-			if (left[i] <= right[j]) {
-				// increment inversion count of L[i]
-				if (map.get(left[i]) == null) {
-					map.put(left[i], 0);
+		while ((i <= mid) && (j <= high)) {
+			while ((i <= mid) && (j <= high)) {
+				if (temArr2[i] <= temArr2[j]) {
+					if (map.get(temArr2[i]) == null) {
+						map.put(temArr2[i], 0);
+					} else {
+						map.put(temArr2[i], map.get(temArr2[i]) + c);
+					}
+					temp[k++] = temArr2[i++];
 				} else {
-					map.put(left[i], map.get(left[i]) + c);
+					temp[k++] = temArr2[j++];
+					c++;
 				}
-				arr[k++] = left[i++];
-			} else {
-				arr[k++] = right[j++];
-
-				// inversion found
-				c++;
 			}
-		}
 
-		/*
-		 * Copy the remaining elements of L[], if there are any
-		 */
-		while (i < n1) {
-			// increment inversion count of L[i]
-			if (map.get(left[i]) == null) {
-				map.put(left[i], 0);
+		}
+		while (i <= mid) {
+			if (map.get(temArr2[i]) == null) {
+				map.put(temArr2[i], 0);
 			} else {
-				map.put(left[i], map.get(left[i]) + c);
+				map.put(temArr2[i], map.get(temArr2[i]) + c);
 			}
-			arr[k++] = left[i++];
+			temp[k++] = temArr2[i++];
 		}
-		while (j < n2)
-			arr[k++] = right[j++];
-
+		while (j <= high) {
+			temp[k++] = temArr2[j++];
+		}
+		for (i = low; i <= high; i++) {
+			temArr2[i] = temp[i];
+		}
 	}
 
 }
