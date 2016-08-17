@@ -3,6 +3,23 @@ package com.manish.javadev.geeks.array;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/*
+ For any element of the array, we can easily find out number of elements
+ to the right that are greater than that element if we know number of elements to its right 
+ that are less than that element. The idea is to count the number of inversions for each element of the array 
+ using merge sort. So, surpasser count 
+ of an element at position i will be equal to “n – i – inversion-count” 
+ at that position where n is the size of the array.
+ We have already discussed how to find inversion count of
+ complete array here. We have modified the discussed approach to find 
+ number of inversions for each element of the array instead of 
+ returning inversion count of whole array. Also, as all elements of
+ the array are distinct, we maintain a map that stores inversion count for each element of the array.*/
+
+/**
+ * @author m.d.srivastava
+ * 
+ */
 public class SurparserUsingMergeSort {
 	static int arr[] = { 1, 20, 6, 4, 5 };
 	int temArr[] = { 1, 20, 6, 4, 5 };
