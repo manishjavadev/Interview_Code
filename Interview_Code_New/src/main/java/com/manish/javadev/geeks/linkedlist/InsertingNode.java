@@ -3,8 +3,9 @@ package com.manish.javadev.geeks.linkedlist;
 public class InsertingNode {
 	public static Entity start, end;
 
-	public static Entity insertAtStart(Entity entity, int data) {
+	public static Entity insertAtStart(int data) {
 		Entity node = new Entity(data);
+		start = DefaultLinkedList.getDefaultLinkedList();
 		if (start == null) {
 			start = node;
 		} else {
@@ -16,12 +17,16 @@ public class InsertingNode {
 	}
 
 	public static Entity insertAtEnd(int data) {
-
 		Entity node = new Entity(data);
+		start = DefaultLinkedList.getDefaultLinkedList();
+		Entity front = start;
 		if (start == null) {
 			start = node;
 		} else {
-			end.next = node;
+			while (front.next != null) {
+				front = front.next;
+			}
+			front.next = node;
 		}
 		end = node;
 		return start;
