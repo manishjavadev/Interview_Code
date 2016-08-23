@@ -20,6 +20,34 @@ public class LinkedListManager {
 		System.out.println("Insert At End");
 		InsertingNode.display(start);
 
+		System.out.println("===================");
+		start = DefaultLinkedList.getDefaultLinkedList();
+		System.out.println("Original List");
+		InsertingNode.display(start);
+		start = DeletingNode.deleteAtStart(10);
+		System.out.println("");
+		System.out.println("Deleted At Start");
+		InsertingNode.display(start);
+
+		start = DefaultLinkedList.getDefaultLinkedList();
+		System.out.println("Original List");
+		InsertingNode.display(start);
+		start = DeletingNode.deleteInMiddile(40);
+
+		System.out.println("");
+		System.out.println("Delete At middile");
+		InsertingNode.display(start);
+		
+		
+		start = DefaultLinkedList.getDefaultLinkedList();
+		System.out.println("Original List");
+		InsertingNode.display(start);
+		start = DeletingNode.deleteAtParticularPosition(3);
+
+		System.out.println("");
+		System.out.println("Delete At position");
+		InsertingNode.display(start);
+
 	}
 
 }
