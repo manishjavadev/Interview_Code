@@ -4,4 +4,11 @@ public class Entity {
 	public Object data;
 	public Entity next;
 
+	public Entity() {
+	}
+
+	public Entity(int data) {
+		this.data = data;
+	}
+
 }
