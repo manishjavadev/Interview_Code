@@ -37,8 +37,7 @@ public class LinkedListManager {
 		System.out.println("");
 		System.out.println("Delete At middile");
 		InsertingNode.display(start);
-		
-		
+
 		start = DefaultLinkedList.getDefaultLinkedList();
 		System.out.println("Original List");
 		InsertingNode.display(start);
@@ -46,6 +45,29 @@ public class LinkedListManager {
 
 		System.out.println("");
 		System.out.println("Delete At position");
+		InsertingNode.display(start);
+
+		start = DefaultLinkedList.getDefaultLinkedList();
+		System.out.println("Original List");
+
+		InsertingNode.display(start);
+		int result = LengthOfLinkedListRecursive
+				.findLengthUsingRecursive(start);
+
+		System.out.println("");
+		System.out.println("Getting length of LinkedList");
+		System.out.println("Lenght = " + result);
+		InsertingNode.display(start);
+
+		start = DefaultLinkedList.getDefaultLinkedList();
+		System.out.println("Original List");
+
+		InsertingNode.display(start);
+		result = LengthOfLinkedListRecursive.findLengthUsingIterative(start);
+
+		System.out.println("");
+		System.out.println("Getting length of LinkedList");
+		System.out.println("Lenght = " + result);
 		InsertingNode.display(start);
 
 	}
