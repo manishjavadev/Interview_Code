@@ -10,18 +10,18 @@ public class SwapNodeInLinkedList {
 
 	private void doSwap() {
 		System.out.println("Before Swap");
-		printList();
+		displayNodes();
 		int first = 20;
 		int second = 40;
 		System.out.println("\nWe are going to swap " + first + "  and "
 				+ second);
 		swapNode(20, 40);
 		System.out.println("\nAfter Swap");
-		printList();
+		displayNodes();
 
 	}
 
-	public void printList() {
+	public void displayNodes() {
 		Entity tNode = entity;
 		while (tNode != null) {
 			System.out.print(tNode.data + " ");
