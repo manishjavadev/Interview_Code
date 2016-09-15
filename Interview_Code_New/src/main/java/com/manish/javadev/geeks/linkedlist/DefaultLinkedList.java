@@ -8,10 +8,12 @@ public class DefaultLinkedList {
 		Entity entity3 = new Entity(30);
 		Entity entity4 = new Entity(40);
 		Entity entity5 = new Entity(50);
+		Entity entity6 = new Entity(60);
 		entity1.next = entity2;
 		entity2.next = entity3;
 		entity3.next = entity4;
 		entity4.next = entity5;
+		entity5.next = entity6;
 		return entity1;
 
 	}
