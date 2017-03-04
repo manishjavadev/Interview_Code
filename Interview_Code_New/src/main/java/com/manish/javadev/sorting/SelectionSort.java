@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class SelectionSort {
 
 	public static void main(String[] args) {
-		int arr[] = { 7, 3, 6, 5, 3, 9, 10 };
+		int arr[] = { 5, 4, 3, 1, 2, 6 };
 		int i, j, temp;
 		// Comparing first element with 2nd to end for i=0
 		// 2nd element to 3rd to end for i=1 etc

@@ -12,7 +12,6 @@ public class InsertingNode {
 			node.next = start;
 			start = node;
 		}
-		end = node;
 		return start;
 	}
 

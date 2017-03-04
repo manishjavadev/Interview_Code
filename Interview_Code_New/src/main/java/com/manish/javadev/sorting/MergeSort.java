@@ -31,10 +31,10 @@ public class MergeSort {
 		int j = mid + 1;
 		int k = low;
 		while ((i <= mid) && (j <= high)) {
-			if (arr[i] <= arr[j])
-				temp[k++] = arr[i++];
-			else
+			if (arr[i] >= arr[j])
 				temp[k++] = arr[j++];
+			else
+				temp[k++] = arr[i++];
 		}
 		while (i <= mid) {
 			temp[k++] = arr[i++];

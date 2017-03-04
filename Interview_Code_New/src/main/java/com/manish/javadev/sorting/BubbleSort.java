@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		int arr[] = { 7, 3, 6, 5, 3, 9, 10 };
+		int arr[] = { 2, 7, 4, 1, 5, 3 };
 		int i, j, temp;
 		// Comparing first element with 2nd to end for i=0
 		// 2nd element to 3rd to end for i=1 etc
