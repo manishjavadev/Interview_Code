@@ -1,5 +1,15 @@
 package com.manish.javadev.geeks.array;
 
+/**
+ * Number of an inversion in array is the number of pair(a[i],a[j]) of elements
+ * such that i < j and a[i] > a[j]. For an example if we have a list of element
+ * 2 3 6 9 1 then number of inversion is 4 and the pairs are (2,1), (3,1), (6,1)
+ * and (9,1).
+ * 
+ * @author m.d.srivastava
+ * 
+ */
+
 public class CountInversions {
 	public static void main(String[] args) {
 		int arr[] = { 1, 20, 6, 4, 5 };
