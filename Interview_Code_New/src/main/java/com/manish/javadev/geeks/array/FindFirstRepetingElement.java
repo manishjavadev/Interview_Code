@@ -1,33 +1,38 @@
 package com.manish.javadev.geeks.array;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 public class FindFirstRepetingElement {
-	int arr[] = { 10, 5, 3, 4, 3, 5, 6 };
 
 	public static void main(String[] args) {
-		FindFirstRepetingElement ffre = new FindFirstRepetingElement();
-		ffre.findFirstrepeate();
+		int arr[] = { 10, 5, 3, 4, 3, 5, 3, 3, 6 };
+		printFirstRepeating(arr);
 		System.out.println("Done");
 	}
 
-	private void findFirstrepeate() {
-		int index = -1;
-		List<Integer> list = new ArrayList<Integer>();
+	static void printFirstRepeating(int arr[]) {
+		// Initialize index of first repeating element
+		int min = -1;
 
-		for (int i = 0; i < arr.length; i++) {
-			if (list.contains(arr[i])) {
-				index = i;
-			} else {
-				list.add(arr[i]);
-			}
+		// Creates an empty hashset
+		HashSet<Integer> set = new HashSet<Integer>();
+
+		// Traverse the input array from right to left
+		for (int i = arr.length - 1; i >= 0; i--) {
+			// If element is already in hash set, update min
+			if (set.contains(arr[i]))
+				min = i;
+
+			else
+				// Else add element to hash set
+				set.add(arr[i]);
 		}
-		if (index >= 0) {
-			System.out.println(arr[index]);
-		} else {
-			System.out.println("Repeted elemenet is not there");
-		}
+
+		// Print the result
+		if (min > 0)
+			System.out.println("The first repeating element is " + arr[min]);
+		else
+			System.out.println("There are no repeating elements");
 	}
 
 }
