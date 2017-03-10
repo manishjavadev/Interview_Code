@@ -30,11 +30,15 @@ public class MergeSort {
 		int i = low;
 		int j = mid + 1;
 		int k = low;
+		long count = 0;
 		while ((i <= mid) && (j <= high)) {
-			if (arr[i] >= arr[j])
+			if (arr[i] >= arr[j]) {
 				temp[k++] = arr[j++];
-			else
+				count += (mid + 1) - j;
+			} else {
 				temp[k++] = arr[i++];
+
+			}
 		}
 		while (i <= mid) {
 			temp[k++] = arr[i++];
@@ -45,5 +49,6 @@ public class MergeSort {
 		for (i = low; i <= high; i++) {
 			arr[i] = temp[i];
 		}
+		System.out.println("count = " + count);
 	}
 }
