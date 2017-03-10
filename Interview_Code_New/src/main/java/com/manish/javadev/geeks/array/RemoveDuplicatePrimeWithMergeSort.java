@@ -1,9 +1,8 @@
 package com.manish.javadev.geeks.array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author m.d.srivastava
@@ -17,9 +16,31 @@ public class RemoveDuplicatePrimeWithMergeSort {
 
 		doMergeSort(0, arr.length - 1);
 		System.out.println(Arrays.toString(arr));
-		List list= Arrays.asList(arr);
-		
+		List<Integer> list = removeDups(arr);
+		System.out.println(list);
 
+	}
+
+	private static List<Integer> removeDups(int[] inputArray) {
+		int counter = 0;
+		int temp = 0;
+		List<Integer> list = new ArrayList<Integer>();
+		for (int index = 0; index < inputArray.length; index++) {
+			if (counter == 0) {
+				temp = inputArray[index];
+			}
+			if (temp == inputArray[index]) {
+				counter++;
+			} else {
+				list.add(temp);
+				counter = 1;
+				temp = inputArray[index];
+			}
+			if (index == inputArray.length - 1) {
+				list.add(temp);
+			}
+		}
+		return list;
 	}
 
 	private static void doMergeSort(int low, int high) {
@@ -33,11 +54,4 @@ public class RemoveDuplicatePrimeWithMergeSort {
 
 	}
 
-	private static void removeDups(int[] arr) {
-		Set<Integer> set = new HashSet<Integer>();
-		for (int i = 0; i < arr.length; i++) {
-			set.add(arr[i]);
-		}
-		System.out.println(set);
-	}
 }

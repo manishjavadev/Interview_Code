@@ -3,8 +3,9 @@ package com.manish.javadev.geeks.array;
 import java.util.HashMap;
 
 public class FindFrequencyofDigit {
-	int arr[] = { 1, 1, 1, 1, 5, 5, 5, 8, 9,10,10 };
+	int arr[] = { 1, 1, 1, 1, 2, 2, 5, 6 };
 	static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
 	public static void main(String[] args) {
 		FindFrequencyofDigit ffd = new FindFrequencyofDigit();
 		ffd.getDuplicateCount();

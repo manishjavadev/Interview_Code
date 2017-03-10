@@ -24,19 +24,19 @@ public class SegregateEvenAndOddDemo {
 		int leftSide = 0;
 		int rightSide = data.length - 1;
 
-		while (rightSide >= leftSide) {
+		while (leftSide < rightSide) {
+			while (data[leftSide] % 2 == 0 && leftSide < rightSide) {
+				leftSide++;
+			}
+			while (data[rightSide] % 2 == 1 && leftSide < rightSide) {
+				rightSide--;
+			}
+
 			if (data[leftSide] % 2 != 0 && data[rightSide] % 2 == 0) {
 				// swapping as soon as we find even and odd combination
 				swappEvenOdd(data, leftSide, rightSide);
-				leftSide++;
-				rightSide--;
-			} else {
-				if (data[leftSide] % 2 == 0) {
-					leftSide++;
-				}
-				if (data[rightSide] % 2 == 1) {
-					rightSide--;
-				}
+				leftSide--;
+				rightSide++;
 			}
 		}
 	}
