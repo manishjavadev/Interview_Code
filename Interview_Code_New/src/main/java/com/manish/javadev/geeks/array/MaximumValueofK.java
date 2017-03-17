@@ -8,7 +8,7 @@ public class MaximumValueofK {
 
 	public static void main(String[] args) {
 
-		Integer[] array = { 4, 7, 2, 3, 8 };
+		Integer[] array = { 4, 3, 1, 2 };
 		int maximumNumber = findMaximumNum(array, array.length);
 		System.out.println("Number is " + maximumNumber);
 		System.out.println(set);

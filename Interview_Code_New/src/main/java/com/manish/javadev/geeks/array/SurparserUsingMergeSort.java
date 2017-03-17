@@ -96,7 +96,7 @@ public class SurparserUsingMergeSort {
 				inversionCounter++;
 			}
 		}
-
+		
 		while (i <= mid) {
 			if (map.get(temArr[i]) == null) {
 				map.put(temArr[i], inversionCounter);

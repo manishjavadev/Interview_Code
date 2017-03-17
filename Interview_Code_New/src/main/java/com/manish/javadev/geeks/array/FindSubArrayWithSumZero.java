@@ -44,8 +44,8 @@ import java.util.List;
  5) Insert current sum into the map*/
 
 /**
- * @author Manish
- * 
+ * @author m.d.srivastava
+ *
  */
 public class FindSubArrayWithSumZero {
 
@@ -56,27 +56,24 @@ public class FindSubArrayWithSumZero {
 	private static void displaySubarray() {
 		int[] input = new int[] { 6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 };
 		LinkedHashMap<Integer, List<Integer>> map = new LinkedHashMap<Integer, List<Integer>>();
-
+		List<Integer> newStart = null;
 		int preSum = 0;
 
 		// Loop across all elements of the array
 		for (int i = 0; i < input.length; i++) {
 			preSum += input[i];
 			if (preSum == 0) {
-				System.out.println("SUM 0 Start: " + (0) + "-" + i);
+				System.out.println("SUM 0 Start: " + 0 + "-" + i);
 			}
 			// If preSum is present, it means that
 			// Sub array found
 			if (map.containsKey(preSum)) {
-				List<Integer> startIndices = map.get(preSum);
-				for (int start : startIndices) {
+				newStart = map.get(preSum);
+				for (int start : newStart) {
 					System.out.println("SUM 0 Start: " + (start + 1) + "-" + i);
 				}
-			}
-
-			List<Integer> newStart = new ArrayList<Integer>();
-			if (map.containsKey(preSum)) {
-				newStart = map.get(preSum);
+			} else {
+				newStart = new ArrayList<Integer>();
 			}
 			newStart.add(i);
 			map.put(preSum, newStart);

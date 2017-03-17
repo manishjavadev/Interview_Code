@@ -3,8 +3,11 @@ package com.manish.javadev.geeks.array;
 /**
  * http://www.geeksforgeeks.org/count-frequencies-elements-array-o1-extra-space-time/
  * 
- * Count frequencies of all elements in array in O(1) extra space and O(n) time
-Given an unsorted array of n integers which can contain integers from 1 to n. Some elements can be repeated multiple times and some other elements can be absent from the array. Count frequency of all elements that are present and print the missing elements.
+ * 
+ Count frequencies of all elements in array in O(1) extra space and O(n) time
+Given an unsorted array of n integers which can contain integers from 1 to n. Some 
+elements can be repeated multiple times and some other elements can be absent from the array.
+ Count frequency of all elements that are present and print the missing elements.
 
 Examples:
 
@@ -31,7 +34,12 @@ How to do it in O(1) extra space and O(n) time?
 Below are two methods to solve this in O(n) time and O(1) extra space. Both method modify given array to achieve O(1) extra space.
 
 Method 1 (By making elements negative)
-The idea is to traverse the given array, use elements as index and store their counts at the index. For example, when we see element 7, we go to index 6 and store the count. There are few problems to handle, one is the counts can get mixed with the elements, this is handled by storing the counts as negative. Other problem is loosing the element which is replaced by count, this is handled by first storing the element to be replaced at current index.
+The idea is to traverse the given array, use elements as index and store their counts at the index. 
+For example, when we see element 7, we go to index 6 and store the count. 
+There are few problems to handle, one is the counts can get mixed with the elements, 
+this is handled by storing the counts as negative. 
+Other problem is loosing the element which is replaced by count,
+this is handled by first storing the element to be replaced at current index.
 
 Algorithm:
 1) Initialize i as 0
@@ -108,7 +116,7 @@ i = 1, arr[i] = -1, arr[] = {0, -1, -2, 2, 5}
 Since arr[i] is negative, increment i
 
 i = 2, arr[i] = -2, arr[] = {0, -1, -2, 2, 5}
-Since arr[i] is negative, increment i
+Since arrh[i] is negative, increment i
 
 i = 3, arr[i] = 2, arr[] = {0, -1, -2, 2, 5}
 Since arr[i] > 0, we find elementIndex.

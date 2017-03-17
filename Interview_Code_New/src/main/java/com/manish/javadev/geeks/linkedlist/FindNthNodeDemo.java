@@ -6,8 +6,8 @@ public class FindNthNodeDemo {
 	public static void main(String[] args) {
 		FindNthNodeDemo fnd = new FindNthNodeDemo();
 		fnd.displayNodes();
-		int result = fnd.getNthNode(2);
-		System.out.println("identified node is " + result);
+		Entity entity = fnd.getNthNode(3);
+		System.out.println("identified node is " + entity);
 	}
 
 	public void displayNodes() {
@@ -18,18 +18,18 @@ public class FindNthNodeDemo {
 		}
 	}
 
-	private int getNthNode(int nthNode) {
-		Entity start = entity;
+	private Entity getNthNode(int nthNode) {
+		Entity front = entity;
 		int i = 0;
 		for (i = 0; i < nthNode - 1; i++) {
-			if (start == null) {
-				System.out
-						.println("Linked list node number is less than entered number");
+			if (front.next == null) {
+				System.out.println("There are less node from enter position");
+				return null;
 			}
-			start = start.next;
+			front = front.next;
 		}
 
-		return start.data;
+		return front;
 	}
 
 }

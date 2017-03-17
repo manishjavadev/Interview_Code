@@ -3,7 +3,7 @@ package com.manish.javadev.geeks.array;
 import java.util.HashMap;
 
 public class FindFrequencyofDigit {
-	int arr[] = { 1, 1, 1, 1, 2, 2, 5, 6 };
+	int arr[] = { 1, 2, 2, 5, 6 };
 	static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
 	public static void main(String[] args) {

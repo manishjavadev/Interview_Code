@@ -36,13 +36,11 @@ public class InsertingNode {
 		start = DefaultLinkedList.getDefaultLinkedList();
 		Entity front = start;
 		for (int i = 0; i < after - 1; i++) {
-
 			if (front.next == null) {
 				System.out.println("There are less from enter position");
 				return start;
 			}
 			front = front.next;
-
 		}
 		entity.next = front.next;
 		front.next = entity;

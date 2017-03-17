@@ -46,11 +46,11 @@ public class CountInversionsByMergeSort {
 		int i = low;
 		int j = mid + 1;
 		int k = low;
-		int count = 0;
+		int countInversion = 0;
 		while ((i <= mid) && (j <= high)) {
 			if (arr[i] >= arr[j]) {
 				temp[k++] = arr[j++];
-				count += (mid + 1) - i;
+				countInversion += (mid + 1) - i;
 			} else
 				temp[k++] = arr[i++];
 		}
@@ -63,6 +63,6 @@ public class CountInversionsByMergeSort {
 		for (i = low; i <= high; i++) {
 			arr[i] = temp[i];
 		}
-		return count;
+		return countInversion;
 	}
 }

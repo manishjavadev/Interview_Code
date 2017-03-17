@@ -10,7 +10,7 @@ public class MiddleNode {
 	}
 
 	private Entity getMiddleNode() {
-		int counter = 1;
+		int counter = 0;
 		Entity entity = this.entity;
 		Entity middle = this.entity;
 		while (entity.next != null) {

@@ -13,17 +13,16 @@ public class DeletingNode {
 		return start;
 	}
 
-	@SuppressWarnings("unused")
 	public static Entity deleteAtParticularPosition(int position) {
 		start = DefaultLinkedList.getDefaultLinkedList();
 		Entity front = start;
 		for (int i = 0; i < position - 1; i++) {
-			while (front.next == null) {
+			if (front.next == null) {
 				System.out
 						.println("There are less element from entered position");
+				return null;
 			}
 			front = front.next;
-			break;
 		}
 		front.next = front.next.next;
 
