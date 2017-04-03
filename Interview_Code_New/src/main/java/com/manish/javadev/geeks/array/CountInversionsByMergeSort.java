@@ -3,13 +3,14 @@ package com.manish.javadev.geeks.array;
 import java.util.Arrays;
 
 /**
+ * http://www.geeksforgeeks.org/counting-inversions/
+ * 
+ * 
  * How to get number of inversions in merge()? In merge process, let i is used
  * for indexing left sub-array and j for right sub-array. At any step in
  * merge(), if a[i] is greater than a[j], then there are (mid – i) inversions.
  * because left and right subarrays are sorted, so all the remaining elements in
  * left-subarray (a[i+1], a[i+2] … a[mid]) will be greater than a[j]
- * http://www.geeksforgeeks.org/counting-inversions/
- * 
  * 
  * @author m.d.srivastava
  * 

@@ -6,8 +6,8 @@ package com.manish.javadev.geeks.array;
  */
 
 /*Solution: 
- 1) We need to find out maximum array index number where Array element has at least >=k 
- 2) let's start from array last index and compare from starting element of array, 
+ 1) We need to find out maximum array index number where Array element has at least >=k
+ 2) let's start from array last index and compare from starting element of array,
  test size of array is grater than array element
 
  3) if yes decrease size by 1, because we started from array maximum size, need to find maximum value of K

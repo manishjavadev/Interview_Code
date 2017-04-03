@@ -84,19 +84,19 @@ public class SurparserUsingMergeSort {
 		int inversionCounter = 0;
 
 		while ((i <= mid) && (j <= high)) {
-			if (temArr[i] <= temArr[j]) {
+			if (temArr[i] >= temArr[j]) {
+				temp[k++] = temArr[j++];
+				inversionCounter++;
+			} else {
 				if (map.get(temArr[i]) == null) {
 					map.put(temArr[i], inversionCounter);
 				} else {
 					map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
 				}
 				temp[k++] = temArr[i++];
-			} else {
-				temp[k++] = temArr[j++];
-				inversionCounter++;
 			}
 		}
-		
+
 		while (i <= mid) {
 			if (map.get(temArr[i]) == null) {
 				map.put(temArr[i], inversionCounter);
