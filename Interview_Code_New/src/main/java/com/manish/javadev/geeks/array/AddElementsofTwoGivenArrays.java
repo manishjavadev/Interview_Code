@@ -38,8 +38,8 @@ public class AddElementsofTwoGivenArrays {
 	public static ArrayList<Integer> output = new ArrayList<Integer>();
 
 	public static void main(String[] args) {
-		int arr1[] = { 9, 2, 3, 7, 9, 6 };
-		int arr2[] = { 3, 1, 4, 7, 8, 7, 6, 9 };
+		int arr1[] = { 9, 2, 3, 7, 1, 5 };
+		int arr2[] = { 3, 1, 4 };
 		addArrays(arr1, arr2);
 		System.out.println(output);
 	}
@@ -55,13 +55,25 @@ public class AddElementsofTwoGivenArrays {
 				split(sum);
 			}
 		}
-		while (index1 < arr1.length)
-			split(arr2[index1++]);
+		while (index1 < arr1.length) {
+			int sum = arr1[index1++];
+			if (sum < 10) {
+				output.add(sum);
+			} else {
+				split(sum);
+			}
+		}
 
 		// push remaining elements of second input array
 		// (if any) to output vector
-		while (index2 < arr2.length)
-			split(arr2[index2++]);
+		while (index2 < arr2.length) {
+			int sum = arr2[index2++];
+			if (sum < 10) {
+				output.add(sum);
+			} else {
+				split(sum);
+			}
+		}
 
 	}
 
