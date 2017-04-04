@@ -65,14 +65,14 @@ public class SurparserUsingMergeSort {
 
 	private void doSorting() {
 		int len = arr.length - 1;
-		merge_sort(arr, 0, len);
+		merge_sort(0, len);
 	}
 
-	private void merge_sort(int[] temArr2, int low, int high) {
+	private void merge_sort(int low, int high) {
 		if (low < high) {
 			int mid = (low + high) / 2;
-			merge_sort(arr, low, mid);
-			merge_sort(arr, mid + 1, high);
+			merge_sort(low, mid);
+			merge_sort(mid + 1, high);
 			mergePartOfArray(arr, low, mid, high);
 		}
 	}
@@ -88,7 +88,7 @@ public class SurparserUsingMergeSort {
 				temp[k++] = temArr[j++];
 				inversionCounter++;
 			} else {
-				if (map.get(temArr[i]) == null) {
+				if (!map.containsKey(temArr[i])) {
 					map.put(temArr[i], inversionCounter);
 				} else {
 					map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
@@ -98,7 +98,7 @@ public class SurparserUsingMergeSort {
 		}
 
 		while (i <= mid) {
-			if (map.get(temArr[i]) == null) {
+			if (!map.containsKey(temArr[i])) {
 				map.put(temArr[i], inversionCounter);
 			} else {
 				map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
