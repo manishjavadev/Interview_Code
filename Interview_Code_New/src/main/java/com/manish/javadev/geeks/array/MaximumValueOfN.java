@@ -5,8 +5,9 @@ package com.manish.javadev.geeks.array;
  find out maximum value of K where Array element has at least >=k
  */
 
-/*Solution: 
- 1) We need to find out maximum array index number where Array element has at least >=k
+/*
+ * Solution: 
+ 1) We need to find out maximum array index number, where Array element has at least >=k
  2) let's start from array last index and compare from starting element of array,
  test size of array is grater than array element
 

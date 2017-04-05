@@ -16,11 +16,10 @@ public class LengthOfLinkedListRecursive {
 	}
 
 	public static int findLengthUsingIterative(Entity start) {
-		count = 0;
+		count = 1;
 		while (start.next != null) {
 			count++;
 			start = start.next;
-
 		}
 		return (count + 1);
 	}

@@ -35,6 +35,7 @@ public class DeletingNode {
 		Entity prev = null;
 		if (front != null && front.data == data) {
 			front = front.next;
+			return front;
 		}
 		while (front != null && front.data != data) {
 			prev = front;

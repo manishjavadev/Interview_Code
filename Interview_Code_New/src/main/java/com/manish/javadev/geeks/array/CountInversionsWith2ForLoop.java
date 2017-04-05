@@ -22,7 +22,6 @@ public class CountInversionsWith2ForLoop {
 			for (int j = i + 1; j < arr.length; j++) {
 				if (arr[i] > arr[j])
 					inv_count++;
-
 			}
 		}
 

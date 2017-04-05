@@ -11,7 +11,7 @@ public class LinkedListManager {
 		System.out.println("Insert In middile");
 		InsertingNode.display(start);
 
-		start = InsertingNode.insertAtStart(5);
+		/*start = InsertingNode.insertAtStart(5);
 		System.out.println("");
 		System.out.println("Insert In Start");
 		InsertingNode.display(start);
@@ -69,7 +69,7 @@ public class LinkedListManager {
 		System.out.println("Getting length of LinkedList");
 		System.out.println("Lenght = " + result);
 		InsertingNode.display(start);
-
+*/
 	}
 
 }

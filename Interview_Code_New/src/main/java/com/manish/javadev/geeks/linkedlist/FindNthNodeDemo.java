@@ -5,9 +5,9 @@ public class FindNthNodeDemo {
 
 	public static void main(String[] args) {
 		FindNthNodeDemo fnd = new FindNthNodeDemo();
-		fnd.displayNodes();
+		//fnd.displayNodes();
 		Entity entity = fnd.getNthNode(3);
-		System.out.println("identified node is " + entity);
+		System.out.println("identified node is " + entity.data);
 	}
 
 	public void displayNodes() {

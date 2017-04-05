@@ -88,20 +88,22 @@ public class SurparserUsingMergeSort {
 				temp[k++] = temArr[j++];
 				inversionCounter++;
 			} else {
-				if (!map.containsKey(temArr[i])) {
-					map.put(temArr[i], inversionCounter);
-				} else {
+				if (map.containsKey(temArr[i])) {
 					map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
+					
+				} else {
+					map.put(temArr[i], inversionCounter);
 				}
 				temp[k++] = temArr[i++];
 			}
 		}
 
 		while (i <= mid) {
-			if (!map.containsKey(temArr[i])) {
-				map.put(temArr[i], inversionCounter);
-			} else {
+			if (map.containsKey(temArr[i])) {
 				map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
+				
+			} else {
+				map.put(temArr[i], inversionCounter);
 			}
 			temp[k++] = temArr[i++];
 		}

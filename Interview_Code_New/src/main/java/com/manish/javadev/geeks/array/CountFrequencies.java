@@ -191,7 +191,7 @@ public class CountFrequencies {
 
 	public static void main(String[] args) {
 		CountFrequencies count = new CountFrequencies();
-		int arr[] = { 2, 3, 3, 2, 5 };
+		int arr[] = { 2, 3, 3, 2,2, 5 };
 		count.findCounts(arr, arr.length);
 		/*int arr3[] = { 4, 4, 4, 4 };
 		count.findCounts(arr3, arr3.length);*/

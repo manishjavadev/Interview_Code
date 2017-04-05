@@ -95,16 +95,16 @@ public class SwapNodeInLinkedList {
 			return;
 
 		// If x is not head of linked list
-		if (prevx != null) {
-			prevx.next = curry;
-		} else {
+		if (prevx == null) {
 			start = curry;
+		} else {
+			prevx.next = curry;
 		}
 		// If y is not head of linked list
-		if (prevy != null) {
-			prevy.next = currx;
-		} else {
+		if (prevy == null) {
 			start = currx;
+		} else {
+			prevy.next = currx;
 		}
 		// Swap next pointers
 		Entity temEntity = currx.next;

@@ -13,8 +13,8 @@ public class SortStringOfArray {
 	public static void main(String[] args) {
 		String str[] = { "Manish", "Ashish", "Ravi", "Java", "Technology" };
 		String temp = "";
-		for (int i = 0; i < str.length; i++) {
-			for (int j = i + 1; j < str.length-1; j++) {
+		for (int i = 0; i < str.length-1; i++) {
+			for (int j = i + 1; j < str.length; j++) {
 				// If you want to sort in descending order then change the symbol
 				// to >(greater than) like if ((str[j].compareTo(str[i]) >0)) {
 				if ((str[i].compareTo(str[j]) > 0)) {
