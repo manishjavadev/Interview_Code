@@ -96,14 +96,15 @@ package com.manish.javadev.thread;
  */
 public class VolatileTest {
 
-	private static volatile int MY_INT = 0;
+	private volatile int MY_INT = 0;
 
 	public static void main(String[] args) {
-		new ChangeListener().start();
-		new ChangeMaker().start();
+		VolatileTest vt = new VolatileTest();
+		vt.new ChangeListener().start();
+		vt.new ChangeMaker().start();
 	}
 
-	static class ChangeMaker extends Thread {
+	class ChangeMaker extends Thread {
 
 		@Override
 		public void run() {
@@ -122,7 +123,7 @@ public class VolatileTest {
 		}
 	}
 
-	static class ChangeListener extends Thread {
+	class ChangeListener extends Thread {
 		@Override
 		public void run() {
 			int local_value = MY_INT;
