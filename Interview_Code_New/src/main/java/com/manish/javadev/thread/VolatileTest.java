@@ -10,6 +10,12 @@ package com.manish.javadev.thread;
  * that a method or class instance can be used by multiple threads at the same
  * time without any problem.
  * 
+ * 
+ * Declaring a volatile Java variable means: The value of this variable will
+ * never be cached thread-locally: all reads and writes will go straight to
+ * "main memory"; Access to the variable acts as though it is enclosed in a
+ * synchronized block, synchronized on itself.
+ * 
  * class SharedObj {
  * 
  * // Changes made to sharedVar in one thread
@@ -78,15 +84,15 @@ package com.manish.javadev.thread;
  * 
  * With the volatile keyword the output is :
  * 
- * Incrementing MY_INT to 1 Got Change for MY_INT : 1
+ * Incrementing chv to 1 Got Change for chv : 1
  * 
- * Incrementing MY_INT to 2 Got Change for MY_INT : 2 Incrementing MY_INT to 3
- * Got Change for MY_INT : 3 Incrementing MY_INT to 4 Got Change for MY_INT : 4
- * Incrementing MY_INT to 5 Got Change for MY_INT : 5 Without the volatile
+ * Incrementing chv to 2 Got Change for chv : 2 Incrementing chv to 3
+ * Got Change for chv : 3 Incrementing chv to 4 Got Change for chv : 4
+ * Incrementing chv to 5 Got Change for chv : 5 Without the volatile
  * keyword the output is :
  * 
- * Incrementing MY_INT to 1 Incrementing MY_INT to 2 Incrementing MY_INT to 3
- * Incrementing MY_INT to 4 Incrementing MY_INT to 5 .....And the change
+ * Incrementing chv to 1 Incrementing chv to 2 Incrementing chv to 3
+ * Incrementing chv to 4 Incrementing chv to 5 .....And the change
  * listener loop infinitely...
  * 
  * 
@@ -96,7 +102,7 @@ package com.manish.javadev.thread;
  */
 public class VolatileTest {
 
-	private volatile int MY_INT = 0;
+	private volatile int chv = 0;
 
 	public static void main(String[] args) {
 		VolatileTest vt = new VolatileTest();
@@ -109,11 +115,10 @@ public class VolatileTest {
 		@Override
 		public void run() {
 
-			int local_value = MY_INT;
-			while (MY_INT < 5) {
-				System.out.print("Incrementing MY_INT to\t");
-				System.out.println(local_value + 1);
-				MY_INT = ++local_value;
+			while (chv < 5) {
+				System.out.print("Incrementing chv to\t");
+				System.out.println(chv + 1);
+				chv = chv + 1;
 				try {
 					Thread.sleep(500);
 				} catch (InterruptedException e) {
@@ -126,12 +131,12 @@ public class VolatileTest {
 	class ChangeListener extends Thread {
 		@Override
 		public void run() {
-			int local_value = MY_INT;
-			while (local_value < 5) {
-				if (local_value != MY_INT) {
-					System.out.print("Got Change for MY_INT\t ");
-					System.out.println(MY_INT);
-					local_value = MY_INT;
+			int localVal = chv;
+			while (localVal < 5) {
+				if (localVal != chv) {
+					System.out.print("Got Change for chv\t ");
+					System.out.println(chv);
+					localVal = chv;
 				}
 			}
 		}
