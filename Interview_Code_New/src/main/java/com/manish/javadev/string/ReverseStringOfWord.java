@@ -36,8 +36,8 @@ public class ReverseStringOfWord {
 	}	
 	private void reverse(String str) {
 		char ar[] = str.toCharArray();
-		for (int i = ar.length; i > 0; i--) {
-			finlaString = finlaString + ar[i - 1];
+		for (int i = ar.length-1; i >= 0; i--) {
+			finlaString = finlaString + ar[i];
 		}
 		finlaString = finlaString + " ";
 		getStr = "";

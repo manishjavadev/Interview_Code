@@ -4,7 +4,7 @@ public class CharCountAdjacenttoChar {
 	public static void main(String[] args) {
 		char ch[] = { 'a', 'b', 'c', 'c', 'c', 'd', 'd' };
 		System.out.println(ch);
-		int count = 0, start = 0;
+		int count = 0;
 		char temp = ' ';
 		String finalResult = "";
 		for (int i = 0; i < ch.length; i++) {

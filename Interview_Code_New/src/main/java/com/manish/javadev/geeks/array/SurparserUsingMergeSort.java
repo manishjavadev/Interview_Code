@@ -90,7 +90,7 @@ public class SurparserUsingMergeSort {
 			} else {
 				if (map.containsKey(temArr[i])) {
 					map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
-					
+
 				} else {
 					map.put(temArr[i], inversionCounter);
 				}
@@ -101,13 +101,19 @@ public class SurparserUsingMergeSort {
 		while (i <= mid) {
 			if (map.containsKey(temArr[i])) {
 				map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
-				
+
 			} else {
 				map.put(temArr[i], inversionCounter);
 			}
 			temp[k++] = temArr[i++];
 		}
 		while (j <= high) {
+			if (map.containsKey(temArr[i])) {
+				map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
+
+			} else {
+				map.put(temArr[i], inversionCounter);
+			}
 			temp[k++] = temArr[j++];
 		}
 		for (i = low; i <= high; i++) {

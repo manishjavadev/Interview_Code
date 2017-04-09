@@ -14,10 +14,10 @@ public class CharCountAdjacenttoCharUsingMap {
 	}
 
 	private void getDuplicateCount() {
-		findFrequecncy(arr, 0, arr.length - 1);
+		findFrequecncy(0, arr.length - 1);
 	}
 
-	private void findFrequecncy(char[] tempArr, int low, int high) {
+	private void findFrequecncy(int low, int high) {
 		if (arr[low] == arr[high]) {
 			if (map.containsKey(arr[low])) {
 				map.put(arr[low], map.get(arr[low]) + (high - low + 1));
@@ -27,8 +27,8 @@ public class CharCountAdjacenttoCharUsingMap {
 
 		} else {
 			int mid = (low + high) / 2;
-			findFrequecncy(arr, low, mid);
-			findFrequecncy(arr, mid + 1, high);
+			findFrequecncy(low, mid);
+			findFrequecncy(mid + 1, high);
 		}
 	}
 }
