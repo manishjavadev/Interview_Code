@@ -53,7 +53,6 @@ package com.manish.javadev.geeks.basics;
  * In this case, we also update ans (Note that we need floor). e) If x is
  * smaller, do binary search between start and mid-1
  * 
- * Below is C++ implementation of above idea. C/C++Java
  * 
  * 
  * 
@@ -62,7 +61,7 @@ package com.manish.javadev.geeks.basics;
  */
 public class SquareRoot {
 	public static void main(String[] args) {
-		double result = floorSqrt(6);
+		double result = floorSqrt(26);
 		System.out.println(result);
 	}
 

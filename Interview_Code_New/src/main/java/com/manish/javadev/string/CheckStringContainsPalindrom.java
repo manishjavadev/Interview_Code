@@ -5,22 +5,22 @@ public class CheckStringContainsPalindrom {
 
 	public static void main(String[] args) {
 
-		int pos = 0;
-		int j = 0;
+		int start = 0;
+		int end = 0;
 		int length = str.length() - 1;
 		for (int i = 0; i < length; i++) {
 			for (int k = length; i < k; k--) {
 				if (str.charAt(i) == str.charAt(k)) {
-					pos = i;
-					j = k;
-					if (checkPalidrom(pos, j)) {
-						System.out.println("Pos " + pos + "and " + k);
+					start = i;
+					end = k;
+					if (checkPalidrom(start, end)) {
+						System.out.println("Pos " + start + "and " + k);
 						System.out.println("Yes String contains Palindrom");
-						for (int k2 = pos; k2 <= j; k2++) {
+						for (int k2 = start; k2 <= end; k2++) {
 							System.out.print(str.charAt(k2));
 						}
 						System.out.println("\n");
-						i = k;
+						i = end;
 					}
 				}
 			}
@@ -33,8 +33,7 @@ public class CheckStringContainsPalindrom {
 			if (str.charAt(i) == str.charAt(j)) {
 				flag = true;
 			} else {
-				return flag = false;
-
+				flag = false;
 			}
 		}
 		return flag;

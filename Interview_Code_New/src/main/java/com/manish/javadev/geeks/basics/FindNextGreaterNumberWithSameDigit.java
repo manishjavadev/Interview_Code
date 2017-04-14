@@ -53,7 +53,7 @@ package com.manish.javadev.geeks.basics;
  */
 
 public class FindNextGreaterNumberWithSameDigit {
-	String number = "123456784987654321";
+	String number = "534976";
 	char[] digits = number.toCharArray();
 
 	public static void main(String[] args) {
