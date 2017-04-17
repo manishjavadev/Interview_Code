@@ -7,7 +7,7 @@ public class Shared1 {
 	public synchronized void printEven() {
 		if (!evenOddFlag) {
 			try {
-				wait();
+				this.wait();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

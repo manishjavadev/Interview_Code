@@ -8,6 +8,14 @@ public class EvenOddDemo {
 		OddThread ot = new OddThread(s1);
 		et.start();
 		ot.start();
+		try {
+			et.join();
+			ot.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		System.out.println("Done");
 	}
 

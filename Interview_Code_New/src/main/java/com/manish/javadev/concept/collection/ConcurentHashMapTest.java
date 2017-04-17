@@ -8,7 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConcurentHashMapTest {
 	public static void main(String[] args) {
 		Map<String, Integer> hashMap = new HashMap<String, Integer>();
-		Map<String, Integer> syncMap = Collections.synchronizedMap(hashMap);
+		Map<String, Integer> syncMap = new ConcurrentHashMap<String, Integer>(
+				hashMap);
 		MyThread1 thread1 = new MyThread1(syncMap);
 		MyThread2 thread2 = new MyThread2(syncMap);
 		MyThread3 thread3 = new MyThread3(syncMap);
