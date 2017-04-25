@@ -25,7 +25,6 @@ public class DeletingNode {
 			front = front.next;
 		}
 		front.next = front.next.next;
-
 		return start;
 	}
 
@@ -53,7 +52,5 @@ public class DeletingNode {
 			System.out.print(start.data + "\t");
 			start = start.next;
 		}
-
 	}
-
 }

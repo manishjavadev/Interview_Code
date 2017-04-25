@@ -16,9 +16,7 @@ public class CheckStringContainsPalindrom {
 					if (checkPalidrom(start, end)) {
 						System.out.println("Pos " + start + "and " + k);
 						System.out.println("Yes String contains Palindrom");
-						for (int k2 = start; k2 <= end; k2++) {
-							System.out.print(str.charAt(k2));
-						}
+						System.out.print(str.substring(start, end + 1));
 						System.out.println("\n");
 						i = end;
 					}
@@ -29,8 +27,8 @@ public class CheckStringContainsPalindrom {
 
 	private static boolean checkPalidrom(int pos, int k) {
 		boolean flag = false;
-		for (int i = pos, j = k; i < j; i++, j--) {
-			if (str.charAt(i) == str.charAt(j)) {
+		while (pos < k) {
+			if (str.charAt(pos++) == str.charAt(k--)) {
 				flag = true;
 			} else {
 				flag = false;

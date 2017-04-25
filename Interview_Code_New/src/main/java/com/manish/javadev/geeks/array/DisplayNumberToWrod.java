@@ -28,12 +28,12 @@ public class DisplayNumberToWrod {
 		if (n <= 0)
 			System.out.println("Enter numbers should be greater than 0");
 		else {
-			DisplayNumberToWrod a = new DisplayNumberToWrod();
-			a.power((n / 10000000) % 100, " crore");
-			a.power(((n / 100000) % 100), " lakh");
-			a.power(((n / 1000) % 100), " thousand");
-			a.power(((n / 100) % 10), " hundred");
-			a.power((n % 100), " ");
+			DisplayNumberToWrod dntw = new DisplayNumberToWrod();
+			dntw.power((n / 10000000) % 100, " crore");
+			dntw.power(((n / 100000) % 100), " lakh");
+			dntw.power(((n / 1000) % 100), " thousand");
+			dntw.power(((n / 100) % 10), " hundred");
+			dntw.power((n % 100), " ");
 		}
 	}
 }

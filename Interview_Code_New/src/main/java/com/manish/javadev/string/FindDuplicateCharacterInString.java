@@ -43,10 +43,9 @@ public class FindDuplicateCharacterInString {
 			// Here we are trying to print the entire logic for code
 			// If list.contains is false then it will print the logic try to
 			// understand
-			if (repeate && counter > 0 && !list.contains(strArray[i])) {
+			if (repeate && counter > 0 && !list.contains(ch)) {
 
-				System.out.print(strArray[i] + " Occurs " + (counter + 1)
-						+ " time ");
+				System.out.print(ch + " Occurs " + (counter + 1) + " time ");
 				for (int j = 0; j <= counter; j++) {
 					System.out.print(ch);
 				}
