@@ -64,26 +64,26 @@ public class FindNextGreaterNumberWithSameDigit {
 	}
 
 	private void findNextNumber(char[] number) {
-		int i, j = 0;
-		for (i = number.length - 1; i > 0; i--) {
-			if (number[i] > number[i - 1])
+		int currIndex, j = 0;
+		for (currIndex = number.length - 1; currIndex > 0; currIndex--) {
+			if (number[currIndex] > number[currIndex - 1])
 				break;
 		}
 
-		if (i == 0) {
+		if (currIndex == 0) {
 			System.out.println("Next number is not possible");
 			return;
 		}
 
-		char x = number[i - 1];
-		int smallest = i;
-		for (j = i; j < number.length; j++) {
-			if (number[j] > x && number[j] < number[smallest])
-				smallest = j;
+		char flNumber = number[currIndex - 1];
+		int fgIndex = currIndex;
+		for (j = currIndex; j < number.length; j++) {
+			if (number[j] > flNumber && number[j] < number[fgIndex])
+				fgIndex = j;
 		}
 
-		swap(digits, i - 1, smallest);
-		sort(digits, i);
+		swap(digits, currIndex - 1, fgIndex);
+		sort(digits, currIndex);
 		for (int k = 0; k < digits.length; k++) {
 			System.out.print(digits[k] + "\t");
 		}

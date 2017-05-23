@@ -55,7 +55,7 @@ public class Segregate0And1 {
 	/* Driver Program to test above functions */
 	public static void main(String[] args) {
 		Segregate0And1 seg = new Segregate0And1();
-		int arr[] = new int[] { 0, 1, 0, 1, 1, 1 };
+		int arr[] = new int[] { 0, 0, 1, 0, 1, 0, 1, 1, 1 };
 		int i = 0;
 		int length = arr.length;
 

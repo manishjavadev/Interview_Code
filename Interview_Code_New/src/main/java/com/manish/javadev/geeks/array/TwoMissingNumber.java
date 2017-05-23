@@ -45,12 +45,13 @@ package com.manish.javadev.geeks.array;
  * sum (Sum of 2 missing numbers) = (Sum of integers from 1 to n) - arrSum =
  * ((n)*(n+1))/2 – arrSum
  * 
- * avg (Average of 2 missing numbers) = sum / 2; One of the numbers will be less
- * than or equal to avg while the other one will be strictly greater then avg.
- * Two numbers can never be equal since all the given numbers are distinct. We
- * can find the first missing number as sum of natural numbers from 1 to avg,
- * i.e., avg*(avg+1)/2 minus the sum of array elements smaller than avg We can
- * find the second missing number as sum of natural numbers from avg+1 to n
+ * avg (Average of 2 missing numbers) = sum / 2; 
+ * One of the numbers will be less than or equal to avg
+ * while the other one will be strictly greater then avg.
+ * Two numbers can never be equal since all the given numbers are distinct. 
+ * We can find the first missing number as sum of natural numbers from 1 to avg,
+ * i.e., avg*(avg+1)/2 minus the sum of array elements smaller than avg.
+ * We can find the second missing number as sum of natural numbers from avg+1 to n
  * minus the sum of array elements greater than than avg Consider an example for
  * better clarification
  * 

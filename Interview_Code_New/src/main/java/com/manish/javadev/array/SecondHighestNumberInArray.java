@@ -20,7 +20,7 @@ public class SecondHighestNumberInArray {
 				smax = fmax;
 				fmax = arr[i];
 			}
-			if (smax < arr[i] && fmax != arr[i]) {
+			if (arr[i] > smax  && fmax != arr[i]) {
 				smax = arr[i];
 			}
 		}
