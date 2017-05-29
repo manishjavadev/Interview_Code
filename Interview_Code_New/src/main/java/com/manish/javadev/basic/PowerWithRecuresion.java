@@ -29,14 +29,12 @@ public class PowerWithRecuresion {
 	}
 
 	private static int doPowerCalcaulation(int number, int power) {
-
 		if(power==0){
 			return 1;
 		}
 		else{
 			return (number*doPowerCalcaulation(number,(power-1)));
 		}
-		
 	}
 
 }

@@ -18,19 +18,19 @@ public class SecondSmallest {
 			if (arr[i] < first) {
 				second = first;
 				first = arr[i];
-			} else if (arr[i] < second && arr[i] != first)
+			}
+			if (arr[i] < second && arr[i] != first) {
 				second = arr[i];
+			}
 		}
-		if (second == Integer.MAX_VALUE)
-			System.out.println("There is no second" + "smallest element");
-		else
-			System.out.println("The first smallest element is " + first
-					+ "\nand second Smallest" + " element is " + second);
+
+		System.out.println("The first smallest element is " + first
+				+ "\nand second Smallest" + " element is " + second);
 	}
 
 	/* Driver program to test above functions */
 	public static void main(String[] args) {
-		int arr[] = { 12, 13, 2, 10, 34, 1 };
+		int arr[] = { 12, 13, 8, 10, 34, 0 };
 		print2Smallest(arr);
 	}
 }
