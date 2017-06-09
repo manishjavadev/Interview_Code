@@ -13,7 +13,7 @@ public class SecondSmallest {
 			return;
 		}
 
-		first = second = Integer.MAX_VALUE;
+		first = second = arr[0];
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] < first) {
 				second = first;
@@ -30,7 +30,7 @@ public class SecondSmallest {
 
 	/* Driver program to test above functions */
 	public static void main(String[] args) {
-		int arr[] = { 12, 13, 8, 10, 34, 0 };
+		int arr[] = { 1, 2, 3, 4, 5, 6, 0 };
 		print2Smallest(arr);
 	}
 }

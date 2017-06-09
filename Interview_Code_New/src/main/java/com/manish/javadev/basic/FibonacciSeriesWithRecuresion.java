@@ -9,10 +9,9 @@ import java.util.Scanner;
 
 /**
  * This program printing FibonacciSeries using Recuresion till entered number
- * For more detail lease visit Wiki page https://en.wikipedia.org/wiki/Fibonacci_number
- * 			= 1                    n=0 or n=1
- * fib(n)
- * 			= fib(n-1) + fib(b-2)  n>1
+ * For more detail lease visit Wiki page
+ * https://en.wikipedia.org/wiki/Fibonacci_number Sample FibonacciSeries like
+ * this (1 1 2 3 5 8) = 1 n=0 or n=1 fib(n) = fib(n-1) + fib(b-2) n>1
  */
 public class FibonacciSeriesWithRecuresion {
 
@@ -21,16 +20,16 @@ public class FibonacciSeriesWithRecuresion {
 		System.out.println("Enter Number");
 		int number = sc.nextInt();
 		for (int i = 0; i < number; i++) {
-			int result = createFibonaccki(i);
-			System.out.print(result +"\t");
+			int result = fib(i);
+			System.out.print(result + "\t");
 		}
 	}
 
-	private static int createFibonaccki(int n) {
+	private static int fib(int n) {
 		if (n == 0 || n == 1)
 			return 1;
 		else {
-			return (createFibonaccki(n - 1) + createFibonaccki(n - 2));
+			return (fib(n - 1) + fib(n - 2));
 		}
 	}
 }

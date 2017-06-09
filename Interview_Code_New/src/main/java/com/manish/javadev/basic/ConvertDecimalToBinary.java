@@ -1,4 +1,5 @@
 package com.manish.javadev.basic;
+
 import java.util.Scanner;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * This program convert Decimal number to binary number
- *
+ * 
  */
 public class ConvertDecimalToBinary {
 
@@ -17,7 +18,7 @@ public class ConvertDecimalToBinary {
 		int num;
 		int enteredNumber;
 		int rem;
-		int rool = 1;
+		int rule = 1;
 		int binaryNumber = 0;
 
 		System.out.println("Enter the Decimal number");
@@ -26,8 +27,8 @@ public class ConvertDecimalToBinary {
 		enteredNumber = num;
 		while (num > 0) {
 			rem = num % 2;
-			binaryNumber = binaryNumber + rem * rool;
-			rool = rool * 10;
+			binaryNumber = binaryNumber + rem * rule;
+			rule = rule * 10;
 			num = num / 2;
 		}
 

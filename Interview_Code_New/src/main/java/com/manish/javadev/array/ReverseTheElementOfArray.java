@@ -1,5 +1,6 @@
 package com.manish.javadev.array;
 
+import java.util.Arrays;
 
 /**
  * @author Manish
@@ -8,23 +9,25 @@ package com.manish.javadev.array;
 
 /**
  * This program reversing the given array
- *
+ * 
  */
 public class ReverseTheElementOfArray {
-	
+	static int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-		int temp;
-		for (int i = 0, j = arr.length - 1; i < j; i++, j--) {
-			temp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = temp;
-		}
-		System.out.println("After reversing the array is ");
-		for (int arrNumber : arr) {
-			System.out.print(arrNumber+" ");
-		}
+		ReverseTheElementOfArray rea = new ReverseTheElementOfArray();
+		rea.reverseArray(0, arr.length - 1);
+		System.out.println(Arrays.toString(arr));
 		System.out.println("\nDone");
 	}
 
+	private void reverseArray(int low, int high) {
+		int temp = 0;
+		if (low < high) {
+			temp = arr[low];
+			arr[low++] = arr[high];
+			arr[high--] = temp;
+			reverseArray(low, high);
+		}
+	}
 }
