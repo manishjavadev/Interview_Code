@@ -11,20 +11,16 @@ public class SequentialExecutionOfTwoThread implements Runnable {
 	}
 
 	public void run() {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 5; i++) {
 			if (j == 0) {
 				System.out.println((char) (ch));
 			} else {
 				System.out.println((char) (ch + j));
 			}
 			j++;
-			System.out.println(i);
 		}
 	}
 
-}
-
-class TestSequentialExecutionOfTwoThread {
 	public static void main(String[] args) {
 		SequentialExecutionOfTwoThread se = new SequentialExecutionOfTwoThread();
 		for (int i = 0; i < 1; i++) {

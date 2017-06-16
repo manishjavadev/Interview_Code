@@ -5,8 +5,8 @@ public class FindNthNodeFromLastDemo {
 
 	public static void main(String[] args) {
 		FindNthNodeFromLastDemo fnd = new FindNthNodeFromLastDemo();
-		//fnd.displayNodes();
-		Entity entity = fnd.getNthNode(3);
+		// fnd.displayNodes();
+		Entity entity = fnd.getNthNodeFromLast(6);
 		if (null == entity) {
 			System.out.println("Number lesser than entered number");
 		} else {
@@ -23,14 +23,16 @@ public class FindNthNodeFromLastDemo {
 		}
 	}
 
-	private Entity getNthNode(int nthNode) {
+	private Entity getNthNodeFromLast(int nthNode) {
 		Entity front = entity;
 		int i = 0;
 		int len = getLength(entity);
 		if (len > nthNode) {
-			for (i = 0; i < (len - nthNode + 1) - 1; i++) {
+			for (i = 0; i < (len - nthNode); i++) {
 				front = front.next;
 			}
+		} else if (len == nthNode) {
+			return front;
 		} else {
 			return null;
 		}

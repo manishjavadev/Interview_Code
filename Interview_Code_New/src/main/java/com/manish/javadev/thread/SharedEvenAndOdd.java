@@ -1,8 +1,9 @@
 package com.manish.javadev.thread;
 
-public class Shared1 {
+public class SharedEvenAndOdd {
 	boolean evenOddFlag = false;
-	int number = 1;
+	int number = 0;
+	char ch = 'A';
 
 	public synchronized void printEven() {
 		if (!evenOddFlag) {
@@ -13,7 +14,7 @@ public class Shared1 {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Even Thread = " + number++);
+		System.out.println("Even Thread = " + (char) (ch + number++));
 		evenOddFlag = false;
 		notify();
 
@@ -28,7 +29,7 @@ public class Shared1 {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Odd Thread  = " + number++);
+		System.out.println("Odd Thread  = " + (char) (ch + number++));
 		evenOddFlag = true;
 		notify();
 	}
