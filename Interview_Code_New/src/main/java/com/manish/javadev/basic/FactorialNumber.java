@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 /**
  * 
- * = 1 n=0 fact(n) = n*fact(n-1) n>0
+ * 				= 1 n=0 
+ * 
+ * fact(n) = 
+ * 
+ * 				n*fact(n-1) n>0
  * 
  * This program is simply printing the factorial number WithRecursion of entered
  * number

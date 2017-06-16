@@ -31,6 +31,7 @@ public class ImageOfGivenNumber {
 			//Here we are reversing the number
 			imageNumber = imageNumber * 10 + reminder;	
 			number = number / 10;
+			
 		}
 		
 		//Note: You have image number so you can check for palindrome
