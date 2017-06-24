@@ -4,11 +4,11 @@ import java.util.PriorityQueue;
 
 public class LevelOrderTraversal {
 
-	void doLevelOrderTraversal(TreeNode root) {
+	void doLevelOrderTraversal(BSTNode root) {
 		if (root == null)
 			return;
 		else {
-			PriorityQueue<TreeNode> pq = new PriorityQueue<TreeNode>();
+			PriorityQueue<BSTNode> pq = new PriorityQueue<BSTNode>();
 			pq.add(root);
 			while (!pq.isEmpty()) {
 				root = pq.poll();

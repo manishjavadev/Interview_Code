@@ -2,7 +2,7 @@ package com.manish.javadev.tree;
 
 public class TreeTraversalUsingRecursion {
 	
-	public void preOrder(TreeNode root) {
+	public void preOrder(BSTNode root) {
 		if (root != null) {
 			System.out.print(root.data + "\t");
 			preOrder(root.left);
@@ -10,7 +10,7 @@ public class TreeTraversalUsingRecursion {
 		}
 	}
 
-	public void inOrder(TreeNode root) {
+	public void inOrder(BSTNode root) {
 		if (root != null) {
 
 			preOrder(root.left);
@@ -19,7 +19,7 @@ public class TreeTraversalUsingRecursion {
 		}
 	}
 
-	public void postOrder(TreeNode root) {
+	public void postOrder(BSTNode root) {
 		if (root != null) {
 			preOrder(root.left);
 			preOrder(root.right);

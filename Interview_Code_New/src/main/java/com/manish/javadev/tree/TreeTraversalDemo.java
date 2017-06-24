@@ -4,14 +4,19 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class TreeTraversalIterativeMethod {
+public class TreeTraversalDemo {
+	public static void main(String[] args) {
+		BSTNode root = BSTDefaultTree.getDefaultTree();
+		TreeTraversalDemo treeTraversalDemo = new TreeTraversalDemo();
+		treeTraversalDemo.preOrder(root);
+	}
 
-	public void preOrder(TreeNode root) {
-		Stack<TreeNode> stack = new Stack<TreeNode>();
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+	public void preOrder(BSTNode root) {
+		Stack<BSTNode> stack = new Stack<BSTNode>();
+		Queue<BSTNode> queue = new LinkedList<BSTNode>();
 		stack.push(root);
 		while (!stack.isEmpty()) {
-			TreeNode cur = stack.peek();
+			BSTNode cur = stack.peek();
 			stack.pop();
 			queue.add(cur);
 			if (cur.right != null) {
@@ -22,16 +27,16 @@ public class TreeTraversalIterativeMethod {
 			}
 		}
 		System.out.println("Display from Queue");
-		for (TreeNode node : queue) {
+		for (BSTNode node : queue) {
 			System.out.println(node.data);
 		}
 	}
 
-	public void inOrder(TreeNode root) {
-		Stack<TreeNode> stack = new Stack<TreeNode>();
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+	public void inOrder(BSTNode root) {
+		Stack<BSTNode> stack = new Stack<BSTNode>();
+		Queue<BSTNode> queue = new LinkedList<BSTNode>();
 		boolean done = false;
-		TreeNode cur = root;
+		BSTNode cur = root;
 		while (!done) {
 			if (cur != null) {
 				stack.push(cur);
@@ -40,7 +45,7 @@ public class TreeTraversalIterativeMethod {
 				if (stack.empty()) {
 					done = true;
 				} else {
-					TreeNode top = stack.peek();
+					BSTNode top = stack.peek();
 					stack.pop();
 					queue.add(top);
 					cur = top.right;
@@ -48,17 +53,17 @@ public class TreeTraversalIterativeMethod {
 			}
 		}
 		System.out.println("Display from Queue");
-		for (TreeNode node : queue) {
+		for (BSTNode node : queue) {
 			System.out.println(node.data);
 		}
 	}
 
-	public void postOrder(TreeNode root) {
-		Stack<TreeNode> stack = new Stack<TreeNode>();
-		Stack<TreeNode> out = new Stack<TreeNode>();
+	public void postOrder(BSTNode root) {
+		Stack<BSTNode> stack = new Stack<BSTNode>();
+		Stack<BSTNode> out = new Stack<BSTNode>();
 		stack.push(root);
 		while (!stack.isEmpty()) {
-			TreeNode cur = stack.peek();
+			BSTNode cur = stack.peek();
 			stack.pop();
 			out.push(cur);
 			if (cur.left != null) {

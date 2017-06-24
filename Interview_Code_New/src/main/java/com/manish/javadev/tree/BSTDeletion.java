@@ -1,27 +1,18 @@
 package com.manish.javadev.tree;
 
 public class BSTDeletion {
-	static BSTNodeTest start;
-	static BSTNodeTest current;
+	static BSTNode start;
+	static BSTNode current;
 
 	public static void main(String[] args) {
 
-		BSTNodeTest root = insert(current, 10);
-		insert(root, 19);
-		insert(root, 15);
-		insert(root, 17);
-		insert(root, 20);
+		BSTNode root = BSTDefaultTree.getDefaultTree();
 
-		insert(root, 5);
-		insert(root, 2);
-		System.out.println("manishjavadev.com – Binary Tree Inorder Traversal");
-		preOrder(root);
-		delete(root, 19);
 		System.out.println("manishjavadev.com – Binary Tree Inorder Traversal");
 		preOrder(root);
 	}
 
-	public static void preOrder(BSTNodeTest root) {
+	public static void preOrder(BSTNode root) {
 		if (root != null) {
 			System.out.print(root.data + "\t");
 			preOrder(root.left);
@@ -29,7 +20,7 @@ public class BSTDeletion {
 		}
 	}
 
-	private static BSTNodeTest find(BSTNodeTest root, int data) {
+	private static BSTNode find(BSTNode root, int data) {
 
 		// This block for recursion
 		if (root == null) {
@@ -46,26 +37,9 @@ public class BSTDeletion {
 		// recursion end
 	}
 
-	private static BSTNodeTest insert(BSTNodeTest root, int data) {
+	private static BSTNode delete(BSTNode root, int data) {
 		start = root;
-		BSTNodeTest node = new BSTNodeTest();
-		node.data = data;
-		if (root == null) {
-			return node;
-		}
-		current = find(root, data);
-
-		if (current.data > data) {
-			current.left = node;
-		} else {
-			current.right = node;
-		}
-		return root;
-	}
-
-	private static BSTNodeTest delete(BSTNodeTest root, int data) {
-		start = root;
-		BSTNodeTest end = null;
+		BSTNode end = null;
 		while (start != null) {
 			if (start.data == data) {
 				break;
@@ -80,7 +54,7 @@ public class BSTDeletion {
 
 		// Delete node has 2 child
 		if (start.left != null && start.right != null) {
-			BSTNodeTest y = start.left;
+			BSTNode y = start.left;
 			end = start;
 			while (y.right != null) {
 				end = y;

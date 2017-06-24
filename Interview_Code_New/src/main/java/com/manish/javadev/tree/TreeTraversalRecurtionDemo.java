@@ -3,13 +3,13 @@ package com.manish.javadev.tree;
 public class TreeTraversalRecurtionDemo {
 
 	public static void main(String[] args) {
-		TreeNode root = new TreeNode(30);
-		TreeNode tn1 = new TreeNode(10);
-		TreeNode tn2 = new TreeNode(50);
-		TreeNode tn3 = new TreeNode(5);
-		TreeNode tn4 = new TreeNode(20);
-		TreeNode tn5 = new TreeNode(40);
-		TreeNode tn6 = new TreeNode(60);
+		BSTNode root = new BSTNode(30);
+		BSTNode tn1 = new BSTNode(10);
+		BSTNode tn2 = new BSTNode(50);
+		BSTNode tn3 = new BSTNode(5);
+		BSTNode tn4 = new BSTNode(20);
+		BSTNode tn5 = new BSTNode(40);
+		BSTNode tn6 = new BSTNode(60);
 
 		// Left side tree
 		root.left = tn1;
