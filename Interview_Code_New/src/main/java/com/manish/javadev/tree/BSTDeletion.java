@@ -1,7 +1,7 @@
 package com.manish.javadev.tree;
 
 public class BSTDeletion {
-	static BSTNode start;
+	static BSTNode x;
 	static BSTNode current;
 
 	public static void main(String[] args) {
@@ -38,43 +38,43 @@ public class BSTDeletion {
 	}
 
 	private static BSTNode delete(BSTNode root, int data) {
-		start = root;
-		BSTNode end = null;
-		while (start != null) {
-			if (start.data == data) {
+		x = root;
+		BSTNode p = null;
+		while (x != null) {
+			if (x.data == data) {
 				break;
 			}
-			end = start;
-			if (start.data > data) {
-				start = start.left;
+			p = x;
+			if (x.data > data) {
+				x = x.left;
 			} else {
-				start = start.right;
+				x = x.right;
 			}
 		}
 
 		// Delete node has 2 child
-		if (start.left != null && start.right != null) {
-			BSTNode y = start.left;
-			end = start;
+		if (x.left != null && x.right != null) {
+			BSTNode y = x.left;
+			p = x;
 			while (y.right != null) {
-				end = y;
+				p = y;
 				y = y.right;
 			}
-			start.data = y.data;
-			start = y;
+			x.data = y.data;
+			x = y;
 		}
 		// Delete leaf or 1 child
-		if (end == null) {
-			if (start.left != null) {
-				return start.left;
+		if (p == null) {
+			if (x.left != null) {
+				return x.left;
 			} else {
-				return start.right;
+				return x.right;
 			}
 		}
-		if (end.right == start) {
-			end.right = start.right;
+		if (p.right == x) {
+			p.right = x.right;
 		} else {
-			end.left = start.left;
+			p.left = x.left;
 		}
 		return root;
 	}

@@ -1,15 +1,12 @@
 package com.manish.javadev.tree;
 
 public class BSTInsertion {
-	static BSTNode start;
-	static BSTNode current;
 
 	public static void main(String[] args) {
 
-		BSTNode root = insert(current, 10);
-		insert(root, 33);
-		insert(root, 5);
-		insert(root, 2);
+		BSTNode root = BSTDefaultTree.getDefaultTree();
+		BSTInsertion bstInsertion = new BSTInsertion();
+		bstInsertion.insert(root, 28);
 		System.out.println("manishjavadev.com – Binary Tree Inorder Traversal");
 		preOrder(root);
 	}
@@ -22,37 +19,32 @@ public class BSTInsertion {
 		}
 	}
 
-	private static BSTNode find(BSTNode root, int data) {
-
-		// This block for recursion
-		if (root == null) {
-			return current;
+	private BSTNode insert(BSTNode root, int data) {
+		BSTNode prev = null;
+		BSTNode crr = root;
+		boolean left = false;
+		while (crr != null) {
+			if (crr.data == data) {
+				throw new IllegalArgumentException();
+			}
+			prev = crr;
+			if (crr.data > data) {
+				crr = crr.left;
+				left = true;
+			} else {
+				crr = crr.right;
+				left = false;
+			}
 		}
-		if (root.data == data) {
-			return root;
-		} else if (root.data < data) {
-			current = root;
-			return find(root.right, data);
-		} else {
-			current = root;
-			return find(root.left, data);
-		}
-	}
-
-	private static BSTNode insert(BSTNode root, int data) {
-		start = root;
-		current = find(root, data);
-
 		BSTNode node = new BSTNode();
 		node.data = data;
 		if (root == null) {
 			return node;
 		}
-
-		if (current.data > data) {
-			current.left = node;
+		if (left) {
+			prev.left = node;
 		} else {
-			current.right = node;
+			prev.right = node;
 		}
 		return root;
 	}
