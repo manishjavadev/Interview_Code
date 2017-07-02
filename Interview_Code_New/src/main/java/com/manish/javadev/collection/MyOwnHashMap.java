@@ -1,8 +1,5 @@
 package com.manish.javadev.collection;
 
-
-
-
 public class MyOwnHashMap {
 	private int size;
 	private static Entry[] element;
@@ -33,8 +30,9 @@ public class MyOwnHashMap {
 
 		public String getKey() {
 			return key;
-		}		
+		}
 	}
+
 	public Entry get(String key) {
 		if (key == null)
 			return null;
@@ -61,14 +59,22 @@ public class MyOwnHashMap {
 		int hash = hash(key.hashCode());
 		int i = indexFor(hash, element.length);
 		Entry e = element[i];
+		boolean addValuFlag = false;
 		if (e != null) {
 			if (e.key.equals(key)) {
 				e.value = value;
 			} else {
 				while (e.next != null) {
 					e = e.next;
+					if (e.key.equals(key)) {
+						e.value = value;
+						addValuFlag = true;
+						break;
+					}
 				}
-				e.next = entryForBukket;
+				if (!addValuFlag) {
+					e.next = entryForBukket;
+				}
 			}
 		} else {
 			element[i] = entryForBukket;
@@ -91,9 +97,6 @@ public class MyOwnHashMap {
 		return h & (length - 1);
 	}
 
-}
-
-class TestMyOwnHashMap {
 	public static void main(String[] args) {
 
 		MyOwnHashMap mohm = new MyOwnHashMap();
@@ -106,4 +109,5 @@ class TestMyOwnHashMap {
 		MyOwnHashMap.Entry e = mohm.get("Manish");
 		System.out.println("" + e.getValue());
 	}
+
 }

@@ -32,6 +32,9 @@ public class FindNthNodeFromLastDemo {
 				front = front.next;
 			}
 		} else if (len == nthNode) {
+			while (front.next != null) {
+				front = front.next;
+			}
 			return front;
 		} else {
 			return null;
