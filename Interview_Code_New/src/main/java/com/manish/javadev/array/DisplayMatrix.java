@@ -1,5 +1,7 @@
 package com.manish.javadev.array;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -14,17 +16,16 @@ import java.util.Scanner;
 public class DisplayMatrix {
 
 	public static void main(String[] args) {
-		int row = 3;
+		int row = 5;
 		int col = 4;
-		int matrix1[][];
-		matrix1 = new int[3][4];
+		
 		Scanner sc = new Scanner(System.in);
 
-		// In side for loop we are taking input from user and displaying String
+		String matrix[][] = new String[row][col];
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				System.out.println("Enter Number for matrix");
-				matrix1[i][j] = sc.nextInt();
+				matrix[i][j] = sc.next();
 			}
 		}
 
@@ -32,9 +33,28 @@ public class DisplayMatrix {
 		System.out.println("Entered Matrix");
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				System.out.print(matrix1[i][j] + "  ");
+				System.out.print(matrix[i][j] + "  ");
 			}
 			System.out.println("\n");
 		}
+
+		int result = findDuplicate(matrix);
+		System.out.println("Result = " + result);
+	}
+
+	private static int findDuplicate(String[][] matrix1) {
+		int counter = 0;
+		List list = new ArrayList();
+		// TODO Auto-generated method stub
+		for (int i = 0; i < matrix1.length; i++) {
+			for (int j = 0; j < matrix1[i].length; j++) {
+				if (list.contains(matrix1[i][j]) && matrix1[i][j] != null) {
+					counter++;
+				}
+				list.add(matrix1[i][j]);
+
+			}
+		}
+		return counter;
 	}
 }

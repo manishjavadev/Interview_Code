@@ -1,6 +1,5 @@
 package com.manish.javadev.thread;
 
-import java.util.Collections;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 

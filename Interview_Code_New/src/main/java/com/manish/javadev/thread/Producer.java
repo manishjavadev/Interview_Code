@@ -16,7 +16,7 @@ public class Producer implements Runnable {
 		try {
 			while (index++ <= 15) {
 				produce();
-				//Thread.sleep(100);
+				Thread.sleep(100);
 			}
 
 		} catch (InterruptedException e) {
