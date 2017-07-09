@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class DisplayMatrix {
 
 	public static void main(String[] args) {
-		int row = 5;
+		int row = 3;
 		int col = 4;
 		
 		Scanner sc = new Scanner(System.in);
