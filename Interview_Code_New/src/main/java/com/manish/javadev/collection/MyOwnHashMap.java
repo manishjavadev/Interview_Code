@@ -35,15 +35,15 @@ public class MyOwnHashMap {
 
 	public Entry get(String key) {
 		if (key == null)
-			return null;
+			return element[0];
 		int hash = hash(key.hashCode());
 		int i = indexFor(hash, element.length);
-		Entry e = element[i];
-		while (e != null) {
-			if (e.key.equals(key)) {
-				return e;
+		Entry oldEntity = element[i];
+		while (oldEntity != null) {
+			if (oldEntity.key.equals(key)) {
+				return oldEntity;
 			}
-			e = e.next;
+			oldEntity = oldEntity.next;
 		}
 		return null;
 	}
@@ -53,33 +53,26 @@ public class MyOwnHashMap {
 	 */
 
 	public void put(String key, String value) {
-		Entry entryForBukket = new Entry(key, value);
 		if (key == null)
-			return;
+			createEntryForNullKey(key, value);
 		int hash = hash(key.hashCode());
 		int i = indexFor(hash, element.length);
-		Entry e = element[i];
-		boolean addValuFlag = false;
-		if (e != null) {
-			if (e.key.equals(key)) {
-				e.value = value;
-			} else {
-				while (e.next != null) {
-					e = e.next;
-					if (e.key.equals(key)) {
-						e.value = value;
-						addValuFlag = true;
-						break;
-					}
-				}
-				if (!addValuFlag) {
-					e.next = entryForBukket;
-				}
+		Entry oldEntry = element[i];
+		while (oldEntry != null) {
+			if (oldEntry.getKey().equals(key)) {
+				oldEntry.value = value;
+				return;
 			}
-		} else {
-			element[i] = entryForBukket;
+			oldEntry = oldEntry.next;
 		}
+		Entry newEntry = new Entry(key, value);
+		newEntry.next = oldEntry;
+		element[i] = newEntry;
+	}
 
+	private void createEntryForNullKey(String key, String value) {
+		Entry newEntry = new Entry(key, value);
+		element[0] = newEntry;
 	}
 
 	static int hash(int h) {

@@ -50,6 +50,5 @@ public class HeapSort {
 			array[start] = array[left];
 			array[left] = temp;
 		}
-
 	}
 }

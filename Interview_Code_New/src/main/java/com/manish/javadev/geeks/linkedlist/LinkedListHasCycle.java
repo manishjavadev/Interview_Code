@@ -32,13 +32,16 @@ public class LinkedListHasCycle {
 
 	public static void main(String[] args) {
 		Entity rootNode = new Entity(1);
-		rootNode.next = new Entity(1);
-		rootNode.next.next = new Entity(2);
-		Entity cycleNode = new Entity(3);
+		rootNode.next = new Entity(2);
+		rootNode.next.next = new Entity(3);
+		Entity cycleNode = new Entity(4);
 		rootNode.next.next.next = cycleNode;
-		rootNode.next.next.next.next = new Entity(4);
-		rootNode.next.next.next.next.next = new Entity(5);
-		rootNode.next.next.next.next.next.next = new Entity(6);
+		rootNode.next.next.next.next = new Entity(5);
+		rootNode.next.next.next.next.next = new Entity(6);
+		rootNode.next.next.next.next.next.next = new Entity(7);
 		rootNode.next.next.next.next.next.next.next = cycleNode;
+		LinkedListHasCycle llhc = new LinkedListHasCycle();
+		boolean result = llhc.hashCycle(rootNode);
+		System.out.println("Linked List Hash Cycle   = " + result);
 	}
 }

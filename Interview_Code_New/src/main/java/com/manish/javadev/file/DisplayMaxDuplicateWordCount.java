@@ -1,11 +1,10 @@
 package com.manish.javadev.file;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -14,33 +13,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.StringTokenizer;
 
 public class DisplayMaxDuplicateWordCount {
 
 	public Map<String, Integer> getWordCount(String fileName) {
-
-		FileInputStream fis = null;
-		DataInputStream dis = null;
+		File file = new File(fileName);
+		FileReader fr = null;
 		BufferedReader br = null;
 		Map<String, Integer> wordMap = new HashMap<String, Integer>();
 		try {
-			fis = new FileInputStream(fileName);
-			dis = new DataInputStream(fis);
-			br = new BufferedReader(new InputStreamReader(dis));
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
 			String line = null;
 			while ((line = br.readLine()) != null) {
 				String strArr[] = line.split(" ");
 				String temp = null;
 				for (int i = 0; i < strArr.length; i++) {
 					temp = strArr[i];
-					// wordMap.put(temp,
-					// wordMap.containsKey(strArr[i])?wordMap.get(temp) + 1:1);
-					if (wordMap.containsKey(strArr[i])) {
-						wordMap.put(temp, wordMap.get(temp) + 1);
-					} else {
-						wordMap.put(temp, 1);
-					}
+					wordMap.put(temp,
+							wordMap.containsKey(strArr[i]) ? wordMap.get(temp) + 1 : 1);
 				}
 			}
 		} catch (FileNotFoundException e) {

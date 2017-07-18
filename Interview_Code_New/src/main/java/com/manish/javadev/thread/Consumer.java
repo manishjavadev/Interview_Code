@@ -12,7 +12,7 @@ public class Consumer implements Runnable {
 
 	public void run() {
 		try {
-			while (index++ <= 15) {
+			while (true) {
 				System.out.println("Consumed: " + queue.take());
 			}
 
