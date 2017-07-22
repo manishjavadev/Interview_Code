@@ -7,11 +7,10 @@ import java.util.Stack;
 public class TreeTraversalDemo {
 	public static void main(String[] args) {
 		BSTNode root = BSTDefaultTree.getDefaultTree();
-		TreeTraversalDemo treeTraversalDemo = new TreeTraversalDemo();
-		treeTraversalDemo.preOrder(root);
+		preOrder(root);
 	}
 
-	public void preOrder(BSTNode root) {
+	public static void preOrder(BSTNode root) {
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		Queue<BSTNode> queue = new LinkedList<BSTNode>();
 		stack.push(root);
@@ -32,7 +31,7 @@ public class TreeTraversalDemo {
 		}
 	}
 
-	public void inOrder(BSTNode root) {
+	public static void inOrder(BSTNode root) {
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		Queue<BSTNode> queue = new LinkedList<BSTNode>();
 		boolean done = false;
@@ -58,7 +57,7 @@ public class TreeTraversalDemo {
 		}
 	}
 
-	public void postOrder(BSTNode root) {
+	public static void postOrder(BSTNode root) {
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		Stack<BSTNode> out = new Stack<BSTNode>();
 		stack.push(root);
