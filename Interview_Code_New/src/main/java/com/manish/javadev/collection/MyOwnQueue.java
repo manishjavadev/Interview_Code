@@ -1,81 +1,75 @@
 package com.manish.javadev.collection;
+
 /**
  * @author Manish
  *
  */
 
 /**
- * THis program creating our own Queue feature like collection classes.
- * But this is user defined Queue 
- * Note: Queue means First in First out(means 0th index always)
- * Note: this is dynamic queue because once the size of array is full
- * it will call alterCapacity method and alter the size of array with double capacity
- * and do the operation
+ * THis program creating our own Queue feature like collection classes. But this
+ * is user defined Queue Note: Queue means First in First out(means 0th index
+ * always) Note: this is dynamic queue because once the size of array is full it
+ * will call alterCapacity method and alter the size of array with double
+ * capacity and do the operation
  */
 public class MyOwnQueue {
-	
+
 	private int size;
 	private int capacity;
 	private Object elements[];
-	public MyOwnQueue(){
-		capacity=10;
-		elements= new Object[capacity];
-		
+
+	public MyOwnQueue() {
+		capacity = 10;
+		elements = new Object[capacity];
+
 	}
-	public void addObject(Object obj){
-		if(size==10){
+
+	public void addObject(Object obj) {
+		if (size == 10) {
 			alterCapacity();
 		}
-		elements[size++]=obj;
+		elements[size++] = obj;
 	}
-	//Here i am altering the capacity of array
+
+	// Here i am altering the capacity of array
 	// and copying array element in to temp array
-	//and creating new array with modified size and 
+	// and creating new array with modified size and
 	// and again copying temp array in again in new modified(size) array
-	private void alterCapacity(){
-		capacity=capacity*2;
-		Object temp[]= elements;
-		elements= new Object[capacity];
-		for(int i=0;i<temp.length;i++){
-			elements[i]=temp[i];			
-		}	
+	private void alterCapacity() {
+		capacity = capacity * 2;
+		Object temp[] = elements;
+		elements = new Object[capacity];
+		for (int i = 0; i < temp.length; i++) {
+			elements[i] = temp[i];
+		}
 	}
-	
-	public Object removeObjectFromQueue(){
+
+	public Object removeObjectFromQueue() {
 		Object obj = elements[0];
-		for(int i=0;i<size;i++){
-			elements[i]=elements[i+1];						
+		for (int i = 0; i < size; i++) {
+			elements[i] = elements[i + 1];
 		}
 		size--;
 		return obj;
 	}
-	
+
 	public String toString() {
-		StringBuffer sb= new StringBuffer("[");
-		for(int i=0;i<size;i++){
-			sb.append(elements[i]+",");						
+		StringBuffer sb = new StringBuffer("[");
+		for (int i = 0; i < size; i++) {
+			sb.append(elements[i] + ",");
 		}
-		return sb.substring(0,sb.length()-1)+"]";		
+		return sb.substring(0, sb.length() - 1) + "]";
 	}
-}
-class TestMyQueue{
-	
+
 	public static void main(String[] args) {
-	
-		MyOwnQueue s1= new MyOwnQueue();
+
+		MyOwnQueue s1 = new MyOwnQueue();
 		s1.addObject("abc");
 		s1.addObject("123");
 		s1.addObject("bcd");
 		System.out.println(s1);
-		//Here i am calling remove method of queue
+		// Here i am calling remove method of queue
 		System.out.println(s1.removeObjectFromQueue());
 		System.out.println(s1);
-		s1.addObject("433");
-		s1.addObject("hello");
-		System.out.println(s1);
-		//Here i am again calling remove method of queue 
-		//after adding new object
-		System.out.println(s1.removeObjectFromQueue());
-		System.out.println(s1);		
 	}
 }

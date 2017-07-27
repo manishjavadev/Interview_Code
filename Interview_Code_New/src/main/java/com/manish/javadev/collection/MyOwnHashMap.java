@@ -6,7 +6,7 @@ public class MyOwnHashMap {
 	int index;
 
 	public MyOwnHashMap() {
-		size = 20;
+		size = 16;
 		element = new Entry[size];
 	}
 

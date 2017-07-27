@@ -30,7 +30,7 @@ public class SecondSmallest {
 
 	/* Driver program to test above functions */
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 4, 5, 6, 0 };
+		int arr[] = { 10, 3, 5, 7, 0, 9 };
 		print2Smallest(arr);
 	}
 }

@@ -2,9 +2,7 @@ package com.manish.javadev.file;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -30,19 +28,20 @@ public class DisplayMaxDuplicateWordCount {
 				String temp = null;
 				for (int i = 0; i < strArr.length; i++) {
 					temp = strArr[i];
-					wordMap.put(temp,
-							wordMap.containsKey(strArr[i]) ? wordMap.get(temp) + 1 : 1);
+					wordMap.put(
+							temp,
+							wordMap.containsKey(strArr[i]) ? wordMap.get(temp) + 1
+									: 1);
 				}
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				if (br != null)
 					br.close();
 			} catch (Exception ex) {
+				ex.printStackTrace();
 			}
 		}
 		return wordMap;

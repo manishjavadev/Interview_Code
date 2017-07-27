@@ -61,26 +61,26 @@ public class MyOwnStack {
 			sb.append(elements[i]+",");						
 		}
 		return sb.substring(0,sb.length()-1)+"]";		
+
 	}
-}
-class TestMyStack{
 	
 	public static void main(String[] args) {
-	
+		
 		MyOwnStack s1= new MyOwnStack();
 		s1.addObject("abc");
 		s1.addObject("123");
 		s1.addObject("bcd");
 		System.out.println(s1);
 		//Here i am calling remove method of Stack
-		System.out.println(s1.removeObjectFromStack());
+		//System.out.println(s1.removeObjectFromStack());
 		System.out.println(s1);
 		s1.addObject("433");
 		s1.addObject("hello");
 		//Here i am again calling remove method of Stack 
 		//after adding new object
 		System.out.println(s1);
-		System.out.println(s1.removeObjectFromStack());
+		System.out.println(s1.removeObjectFromQueue());
 		System.out.println(s1);		
 	}
 }
+
