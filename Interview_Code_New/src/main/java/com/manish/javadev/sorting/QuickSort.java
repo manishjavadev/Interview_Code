@@ -10,7 +10,7 @@ public class QuickSort {
 		System.out.println(Arrays.toString(arr));
 	}
 
-	private static void quickSort(int[] arr, int p, int r) {
+	private static void quickSort(int arr[], int p, int r) {
 		if (p < r) {
 			// The index of pivot element is same as in sorted array and in
 			// Portioned array

@@ -36,7 +36,7 @@ import java.util.List;
 
 public class AddElementsofTwoGivenArrays {
 	public static ArrayList<Integer> output = new ArrayList<Integer>();
-
+	
 	public static void main(String[] args) {
 		int arr1[] = { 9, 2, 3, 7, 1, 5 };
 		int arr2[] = { 3, 1, 4 };
