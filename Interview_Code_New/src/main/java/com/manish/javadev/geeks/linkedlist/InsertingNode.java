@@ -20,14 +20,12 @@ public class InsertingNode {
 		start = DefaultLinkedList.getDefaultLinkedList();
 		Entity front = start;
 		if (start == null) {
-			start = node;
-		} else {
-			while (front.next != null) {
-				front = front.next;
-			}
-			front.next = node;
+			return node;
 		}
-		end = node;
+		while (front.next != null) {
+			front = front.next;
+		}
+		front.next = node;
 		return start;
 	}
 
