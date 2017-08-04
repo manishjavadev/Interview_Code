@@ -10,7 +10,7 @@ public class LinkedlistRecursiveReverse {
 		rootNode.next.next.next = new Entity(40);
 		rootNode.next.next.next.next = new Entity(50);
 		rootNode.next.next.next.next.next = new Entity(60);
-		rootNode = reverseUtil(rootNode, null);
+		rootNode = reverseUtil(null, null);
 		displayNodes(rootNode);
 
 	}
@@ -26,6 +26,10 @@ public class LinkedlistRecursiveReverse {
 	// A simple and tail recursive function to reverse
 	// a linked list. prev is passed as NULL initially.
 	static Entity reverseUtil(Entity curr, Entity prev) {
+		
+		if (curr == null) {
+			return curr;
+		}
 		/* If last node mark it head */
 		if (curr.next == null) {
 			head = curr;
