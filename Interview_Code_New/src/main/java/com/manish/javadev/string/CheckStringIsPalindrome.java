@@ -42,17 +42,15 @@ public class CheckStringIsPalindrome {
 		 */}
 
 	private static boolean checkPalindrom(int i, int j) {
-		boolean rFalg = true;
 		int start = i;
 		int end = j;
 		if (i < j) {
 			if (enteredString.charAt(i) != enteredString.charAt(j)) {
-				rFalg = false;
-				return rFalg;
+				return false;
 			}
 			checkPalindrom(++start, --end);
 		}
-		return rFalg;
+		return true;
 
 	}
 
