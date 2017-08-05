@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class SegregateEvenAndOddDemo {
 	public static void main(String args[]) {
-		int[] array = { 12, 34, 45, 9, 8, 90, 3 };
+		int[] array = { 1, 2, 3, 4, 5, 6, 7, 8 };
 		segregateEvenOdd(array);
 		System.out.println(Arrays.toString(array));
 	}
@@ -32,11 +32,9 @@ public class SegregateEvenAndOddDemo {
 				rightSide--;
 			}
 
-			if (data[leftSide] % 2 != 0 && data[rightSide] % 2 == 0) {
+			if (leftSide < rightSide) {
 				// swapping as soon as we find even and odd combination
 				swappEvenOdd(data, leftSide, rightSide);
-				leftSide--;
-				rightSide++;
 			}
 		}
 	}

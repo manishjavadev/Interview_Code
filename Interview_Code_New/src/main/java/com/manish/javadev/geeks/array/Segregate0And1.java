@@ -46,8 +46,8 @@ public class Segregate0And1 {
 			 * at right. Exchange arr[left] and arr[right]
 			 */
 			if (left < right) {
-				arr[left--] = 0;
-				arr[right++] = 1;
+				arr[left] = 0;
+				arr[right] = 1;
 			}
 		}
 	}
