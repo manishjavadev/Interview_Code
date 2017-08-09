@@ -1,6 +1,7 @@
 package com.manish.javadev.geeks.array;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -36,10 +37,10 @@ import java.util.List;
 
 public class AddElementsofTwoGivenArrays {
 	public static ArrayList<Integer> output = new ArrayList<Integer>();
-	
+
 	public static void main(String[] args) {
 		int arr1[] = { 9, 2, 3, 7, 1, 5 };
-		int arr2[] = { 3, 1, 4 };
+		int arr2[] = { 3, 1, 8 };
 		addArrays(arr1, arr2);
 		System.out.println(output);
 	}
@@ -83,9 +84,8 @@ public class AddElementsofTwoGivenArrays {
 			reverseOut.add(sum % 10);
 			sum = sum / 10;
 		}
-		for (int i = reverseOut.size() - 1; i >= 0; i--) {
-			output.add(reverseOut.get(i));
-		}
+		Collections.reverse(reverseOut);
+		output.addAll(output.size(), reverseOut);
 
 	}
 }

@@ -10,32 +10,32 @@ public class QuickSort {
 		System.out.println(Arrays.toString(arr));
 	}
 
-	private static void quickSort(int arr[], int p, int r) {
-		if (p < r) {
+	private static void quickSort(int arr[], int low, int high) {
+		if (low < high) {
 			// The index of pivot element is same as in sorted array and in
 			// Portioned array
-			int q = partition(arr, p, r);
-			quickSort(arr, p, q - 1);
-			quickSort(arr, q + 1, r);
+			int q = partition(arr, low, high);
+			quickSort(arr, low, q - 1);
+			quickSort(arr, q + 1, high);
 		}
 	}
 
-	private static int partition(int[] arr, int p, int r) {
-		int pivote = arr[r];
-		int i = p - 1;
-		for (int j = p; j < r; j++) {
+	private static int partition(int[] arr, int low, int high) {
+		int pivote = arr[high];
+		int i = low - 1;
+		for (int j = low; j < high; j++) {
 			if (arr[j] <= pivote) {
 				i++;
 				swap(arr, i, j);
 			}
 		}
-		swap(arr, r, i + 1);
+		swap(arr, high, i + 1);
 		return i + 1;
 	}
 
-	private static void swap(int[] arr, int i, int j) {
-		int temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
+	private static void swap(int[] arr, int first, int last) {
+		int temp = arr[first];
+		arr[first] = arr[last];
+		arr[last] = temp;
 	}
 }

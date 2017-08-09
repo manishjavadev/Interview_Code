@@ -5,12 +5,16 @@ import java.util.HashSet;
 public class FindFirstRepetingElement {
 
 	public static void main(String[] args) {
-		int arr[] = { 10, 5, 3, 4, 3, 5, 3, 3, 6 };
-		printFirstRepeating(arr);
+		int arr[] = { 3, 5, 3, 4, 3, 5, 3, 3, 6 };
+		int result = printFirstRepeating(arr);
+		if (result >= 0)
+			System.out.println("The first repeating element is " + arr[result]);
+		else
+			System.out.println("There are no repeating elements");
 		System.out.println("Done");
 	}
 
-	static void printFirstRepeating(int arr[]) {
+	static int printFirstRepeating(int arr[]) {
 		// Initialize index of first repeating element
 		int firstRepeatingIndex = -1;
 
@@ -22,17 +26,13 @@ public class FindFirstRepetingElement {
 			// If element is already in hash set, update min
 			if (set.contains(arr[i]))
 				firstRepeatingIndex = i;
-
-			else
+			else {
 				// Else add element to hash set
 				set.add(arr[i]);
+			}
 		}
 
-		// Print the result
-		if (firstRepeatingIndex > 0)
-			System.out.println("The first repeating element is " + arr[firstRepeatingIndex]);
-		else
-			System.out.println("There are no repeating elements");
+		return firstRepeatingIndex;
 	}
 
 }

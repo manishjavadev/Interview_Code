@@ -24,12 +24,12 @@ package com.manish.javadev.geeks.array;
  * 
  * @author Manish
  */
-public class MinimumPossibleSumofTwoNumber {
+public class MinimumSumofTwoNumberFormedWithArray {
 
 	static int[] arr = { 6, 8, 4, 5, 2, 3 };
 
 	public static void main(String[] args) {
-		MinimumPossibleSumofTwoNumber mpstn = new MinimumPossibleSumofTwoNumber();
+		MinimumSumofTwoNumberFormedWithArray mpstn = new MinimumSumofTwoNumberFormedWithArray();
 		int result = mpstn.getMinimumSumOfTwoNumber(arr);
 		System.out.println(result);
 	}
