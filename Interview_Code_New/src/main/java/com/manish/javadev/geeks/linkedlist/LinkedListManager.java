@@ -8,13 +8,16 @@ public class LinkedListManager {
 
 	private void doOperation() {
 		System.out.println("Insert In middile");
-		Entity start = InsertingNode.insertInMiddile(35, 3);
-		InsertingNode.display(start);
+		Entity root = DefaultLinkedList.getDefaultLinkedList();
+		boolean result = InsertingNode.insertInMiddile(root, 35, 6);
+		if (result) {
+			InsertingNode.display(root);
+		}
 
 		System.out.println("Insert In middile");
-		InsertingNode.insertAfterGivenNode(
-				DefaultLinkedList.getDefaultLinkedList().next.next, 25);
-		InsertingNode.display(start);
+		root = DefaultLinkedList.getDefaultLinkedList();
+		InsertingNode.insertAfterGivenNode(root.next, 25);
+		InsertingNode.display(root);
 
 		/*
 		 * start = InsertingNode.insertAtStart(5); System.out.println("");

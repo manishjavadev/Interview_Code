@@ -15,43 +15,33 @@ package com.manish.javadev.geeks.linkedlist;
  * 
  */
 public class FindNthNodeFromLastWithOnDemo {
-	Entity entity = DefaultLinkedList.getDefaultLinkedList();
 
 	public static void main(String[] args) {
-		FindNthNodeFromLastWithOnDemo fnd = new FindNthNodeFromLastWithOnDemo();
 		// fnd.displayNodes();
-		fnd.getNthNodeFromLast(6);
+		Entity entity = DefaultLinkedList.getDefaultLinkedList();
+		Entity result = getNthNodeFromLast(entity, 2);
+		System.out.println(result.data);
 	}
 
-	public void displayNodes() {
-		Entity tNode = entity;
-		while (tNode != null) {
-			System.out.print(tNode.data + " ");
-			tNode = tNode.next;
-		}
-	}
-
-	private void getNthNodeFromLast(int nthNode) {
+	private static Entity getNthNodeFromLast(Entity entity, int nthNode) {
 		Entity refEntity = entity;
 		Entity mainEntity = entity;
-		int counter = 0;
-		if (refEntity != null) {
-			while (counter < nthNode) {
-				if (refEntity == null) {
-					System.out.println(nthNode + " is greater than the no "
-							+ " of nodes in the list");
-					return;
-				}
-				refEntity = refEntity.next;
-				counter++;
-			}
 
-			while (refEntity != null) {
-				mainEntity = mainEntity.next;
-				refEntity = refEntity.next;
-			}
-			System.out.println("Node no. " + nthNode + " from last is "
-					+ mainEntity.data);
+		if (refEntity == null) {
+			return null;
 		}
+		for (int counter = 0; counter < nthNode; counter++) {
+			if (refEntity == null) {
+				System.out.println(nthNode + " is greater than the no "
+						+ " of nodes in the list");
+				return null;
+			}
+			refEntity = refEntity.next;
+		}
+		while (refEntity != null) {
+			mainEntity = mainEntity.next;
+			refEntity = refEntity.next;
+		}
+		return mainEntity;
 	}
 }

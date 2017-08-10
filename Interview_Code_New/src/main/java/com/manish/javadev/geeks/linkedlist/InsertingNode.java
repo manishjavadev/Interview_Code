@@ -1,52 +1,51 @@
 package com.manish.javadev.geeks.linkedlist;
 
 public class InsertingNode {
-	public static Entity start, end;
+	public static Entity root, end;
 
 	public static Entity insertAtStart(int data) {
 		Entity node = new Entity(data);
-		start = DefaultLinkedList.getDefaultLinkedList();
-		if (start == null) {
-			start = node;
+		root = DefaultLinkedList.getDefaultLinkedList();
+		if (root == null) {
+			root = node;
 		} else {
-			node.next = start;
-			start = node;
+			node.next = root;
+			root = node;
 		}
-		return start;
+		return root;
 	}
 
 	public static Entity insertAtEnd(int data) {
 		Entity node = new Entity(data);
-		start = DefaultLinkedList.getDefaultLinkedList();
-		Entity front = start;
-		if (start == null) {
+		root = DefaultLinkedList.getDefaultLinkedList();
+		Entity front = root;
+		if (root == null) {
 			return node;
 		}
 		while (front.next != null) {
 			front = front.next;
 		}
 		front.next = node;
-		return start;
+		return root;
 	}
 
-	public static Entity insertInMiddile(int data, int after) {
+	public static boolean insertInMiddile(Entity root, int data, int after) {
 		Entity entity = new Entity(data);
-		start = DefaultLinkedList.getDefaultLinkedList();
-		if (start == null) {
-			return null;
+		if (root == null) {
+			return false;
 		}
-		Entity front = start;
+		Entity front = root;
 		for (int i = 0; i < after - 1; i++) {
-			if (front.next == null) {
+			if (front == null) {
 				System.out.println("There are less from enter position");
-				return start;
+				return false;
 			}
 			front = front.next;
 		}
 		entity.next = front.next;
 		front.next = entity;
 
-		return start;
+		return true;
 	}
 
 	public static void insertAfterGivenNode(Entity prevNode, int data) {
@@ -70,6 +69,17 @@ public class InsertingNode {
 			start = start.next;
 		}
 
+	}
+
+	public static void main(String[] args) {
+		Entity rootNode = new Entity(10);
+		rootNode.next = new Entity(20);
+		rootNode.next.next = new Entity(30);
+		rootNode.next.next.next = new Entity(40);
+		rootNode.next.next.next.next = new Entity(50);
+		rootNode.next.next.next.next.next = new Entity(60);
+		insertInMiddile(rootNode, 70, 3);
+		display(rootNode);
 	}
 
 }
