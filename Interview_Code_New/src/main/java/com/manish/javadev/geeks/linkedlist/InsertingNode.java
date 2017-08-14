@@ -3,9 +3,8 @@ package com.manish.javadev.geeks.linkedlist;
 public class InsertingNode {
 	public static Entity root, end;
 
-	public static Entity insertAtStart(int data) {
+	public static Entity insertAtStart(Entity root, int data) {
 		Entity node = new Entity(data);
-		root = DefaultLinkedList.getDefaultLinkedList();
 		if (root == null) {
 			root = node;
 		} else {
@@ -15,7 +14,7 @@ public class InsertingNode {
 		return root;
 	}
 
-	public static Entity insertAtEnd(int data) {
+	public static Entity insertAtEnd(Entity root, int data) {
 		Entity node = new Entity(data);
 		root = DefaultLinkedList.getDefaultLinkedList();
 		Entity front = root;
@@ -48,12 +47,12 @@ public class InsertingNode {
 		return true;
 	}
 
-	public static void insertAfterGivenNode(Entity prevNode, int data) {
+	public static Entity insertAfterGivenNode(Entity prevNode, int data) {
 		Entity newNode = new Entity(data);
 		/* 1. Check if the given Node is null */
 		if (prevNode == null) {
 			System.out.println("The given previous node cannot be null");
-			return;
+			return null;
 		}
 
 		/* 2. Make next of new Node as next of prev_node */
@@ -61,9 +60,11 @@ public class InsertingNode {
 
 		/* 3. make next of prev_node as new_node */
 		prevNode.next = newNode;
+		return prevNode;
 	}
 
-	public static void display(Entity start) {
+	public static void display(Entity root) {
+		Entity start = root;
 		while (start != null) {
 			System.out.print(start.data + "\t");
 			start = start.next;
@@ -72,14 +73,25 @@ public class InsertingNode {
 	}
 
 	public static void main(String[] args) {
-		Entity rootNode = new Entity(10);
-		rootNode.next = new Entity(20);
-		rootNode.next.next = new Entity(30);
-		rootNode.next.next.next = new Entity(40);
-		rootNode.next.next.next.next = new Entity(50);
-		rootNode.next.next.next.next.next = new Entity(60);
-		insertInMiddile(rootNode, 70, 3);
-		display(rootNode);
+		Entity root = DefaultLinkedList.getDefaultLinkedList();
+		System.out.println("\nInsert at Start with null root");
+		root = insertAtStart(null, 5);
+		display(root);
+
+		System.out.println("\nInsert at Start with actual root");
+		root = DefaultLinkedList.getDefaultLinkedList();
+		root = insertAtStart(root, 5);
+		display(root);
+
+		System.out.println("\nInsert at End with actual root");
+		root = DefaultLinkedList.getDefaultLinkedList();
+		root = insertAtEnd(root, 70);
+		display(root);
+
+		System.out.println("\nInsert after given node ");
+		root = DefaultLinkedList.getDefaultLinkedList();
+		insertAfterGivenNode(root.next.next, 70);
+		display(root);
 	}
 
 }

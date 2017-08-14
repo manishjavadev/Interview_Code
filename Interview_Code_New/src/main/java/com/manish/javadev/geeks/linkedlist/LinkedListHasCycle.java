@@ -21,9 +21,6 @@ public class LinkedListHasCycle {
 				// next node is null no cycle in list.
 				return false;
 			}
-			// if slow or fast node is null no cycle in list.
-			if (slow == null || fast == null)
-				return false;
 			// If slow and fast overlaps then we have cycle in list
 			if (slow == fast)
 				return true;

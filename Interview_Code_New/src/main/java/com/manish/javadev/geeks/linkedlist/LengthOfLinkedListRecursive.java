@@ -22,8 +22,9 @@ public class LengthOfLinkedListRecursive {
 		return count;
 	}
 
-	public static int findLengthUsingIterative(Entity start) {
+	public static int findLengthUsingIterative(Entity root) {
 		count = 0;
+		Entity start=root;
 		while (start != null) {
 			count++;
 			start = start.next;
