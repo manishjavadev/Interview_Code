@@ -4,14 +4,9 @@ public class InsertingNode {
 	public static Entity root, end;
 
 	public static Entity insertAtStart(Entity root, int data) {
-		Entity node = new Entity(data);
-		if (root == null) {
-			root = node;
-		} else {
-			node.next = root;
-			root = node;
-		}
-		return root;
+		Entity entity = new Entity(data);
+		entity.next = root;
+		return entity;
 	}
 
 	public static Entity insertAtEnd(Entity root, int data) {
@@ -45,6 +40,33 @@ public class InsertingNode {
 		front.next = entity;
 
 		return true;
+	}
+
+	public static Entity insertAtGivenPosition(Entity root, int data,
+			int position) {
+		Entity entity = new Entity(data);
+		if (root == null && position == 0) {
+			root = entity;
+			return root;
+		}
+		if (root != null && position == 0) {
+			entity.next = root;
+			return entity;
+		}
+		Entity front = root;
+		Entity prev = root;
+		for (int i = 0; i < position - 1; i++) {
+			if (front == null) {
+				System.out.println("There are less from enter position");
+				return null;
+			}
+			prev = front;
+			front = front.next;
+		}
+		entity.next = prev.next;
+		prev.next = entity;
+
+		return root;
 	}
 
 	public static Entity insertAfterGivenNode(Entity prevNode, int data) {
@@ -91,6 +113,11 @@ public class InsertingNode {
 		System.out.println("\nInsert after given node ");
 		root = DefaultLinkedList.getDefaultLinkedList();
 		insertAfterGivenNode(root.next.next, 70);
+		display(root);
+
+		System.out.println("\nInsert after given position ");
+		root = DefaultLinkedList.getDefaultLinkedList();
+		insertAtGivenPosition(root, 70, 0);
 		display(root);
 	}
 
