@@ -22,19 +22,20 @@ public class DeletingNode {
 			prev = start;
 			start = start.next;
 		}
-		prev.next = null;
+		prev.next = start.next;
 		return root;
 	}
 
 	public Entity deleteGivenKey(Entity root, int data) {
 		Entity prev = null, start;
 		start = root;
-		if (start == null) {
-			return null;
-		}
+
 		while (start != null && start.data != data) {
 			prev = start;
 			start = start.next;
+		}
+		if (start == null) {
+			return null;
 		}
 		prev.next = start.next;
 		return root;
@@ -52,9 +53,16 @@ public class DeletingNode {
 		for (int i = 0; front != null && i < position - 1; i++) {
 			front = front.next;
 		}
+		/**
+		 * front.next == null once you want to delete 1st node, you have only
+		 * one node i mean 0th one only
+		 */
 		if (front == null || front.next == null)
 			return null;
-		front.next = front.next.next; // Unlink the deleted node from list
+		/**
+		 * Unlink the deleted node from list
+		 */
+		front.next = front.next.next;
 		return root;
 	}
 
@@ -78,15 +86,15 @@ public class DeletingNode {
 		display(root);
 
 		System.out.println("\nDelete at 0 position");
-		root = deletingNode.deleteAtParticularPosition(deletingNode.root, 0);
+		root = deletingNode.deleteAtParticularPosition(new Entity(10), 1);
 		display(root);
 
 		System.out.println("\nDelete at 3 position");
-		root = deletingNode.deleteAtParticularPosition(null, 3);
+		root = deletingNode.deleteAtParticularPosition(root, 3);
 		display(root);
 
 		System.out.println("\nDelete particular key like 30");
-		root = deletingNode.deleteGivenKey(null, 30);
+		root = deletingNode.deleteGivenKey(deletingNode.root, 90);
 		display(root);
 
 	}

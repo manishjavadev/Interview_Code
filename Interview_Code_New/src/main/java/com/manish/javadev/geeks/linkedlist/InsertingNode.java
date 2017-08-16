@@ -23,28 +23,32 @@ public class InsertingNode {
 		return root;
 	}
 
-	public static boolean insertInMiddile(Entity root, int data, int after) {
+	public static Entity insertAfterGivenPosition(Entity root, int data,
+			int position) {
 		Entity entity = new Entity(data);
-		if (root == null) {
-			return false;
+		if (root != null && position == 0) {
+			entity.next = root.next;
+			root.next = entity;
+			return root;
 		}
 		Entity front = root;
-		for (int i = 0; i < after - 1; i++) {
-			if (front == null) {
-				System.out.println("There are less from enter position");
-				return false;
-			}
+		for (int i = 0; front != null && i < position - 1; i++) {
 			front = front.next;
+		}
+		if (front == null || root.next == null) {
+			return null;
+
 		}
 		entity.next = front.next;
 		front.next = entity;
 
-		return true;
+		return root;
 	}
 
 	public static Entity insertAtGivenPosition(Entity root, int data,
 			int position) {
 		Entity entity = new Entity(data);
+		Entity front = root;
 		if (root == null && position == 0) {
 			root = entity;
 			return root;
@@ -53,18 +57,15 @@ public class InsertingNode {
 			entity.next = root;
 			return entity;
 		}
-		Entity front = root;
-		Entity prev = root;
-		for (int i = 0; i < position - 1; i++) {
-			if (front == null) {
-				System.out.println("There are less from enter position");
-				return null;
-			}
-			prev = front;
+
+		for (int i = 0; front != null && i < position - 1; i++) {
 			front = front.next;
 		}
-		entity.next = prev.next;
-		prev.next = entity;
+		if (front == null || front.next == null) {
+			return null;
+		}
+		entity.next = front.next;
+		front.next = entity;
 
 		return root;
 	}
@@ -117,7 +118,12 @@ public class InsertingNode {
 
 		System.out.println("\nInsert after given position ");
 		root = DefaultLinkedList.getDefaultLinkedList();
-		insertAtGivenPosition(root, 70, 0);
+		root = insertAfterGivenPosition(root, 70, 7);
+		display(root);
+
+		System.out.println("\nInsert at given position ");
+		root = DefaultLinkedList.getDefaultLinkedList();
+		root = insertAtGivenPosition(new Entity(10), 70, 1);
 		display(root);
 	}
 
