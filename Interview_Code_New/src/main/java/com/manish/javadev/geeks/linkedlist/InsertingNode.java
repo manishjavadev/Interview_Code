@@ -1,17 +1,16 @@
 package com.manish.javadev.geeks.linkedlist;
 
 public class InsertingNode {
-	public static Entity root, end;
+	Entity root = DefaultLinkedList.getDefaultLinkedList();
 
-	public static Entity insertAtStart(Entity root, int data) {
+	public Entity insertAtStart(Entity root, int data) {
 		Entity entity = new Entity(data);
 		entity.next = root;
 		return entity;
 	}
 
-	public static Entity insertAtEnd(Entity root, int data) {
+	public Entity insertAtEnd(Entity root, int data) {
 		Entity node = new Entity(data);
-		root = DefaultLinkedList.getDefaultLinkedList();
 		Entity front = root;
 		if (root == null) {
 			return node;
@@ -23,30 +22,29 @@ public class InsertingNode {
 		return root;
 	}
 
-	public static Entity insertAfterGivenPosition(Entity root, int data,
-			int position) {
+	public Entity insertAfterGivenPosition(Entity root, int data, int position) {
 		Entity entity = new Entity(data);
-		if (root != null && position == 0) {
-			entity.next = root.next;
-			root.next = entity;
+		Entity front = root;
+		if (front != null && position == 0) {
+			entity.next = front.next;
+			front.next = entity;
 			return root;
 		}
-		Entity front = root;
+
 		for (int i = 0; front != null && i < position - 1; i++) {
 			front = front.next;
 		}
-		if (front == null || root.next == null) {
+		if (front == null || front.next == null) {
 			return null;
 
 		}
-		entity.next = front.next;
-		front.next = entity;
+		entity.next = front.next.next;
+		front.next.next = entity;
 
 		return root;
 	}
 
-	public static Entity insertAtGivenPosition(Entity root, int data,
-			int position) {
+	public Entity insertAtGivenPosition(Entity root, int data, int position) {
 		Entity entity = new Entity(data);
 		Entity front = root;
 		if (root == null && position == 0) {
@@ -70,7 +68,7 @@ public class InsertingNode {
 		return root;
 	}
 
-	public static Entity insertAfterGivenNode(Entity prevNode, int data) {
+	public Entity insertAfterGivenNode(Entity prevNode, int data) {
 		Entity newNode = new Entity(data);
 		/* 1. Check if the given Node is null */
 		if (prevNode == null) {
@@ -96,35 +94,33 @@ public class InsertingNode {
 	}
 
 	public static void main(String[] args) {
-		Entity root = DefaultLinkedList.getDefaultLinkedList();
+		InsertingNode insertingNode = new InsertingNode();
+
 		System.out.println("\nInsert at Start with null root");
-		root = insertAtStart(null, 5);
+		Entity root = insertingNode.insertAtStart(insertingNode.root, 5);
 		display(root);
 
 		System.out.println("\nInsert at Start with actual root");
 		root = DefaultLinkedList.getDefaultLinkedList();
-		root = insertAtStart(root, 5);
+		root = insertingNode.insertAtStart(insertingNode.root, 5);
 		display(root);
 
 		System.out.println("\nInsert at End with actual root");
-		root = DefaultLinkedList.getDefaultLinkedList();
-		root = insertAtEnd(root, 70);
+		root = insertingNode.insertAtEnd(insertingNode.root, 70);
 		display(root);
 
 		System.out.println("\nInsert after given node ");
-		root = DefaultLinkedList.getDefaultLinkedList();
-		insertAfterGivenNode(root.next.next, 70);
+		insertingNode.insertAfterGivenNode(insertingNode.root.next.next, 70);
 		display(root);
 
 		System.out.println("\nInsert after given position ");
-		root = DefaultLinkedList.getDefaultLinkedList();
-		root = insertAfterGivenPosition(root, 70, 7);
-		display(root);
+		Entity resultRoot = insertingNode.insertAfterGivenPosition(
+				DefaultLinkedList.getDefaultLinkedList(), 70, 5);
+		display(resultRoot);
 
 		System.out.println("\nInsert at given position ");
-		root = DefaultLinkedList.getDefaultLinkedList();
-		root = insertAtGivenPosition(new Entity(10), 70, 1);
+		root = insertingNode.insertAtGivenPosition(new Entity(10), 70, 1);
 		display(root);
-	}
 
+	}
 }
