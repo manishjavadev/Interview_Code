@@ -29,7 +29,9 @@ public class DeletingNode {
 	public Entity deleteGivenKey(Entity root, int data) {
 		Entity prev = null, start;
 		start = root;
-
+		if (start!= null && start.data == data) {
+			return start.next;
+		}
 		while (start != null && start.data != data) {
 			prev = start;
 			start = start.next;
