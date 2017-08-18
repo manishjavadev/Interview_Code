@@ -22,6 +22,9 @@ public class DeletingNode {
 			prev = start;
 			start = start.next;
 		}
+		if (prev == null) {
+			return null;
+		}
 		prev.next = start.next;
 		return root;
 	}
@@ -29,14 +32,12 @@ public class DeletingNode {
 	public Entity deleteGivenKey(Entity root, int data) {
 		Entity prev = null, start;
 		start = root;
-		if (start!= null && start.data == data) {
-			return start.next;
-		}
+
 		while (start != null && start.data != data) {
 			prev = start;
 			start = start.next;
 		}
-		if (start == null) {
+		if (start == null || prev == null) {
 			return null;
 		}
 		prev.next = start.next;

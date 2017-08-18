@@ -114,8 +114,7 @@ public class InsertingNode {
 		display(root);
 
 		System.out.println("\nInsert after given position ");
-		Entity resultRoot = insertingNode.insertAfterGivenPosition(
-				DefaultLinkedList.getDefaultLinkedList(), 70, 5);
+		Entity resultRoot = insertingNode.insertAfterGivenPosition(new Entity(10), 70, 0);
 		display(resultRoot);
 
 		System.out.println("\nInsert at given position ");

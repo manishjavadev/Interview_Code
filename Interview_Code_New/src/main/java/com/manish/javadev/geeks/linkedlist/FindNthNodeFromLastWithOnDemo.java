@@ -19,24 +19,26 @@ public class FindNthNodeFromLastWithOnDemo {
 	public static void main(String[] args) {
 		// fnd.displayNodes();
 		Entity entity = DefaultLinkedList.getDefaultLinkedList();
-		Entity result = getNthNodeFromLast(entity, 2);
-		System.out.println(result.data);
+		Entity result = getNthNodeFromLast(entity, 0);
+		if (result != null) {
+			System.out.println(result.data);
+		} else {
+			System.out.println("May be root is empty or nth node 0");
+		}
+
 	}
 
 	private static Entity getNthNodeFromLast(Entity entity, int nthNode) {
 		Entity refEntity = entity;
 		Entity mainEntity = entity;
-
-		if (refEntity == null) {
+		if (nthNode == 0) {
 			return null;
 		}
-		for (int counter = 0; counter < nthNode; counter++) {
-			if (refEntity == null) {
-				System.out.println(nthNode + " is greater than the no "
-						+ " of nodes in the list");
-				return null;
-			}
+		for (int counter = 0; counter < nthNode && refEntity != null; counter++) {
 			refEntity = refEntity.next;
+		}
+		if (refEntity == null) {
+			return null;
 		}
 		while (refEntity != null) {
 			mainEntity = mainEntity.next;
