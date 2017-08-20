@@ -61,11 +61,11 @@ package com.manish.javadev.geeks.basics;
  */
 public class SquareRoot {
 	public static void main(String[] args) {
-		double result = floorSqrt(26);
+		double result = findSqrt(26);
 		System.out.println(result);
 	}
 
-	public static int floorSqrt(int x) {
+	public static int findSqrt(int x) {
 		// Base Cases
 		if (x == 0 || x == 1)
 			return x;
