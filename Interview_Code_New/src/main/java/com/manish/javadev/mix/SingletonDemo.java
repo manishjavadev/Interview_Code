@@ -55,7 +55,11 @@ class Singleton implements Serializable {
 
 	public static Singleton getInstance() {
 		if (obj == null) {
-			obj = new Singleton();
+			synchronized (Singleton.class) {
+				if (obj == null) {
+					obj = new Singleton();
+				}
+			}
 		}
 		System.out.println("An instance is returned");
 		return obj;

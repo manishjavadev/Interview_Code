@@ -30,7 +30,7 @@ import java.util.HashMap;
  * the array are distinct, we maintain a map that stores inversion count for
  * each element of the array.
  * 
- * Input: [2, 7, 5, 3, 0, 8, 1] Output: [4, 1, 1, 1, 2, 0, 0]
+ * Input: [2, 07, 5, 3, 0, 8, 1] Output: [4, 1, 1, 1, 2, 0, 0]
  * 
  * @author m.d.srivastava
  * 
@@ -42,8 +42,8 @@ public class SurparserUsingMergeSort {
 	// static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
 	// static int arrRef[] = { 2, 7, 5, 3, 0, 8, 1 };
 
-	static int arr[] = { 1, 20, 6, 4, 5 };
-	static int arrRef[] = { 1, 20, 6, 4, 5 };
+	static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
+	static int arrRef[] = { 2, 7, 5, 3, 0, 8, 1 };
 
 	int temp[] = new int[arr.length];
 	static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -110,7 +110,6 @@ public class SurparserUsingMergeSort {
 		while (j <= high) {
 			if (map.containsKey(temArr[i])) {
 				map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
-
 			} else {
 				map.put(temArr[i], inversionCounter);
 			}
@@ -120,5 +119,4 @@ public class SurparserUsingMergeSort {
 			temArr[i] = temp[i];
 		}
 	}
-
 }
