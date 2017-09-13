@@ -38,8 +38,13 @@ public class CircularLinkedList {
 	public void addBegning(Object data) {
 		Node e = new Node(data);
 		e.data = data;
-		e.next = last.next;
-		last.next = e;
+		if (last == null) {
+			last = e;
+			e.next = last;
+		} else {
+			e.next = last.next;
+			last.next = e;
+		}
 	}
 
 	public void addAfter(Object data, int pos) {

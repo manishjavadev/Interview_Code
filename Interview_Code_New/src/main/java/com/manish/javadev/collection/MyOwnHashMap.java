@@ -94,10 +94,10 @@ public class MyOwnHashMap {
 
 		MyOwnHashMap mohm = new MyOwnHashMap();
 
+		mohm.put("Manish", "Accenture");
 		mohm.put("Manish", "Amba Research");
-		mohm.put("Manish", "SISA Tech");
-		mohm.put("Rakesh", "Rakesh UST Global");
-		mohm.put("Pawan", "Samsung");
+		mohm.put("Rakesh", "Oracle");
+		mohm.put("Pawan", "Juniper");
 
 		MyOwnHashMap.Entry e = mohm.get("Manish");
 		System.out.println("" + e.getValue());
