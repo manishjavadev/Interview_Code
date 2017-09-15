@@ -52,9 +52,9 @@ public class DisplayMaxDuplicateWordCount {
 		Set<Entry<String, Integer>> set = wordMap.entrySet();
 		List<Entry<String, Integer>> list = new ArrayList<Entry<String, Integer>>(
 				set);
-		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
-			public int compare(Map.Entry<String, Integer> o1,
-					Map.Entry<String, Integer> o2) {
+		Collections.sort(list, new Comparator<Entry<String, Integer>>() {
+			public int compare(Entry<String, Integer> o1,
+					Entry<String, Integer> o2) {
 				return (o2.getValue()).compareTo(o1.getValue());
 			}
 		});
@@ -66,7 +66,7 @@ public class DisplayMaxDuplicateWordCount {
 		Map<String, Integer> wordMap = dmdwc.getWordCount("abc.txt");
 		List<Entry<String, Integer>> list = dmdwc.sortByValue(wordMap);
 		System.out.println(list.get(0));
-		for (Map.Entry<String, Integer> entry : list) {
+		for (Entry<String, Integer> entry : list) {
 			System.out.println("Key  = " + entry.getKey() + " And Value= "
 					+ entry.getValue());
 		}

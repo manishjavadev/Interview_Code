@@ -46,10 +46,7 @@ public class IntersectionPointOfTwoLinkedList {
 		int i;
 		Node current1 = node1;
 		Node current2 = node2;
-		for (i = 0; i < d; i++) {
-			if (current1 == null) {
-				return null;
-			}
+		for (i = 0; i < d && current1 != null; i++) {
 			current1 = current1.next;
 		}
 		while (current1 != null && current2 != null) {
