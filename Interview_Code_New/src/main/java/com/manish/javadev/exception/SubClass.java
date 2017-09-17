@@ -1,9 +1,8 @@
 package com.manish.javadev.exception;
 
-
-public class SubClass extends Super {
+public class SubClass implements Super {
 	public static void main(String[] args) {
-		SubClass sc = new SubClass();
+		Super sc = new SubClass();
 		try {
 			sc.test1();
 		} catch (Exception e) {
@@ -12,10 +11,10 @@ public class SubClass extends Super {
 		}
 	}
 
-	public void test1() {
+	public void test1() throws Exception {
 		try {
-			return;
-		} catch (Exception ex) {
+			throw new Exception();
+		} catch (NullPointerException ex) {
 			System.out.println("StackOverflowError");
 		}
 	}
@@ -25,6 +24,7 @@ public class SubClass extends Super {
 			throw new StackOverflowError();
 		} catch (Throwable e) {
 			System.out.println("StackOverflowError");
+			test2();
 		}
 	}
 

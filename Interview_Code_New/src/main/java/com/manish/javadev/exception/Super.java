@@ -1,9 +1,8 @@
 package com.manish.javadev.exception;
 
-import java.io.IOException;
+public interface Super {
 
-public class Super {
-	public void test2() {
+	public void test1();
 
-	}
+	public void test2();
 }
