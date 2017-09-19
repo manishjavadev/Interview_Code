@@ -13,7 +13,7 @@ import java.util.Scanner;
  * 
  * 			= 1 n=0 
  * a^n = 
- * 			a*power(n-1) n>1
+ * 			a*power(a,n-1) n>1
  */
 public class PowerWithRecuresion {
 
