@@ -13,8 +13,8 @@ public class SecondHighestNumberInArray {
 	public static void main(String[] args) {
 
 		int arr[] = { 10, 3, 5, 7, 0, 9 };
-		int fmax = 1;
-		int smax = 1;
+		int fmax = 0;
+		int smax = 0;
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] > fmax) {

@@ -12,21 +12,23 @@ package com.manish.javadev.array;
 public class SortStringOfArray {
 	public static void main(String[] args) {
 		String str[] = { "Manish", "Ashish", "Ravi", "Java", "Technology" };
-		String temp = "";
-		for (int i = 0; i < str.length-1; i++) {
-			for (int j = i + 1; j < str.length; j++) {
-				// If you want to sort in descending order then change the symbol
-				// to >(greater than) like if ((str[j].compareTo(str[i]) >0)) {
-				if ((str[i].compareTo(str[j]) > 0)) {
-					temp = str[i];
-					str[i] = str[j];
-					str[j] = temp;
-				}
-			}
-		}
+
+		sortStringArray(str, 0, str.length - 1);
+
 		for (int i = 0; i < str.length; i++) {
 			System.out.print(str[i] + "\t");
 		}
 		System.out.println("\nDone");
+	}
+
+	private static void sortStringArray(String[] str, int low, int high) {
+		if (low < high) {
+			if ((str[low].compareTo(str[high]) > 0)) {
+				String temp = str[low];
+				str[low] = str[high];
+				str[high] = temp;
+			}
+			sortStringArray(str, ++low, --high);
+		}
 	}
 }
