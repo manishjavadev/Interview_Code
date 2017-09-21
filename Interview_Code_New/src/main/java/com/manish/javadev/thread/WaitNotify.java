@@ -1,6 +1,6 @@
 package com.manish.javadev.thread;
 
-public class Shared {
+public class WaitNotify {
 	public synchronized void test1() {
 		System.out.println("Test1 begin");
 		try {

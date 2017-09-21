@@ -2,7 +2,7 @@ package com.manish.javadev.thread;
 
 public class ThreadComunicationDemo {
 	public static void main(String[] args) {
-		Shared s1 = new Shared();
+		WaitNotify s1 = new WaitNotify();
 		Thread1 t1 = new Thread1(s1);
 		t1.start();
 		try {

@@ -1,11 +1,11 @@
 package com.manish.javadev.thread;
 
 public class DeadLockThread2 extends Thread {
-	DeadLockSharedResources d1 = null;
-	DeadLockSharedResources d2 = null;
+	SharedDeadLock d1 = null;
+	SharedDeadLock d2 = null;
 
-	public DeadLockThread2(DeadLockSharedResources d1,
-			DeadLockSharedResources d2) {
+	public DeadLockThread2(SharedDeadLock d1,
+			SharedDeadLock d2) {
 		this.d1 = d1;
 		this.d2 = d2;
 	}
