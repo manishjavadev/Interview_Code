@@ -1,6 +1,6 @@
 package com.manish.javadev.thread;
 
-public class ThreadComunicationDemo {
+public class WaitNotifyDemo {
 	public static void main(String[] args) {
 		WaitNotify s1 = new WaitNotify();
 		Thread1 t1 = new Thread1(s1);
