@@ -1,4 +1,4 @@
-package com.manish.javadev.basic.test;
+package com.manish.javadev.test;
 
 /**
  * Hello world!

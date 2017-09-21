@@ -1,4 +1,4 @@
-package com.manish.javadev.basic.test;
+package com.manish.javadev.test;
 
 import static org.junit.Assert.*;
 
@@ -22,7 +22,6 @@ public class AccountServiceImplTest extends TestCase{
 
 	@Before
 	public void setUp() throws Exception {
-		accountServicemMock=EasyM
 	}
 
 	@After

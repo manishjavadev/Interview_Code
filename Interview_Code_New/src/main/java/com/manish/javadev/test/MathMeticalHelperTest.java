@@ -1,4 +1,4 @@
-package com.manish.javadev.basic.test;
+package com.manish.javadev.test;
 
 import static org.junit.Assert.*;
 

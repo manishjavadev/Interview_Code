@@ -1,4 +1,4 @@
-package com.manish.javadev.basic.test;
+package com.manish.javadev.test;
 
 import java.io.Serializable;
 import java.util.Date;
