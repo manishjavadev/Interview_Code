@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DatabaseService {
-	static Map<Integer, AccountEntity> accountMap = new HashMap<>();
+	static Map<Integer, AccountEntity> accountMap = new HashMap<Integer, AccountEntity>();
 	static {
 		AccountEntity accountEntity = new AccountEntity(new Long(1), "saving Account", "Manish", new Double(2000),
 				new Date());

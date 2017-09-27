@@ -51,7 +51,7 @@ public class SortStackUsingRecursion {
 
 	// Driver method
 	public static void main(String[] args) {
-		Stack<Integer> s = new Stack<>();
+		Stack<Integer> s = new Stack<Integer>();
 		s.push(30);
 		s.push(-5);
 		s.push(18);
