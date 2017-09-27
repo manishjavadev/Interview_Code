@@ -1,6 +1,6 @@
 package com.manish.javadev.collection;
 
-public class MyOwnHashMap {
+public class MyOwnHashMap<K> {
 	private int size;
 	private static Entry[] element;
 	int index;
@@ -35,7 +35,7 @@ public class MyOwnHashMap {
 
 	public Entry get(String key) {
 		if (key == null)
-			return element[0];
+			return getForNullKey();
 		int hash = hash(key.hashCode());
 		int i = indexFor(hash, element.length);
 		Entry oldEntity = element[i];
@@ -48,13 +48,21 @@ public class MyOwnHashMap {
 		return null;
 	}
 
+	private Entry getForNullKey() {
+		for (Entry e = element[0]; e != null; e = e.next) {
+			if (e.key == null)
+				return e;
+		}
+		return null;
+	}
+
 	/*
 	 * public int hashCode() { return index; }
 	 */
 
 	public void put(String key, String value) {
 		if (key == null)
-			createEntryForNullKey(key, value);
+			putForNullKey(key, value);
 		int hash = hash(key.hashCode());
 		int i = indexFor(hash, element.length);
 		Entry oldEntry = element[i];
@@ -70,7 +78,7 @@ public class MyOwnHashMap {
 		element[i] = newEntry;
 	}
 
-	private void createEntryForNullKey(String key, String value) {
+	private void putForNullKey(String key, String value) {
 		Entry newEntry = new Entry(key, value);
 		element[0] = newEntry;
 	}
