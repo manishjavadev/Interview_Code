@@ -43,7 +43,7 @@ public class LinkedListIntersection {
 			current1 = current1.next;
 		}
 		while (current1 != null && current2 != null) {
-			if (current1.data == current2.data) {
+			if (current1 == current2) {
 				return current1;
 			}
 			current1 = current1.next;
@@ -88,8 +88,7 @@ public class LinkedListIntersection {
 		list.head2.next.next.next = new Node(30);
 		list.head2.next.next.next.next = new Node(40);
 
-		System.out
-				.println("The node of intersection is " + list.getNode().data);
+		System.out.println("The node of intersection is " + list.getNode().data);
 
 	}
 

@@ -6,7 +6,6 @@ public class WaitNotify {
 		try {
 			wait();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Test1 end");
