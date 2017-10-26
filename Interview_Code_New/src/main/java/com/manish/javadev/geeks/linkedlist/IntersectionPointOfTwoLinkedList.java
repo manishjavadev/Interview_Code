@@ -50,7 +50,7 @@ public class IntersectionPointOfTwoLinkedList {
 			current1 = current1.next;
 		}
 		while (current1 != null && current2 != null) {
-			if (current1 == current2) {
+			if (current1.data == current2.data) {
 				return current1;
 			}
 			current1 = current1.next;
