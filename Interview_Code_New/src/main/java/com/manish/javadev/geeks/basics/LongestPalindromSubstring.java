@@ -2,7 +2,7 @@ package com.manish.javadev.geeks.basics;
 
 //Java implementation of O(n^2) time and O(1) space method
 //to find the longest palindromic substring
-public class LongestPalinSubstring {
+public class LongestPalindromSubstring {
 	// A utility function to print a substring str[low..high]
 	static void printSubStr(String str, int low, int high) {
 		System.out.println(str.substring(low, high + 1));
