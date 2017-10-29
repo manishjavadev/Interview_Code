@@ -19,12 +19,9 @@ public class HeapSort {
 
 	private void doSorting(int last) {
 		int start = 0;
-		int temp;
 		int left = 0;
 		int right = 0;
-		temp = array[start];
-		array[start] = array[last];
-		array[last] = temp;
+		swapNode(start, last);
 		left = 2 * start + 1;
 		right = 2 * start + 2;
 		while (right < last) {
@@ -32,23 +29,24 @@ public class HeapSort {
 				return;
 			}
 			if (array[right] <= array[left]) {
-				temp = array[start];
-				array[start] = array[left];
-				array[left] = temp;
+				swapNode(start, left);
 				start = left;
 			} else {
-				temp = array[start];
-				array[start] = array[right];
-				array[right] = temp;
+				swapNode(start, right);
 				start = right;
 			}
 			left = 2 * start + 1;
 			right = 2 * start + 2;
 		}
 		if (left == last - 1 && array[start] < array[left]) {
-			temp = array[start];
-			array[start] = array[left];
-			array[left] = temp;
+			swapNode(start, left);
 		}
+	}
+
+	private void swapNode(int start, int left) {
+		int temp;
+		temp = array[start];
+		array[start] = array[left];
+		array[left] = temp;
 	}
 }
