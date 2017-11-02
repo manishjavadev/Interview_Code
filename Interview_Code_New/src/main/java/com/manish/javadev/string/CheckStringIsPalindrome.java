@@ -36,22 +36,18 @@ public class CheckStringIsPalindrome {
 		 * for (int i = chr.length - 1; i >= 0; i--) { reverseString =
 		 * reverseString + enteredString.charAt(i); }
 		 * 
-		 * if (enteredString.equals(reverseString))
-		 * System.out.println("Entered string is palindrome"); else
-		 * System.out.println("Entered string is not a palindrome");
+		 * if (enteredString.equals(reverseString)) System.out.println(
+		 * "Entered string is palindrome"); else System.out.println(
+		 * "Entered string is not a palindrome");
 		 */}
 
 	private static boolean checkPalindrom(int i, int j) {
-		int start = i;
-		int end = j;
 		if (i < j) {
-			if (enteredString.charAt(i) != enteredString.charAt(j)) {
+			if (enteredString.charAt(i++) != enteredString.charAt(j--)) {
 				return false;
 			}
-			checkPalindrom(++start, --end);
+			checkPalindrom(i, j);
 		}
 		return true;
-
 	}
-
 }
