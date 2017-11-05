@@ -65,6 +65,7 @@ public class MyOwnHashMap<K> {
 			putForNullKey(key, value);
 		int hash = hash(key.hashCode());
 		int i = indexFor(hash, element.length);
+
 		Entry oldEntry = element[i];
 		while (oldEntry != null) {
 			if (oldEntry.getKey().equals(key)) {
@@ -73,8 +74,9 @@ public class MyOwnHashMap<K> {
 			}
 			oldEntry = oldEntry.next;
 		}
+
 		Entry newEntry = new Entry(key, value);
-		newEntry.next = oldEntry;
+		newEntry.next = element[i];
 		element[i] = newEntry;
 	}
 

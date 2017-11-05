@@ -21,28 +21,28 @@ public class SegregateEvenAndOddDemo {
 	}
 
 	private static void segregateEvenOdd(int[] data) {
-		int leftSide = 0;
-		int rightSide = data.length - 1;
+		int left = 0;
+		int right = data.length - 1;
 
-		while (leftSide < rightSide) {
-			while (data[leftSide] % 2 == 0 && leftSide < rightSide) {
-				leftSide++;
+		while (left < right) {
+			while (data[left] % 2 != 0 && left < right) {
+				left++;
 			}
-			while (data[rightSide] % 2 == 1 && leftSide < rightSide) {
-				rightSide--;
+			while (data[right] % 2 == 0 && left < right) {
+				right--;
 			}
 
-			if (leftSide < rightSide) {
+			if (left < right) {
 				// swapping as soon as we find even and odd combination
-				swappEvenOdd(data, leftSide, rightSide);
+				swappData(data, left, right);
 			}
 		}
 	}
 
-	private static void swappEvenOdd(int[] data, int left, int right) {
+	private static void swappData(int[] data, int left, int right) {
 		// swapping even and odd numbers
-		int temp = data[left];
-		data[left] = data[right];
-		data[right] = temp;
+		int temp = data[right];
+		data[right] = data[left];
+		data[left] = temp;
 	}
 }

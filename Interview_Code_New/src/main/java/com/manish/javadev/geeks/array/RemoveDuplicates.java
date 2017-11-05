@@ -3,7 +3,7 @@ package com.manish.javadev.geeks.array;
 public class RemoveDuplicates {
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 2, 3, 4, 4, 4, 4, 5 };
+		int arr[] = { 1, 2, 2, 3, 4, 4, 4, 4, 4 };
 		int len = arr.length;
 
 		len = removeDuplicates(arr, len);
