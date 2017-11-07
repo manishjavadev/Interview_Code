@@ -46,7 +46,7 @@ public class MyOwnQueue {
 
 	public Object removeObjectFromQueue() {
 		Object obj = elements[0];
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size-1; i++) {
 			elements[i] = elements[i + 1];
 		}
 		size--;
@@ -67,6 +67,8 @@ public class MyOwnQueue {
 		s1.addObject("abc");
 		s1.addObject("123");
 		s1.addObject("bcd");
+		s1.addObject("bcd2");
+		s1.addObject("bcd3");
 		System.out.println(s1);
 		// Here i am calling remove method of queue
 		System.out.println(s1.removeObjectFromQueue());

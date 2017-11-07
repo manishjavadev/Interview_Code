@@ -26,13 +26,12 @@ public class CircularLinkedList {
 		Node e = new Node(data);
 		e.data = data;
 		if (last == null) {
-			last = e;
 			e.next = last;
 		} else {
 			e.next = last.next;
 			last.next = e;
-			last = e;
 		}
+		last = e;
 	}
 
 	public void addBegning(Object data) {
