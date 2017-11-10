@@ -2,6 +2,7 @@ package com.manish.javadev.thread.advance;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.TimeUnit;
 
 public class CabService implements Runnable {
 	CyclicBarrier cyclicBarrier;
@@ -13,6 +14,8 @@ public class CabService implements Runnable {
 	public void run() {
 		try {
 			System.out.println(Thread.currentThread().getName() + "  .." + "has arived");
+			System.out.println("Number of parties required to trip the barrier = " + cyclicBarrier.getParties());
+
 			try {
 				/**
 				 * Once all the Thread did not call await method, then below of
@@ -33,7 +36,11 @@ public class CabService implements Runnable {
 				 * Once cyclicBarrier found 3 thread are in waiting state then
 				 * cyclicBarrier execute the remaining code.
 				 */
+				// number of parties waiting at the barrier
+				System.out.println("Number of parties waiting at the barrier " + "at this point = "
+						+ cyclicBarrier.getNumberWaiting());
 				cyclicBarrier.await();
+
 			} catch (BrokenBarrierException e) {
 				e.printStackTrace();
 			}
