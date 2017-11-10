@@ -1,4 +1,4 @@
-package com.manish.javadev.thread;
+package com.manish.javadev.thread.advance;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
