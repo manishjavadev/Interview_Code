@@ -47,11 +47,8 @@ public class InsertingNode {
 	public Entity insertAtGivenPosition(Entity root, int data, int position) {
 		Entity entity = new Entity(data);
 		Entity front = root;
-		if (root == null && position == 0) {
-			root = entity;
-			return root;
-		}
-		if (root != null && position == 0) {
+		
+		if (position == 0) {
 			entity.next = root;
 			return entity;
 		}
