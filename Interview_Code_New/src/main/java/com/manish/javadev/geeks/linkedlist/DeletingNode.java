@@ -89,7 +89,7 @@ public class DeletingNode {
 		display(root);
 
 		System.out.println("\nDelete at 0 position");
-		root = deletingNode.deleteAtParticularPosition(new Entity(10), 1);
+		root = deletingNode.deleteAtParticularPosition(deletingNode.root, 5);
 		display(root);
 
 		System.out.println("\nDelete at 3 position");

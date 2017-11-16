@@ -5,7 +5,7 @@ public class FindNthNodeDemo {
 
 	public static void main(String[] args) {
 		FindNthNodeDemo fnd = new FindNthNodeDemo();
-		//fnd.displayNodes();
+		// fnd.displayNodes();
 		Entity entity = fnd.getNthNode(3);
 		System.out.println("identified node is " + entity.data);
 	}
@@ -20,15 +20,12 @@ public class FindNthNodeDemo {
 
 	private Entity getNthNode(int nthNode) {
 		Entity front = entity;
-		int i = 0;
-		for (i = 0; i < nthNode - 1; i++) {
-			if (front.next == null) {
-				System.out.println("There are less node from enter position");
-				return null;
-			}
+		for (int i = 0; i < nthNode - 1 && front != null; i++) {
 			front = front.next;
 		}
-
+		if (front == null) {
+			return null;
+		}
 		return front;
 	}
 

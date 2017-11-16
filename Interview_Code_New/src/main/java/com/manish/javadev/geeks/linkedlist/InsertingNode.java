@@ -36,7 +36,6 @@ public class InsertingNode {
 		}
 		if (front == null || front.next == null) {
 			return null;
-
 		}
 		entity.next = front.next.next;
 		front.next.next = entity;
