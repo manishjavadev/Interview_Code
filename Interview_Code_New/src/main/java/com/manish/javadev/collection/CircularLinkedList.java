@@ -36,7 +36,6 @@ public class CircularLinkedList {
 
 	public void addBegning(Object data) {
 		Node e = new Node(data);
-		e.data = data;
 		if (last == null) {
 			last = e;
 			e.next = last;
@@ -48,7 +47,6 @@ public class CircularLinkedList {
 
 	public void addAfter(Object data, int pos) {
 		Node e = new Node(data);
-		e.data = data;
 		Node em = last.next;
 		for (int i = 0; i < pos - 1; i++) {
 			if (em.next == last.next) {

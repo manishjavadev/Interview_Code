@@ -32,10 +32,10 @@ public class MergeTwoSortedArrayWithO1ExtraSpace {
 			ar2[i] = last;
 
 			// If there was a greater element
-			/*if (j != l1 - 1) {
+			if (j != l1 - 1) {
 				ar1[j + 1] = ar2[i];
 				ar2[i] = last;
-			}*/
+			}
 		}
 	}
 }
