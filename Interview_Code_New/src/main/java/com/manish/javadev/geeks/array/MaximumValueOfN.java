@@ -16,7 +16,11 @@ package com.manish.javadev.geeks.array;
  */
 public class MaximumValueOfN {
 	public static void main(String[] args) {
-		Integer[] array = { 4, 3, 7, 8 };
+		// Integer[] array = { 1, 3, 6, 7};
+		Integer[] array = { 2, 33, 34, 35, 36, 37, 39, 310, 311 };
+
+		int result = (0 + array.length) / 2;
+
 		System.out.println("maxValue Of K is :: " + maxValueOfK(array));
 	}
 

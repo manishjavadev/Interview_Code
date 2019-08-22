@@ -10,15 +10,14 @@ public class FindSubArrayOfNumber {
 		int currSum = 0;
 
 		for (int i = 0; i < seed.length; i++) {
-			String str = "[ ";
+			String str = "[";
 			int sum = 0;
 			for (int j = i; j < seed.length; j++) {
 				sum = sum + seed[j];
-				str = str + seed[j] + ", ";
+				str = str + seed[j] + ",";
 				if (sum == currSum) {
-					str = str.substring(0, str.length() - 2);
-					System.out.println(" sum : " + sum + " array : " + str
-							+ "]");
+					str = str.substring(0, str.length() - 1);
+					System.out.println(" sum : " + sum + " array : " + str + "]");
 
 				}
 			}

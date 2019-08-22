@@ -14,35 +14,29 @@ import java.util.Arrays;
  */
 
 public class SegregateEvenAndOddDemo {
-	public static void main(String args[]) {
-		int[] array = { 1, 2, 3, 4, 5, 6, 7, 8 };
-		segregateEvenOdd(array);
-		System.out.println(Arrays.toString(array));
+	/* Driver Program to test above functions */
+	public static void main(String[] args) {
+		Segregate0And1 seg = new Segregate0And1();
+		int arr[] = new int[] { 10, 3, 4, 9, 6, 0, 7, 11, 13 };
+		seg.segregate0and1(arr);
+
+		System.out.print("Array after segregation is ");
+		System.out.println(Arrays.toString(arr));
 	}
 
-	private static void segregateEvenOdd(int[] data) {
-		int left = 0;
-		int right = data.length - 1;
-
-		while (left < right) {
-			while (data[left] % 2 != 0 && left < right) {
-				left++;
-			}
-			while (data[right] % 2 == 0 && left < right) {
-				right--;
-			}
-
-			if (left < right) {
-				// swapping as soon as we find even and odd combination
-				swappData(data, left, right);
-			}
+	void segregate0and1(int arr[]) {
+		int i = -1;
+		for (int j = 0; j < arr.length; j++) {
+			if (arr[j] % 2 != 0)
+				i++;
+			swapData(arr, i, j);
 		}
 	}
 
-	private static void swappData(int[] data, int left, int right) {
-		// swapping even and odd numbers
-		int temp = data[right];
-		data[right] = data[left];
-		data[left] = temp;
+	private void swapData(int[] arr, int left, int right) {
+		int temp = 0;
+		temp = arr[left];
+		arr[left] = arr[right];
+		arr[right] = temp;
 	}
 }

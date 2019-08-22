@@ -13,7 +13,7 @@ import java.util.Scanner;
  * https://en.wikipedia.org/wiki/Fibonacci_number Sample FibonacciSeries like
  * this (1 1 2 3 5 8)
  * 			
- * 				1 								n=0 or n=1  
+ * 				n 					    n=0 or n=1  
  * 			
  * fib(n) = 
  * 

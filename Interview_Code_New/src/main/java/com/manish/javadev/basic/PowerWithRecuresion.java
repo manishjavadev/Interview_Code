@@ -26,6 +26,12 @@ public class PowerWithRecuresion {
 		int result = power(number, power);
 		System.out.println("Number " + number + "  with power  " + power
 				+ "  is " + result);
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 	private static int power(int number, int power) {

@@ -27,6 +27,7 @@ public class SortStackUsingRecursion {
 		if (!s.isEmpty()) {
 			// Remove the top item
 			int x = s.pop();
+			System.out.println("top element is " + x);
 
 			// Sort remaining stack
 			sortStack(s);
@@ -44,9 +45,10 @@ public class SortStackUsingRecursion {
 		while (lt.hasNext())
 			System.out.println(lt.next());
 
-		/*// printing from top to bottom
-		while (lt.hasPrevious())
-			System.out.print(lt.previous() + " ");*/
+		/*
+		 * // printing from top to bottom while (lt.hasPrevious())
+		 * System.out.print(lt.previous() + " ");
+		 */
 	}
 
 	// Driver method

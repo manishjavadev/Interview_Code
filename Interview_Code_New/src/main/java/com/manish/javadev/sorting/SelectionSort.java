@@ -1,6 +1,6 @@
 package com.manish.javadev.sorting;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @author Manish
@@ -31,5 +31,4 @@ public class SelectionSort {
 		System.out.println(Arrays.toString(arr));
 		System.out.println("\nDone");
 	}
-
 }

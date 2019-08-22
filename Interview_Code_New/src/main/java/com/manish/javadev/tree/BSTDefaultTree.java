@@ -10,20 +10,19 @@ public class BSTDefaultTree {
 		leftRoot.left = new BSTNode(35);
 		leftRoot.right = new BSTNode(42);
 
-		leftRoot.left.left = new BSTNode(30);
-		leftRoot.left.right = new BSTNode(37);
+		/*leftRoot.left.left = new BSTNode(30);
+		leftRoot.left.right = new BSTNode(37);*/
 		root.left = leftRoot;
 
 		rightRoot.left = new BSTNode(47);
 		rightRoot.right = new BSTNode(52);
 
-		rightRoot.left.left = new BSTNode(46);
-		rightRoot.left.right = new BSTNode(48);
+		/*rightRoot.left.left = new BSTNode(46);
+		rightRoot.left.right = new BSTNode(48);*/
 
-		rightRoot.right.left = new BSTNode(51);
-		rightRoot.right.right = new BSTNode(54);
+		/*rightRoot.right.left = new BSTNode(51);
+		rightRoot.right.right = new BSTNode(54);*/
 		root.right = rightRoot;
 		return root;
-
 	}
 }

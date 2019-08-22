@@ -1,7 +1,5 @@
 package com.manish.javadev.string;
 
-import java.util.Scanner;
-
 /**
  * @author Manish
  *
@@ -16,30 +14,18 @@ public class CheckStringIsPalindrome {
 	static String enteredString = "";
 
 	public static void main(String[] args) {
-
-		String reverseString = "";
-		char chr[];
-
-		System.out.println("Please enter String");
-
-		Scanner sc = new Scanner(System.in);
-		enteredString = sc.next();
-		chr = enteredString.toCharArray();
+		String enteredString = "MANINAM";
+		// 1st logic Method
 		boolean resultFlag = checkPalindrom(0, enteredString.length() - 1);
+
+		// 2nd logic Method
+		resultFlag = checkPalindrom(enteredString);
 		if (resultFlag) {
-			System.out.println("Entered String is Palindrom");
+			System.out.println("Entered String '" + enteredString + "' is Palindrom");
 		} else {
 			System.out.println("Entered String is not a Palindrom");
 		}
-
-		/*
-		 * for (int i = chr.length - 1; i >= 0; i--) { reverseString =
-		 * reverseString + enteredString.charAt(i); }
-		 * 
-		 * if (enteredString.equals(reverseString)) System.out.println(
-		 * "Entered string is palindrome"); else System.out.println(
-		 * "Entered string is not a palindrome");
-		 */}
+	}
 
 	private static boolean checkPalindrom(int i, int j) {
 		if (i < j) {
@@ -49,5 +35,27 @@ public class CheckStringIsPalindrome {
 			checkPalindrom(i, j);
 		}
 		return true;
+	}
+
+	private static boolean checkPalindrom(String str) {
+		boolean flag = false;
+		int low = 0;
+		int high = 0;
+		int len = str.length();
+		if (len % 2 == 0) {
+			low = len / 2 - 1;
+			high = len / 2;
+		}
+		if (len % 2 != 0) {
+			low = len / 2 - 1;
+			high = len / 2 + 1;
+		}
+		while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
+			flag = true;
+
+			low--;
+			high++;
+		}
+		return flag;
 	}
 }

@@ -6,15 +6,14 @@ public class BSTSearch {
 
 	public static void main(String[] args) {
 		BSTSearch bstSearch = new BSTSearch();
-		BSTNode root = bstSearch.findWithOutRecursion(
-				BSTDefaultTree.getDefaultTree(), 40);
+		BSTNode root = bstSearch.findWithOutRecursion(BSTDefaultTree2.getDefaultTree(), 45);
 		if (root == null) {
 			System.out.println("requested data is not there");
 		} else {
 			System.out.println(root.data);
 		}
 
-		root = bstSearch.findWithRecursion(BSTDefaultTree.getDefaultTree(), 40);
+		root = bstSearch.findWithRecursion(BSTDefaultTree.getDefaultTree(), 45);
 		if (root == null) {
 			System.out.println("requested data is not there");
 		} else {
@@ -52,12 +51,9 @@ public class BSTSearch {
 			return current;
 		}
 		if (current.data > data) {
-			current = current.left;
-			return findWithRecursion(current, data);
+			return findWithRecursion(current.left, data);
 		} else {
-			current = current.right;
-			return findWithRecursion(current, data);
+			return findWithRecursion(current.right, data);
 		}
-
 	}
 }

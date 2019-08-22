@@ -34,20 +34,21 @@ package com.manish.javadev.geeks.array;
  * 
  * 
  * 
- * Method 2 – O(n) time complexity and O(1) Extra Space
+ * Method 2:: O(n) time complexity and O(1) Extra Space
  * 
  * The idea is based on this popular solution for finding one missing numbers.
- * We extend the solution so that two missing elements are printed. Let’s find
+ * We extend the solution so that two missing elements are printed. Let's find
  * out the sum of 2 missing numbers:
  * 
  * arrSum => Sum of all elements in the array
  * 
  * sum (Sum of 2 missing numbers) = (Sum of integers from 1 to n) - arrSum =
- * ((n)*(n+1))/2 – arrSum
+ * ((n)*(n+1))/2 arrSum
  * 
  * avg (Average of 2 missing numbers) = sum / 2; 
  * One of the numbers will be less than or equal to avg
  * while the other one will be strictly greater then avg.
+ * 
  * Two numbers can never be equal since all the given numbers are distinct. 
  * We can find the first missing number as sum of natural numbers from 1 to avg,
  * i.e., avg*(avg+1)/2 minus the sum of array elements smaller than avg.

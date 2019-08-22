@@ -33,7 +33,7 @@ public class SurparserOfArray {
 				if (arr[j] > arr[i])
 					count++;
 			}
-			System.out.print(count + "\t");
+			System.out.println("For element " + arr[i] + " Count is :: " + count + "\t");
 		}
 	}
 

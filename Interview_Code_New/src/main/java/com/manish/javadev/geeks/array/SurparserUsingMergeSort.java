@@ -22,7 +22,7 @@ import java.util.HashMap;
  * the right that are greater than that element if we know number of elements to
  * its right that are less than that element. The idea is to count the number of
  * inversions for each element of the array using merge sort. So, surpasser
- * count of an element at position i will be equal to “n – i – inversion-count”
+ * count of an element at position i will be equal to â€œn â€“ i â€“ inversion-countâ€�
  * at that position where n is the size of the array. We have already discussed
  * how to find inversion count of complete array here. We have modified the
  * discussed approach to find number of inversions for each element of the array

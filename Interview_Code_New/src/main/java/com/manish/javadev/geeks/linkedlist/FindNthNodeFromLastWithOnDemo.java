@@ -19,7 +19,7 @@ public class FindNthNodeFromLastWithOnDemo {
 	public static void main(String[] args) {
 		// fnd.displayNodes();
 		Entity entity = DefaultLinkedList.getDefaultLinkedList();
-		Entity result = getNthNodeFromLast(entity, 0);
+		Entity result = getNthNodeFromLast(entity, 3);
 		if (result != null) {
 			System.out.println(result.data);
 		} else {
@@ -28,9 +28,9 @@ public class FindNthNodeFromLastWithOnDemo {
 
 	}
 
-	private static Entity getNthNodeFromLast(Entity entity, int nthNode) {
-		Entity refEntity = entity;
-		Entity mainEntity = entity;
+	private static Entity getNthNodeFromLast(Entity root, int nthNode) {
+		Entity refEntity = root;
+		Entity mainEntity = root;
 		if (nthNode == 0) {
 			return null;
 		}

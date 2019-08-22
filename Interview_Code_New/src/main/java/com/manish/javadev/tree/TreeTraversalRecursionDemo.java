@@ -24,7 +24,6 @@ public class TreeTraversalRecursionDemo {
 
 	public static void inOrder(BSTNode root) {
 		if (root != null) {
-
 			inOrder(root.left);
 			System.out.print(root.data + "\t");
 			inOrder(root.right);

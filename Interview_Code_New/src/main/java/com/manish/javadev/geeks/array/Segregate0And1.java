@@ -1,5 +1,7 @@
 package com.manish.javadev.geeks.array;
 
+import java.util.Arrays;
+
 /**
  * 
  * Method 1 (Count 0s or 1s) Thanks to Naveen for suggesting this method. 1)
@@ -27,47 +29,31 @@ package com.manish.javadev.geeks.array;
  * 
  */
 public class Segregate0And1 {
+	/* Driver Program to test above functions */
+	public static void main(String[] args) {
+		Segregate0And1 seg = new Segregate0And1();
+		int arr[] = new int[] { 0, 0, 1, 0, 1, 0, 1, 1, 1 };
+		// int arr[] = new int[] { 10, 3, 4, 9, 6, 0, 7, 11, 13 };
+		seg.segregate0and1(arr);
 
-	void segregate0and1(int arr[], int size) {
-		/* Initialize left and right indexes */
-		int left = 0, right = size - 1;
+		System.out.print("Array after segregation is ");
+		System.out.println(Arrays.toString(arr));
+	}
 
-		while (left < right) {
-			/* Increment left index while we see 0 at left */
-			while (arr[left] == 0 && left < right)
-				left++;
-
-			/* Decrement right index while we see 1 at right */
-			while (arr[right] == 1 && left < right)
-				right--;
-
-			/*
-			 * If left is smaller than right then there is a 1 at left and a 0
-			 * at right. Exchange arr[left] and arr[right]
-			 */
-			if (left < right) {
-				swapData(arr, left, right);
+	void segregate0and1(int arr[]) {
+		int i = -1;
+		for (int j = 0; j < arr.length; j++) {
+			if (arr[j] > 0) {// if (arr[j]%2!=0)
+				i++;
+				swapData(arr, i, j);
 			}
 		}
 	}
 
 	private void swapData(int[] arr, int left, int right) {
-		arr[left] = 0;
-		arr[right] = 1;
+		int temp = 0;
+		temp = arr[left];
+		arr[left] = arr[right];
+		arr[right] = temp;
 	}
-
-	/* Driver Program to test above functions */
-	public static void main(String[] args) {
-		Segregate0And1 seg = new Segregate0And1();
-		int arr[] = new int[] { 0, 0, 1, 0, 1, 0, 1, 1, 1 };
-		int i = 0;
-		int length = arr.length;
-
-		seg.segregate0and1(arr, length);
-
-		System.out.print("Array after segregation is ");
-		for (i = 0; i < length; i++)
-			System.out.print(arr[i] + " ");
-	}
-
 }

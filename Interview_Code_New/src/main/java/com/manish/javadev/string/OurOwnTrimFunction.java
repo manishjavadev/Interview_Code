@@ -16,7 +16,7 @@ public class OurOwnTrimFunction {
 			ch = str.charAt(i);
 			added = false;
 			// Here i am checking space, but flag for space in between of String
-			
+
 			if (ch != ' ' && chFlag) {
 				if (str.charAt(i - 1) == ' ') {
 					fStr = fStr + str.charAt(i - 1) + ch;

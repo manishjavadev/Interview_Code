@@ -6,7 +6,7 @@ public class FindNthNodeFromLastDemo {
 	public static void main(String[] args) {
 		FindNthNodeFromLastDemo fnd = new FindNthNodeFromLastDemo();
 		// fnd.displayNodes();
-		Entity entity = fnd.getNthNodeFromLast(6);
+		Entity entity = fnd.getNthNodeFromLast(3);
 		if (null == entity) {
 			System.out.println("Number lesser than entered number");
 		} else {

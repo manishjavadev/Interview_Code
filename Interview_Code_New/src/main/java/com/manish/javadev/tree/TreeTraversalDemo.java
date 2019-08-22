@@ -2,12 +2,25 @@ package com.manish.javadev.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class TreeTraversalDemo {
 	public static void main(String[] args) {
 		BSTNode root = BSTDefaultTree.getDefaultTree();
-		preOrder(root);
+		System.out.println("Enter For Pre-Order 1\nEnter For Post-Order 2\n Enter For In-Order 3\n ");
+		Scanner sc = new Scanner(System.in);
+		int flag = sc.nextInt();
+		if (flag == 1) {
+			preOrder(root);
+		}
+		if (flag == 2) {
+			postOrder(root);
+		}
+		if (flag == 3) {
+			inOrder(root);
+		}
+
 	}
 
 	public static void preOrder(BSTNode root) {

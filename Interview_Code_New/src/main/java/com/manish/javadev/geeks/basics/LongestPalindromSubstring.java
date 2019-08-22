@@ -1,12 +1,11 @@
 package com.manish.javadev.geeks.basics;
 
-//Java implementation of O(n^2) time and O(1) space method
-//to find the longest palindromic substring
+/**
+ * @author kmamani Java implementation of O(n^2)time and O(1)space methodto find
+ *         the longest palindromic substring
+ */
+
 public class LongestPalindromSubstring {
-	// A utility function to print a substring str[low..high]
-	static void printSubStr(String str, int low, int high) {
-		System.out.println(str.substring(low, high + 1));
-	}
 
 	// This function prints the longest palindrome substring
 	// (LPS) of str[]. It also returns the length of the
@@ -55,12 +54,17 @@ public class LongestPalindromSubstring {
 		return maxLength;
 	}
 
+	// A utility function to print a substring str[low..high]
+	static void printSubStr(String str, int low, int high) {
+		System.out.println(str.substring(low, high + 1));
+	}
+
 	// Driver program to test above function
 	public static void main(String[] args) {
 
-		String str = "forgeeksskeegfor";
+		// String str = "forgeeksskeegfor";
+		// String str = "BNMLMANISHSINAMRTYI";
+		String str = "MANINAM";
 		System.out.println("Length is: " + longestPalSubstr(str));
 	}
-
 }
-// This code is contributed by Sumit Ghosh

@@ -13,9 +13,8 @@ public class RemoveDuplicatePrimeWithMergeSort {
 	static int temp[] = new int[arr.length];
 
 	public static void main(String[] args) {
-
-		doMergeSort(0, arr.length - 1);
 		System.out.println(Arrays.toString(arr));
+		Arrays.sort(arr);
 		List<Integer> list = removeDups(arr);
 		System.out.println(list);
 

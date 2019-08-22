@@ -1,5 +1,7 @@
 package com.manish.javadev.geeks.array;
 
+import java.util.Arrays;
+
 /**
  * Minimum sum of two numbers formed from digits of an array
  * 
@@ -36,13 +38,13 @@ public class MinimumSumofTwoNumberFormedWithArray {
 	private int getMinimumSumOfTwoNumber(int[] inputArray) {
 		// Step1 Sort the array we are assuming that sorting you can do we just
 		// puted in sorted order
-		int[] arr = { 2, 3, 4, 5, 6, 8 };
+		Arrays.sort(inputArray);
 		int odd = 0;
 		int even = 0;
 
 		// Step2 find the sum of odd position in one variable and even position
-		// in another variable
-		// and finally sum both the value will get the result
+		// in another variable and finally sum both the value will get the
+		// result
 		for (int i = 0; i < arr.length; i++) {
 			if (i == 0 || i % 2 == 0) {
 				even = even * 10 + arr[i];
