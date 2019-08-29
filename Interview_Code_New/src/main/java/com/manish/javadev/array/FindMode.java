@@ -12,7 +12,7 @@ public class FindMode {
 		Arrays.sort(arr);
 
 		int previous = arr[0];
-		int popular = arr[0];
+		int mode = arr[0];
 		int count = 1;
 		int maxCount = 1;
 
@@ -21,7 +21,7 @@ public class FindMode {
 				count++;
 			else {
 				if (count > maxCount) {
-					popular = arr[i - 1];
+					mode = arr[i - 1];
 					maxCount = count;
 				}
 				previous = arr[i];
@@ -29,7 +29,7 @@ public class FindMode {
 			}
 		}
 
-		return count > maxCount ? arr[arr.length - 1] : popular;
+		return count > maxCount ? arr[arr.length - 1] : mode;
 	}
 
 	public static void main(String[] args) {

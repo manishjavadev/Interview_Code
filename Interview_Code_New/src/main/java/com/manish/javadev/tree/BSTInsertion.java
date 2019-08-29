@@ -36,8 +36,7 @@ public class BSTInsertion {
 				left = false;
 			}
 		}
-		BSTNode node = new BSTNode();
-		node.data = data;
+		BSTNode node = new BSTNode(data);
 		if (root == null) {
 			return node;
 		}

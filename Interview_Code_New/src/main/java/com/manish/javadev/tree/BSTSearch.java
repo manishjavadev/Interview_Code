@@ -23,7 +23,6 @@ public class BSTSearch {
 	}
 
 	private BSTNode findWithOutRecursion(BSTNode root, int data) {
-
 		current = root;
 		if (current == null) {
 			return current;

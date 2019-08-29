@@ -21,18 +21,17 @@ public class BSTDeletion {
 	}
 
 	private static BSTNode find(BSTNode root, int data) {
-
 		// This block for recursion
+		current = root;
 		if (root == null) {
 			return current;
 		}
-		current = root;
 		if (root.data == data) {
 			return current;
-		} else if (root.data < data) {
-			return find(root.right, data);
-		} else {
+		} else if (root.data > data) {
 			return find(root.left, data);
+		} else {
+			return find(root.right, data);
 		}
 		// recursion end
 	}
