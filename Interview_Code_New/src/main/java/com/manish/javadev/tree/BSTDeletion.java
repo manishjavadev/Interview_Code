@@ -1,13 +1,16 @@
 package com.manish.javadev.tree;
 
 public class BSTDeletion {
-	static BSTNode x;
+	static BSTNode crr;
 	static BSTNode current;
 
 	public static void main(String[] args) {
 
 		BSTNode root = BSTDefaultTree.getDefaultTree();
-
+		preOrder(root);
+		System.out.println("=============================================");
+		BSTNode delete = delete(root, 40);
+		System.out.println("Deleted Node ::" + delete.data);
 		System.out.println("manishjavadev.com – Binary Tree Inorder Traversal");
 		preOrder(root);
 	}
@@ -20,60 +23,41 @@ public class BSTDeletion {
 		}
 	}
 
-	private static BSTNode find(BSTNode root, int data) {
-		// This block for recursion
-		current = root;
-		if (root == null) {
-			return current;
-		}
-		if (root.data == data) {
-			return current;
-		} else if (root.data > data) {
-			return find(root.left, data);
-		} else {
-			return find(root.right, data);
-		}
-		// recursion end
-	}
-
 	private static BSTNode delete(BSTNode root, int data) {
-		x = root;
-		BSTNode p = null;
-		while (x != null) {
-			if (x.data == data) {
+		crr = root;
+		BSTNode prev = null;
+		while (crr != null) {
+			if (crr.data == data) {
 				break;
 			}
-			p = x;
-			if (x.data > data) {
-				x = x.left;
+			prev = crr;
+			if (crr.data > data) {
+				crr = crr.left;
 			} else {
-				x = x.right;
+				crr = crr.right;
 			}
 		}
 
 		// Delete node has 2 child
-		if (x.left != null && x.right != null) {
-			BSTNode y = x.left;
-			p = x;
+		if (crr.left != null && crr.right != null) {
+			BSTNode y = crr.left;
+			prev = crr;
 			while (y.right != null) {
-				p = y;
+				prev = y;
 				y = y.right;
 			}
-			x.data = y.data;
-			x = y;
+			crr.data = y.data;
+			crr = y;
 		}
 		// Delete leaf or 1 child
-		if (p == null) {
-			if (x.left != null) {
-				return x.left;
-			} else {
-				return x.right;
-			}
+		BSTNode tmp = crr.left != null ? crr.left : crr.right;
+		if (prev == null) {
+			return tmp;
 		}
-		if (p.right == x) {
-			p.right = x.right;
+		if (prev.right == crr) {
+			prev.right = tmp;
 		} else {
-			p.left = x.left;
+			prev.left = tmp;
 		}
 		return root;
 	}
