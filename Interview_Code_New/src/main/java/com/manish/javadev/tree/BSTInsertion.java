@@ -47,4 +47,16 @@ public class BSTInsertion {
 		}
 		return root;
 	}
+
+	private BSTNode insertWithRecurtion(BSTNode root, int data) {
+		if (root == null) {
+			return new BSTNode(data);
+		}
+		if (root.data > data) {
+			root.left = insert(root.left, data);
+		} else {
+			root.right = insert(root.right, data);
+		}
+		return root;
+	}
 }

@@ -8,41 +8,41 @@ public class AVLTree {
 		this.root = insert(this.root, item);
 	}
 
-	private Node insert(Node node, int item) {
+	private Node insert(Node node, int data) {
 
 		if (node == null) {
-			Node nn = new Node(item);
+			Node nn = new Node(data);
 			return nn;
 		}
 
-		if (item > node.data) {
-			node.right = insert(node.right, item);
-		} else if (item < node.data) {
-			node.left = insert(node.left, item);
+		if (node.data > data) {
+			node.left = insert(node.left, data);
+		} else {
+			node.right = insert(node.right, data);
 		}
 
 		node.height = Math.max(height(node.left), height(node.right)) + 1;
 
-		int bf = bf(node);
+		int bf = balanceFactor(node);
 
 		// LL Case
-		if (bf > 1 && item < node.left.data) {
+		if (bf > 1 && data < node.left.data) {
 			return rightRotate(node);
 		}
 
 		// RR Case
-		if (bf < -1 && item > node.right.data) {
+		if (bf < -1 && data > node.right.data) {
 			return leftRotate(node);
 		}
 
 		// LR Case
-		if (bf > 1 && item > node.left.data) {
+		if (bf > 1 && data > node.left.data) {
 			node.left = leftRotate(node.left);
 			return rightRotate(node);
 		}
 
 		// RL Case
-		if (bf < -1 && item < node.right.data) {
+		if (bf < -1 && data < node.right.data) {
 			node.right = rightRotate(node.right);
 			return leftRotate(node);
 		}
@@ -54,28 +54,27 @@ public class AVLTree {
 		if (node == null) {
 			return 0;
 		}
-
 		return node.height;
 	}
 
-	private int bf(Node node) {
+	private int balanceFactor(Node node) {
 		if (node == null) {
 			return 0;
 		}
 		return height(node.left) - height(node.right);
 	}
 
-	private Node rightRotate(Node c) {
+	private Node rightRotate(Node crr) {
 
-		Node b = c.left;
+		Node b = crr.left;
 		Node T3 = b.right;
 
 		// rotate
-		b.right = c;
-		c.left = T3;
+		b.right = crr;
+		crr.left = T3;
 
 		// ht update
-		c.height = Math.max(height(c.left), height(c.right)) + 1;
+		crr.height = Math.max(height(crr.left), height(crr.right)) + 1;
 		b.height = Math.max(height(b.left), height(b.right)) + 1;
 
 		return b;
