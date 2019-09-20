@@ -1,53 +1,47 @@
 package com.manish.javadev.tree;
 
 public class AVLTree {
-
-	private Node root;
-
-	public void insert(int item) {
-		this.root = insert(this.root, item);
+	public Node insertNode(Node root, int data) {
+		Node node = root;
+		return insert(node, data);
 	}
 
-	private Node insert(Node node, int data) {
+	public Node insert(Node crr, int data) {
 
-		if (node == null) {
-			Node nn = new Node(data);
-			return nn;
+		if (crr == null) {
+			return new Node(data);
 		}
-
-		if (node.data > data) {
-			node.left = insert(node.left, data);
+		if (crr.data > data) {
+			crr.left = insert(crr.left, data);
 		} else {
-			node.right = insert(node.right, data);
+			crr.right = insert(crr.right, data);
 		}
+		crr.height = Math.max(height(crr.left), height(crr.right)) + 1;
 
-		node.height = Math.max(height(node.left), height(node.right)) + 1;
-
-		int bf = balanceFactor(node);
+		int bf = balanceFactor(crr);
 
 		// LL Case
-		if (bf > 1 && data < node.left.data) {
-			return rightRotate(node);
+		if (bf > 1 && data < crr.left.data) {
+			return rightRotate(crr);
 		}
 
 		// RR Case
-		if (bf < -1 && data > node.right.data) {
-			return leftRotate(node);
+		if (bf < -1 && data > crr.right.data) {
+			return leftRotate(crr);
 		}
 
 		// LR Case
-		if (bf > 1 && data > node.left.data) {
-			node.left = leftRotate(node.left);
-			return rightRotate(node);
+		if (bf > 1 && data > crr.left.data) {
+			crr.left = leftRotate(crr.left);
+			return rightRotate(crr);
 		}
 
 		// RL Case
-		if (bf < -1 && data < node.right.data) {
-			node.right = rightRotate(node.right);
-			return leftRotate(node);
+		if (bf < -1 && data < crr.right.data) {
+			crr.right = rightRotate(crr.right);
+			return leftRotate(crr);
 		}
-		return node;
-
+		return crr;
 	}
 
 	private int height(Node node) {
@@ -66,68 +60,41 @@ public class AVLTree {
 
 	private Node rightRotate(Node crr) {
 
-		Node b = crr.left;
-		Node T3 = b.right;
+		Node tmpLeft = crr.left;
+		Node tmpLeftRight = tmpLeft.right;
 
 		// rotate
-		b.right = crr;
-		crr.left = T3;
+		tmpLeft.right = crr;
+		crr.left = tmpLeftRight;
 
-		// ht update
+		// height update
 		crr.height = Math.max(height(crr.left), height(crr.right)) + 1;
-		b.height = Math.max(height(b.left), height(b.right)) + 1;
+		tmpLeft.height = Math.max(height(tmpLeft.left), height(tmpLeft.right)) + 1;
 
-		return b;
+		return tmpLeft;
 	}
 
-	private Node leftRotate(Node c) {
+	private Node leftRotate(Node crr) {
 
-		Node b = c.right;
-		Node T2 = b.left;
+		Node tmpRight = crr.right;
+		Node tmpLeft = tmpRight.left;
 
 		// rotate
-		b.left = c;
-		c.right = T2;
+		tmpRight.left = crr;
+		crr.right = tmpLeft;
 
-		// ht update
-		c.height = Math.max(height(c.left), height(c.right)) + 1;
-		b.height = Math.max(height(b.left), height(b.right)) + 1;
+		// height update
+		crr.height = Math.max(height(crr.left), height(crr.right)) + 1;
+		tmpRight.height = Math.max(height(tmpRight.left), height(tmpRight.right)) + 1;
 
-		return b;
+		return tmpRight;
 	}
 
-	public void display() {
-		display(this.root);
+	public void display(Node crr) {
+		if (crr != null) {
+			System.out.print(crr.data + "\t");
+			display(crr.left);
+			display(crr.right);
+		}
 	}
-
-	private void display(Node node) {
-
-		if (node == null) {
-			return;
-		}
-
-		// self work
-		String str = "";
-
-		if (node.left == null) {
-			str += ".";
-		} else {
-			str += node.left.data;
-		}
-
-		str += " => " + node.data + " <= ";
-
-		if (node.right == null) {
-			str += ".";
-		} else {
-			str += node.right.data;
-		}
-
-		System.out.println(str);
-
-		display(node.left);
-		display(node.right);
-
-	}
-
 }
