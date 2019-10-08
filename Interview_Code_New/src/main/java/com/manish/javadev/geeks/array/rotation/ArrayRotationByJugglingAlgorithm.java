@@ -9,18 +9,21 @@ import java.util.Arrays;
  * 
  * Array Rotation of the above array by 2 will make array ArrayRotation1
  * 
+ * Time complexity : O(n)
+ * Auxiliary Space : O(1)
  * 
  */
 public class ArrayRotationByJugglingAlgorithm {
 	public static void main(String[] args) {
 		ArrayRotationByJugglingAlgorithm rotate = new ArrayRotationByJugglingAlgorithm();
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
-		rotate.leftRotate(arr, 2, 7);
-		rotate.printArray(arr, 7);
+		// int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+		rotate.leftRotate(arr, 3, 12);
+		rotate.printArray(arr);
 	}
 
 	/* function to print an array */
-	void printArray(int arr[], int size) {
+	void printArray(int arr[]) {
 		System.out.println(Arrays.toString(arr));
 	}
 

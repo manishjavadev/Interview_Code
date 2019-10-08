@@ -7,9 +7,10 @@ public class LevelOrderTraversal {
 
 	public static void main(String[] args) {
 		BSTNode root = BSTDefaultTree2.getDefaultTree();
-		LevelOrderTraversal levelOrderTraversal  = new LevelOrderTraversal();
+		LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
 		levelOrderTraversal.doLevelOrderTraversal(root);
 	}
+
 	void doLevelOrderTraversal(BSTNode root) {
 		if (root == null)
 			return;
@@ -26,8 +27,6 @@ public class LevelOrderTraversal {
 					pq.add(root.right);
 				}
 			}
-
 		}
 	}
-
 }

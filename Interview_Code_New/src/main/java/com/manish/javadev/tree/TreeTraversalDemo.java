@@ -23,13 +23,14 @@ public class TreeTraversalDemo {
 
 	}
 
+	// Node, left, right
 	public static void preOrder(BSTNode root) {
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		Queue<BSTNode> queue = new LinkedList<BSTNode>();
 		stack.push(root);
 		while (!stack.isEmpty()) {
-			BSTNode cur = stack.peek();
-			stack.pop();
+			BSTNode cur = stack.pop();
+			System.out.println(cur.data);
 			queue.add(cur);
 			if (cur.right != null) {
 				stack.push(cur.right);
@@ -57,8 +58,7 @@ public class TreeTraversalDemo {
 				if (stack.empty()) {
 					done = true;
 				} else {
-					BSTNode top = stack.peek();
-					stack.pop();
+					BSTNode top = stack.pop();
 					queue.add(top);
 					cur = top.right;
 				}
@@ -70,13 +70,18 @@ public class TreeTraversalDemo {
 		}
 	}
 
+	/**
+	 * Post order we can not handle using one stack, so we need to use two stack
+	 * to manage output
+	 * 
+	 * @param root
+	 */
 	public static void postOrder(BSTNode root) {
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		Stack<BSTNode> out = new Stack<BSTNode>();
 		stack.push(root);
 		while (!stack.isEmpty()) {
-			BSTNode cur = stack.peek();
-			stack.pop();
+			BSTNode cur = stack.pop();
 			out.push(cur);
 			if (cur.left != null) {
 				stack.push(cur.left);

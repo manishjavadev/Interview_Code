@@ -27,7 +27,13 @@ public class FindTheRotationCount {
 		int arr1[] = { 5, 6, 7, 8, 9, 10, 1, 2, 3 };
 		int n = arr1.length;
 
-		System.out.println(countRotations(arr1, 0, n - 1));
+		int result = countRotations(arr1, n - 1);
+		int result1 = countRotations(arr1, 0, n - 1);
+		if (result1 == -1) {
+			System.out.println("Array is already sorted");
+		} else {
+			System.out.println("Rotation Count of an array is " + (result1 + 1));
+		}
 	}
 
 	// Returns count of rotations for an
@@ -70,23 +76,17 @@ public class FindTheRotationCount {
 	// which is first sorted in ascending order,
 	// then rotated
 	static int countRotations(int arr[], int low, int high) {
-		// base cases
 		if (arr[0] <= arr[arr.length - 1]) {
-			return 0;
+			return -1;
 		}
-
-		/* low + (high - low)/2; */
-		int mid = (low + high) / 2;
-		if (low < mid && arr[mid] < arr[mid - 1])
-			return mid;
-		if (mid < high && arr[mid] > arr[mid + 1])
-			return mid + 1;
-		/**
-		 * If arr[0]>arr[length-1] is greater then means array is sorted rotated
-		 * in between this, so go for pivote in between
-		 */
-		if (arr[low] >= arr[mid])
+		if (low <= high) {
+			int mid = (low + high) / 2;
+			if (arr[mid] > arr[mid + 1])
+				return mid;
+			if (arr[low] <= arr[mid])
+				return countRotations(arr, mid + 1, high);
 			return countRotations(arr, low, mid - 1);
-		return countRotations(arr, mid + 1, high);
+		}
+		return -1;
 	}
 }

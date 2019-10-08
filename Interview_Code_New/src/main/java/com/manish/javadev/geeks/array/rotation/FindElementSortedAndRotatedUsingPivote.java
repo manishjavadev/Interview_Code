@@ -18,7 +18,7 @@ package com.manish.javadev.geeks.array.rotation;
  * All solutions provided here assume that all elements in array are distinct.
  * ===========================================================================
  * The idea is to find the pivot point, divide the array in two sub-arrays and
- * call binary search. The main idea for finding pivot is – for a sorted (in
+ * call binary search. The main idea for finding pivot is ï¿½ for a sorted (in
  * increasing order) and pivoted array, pivot element is the only element for
  * which next element to it is smaller than it. Using above criteria and binary
  * search methodology we can get pivot element in O(logn) time
@@ -74,6 +74,27 @@ public class FindElementSortedAndRotatedUsingPivote {
 	 * element of array(index of 6) implemented for minimum element of array
 	 * Function to get pivot. For array 3, 4, 5, 6, 1, 2 it returns 4 (index of
 	 * 1)
+	 * 
+	 * Algorithm/Insights:
+	 * 
+	 * Use modified binary search to find pivot element:
+	 * 
+	 * 1. If array[0] <= array[length of array - 1], it means the array is not
+	 * rotated, so return -1.
+	 * 
+	 * 2. Initialize start = 0, end = length of array - 1.
+	 * 
+	 * 3. Repeat following steps till start <= end
+	 * 
+	 * a). Set mid = (start+end)/2.
+	 * 
+	 * b). If mid+1 is pivot, then break.
+	 * 
+	 * c). If array[start] <= array[mid], it means from start to mid, all
+	 * elements are in sorted order. Set start = mid+1, so that we look for
+	 * pivot in second half of the array.
+	 * 
+	 * d). Else set end = mid-1, to look for pivot in first half.
 	 */
 	static int findPivot(int arr[], int low, int high) {
 		if (arr[0] <= arr[arr.length - 1]) {
