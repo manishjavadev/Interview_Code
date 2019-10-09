@@ -2,10 +2,10 @@ package com.manish.javadev.geeks.array.rearrange;
 
 import java.util.Arrays;
 
-public class MoveAllNegativeNumbersPositiveToEnd {
+public class MoveAllNegativeNumbersToEnd {
 	public static void main(String args[]) {
-		// int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, -9 };
-		int arr[] = { 1, 2, 0, 4, 3, 0, 5, 0 };
+		int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, -9 };
+		//int arr[] = { 1, 2, 0, 4, 3, 0, 5, 0 };
 
 		rearrange(arr);
 		printArray(arr);
@@ -16,7 +16,7 @@ public class MoveAllNegativeNumbersPositiveToEnd {
 	}
 
 	private static void rearrange(int[] arr) {
-		int j = -1, temp;
+		int j = -1;
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] > 0) {
 				j++;
