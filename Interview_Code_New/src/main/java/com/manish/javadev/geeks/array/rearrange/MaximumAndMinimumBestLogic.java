@@ -2,8 +2,15 @@ package com.manish.javadev.geeks.array.rearrange;
 
 /**
  * In this post a solution that requires O(n) time and O(1) extra space is
- * discussed. The idea is to use multiplication and modular trick to store two
- * elements at an index.
+ * discussed.
+ * 
+ * The idea is to use multiplication and modular trick to store,
+ * 
+ * two number at one array location
+ * 
+ * You tub link
+ * 
+ * https://www.youtube.com/watch?v=ZRoVWxBngX0
  * 
  * @author kmamani
  *
@@ -11,7 +18,7 @@ package com.manish.javadev.geeks.array.rearrange;
 public class MaximumAndMinimumBestLogic {
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
 
 		System.out.println("Original Array");
 		for (int i = 0; i < arr.length; i++)

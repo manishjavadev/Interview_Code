@@ -13,7 +13,7 @@ import java.util.Vector;
  * largest value.
  * 
  * A simple solution that comes to our mind is to sort all numbers in descending
- * order, but simply sorting doesn’t work. For example, 548 is greater than 60,
+ * order, but simply sorting does not work. For example, 548 is greater than 60,
  * but in output 60 comes before 548. As a second example, 98 is greater than 9,
  * but 9 comes before 98 in output.
  * 
@@ -21,7 +21,7 @@ import java.util.Vector;
  * algorithm. In the used sorting algorithm, instead of using the default
  * comparison, write a comparison function myCompare() and use it to sort
  * numbers. Given two numbers X and Y, how should myCompare() decide which
- * number to put first – we compare two numbers XY (Y appended at the end of X)
+ * number to put first ï¿½ we compare two numbers XY (Y appended at the end of X)
  * and YX (X appended at the end of Y). If XY is larger, then X should come
  * before Y in output, else Y should come before. For example, let X and Y be
  * 542 and 60. To compare X and Y, we compare 54260 and 60542. Since 60542 is
@@ -53,17 +53,22 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 
 				// then append X at the end of Y
 				String YX = Y + X;
-				int result = "200999".compareTo("20");
+				//int result = "200999".compareTo("20");
 
 				// Now see which of the two formed numbers
 				// is greater
-				
+
 				/**
-				 * If  XY.compareTo(YX) return -1: XY placed before YX
-				 *  If  XY.compareTo(YX) return 1: XY placed After YX
+				 * If XY.compareTo(YX) return -1: XY placed before YX If
+				 * XY.compareTo(YX) return 1: XY placed After YX
 				 */
-				result = XY.compareTo(YX) > 0 ? -1 : 1;
-				return result;
+				if (XY.compareTo(YX) > 0) {
+					return -1;
+				} else {
+					return 1;
+				}
+				// result = XY.compareTo(YX) > 0 ? -1 : 1;
+				// return result;
 			}
 		});
 

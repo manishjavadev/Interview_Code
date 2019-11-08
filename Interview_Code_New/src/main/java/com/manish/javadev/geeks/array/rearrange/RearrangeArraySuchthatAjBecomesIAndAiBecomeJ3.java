@@ -27,7 +27,8 @@ public class RearrangeArraySuchthatAjBecomesIAndAiBecomeJ3 {
 	// Driver program to test above functions
 	public static void main(String[] args) {
 		RearrangeArraySuchthatAjBecomesIAndAiBecomeJ3 arrange = new RearrangeArraySuchthatAjBecomesIAndAiBecomeJ3();
-		int arr[] = { 1, 3, 0, 2 };
+		// int arr[] = { 1, 3, 0, 2 };
+		int arr[] = { 2, 0, 1, 4, 5, 3 };
 		int n = arr.length;
 
 		System.out.println("Given array is ");
@@ -42,17 +43,18 @@ public class RearrangeArraySuchthatAjBecomesIAndAiBecomeJ3 {
 	// A simple method to rearrange 'arr[0..n-1]' so that 'arr[j]'
 	// becomes 'i' if 'arr[i]' is 'j'
 	void rearrangeNaive(int arr[], int n) {
-		// Create an auxiliary array of same size
-		int temp[] = new int[n];
-		int i;
+		for (int i = 0; i < n; i++) {
 
-		// Store result in temp[]
-		for (i = 0; i < n; i++)
-			temp[arr[i]] = i;
+			// retrieving old value and
+			// storing with the new one
+			arr[arr[i] % n] += i * n;
+		}
 
-		// Copy temp back to arr[]
-		for (i = 0; i < n; i++)
-			arr[i] = temp[i];
+		for (int i = 0; i < n; i++) {
+
+			// retrieving new value
+			arr[i] /= n;
+		}
 	}
 
 	// A utility function to print contents of arr[0..n-1]

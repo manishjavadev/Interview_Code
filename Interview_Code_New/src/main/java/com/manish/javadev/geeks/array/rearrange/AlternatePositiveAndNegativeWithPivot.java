@@ -19,7 +19,6 @@ public class AlternatePositiveAndNegativeWithPivot {
 
 	public static void main(String[] args) {
 		int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
-		int n = arr.length;
 		rearrange(arr);
 		System.out.println("Array after rearranging: ");
 		printArray(arr);
@@ -39,7 +38,7 @@ public class AlternatePositiveAndNegativeWithPivot {
 		 * QuickSort. The idea is to consider 0 as pivot and divide the array
 		 * around it.
 		 */
-		int i = -1, temp = 0, pivot = 0;
+		int i = -1, pivot = 0;
 		for (int j = 0; j < arr.length; j++) {
 			if (arr[j] < pivot) {
 				i++;
@@ -64,19 +63,15 @@ public class AlternatePositiveAndNegativeWithPivot {
 		 */
 		while (pos < arr.length && neg < pos && arr[neg] < 0) {
 			swapData(arr, neg, pos);
-			pos++;
-			neg = neg + 2;
+			pos += 2;
+			neg += 2;
 		}
 	}
 
 	private static void swapData(int[] arr, int i, int j) {
-		if (i < j) {
-			int temp;
-			temp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = temp;
-			swapData(arr, ++i, --j);
-		}
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
 	}
 
 	// display an array

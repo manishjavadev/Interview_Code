@@ -35,7 +35,7 @@ import java.util.Arrays;
 public class ArrayEvenPositionedGreaterThanOdd {
 	public static void main(String args[]) {
 		int A[] = { 1, 3, 2, 2, 5 };
-		//int A[] = { 1, 3, 2 };
+		// int A[] = { 1, 3, 2 };
 		int n = A.length;
 		assign(A, n);
 	}
@@ -49,11 +49,11 @@ public class ArrayEvenPositionedGreaterThanOdd {
 		int p = 0, q = n - 1;
 		for (int i = 0; i < n; i++) {
 			// Assign even indexes with maximum elements
-			if ((i + 1) % 2 == 0)
-				ans[i] = arr[q--];
+			if (i % 2 == 0)
+				ans[i] = arr[p++];
 			// Assign odd indexes with remaining elements
 			else
-				ans[i] = arr[p++];
+				ans[i] = arr[q--];
 		}
 
 		// Print result
