@@ -34,10 +34,10 @@ import java.util.Arrays;
  */
 public class ArrayEvenPositionedGreaterThanOdd {
 	public static void main(String args[]) {
-		int A[] = { 1, 3, 2, 2, 5 };
+		int a[] = { 1, 3, 2, 2, 5 };
 		// int A[] = { 1, 3, 2 };
-		int n = A.length;
-		assign(A, n);
+		int n = a.length;
+		assign(a, n);
 	}
 
 	static void assign(int arr[], int n) {

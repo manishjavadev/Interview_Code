@@ -16,18 +16,19 @@ public class ReverseTheElementOfArray {
 
 	public static void main(String[] args) {
 		ReverseTheElementOfArray rea = new ReverseTheElementOfArray();
-		rea.reverseArray(0, arr.length - 1);
-		System.out.println(Arrays.toString(arr));
+		int[] reverseArray = rea.reverseArray(arr, 0, arr.length - 1);
+		System.out.println(Arrays.toString(reverseArray));
 		System.out.println("\nDone");
 	}
 
-	private void reverseArray(int low, int high) {
+	private int[] reverseArray(int[] arr, int low, int high) {
 		int temp = 0;
 		if (low < high) {
 			temp = arr[low];
 			arr[low++] = arr[high];
 			arr[high--] = temp;
-			reverseArray(low, high);
+			reverseArray(arr, low, high);
 		}
+		return arr;
 	}
 }

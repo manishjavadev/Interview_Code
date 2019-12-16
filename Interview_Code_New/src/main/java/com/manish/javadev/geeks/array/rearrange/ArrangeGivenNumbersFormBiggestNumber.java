@@ -1,8 +1,10 @@
 package com.manish.javadev.geeks.array.rearrange;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -40,7 +42,7 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 	// The main function that prints the
 	// arrangement with the largest value.
 	// The function accepts a vector of strings
-	static void printLargest(Vector<String> arr) {
+	static void printLargest(List<String> arr) {
 
 		Collections.sort(arr, new Comparator<String>() {
 			// A comparison function which is used by
@@ -82,8 +84,7 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 	// driver program
 	public static void main(String[] args) {
 
-		Vector<String> arr;
-		arr = new Vector<>();
+		List<String> arr = new ArrayList();
 
 		// output should be 6054854654
 		arr.add("60");

@@ -7,10 +7,10 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 	public static void main(String[] args) {
 		AlternatingPositiveAndNegativeWithO1ExtraSpace rearrange = new AlternatingPositiveAndNegativeWithO1ExtraSpace();
 		// int arr[n] = {-5, 3, 4, 5, -6, -2, 8, 9, -1, -4};
-		// int arr[] = {-5, -3, -4, -5, -6, 2 , 8, 9, 1 , 4};
+		int arr[] = { -5, -3, -4, -5, -6, -2, 8, 9, -1, 4 };
 		// int arr[] = {5, 3, 4, -2, -1, -2 , -8, -9, -1 , -4};
 		// int arr[] = {-5, 3, -4, -7, -1, -2 , -8, -9, 1 , -4};
-		int arr[] = { -5, -2, 5, 2, 4, 7, 1, 8, 0, -8 };
+		// int arr[] = { -5, -2, 5, 2, 4, 7, 1, 8, 0, -8 };
 
 		System.out.println("Given array is ");
 		rearrange.display(arr);
@@ -21,8 +21,8 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 		rearrange.display(arr);
 	}
 
-	// Utility function to right rotate all elements
-	// between [outofplace, cur]
+	// right rotate all elements between [outofplace, cur], so that all positive
+	// and negative element moved to end
 	void rightrotate(int arr[], int outofplace, int cur) {
 		int tmp = arr[cur];
 		for (int i = cur; i > outofplace; i--)
@@ -60,7 +60,7 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 			// if (((arr[index] >= 0) && ((index & 0x01) == 0)) ||
 			// ((arr[index] < 0) && (index & 0x01) == 1))
 			if (outofplace == -1) {
-				if (((arr[index] < 0) && ((index % 2) != 0)) || ((arr[index] > 0) && (index % 2) == 0))
+				if (((arr[index] > 0) && (index % 2) == 0) || ((arr[index] < 0) && ((index % 2) != 0)))
 					outofplace = index;
 			}
 		}

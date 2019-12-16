@@ -63,7 +63,7 @@ public class AlternatePositiveAndNegativeWithPivot {
 		 */
 		while (pos < arr.length && neg < pos && arr[neg] < 0) {
 			swapData(arr, neg, pos);
-			pos += 2;
+			pos += 1;
 			neg += 2;
 		}
 	}

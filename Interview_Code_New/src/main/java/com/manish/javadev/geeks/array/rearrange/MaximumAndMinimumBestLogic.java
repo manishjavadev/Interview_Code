@@ -42,25 +42,25 @@ public class MaximumAndMinimumBestLogic {
 		int min_idx = 0;
 
 		// store maximum element of array
-		int max_elem = arr[arr.length - 1] + 1;
+		int mv = arr[arr.length - 1] + 1;
 
 		// traverse array elements
 		for (int i = 0; i < n; i++) {
 			// at even index : we have to put
 			// maximum elemlent
-			if (i % 2 == 0) {
-				arr[i] += (arr[max_idx] % max_elem) * max_elem;
+			if ((i+1) % 2 == 0) {
+				arr[i] += (arr[max_idx] % mv) * mv;
 				max_idx--;
 			}
 
 			// at odd index : we have to put minimum element
 			else {
-				arr[i] += (arr[min_idx] % max_elem) * max_elem;
+				arr[i] += (arr[min_idx] % mv) * mv;
 				min_idx++;
 			}
 		}
 		// array elements back to it's original form
 		for (int i = 0; i < n; i++)
-			arr[i] = arr[i] / max_elem;
+			arr[i] = arr[i] / mv;
 	}
 }

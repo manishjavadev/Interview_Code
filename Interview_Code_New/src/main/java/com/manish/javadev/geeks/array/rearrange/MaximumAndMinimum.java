@@ -31,6 +31,7 @@ public class MaximumAndMinimum {
 		// largest or remaining smallest at next position
 
 		// Store result in temp[]
+		// Minimum maximum
 		for (int i = 0; i < n; i++) {
 			if (i % 2 == 0)
 				temp[i] = arr[large--];
@@ -38,7 +39,6 @@ public class MaximumAndMinimum {
 				temp[i] = arr[small++];
 
 		}
-
 		return arr = temp;
 	}
 }
