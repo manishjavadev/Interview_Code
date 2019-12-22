@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
+ * https://www.geeksforgeeks.org/find-surpasser-count-of-each-element-in-array/
+ * 
  * Find Surpasser Count of each element in array A surpasser of an element of an
  * array is a greater element to its right, therefore x[j] is a surpasser of
  * x[i] if i < j and x[i] < x[j]. The surpasser count of an element is the
@@ -17,18 +19,19 @@ import java.util.HashMap;
  * 
  * ================================================================
  * 
- * 
+ * Method 2 Merge Sort
+ * ====================
  * For any element of the array, we can easily find out number of elements to
  * the right that are greater than that element if we know number of elements to
  * its right that are less than that element. The idea is to count the number of
  * inversions for each element of the array using merge sort. So, surpasser
- * count of an element at position i will be equal to â€œn â€“ i â€“ inversion-countâ€�
- * at that position where n is the size of the array. We have already discussed
- * how to find inversion count of complete array here. We have modified the
- * discussed approach to find number of inversions for each element of the array
- * instead of returning inversion count of whole array. Also, as all elements of
- * the array are distinct, we maintain a map that stores inversion count for
- * each element of the array.
+ * count of an element at position i will be equal to â€œn â€“ i â€“
+ * inversion-countâ€� at that position where n is the size of the array. We have
+ * already discussed how to find inversion count of complete array here. We have
+ * modified the discussed approach to find number of inversions for each element
+ * of the array instead of returning inversion count of whole array. Also, as
+ * all elements of the array are distinct, we maintain a map that stores
+ * inversion count for each element of the array.
  * 
  * Input: [2, 07, 5, 3, 0, 8, 1] Output: [4, 1, 1, 1, 2, 0, 0]
  * 
@@ -42,8 +45,11 @@ public class SurparserUsingMergeSort {
 	// static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
 	// static int arrRef[] = { 2, 7, 5, 3, 0, 8, 1 };
 
-	static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
-	static int arrRef[] = { 2, 7, 5, 3, 0, 8, 1 };
+	// static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
+	// static int arrRef[] = { 2, 7, 5, 3, 0, 8, 1 };
+
+	static int arr[] = { 2, 7, 5, 3 };
+	static int arrRef[] = { 2, 7, 5, 3 };
 
 	int temp[] = new int[arr.length];
 	static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -52,14 +58,14 @@ public class SurparserUsingMergeSort {
 		SurparserUsingMergeSort ms = new SurparserUsingMergeSort();
 		ms.doSorting();
 		System.out.println(Arrays.toString(arrRef));
-		System.out.print("Surparser Count\n");
+		int n = arr.length;
 		for (int i = 0; i < arr.length; i++) {
 			int tempresult = ((arr.length - 1) - i);
 			Integer mapdata = map.get(arrRef[i]);
 			if (null == mapdata) {
 				mapdata = 0;
 			}
-			System.out.print(tempresult - mapdata + ",  ");
+			System.out.println("Surparser Count of " + arrRef[i] + " is " + (tempresult - mapdata));
 		}
 	}
 

@@ -1,13 +1,13 @@
 package com.manish.javadev.geeks.array;
 
 public class MaxSurpasser {
-	int[] a, b, c, t;
+	int[] a, b, c, tmp;
 
 	private MaxSurpasser(int[] a) {
 		this.a = a;
 		this.b = new int[a.length];
 		this.c = new int[a.length];
-		this.t = new int[a.length];
+		this.tmp = new int[a.length];
 		for (int i = 0; i < b.length; i++) {
 			b[i] = i;
 		}
@@ -40,17 +40,17 @@ public class MaxSurpasser {
 		int acc = 0;
 		for (int s = l; s <= r; s++) {
 			if (j > r || i <= m && a[b[i]] >= a[b[j]]) {
-				t[s] = b[i];
+				tmp[s] = b[i];
 				c[b[i]] += acc;
 				i++;
 			} else {
-				t[s] = b[j];
+				tmp[s] = b[j];
 				acc++;
 				j++;
 			}
 		}
 		for (int s = l; s <= r; s++) {
-			b[s] = t[s];
+			b[s] = tmp[s];
 		}
 	}
 }

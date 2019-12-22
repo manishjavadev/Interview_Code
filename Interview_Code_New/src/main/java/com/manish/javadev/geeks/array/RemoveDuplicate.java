@@ -40,14 +40,14 @@ public class RemoveDuplicate {
 			}
 		}
 		System.out.println("Size of J : " + j);
+
 		for (int i = 0; i <= j; i++) {
 			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
-		return Arrays.copyOfRange(arr, 0, j+1);
+		return Arrays.copyOfRange(arr, 0, j + 1);
 	}
-	
-	
+
 	/**
 	 * void removeDuplicates(char* S) { // When string is empty, return if (S[0]
 	 * == '\0') return;

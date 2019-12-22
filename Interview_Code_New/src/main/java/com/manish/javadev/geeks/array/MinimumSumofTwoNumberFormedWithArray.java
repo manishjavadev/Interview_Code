@@ -46,7 +46,7 @@ public class MinimumSumofTwoNumberFormedWithArray {
 		// in another variable and finally sum both the value will get the
 		// result
 		for (int i = 0; i < arr.length; i++) {
-			if (i == 0 || i % 2 == 0) {
+			if (i % 2 == 0) {
 				even = even * 10 + arr[i];
 			} else {
 				odd = odd * 10 + arr[i];

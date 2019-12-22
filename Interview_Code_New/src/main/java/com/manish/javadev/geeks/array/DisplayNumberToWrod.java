@@ -6,14 +6,14 @@ public class DisplayNumberToWrod {
 			" nineteen" };
 	String ten[] = { " ", " ", " twenty", " thirty", " forty", " fifty", " sixty", "seventy", " eighty", " ninety" };
 
-	public void numberToWord(int n, String ch) {
+	public void numberToWord(int n, String displayStr) {
 		if (n > 19) {
 			System.out.print(ten[n / 10] + " " + one[n % 10]);
 		} else {
 			System.out.print(one[n]);
 		}
 		if (n > 0)
-			System.out.print(ch);
+			System.out.print(displayStr);
 	}
 
 	public static void main(String[] args) {

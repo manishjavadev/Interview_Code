@@ -24,18 +24,18 @@ public class RemoveDuplicatePrimeWithMergeSort {
 		int counter = 0;
 		int temp = 0;
 		List<Integer> list = new ArrayList<Integer>();
-		for (int index = 0; index < inputArray.length; index++) {
+		for (int i = 0; i < inputArray.length; i++) {
 			if (counter == 0) {
-				temp = inputArray[index];
+				temp = inputArray[i];
 			}
-			if (temp == inputArray[index]) {
+			if (temp == inputArray[i]) {
 				counter++;
 			} else {
 				list.add(temp);
 				counter = 1;
-				temp = inputArray[index];
+				temp = inputArray[i];
 			}
-			if (index == inputArray.length - 1) {
+			if (i == inputArray.length - 1) {
 				list.add(temp);
 			}
 		}

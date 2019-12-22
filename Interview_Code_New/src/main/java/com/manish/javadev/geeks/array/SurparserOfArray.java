@@ -30,7 +30,7 @@ public class SurparserOfArray {
 			// stores surpasser count for element arr[i]
 			int count = 0;
 			for (int j = i + 1; j < arr.length; j++) {
-				if (arr[j] > arr[i])
+				if (arr[i] < arr[j])
 					count++;
 			}
 			System.out.println("For element " + arr[i] + " Count is :: " + count + "\t");

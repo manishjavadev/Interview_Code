@@ -45,14 +45,13 @@ package com.manish.javadev.geeks.array;
  * sum (Sum of 2 missing numbers) = (Sum of integers from 1 to n) - arrSum =
  * ((n)*(n+1))/2 arrSum
  * 
- * avg (Average of 2 missing numbers) = sum / 2; 
- * One of the numbers will be less than or equal to avg
- * while the other one will be strictly greater then avg.
+ * avg (Average of 2 missing numbers) = sum / 2; One of the numbers will be less
+ * than or equal to avg while the other one will be strictly greater then avg.
  * 
- * Two numbers can never be equal since all the given numbers are distinct. 
- * We can find the first missing number as sum of natural numbers from 1 to avg,
- * i.e., avg*(avg+1)/2 minus the sum of array elements smaller than avg.
- * We can find the second missing number as sum of natural numbers from avg+1 to n
+ * Two numbers can never be equal since all the given numbers are distinct. We
+ * can find the first missing number as sum of natural numbers from 1 to avg,
+ * i.e., avg*(avg+1)/2 minus the sum of array elements smaller than avg. We can
+ * find the second missing number as sum of natural numbers from avg+1 to n
  * minus the sum of array elements greater than than avg Consider an example for
  * better clarification
  * 
@@ -77,16 +76,16 @@ public class TwoMissingNumber {
 
 	}
 
-	private static void findTwoMissingNumbers(int[] arr, int arrLength) {
+	private static void findTwoMissingNumbers(int[] arr, int n) {
 
 		// Sum of 2 Missing Numbers
-		int sum = (arrLength * (arrLength + 1)) / 2 - getSum(arr, arrLength);
+		int sum = (n * (n + 1)) / 2 - getSum(arr);
 
 		// Find average of two elements
 		int avg = (sum / 2);
 
 		int sumSmallerHalf = 0, sumGreaterHalf = 0;
-		for (int i = 0; i < arrLength - 2; i++) {
+		for (int i = 0; i < n - 2; i++) {
 			if (arr[i] <= avg)
 				sumSmallerHalf += arr[i];
 			else
@@ -96,20 +95,18 @@ public class TwoMissingNumber {
 		// The first (smaller) element = (sum of natural
 		// numbers upto avg) - (sum of array elements
 		// smaller than or equal to avg)
-		int totalSmallerHalf = (avg * (avg + 1)) / 2;
+		int totalSumOfFirstHalf = (avg * (avg + 1)) / 2;
 		System.out.println("First Number");
-		System.out.println(totalSmallerHalf - sumSmallerHalf);
+		System.out.println(totalSumOfFirstHalf - sumSmallerHalf);
 
 		// The first (smaller) element = (sum of natural
 		// numbers from avg+1 to n) - (sum of array elements
 		// greater than avg)
 		System.out.println("Second Number");
-		System.out
-				.println((((arrLength * (arrLength + 1)) / 2) - totalSmallerHalf)
-						- sumGreaterHalf);
+		System.out.println((((n * (n + 1)) / 2) - totalSumOfFirstHalf) - sumGreaterHalf);
 	}
 
-	private static int getSum(int arr[], int n) {
+	private static int getSum(int arr[]) {
 		int sum = 0;
 		for (int i = 0; i < arr.length; i++)
 			sum += arr[i];
