@@ -10,8 +10,7 @@ package com.manish.javadev.geeks.basics;
  * 
  * Input: x = 4 Output: 2
  * 
- * Input: x = 11 Output: 3 We strongly recommend you to minimize your browser
- * and try this yourself first.
+ * Input: x = 11 Output: 3 
  * 
  * There can be many ways to solve this problem. For example Babylonian Method
  * is one way.

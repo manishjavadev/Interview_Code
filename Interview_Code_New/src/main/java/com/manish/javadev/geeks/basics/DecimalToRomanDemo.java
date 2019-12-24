@@ -3,7 +3,11 @@ package com.manish.javadev.geeks.basics;
 import java.util.HashMap;
 
 /**
- * 1 - i, 9 - IX, 100 - c, 4 - iv, 10 - X, 500 - d, 5 - v, 50 - I, 1000 - m
+ * 1 - i, 4 - iv, 5 - v, 9 - IX, 10 - X, 50 - I, 100 - c, 500 - d, 1000 - m
+ *
+ * 1=> "I"; 4=> "IV"; 5=> "V"; 9=> "IX"; 10=> "X"; 40=> "XL"; 50=> "L";
+ * 
+ * 90=> "XC"; 100=> "C"; 400=> "CD"; 500=> "D"; 900=> "CM"; 1000=> "M";
  * 
  * @author Manish Srivastava
  * 

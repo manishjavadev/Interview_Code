@@ -30,13 +30,15 @@ import java.util.Stack;
  * @author kmamani
  *
  */
-public class FindMinimumOfStackByO1 {
+public class FindMinimumOfStackByUsingRefStack {
 	Stack<Integer> s;
+	Stack<Integer> refs;
 	Integer minEle;
 
 	// Constructor
-	FindMinimumOfStackByO1() {
+	FindMinimumOfStackByUsingRefStack() {
 		s = new Stack<Integer>();
+		refs = new Stack<Integer>();
 	}
 
 	// Prints minimum element of MyStack
@@ -57,15 +59,14 @@ public class FindMinimumOfStackByO1 {
 			System.out.println("Stack is empty ");
 			return;
 		}
-
 		Integer t = s.peek(); // Top element.
 
 		System.out.print("Top Most Element is: ");
 
 		// If t < minEle means minEle stores
 		// value of t.
-		if (t < minEle)
-			System.out.println(minEle);
+		if (t < refs.peek())
+			System.out.println(refs.peek());
 		else
 			System.out.println(t);
 	}
@@ -82,34 +83,33 @@ public class FindMinimumOfStackByO1 {
 
 		// Minimum will change as the minimum element
 		// of the stack is being removed.
-		if (t < minEle) {
-			System.out.println(minEle);
-			minEle = 2 * minEle - t;
-		}
-		else
+		if (t == refs.peek()) {
+			System.out.println(refs.peek());
+			refs.pop();
+		} else
 			System.out.println(t);
 	}
 
 	// Insert new number into MyStack
 	void push(Integer x) {
 		if (s.isEmpty()) {
-			minEle = x;
 			s.push(x);
+			refs.push(x);
 			System.out.println("Number Inserted: " + x);
 			return;
 		}
 
 		// If new number is less than original minEle
-		if (x < minEle) {
-			s.push(2 * x - minEle);
-			minEle = x;
+		if (x < refs.peek()) {
+			s.push(x);
+			refs.push(x);
 		} else
 			s.push(x);
 		System.out.println("Number Inserted: " + x);
 	}
 
 	public static void main(String[] args) {
-		FindMinimumOfStackByO1 s = new FindMinimumOfStackByO1();
+		FindMinimumOfStackByUsingRefStack s = new FindMinimumOfStackByUsingRefStack();
 		s.push(3);
 		s.push(5);
 		s.getMin();

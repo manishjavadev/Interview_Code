@@ -1,6 +1,7 @@
 package com.manish.javadev.geeks.basics;
 
 /**
+ * https://www.geeksforgeeks.org/longest-palindromic-substring-set-2/
  * @author kmamani Java implementation of O(n^2)time and O(1)space methodto find
  *         the longest palindromic substring
  */
@@ -11,6 +12,7 @@ public class LongestPalindromSubstring {
 	// (LPS) of str[]. It also returns the length of the
 	// longest palindrome
 	static int longestPalSubstr(String str) {
+		//str = "AXXA";
 		int maxLength = 1; // The result (length of LPS)
 
 		int start = 0;
@@ -49,14 +51,14 @@ public class LongestPalindromSubstring {
 		}
 
 		System.out.print("Longest palindrome substring is: ");
-		printSubStr(str, start, start + maxLength - 1);
+		printSubStr(str, start, start + maxLength);
 
 		return maxLength;
 	}
 
 	// A utility function to print a substring str[low..high]
 	static void printSubStr(String str, int low, int high) {
-		System.out.println(str.substring(low, high + 1));
+		System.out.println(str.substring(low, high));
 	}
 
 	// Driver program to test above function

@@ -14,7 +14,7 @@ public class MaxOccurrenceOfChar {
 		// string.
 		int len = str.length();
 		for (int i = 0; i < len; i++) {
-			count[str.charAt(i)]++;
+			count['s']++;
 		}
 
 		int max = -1; // Initialize max count
