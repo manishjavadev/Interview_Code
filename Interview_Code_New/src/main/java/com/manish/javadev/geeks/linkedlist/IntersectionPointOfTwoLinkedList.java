@@ -79,20 +79,20 @@ public class IntersectionPointOfTwoLinkedList {
 		IntersectionPointOfTwoLinkedList list = new IntersectionPointOfTwoLinkedList();
 
 		// creating first linked list
-		list.head1 = new Node(3);
-		list.head1.next = new Node(6);
-		list.head1.next.next = new Node(9);
-		list.head1.next.next.next = new Node(15);
-		list.head1.next.next.next.next = new Node(20);
-		list.head1.next.next.next.next.next = new Node(30);
-		list.head1.next.next.next.next.next.next = new Node(40);
+		list.head1 = new Node(10);
+		list.head1.next = new Node(20);
+		list.head1.next.next = new Node(30);
+		list.head1.next.next.next = new Node(40);
+		list.head1.next.next.next.next = new Node(50);
+		list.head1.next.next.next.next.next = new Node(60);
+		list.head1.next.next.next.next.next.next = new Node(70);
 
 		// creating second linked list
-		list.head2 = new Node(6);
-		list.head2.next = new Node(7);
-		list.head2.next.next = new Node(20);
-		list.head2.next.next.next = new Node(30);
-		list.head2.next.next.next.next = new Node(40);
+		list.head2 = new Node(35);
+		list.head2.next = new Node(40);
+		list.head2.next.next = new Node(50);
+		list.head2.next.next.next = new Node(60);
+		list.head2.next.next.next.next = new Node(70);
 
 		System.out.println("The node of intersection is " + list.getNode().data);
 

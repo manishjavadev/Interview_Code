@@ -3,122 +3,102 @@ package com.manish.javadev.geeks.stack;
 import java.util.Stack;
 
 /**
- * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
- * 
- * Design a stack that supports getMin() in O(1) time and O(1) extra space
- * 
- * Question: Design a Data Structure SpecialStack that supports all the stack
- * operations like push(), pop(), isEmpty(), isFull() and an additional
- * operation getMin() which should return minimum element from the SpecialStack.
- *
- * All these operations of SpecialStack must be O(1). To implement SpecialStack,
- * you should only use standard Stack data structure and no other data structure
- * like arrays, list, .. etc.
- * 
- * Example:
- * 
- * Consider the following SpecialStack 16 --> TOP 15 29 19 18
- * 
- * When getMin() is called it should return 15, which is the minimum element in
- * the current stack.
- * 
- * If we do pop two times on stack, the stack becomes 29 --> TOP 19 18
- * 
- * When getMin() is called, it should return 18 which is the minimum in the
- * current stack.
- * 
  * @author kmamani
  *
  */
 public class FindMinimumOfStackByUsingRefStack {
-	Stack<Integer> s;
-	Stack<Integer> refs;
+	Stack<Integer> stack;
+	Stack<Integer> refstack;
 	Integer minEle;
 
 	// Constructor
 	FindMinimumOfStackByUsingRefStack() {
-		s = new Stack<Integer>();
-		refs = new Stack<Integer>();
+		stack = new Stack<Integer>();
+		refstack = new Stack<Integer>();
 	}
 
 	// Prints minimum element of MyStack
 	void getMin() {
 		// Get the minimum number in the entire stack
-		if (s.isEmpty())
+		if (stack.isEmpty())
 			System.out.println("Stack is empty");
 
 		// variable minEle stores the minimum element
 		// in the stack.
 		else
-			System.out.println("Minimum Element in the " + " stack is: " + minEle);
+			System.out.println("Minimum Element in the " + " stack is: " + refstack.peek());
 	}
 
 	// prints top element of MyStack
 	void peek() {
-		if (s.isEmpty()) {
+		if (stack.isEmpty()) {
 			System.out.println("Stack is empty ");
 			return;
 		}
-		Integer t = s.peek(); // Top element.
+		Integer t = stack.peek(); // Top element.
 
 		System.out.print("Top Most Element is: ");
 
 		// If t < minEle means minEle stores
 		// value of t.
-		if (t < refs.peek())
-			System.out.println(refs.peek());
+		if (t < refstack.peek())
+			System.out.println(refstack.peek());
 		else
 			System.out.println(t);
 	}
 
 	// Removes the top element from MyStack
 	void pop() {
-		if (s.isEmpty()) {
+		if (stack.isEmpty()) {
 			System.out.println("Stack is empty");
 			return;
 		}
 
 		System.out.print("Top Most Element Removed: ");
-		Integer t = s.pop();
+		Integer t = stack.pop();
 
 		// Minimum will change as the minimum element
 		// of the stack is being removed.
-		if (t == refs.peek()) {
-			System.out.println(refs.peek());
-			refs.pop();
+		if (t == refstack.peek()) {
+			System.out.println(refstack.peek());
+			refstack.pop();
 		} else
 			System.out.println(t);
 	}
 
 	// Insert new number into MyStack
 	void push(Integer x) {
-		if (s.isEmpty()) {
-			s.push(x);
-			refs.push(x);
+		if (stack.isEmpty()) {
+			stack.push(x);
+			refstack.push(x);
 			System.out.println("Number Inserted: " + x);
 			return;
 		}
 
 		// If new number is less than original minEle
-		if (x < refs.peek()) {
-			s.push(x);
-			refs.push(x);
+		if (x < refstack.peek()) {
+			stack.push(x);
+			refstack.push(x);
 		} else
-			s.push(x);
+			stack.push(x);
 		System.out.println("Number Inserted: " + x);
 	}
 
 	public static void main(String[] args) {
 		FindMinimumOfStackByUsingRefStack s = new FindMinimumOfStackByUsingRefStack();
-		s.push(3);
-		s.push(5);
-		s.getMin();
-		s.push(2);
-		s.push(1);
+		s.push(50);
+		s.push(40);
+		s.push(35);
+		s.push(55);
+		s.push(37);
+		s.push(20);
 		s.getMin();
 		s.pop();
-		s.getMin();
 		s.pop();
-		s.peek();
+		s.getMin();
+		s.push(60);
+		s.pop();
+		s.push(10);
+		s.getMin();
 	}
 }

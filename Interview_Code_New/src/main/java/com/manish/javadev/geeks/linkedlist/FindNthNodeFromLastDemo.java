@@ -6,9 +6,9 @@ public class FindNthNodeFromLastDemo {
 	public static void main(String[] args) {
 		FindNthNodeFromLastDemo fnd = new FindNthNodeFromLastDemo();
 		// fnd.displayNodes();
-		Entity entity = fnd.getNthNodeFromLast(3);
+		Entity entity = fnd.getNthNodeFromLast(9);
 		if (null == entity) {
-			System.out.println("Number lesser than entered number");
+			System.out.println("Linkedlist smaller than nth entered number");
 		} else {
 			System.out.println("identified node is " + entity.data);
 		}
@@ -27,20 +27,19 @@ public class FindNthNodeFromLastDemo {
 		Entity front = entity;
 		int i = 0;
 		int len = getLength(entity);
-		if (len > nthNode) {
-			for (i = 0; i < (len - nthNode); i++) {
-				front = front.next;
-			}
-		} else if (len == nthNode) {
-			while (front.next != null) {
-				front = front.next;
-			}
-			return front;
-		} else {
+		// check if value of n is not more than length of the linked list
+		if (len < nthNode) {
 			return null;
 		}
-
-		return front;
+		// get the (len-n+1)th node from the beginning
+		for (i = 0; front != null && i < (len - nthNode); i++) {
+			front = front.next;
+		}
+		if (front == null) {
+			return null;
+		} else {
+			return front;
+		}
 	}
 
 	private int getLength(Entity root) {

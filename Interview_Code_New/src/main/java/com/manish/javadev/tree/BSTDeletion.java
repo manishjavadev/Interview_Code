@@ -25,6 +25,8 @@ public class BSTDeletion {
 
 	private static BSTNode delete(BSTNode root, int data) {
 		crr = root;
+		boolean left = false;
+
 		BSTNode prev = null;
 		while (crr != null) {
 			if (crr.data == data) {
@@ -32,32 +34,52 @@ public class BSTDeletion {
 			}
 			prev = crr;
 			if (crr.data > data) {
+				left = true;
 				crr = crr.left;
 			} else {
+				left = false;
 				crr = crr.right;
 			}
 		}
-
-		// Delete node has 2 child
-		if (crr.left != null && crr.right != null) {
-			BSTNode y = crr.left;
-			prev = crr;
-			while (y.right != null) {
-				prev = y;
-				y = y.right;
-			}
-			crr.data = y.data;
-			crr = y;
-		}
-		// Delete leaf or 1 child
-		BSTNode tmp = crr.left != null ? crr.left : crr.right;
 		if (prev == null) {
-			return tmp;
+			return null;
 		}
-		if (prev.right == crr) {
-			prev.right = tmp;
-		} else {
-			prev.left = tmp;
+		// Leaf node deletion code
+		if (crr.right == null && crr.left == null) {
+			if (prev == null) {
+				return null;
+			}
+			if (left) {
+				prev.left = null;
+			} else {
+				prev.right = null;
+			}
+		}
+		// Leaf node deletion code
+		if (crr.right != null && crr.left != null) {
+			if (prev == null) {
+				return crr.right != null ? crr.right : crr.left;
+			}
+			if (crr.right != null) {
+				if (prev == null) {
+					return crr.right;
+				}
+				if (prev.right == crr) {
+					prev.right = crr.right;
+				} else {
+					prev.left = crr.right;
+				}
+			}
+			if (crr.left != null) {
+				if (prev == null) {
+					return crr.left;
+				}
+				if (prev.right == crr) {
+					prev.right = crr.left;
+				} else {
+					prev.left = crr.left;
+				}
+			}
 		}
 		return root;
 	}

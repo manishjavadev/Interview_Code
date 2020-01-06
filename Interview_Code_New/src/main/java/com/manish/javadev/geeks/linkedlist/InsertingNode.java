@@ -51,11 +51,10 @@ public class InsertingNode {
 			entity.next = root;
 			return entity;
 		}
-
 		for (int i = 0; front != null && i < position - 1; i++) {
 			front = front.next;
 		}
-		if (front == null || front.next == null) {
+		if (front == null) {
 			return null;
 		}
 		entity.next = front.next;
@@ -65,17 +64,16 @@ public class InsertingNode {
 	}
 
 	public Entity updateAtGivenKey(Entity root, int oldValue, int newValue) {
-		Entity prev = null, start;
-		start = root;
+		Entity front = null;
+		front = root;
 
-		while (start != null && start.data != oldValue) {
-			prev = start;
-			start = start.next;
+		while (front != null && front.data != oldValue) {
+			front = front.next;
 		}
-		if (start == null || prev == null) {
+		if (front == null) {
 			return null;
 		}
-		start.data = newValue;
+		front.data = newValue;
 		return root;
 	}
 
@@ -126,11 +124,12 @@ public class InsertingNode {
 
 		System.out.println("\nInsert after given position ");
 		Entity rootNode = DefaultLinkedList.getDefaultLinkedList();
-		Entity resultRoot = insertingNode.insertAfterGivenPosition(rootNode, 75, 1);
+		Entity resultRoot = insertingNode.insertAfterGivenPosition(rootNode, 75, 0);
 		display(resultRoot);
 
 		System.out.println("\nInsert at given position ");
-		root = insertingNode.insertAtGivenPosition(new Entity(10), 70, 1);
+		rootNode = DefaultLinkedList.getDefaultLinkedList();
+		root = insertingNode.insertAtGivenPosition(rootNode, 70, 2);
 		display(root);
 
 		System.out.println("\nUpdate at given position ");
@@ -140,4 +139,5 @@ public class InsertingNode {
 		display(root);
 
 	}
+
 }

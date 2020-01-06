@@ -15,16 +15,14 @@ public class DeletingNode {
 	public Entity deleteAtEnd(Entity root) {
 		Entity prev = null, start;
 		start = root;
-		if (start == null) {
+		if (start == null || start.next == null) {
 			return null;
 		}
 		while (start.next != null) {
 			prev = start;
 			start = start.next;
 		}
-		if (prev == null) {
-			return null;
-		}
+
 		prev.next = start.next;
 		return root;
 	}
@@ -32,6 +30,9 @@ public class DeletingNode {
 	public Entity deleteGivenKey(Entity root, int data) {
 		Entity prev = null, start;
 		start = root;
+		if (start.data == data) {
+			return start.next;
+		}
 
 		while (start != null && start.data != data) {
 			prev = start;
@@ -46,12 +47,8 @@ public class DeletingNode {
 
 	public Entity deleteAtParticularPosition(Entity root, int position) {
 		Entity front = root;
-		if (root == null)
-			return null;
-		if (position == 0) {
-			root = front.next;
-			return root;
-		}
+		if (front == null || position == 0)
+			return front.next;
 		// Find previous node of the node to be deleted
 		for (int i = 0; front != null && i < position - 1; i++) {
 			front = front.next;
@@ -81,23 +78,31 @@ public class DeletingNode {
 		DeletingNode deletingNode = new DeletingNode();
 
 		System.out.println("\nDelete at Start root");
-		Entity root = deletingNode.deleteAtStart(deletingNode.root);
+		Entity root = deletingNode.deleteAtStart(DefaultLinkedList.getDefaultLinkedList());
 		display(root);
 
 		System.out.println("\nDelete at End");
-		root = deletingNode.deleteAtEnd(deletingNode.root);
+		root = deletingNode.deleteAtEnd(DefaultLinkedList.getDefaultLinkedList());
 		display(root);
 
 		System.out.println("\nDelete at 0 position");
-		root = deletingNode.deleteAtParticularPosition(deletingNode.root, 5);
+		root = deletingNode.deleteAtParticularPosition(DefaultLinkedList.getDefaultLinkedList(), 0);
 		display(root);
 
 		System.out.println("\nDelete at 3 position");
-		root = deletingNode.deleteAtParticularPosition(root, 3);
+		root = deletingNode.deleteAtParticularPosition(DefaultLinkedList.getDefaultLinkedList(), 3);
 		display(root);
 
-		System.out.println("\nDelete particular key like 30");
-		root = deletingNode.deleteGivenKey(deletingNode.root, 90);
+		System.out.println("\nDelete at 2 position");
+		root = deletingNode.deleteAtParticularPosition(DefaultLinkedList.getDefaultLinkedList(), 2);
+		display(root);
+
+		System.out.println("\nDelete at 1 position");
+		root = deletingNode.deleteAtParticularPosition(DefaultLinkedList.getDefaultLinkedList(), 1);
+		display(root);
+
+		System.out.println("\nDelete particular key like 20");
+		root = deletingNode.deleteGivenKey(DefaultLinkedList.getDefaultLinkedList(), 20);
 		display(root);
 
 	}
