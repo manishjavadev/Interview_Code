@@ -1,5 +1,18 @@
 package com.manish.javadev.tree;
 
+/**
+ * Rule for AVL Tree
+ * 
+ * 1) It is a BST
+ * 
+ * 2) Balance factor (Height of left sub tree - Height of right sub tree should
+ * be 1 0 -1)
+ * 
+ * 3) 
+ * 
+ * @author kmamani
+ *
+ */
 public class AVLTree {
 	public Node insertNode(Node root, int data) {
 		Node node = root;
