@@ -29,21 +29,21 @@ public class FindNthNodeFromLastWithOnDemo {
 	}
 
 	private static Entity getNthNodeFromLast(Entity root, int nthNode) {
-		Entity refEntity = root;
-		Entity mainEntity = root;
+		Entity frontRef = root;
+		Entity front = root;
 		if (nthNode == 0) {
 			return null;
 		}
-		for (int counter = 0; counter < nthNode && refEntity != null; counter++) {
-			refEntity = refEntity.next;
+		for (int i = 0; front != null && i < nthNode; i++) {
+			front = front.next;
 		}
-		if (refEntity == null) {
+		if (front == null) {
 			return null;
 		}
-		while (refEntity != null) {
-			mainEntity = mainEntity.next;
-			refEntity = refEntity.next;
+		while (front != null) {
+			front = front.next;
+			frontRef = frontRef.next;
 		}
-		return mainEntity;
+		return frontRef;
 	}
 }

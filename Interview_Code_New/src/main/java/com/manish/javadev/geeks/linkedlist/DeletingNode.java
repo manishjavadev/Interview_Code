@@ -13,56 +13,49 @@ public class DeletingNode {
 	}
 
 	public Entity deleteAtEnd(Entity root) {
-		Entity prev = null, start;
-		start = root;
-		if (start == null || start.next == null) {
+		Entity prev = null, front;
+		front = root;
+		if (front == null || front.next == null) {
 			return null;
 		}
-		while (start.next != null) {
-			prev = start;
-			start = start.next;
+		while (front.next != null) {
+			prev = front;
+			front = front.next;
 		}
 
-		prev.next = start.next;
+		prev.next = front.next;
 		return root;
 	}
 
 	public Entity deleteGivenKey(Entity root, int data) {
-		Entity prev = null, start;
-		start = root;
-		if (start.data == data) {
-			return start.next;
+		Entity prev = null, front;
+		front = root;
+		if (front != null && front.data == data) {
+			return front.next;
 		}
-
-		while (start != null && start.data != data) {
-			prev = start;
-			start = start.next;
+		while (front != null && front.data != data) {
+			prev = front;
+			front = front.next;
 		}
-		if (start == null || prev == null) {
+		if (front == null) {
 			return null;
 		}
-		prev.next = start.next;
+		prev.next = front.next;
 		return root;
 	}
 
 	public Entity deleteAtParticularPosition(Entity root, int position) {
+		Entity prev = null;
 		Entity front = root;
-		if (front == null || position == 0)
+		if (front != null || position == 1)
 			return front.next;
-		// Find previous node of the node to be deleted
 		for (int i = 0; front != null && i < position - 1; i++) {
+			prev = front;
 			front = front.next;
 		}
-		/**
-		 * front.next == null once you want to delete 1st node, you have only
-		 * one node i mean 0th one only
-		 */
-		if (front == null || front.next == null)
+		if (front == null)
 			return null;
-		/**
-		 * Unlink the deleted node from list
-		 */
-		front.next = front.next.next;
+		prev.next = front.next;
 		return root;
 	}
 

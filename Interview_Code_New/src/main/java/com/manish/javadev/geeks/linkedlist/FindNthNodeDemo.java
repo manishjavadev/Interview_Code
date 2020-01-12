@@ -24,10 +24,10 @@ public class FindNthNodeDemo {
 
 	private Entity getNthNode(int nthNode) {
 		Entity front = DefaultLinkedList.getDefaultLinkedList();
-		if (front != null && nthNode == 0) {
+		if (front != null && nthNode == 1) {
 			return front;
 		}
-		for (int i = 0; front != null && i < nthNode; i++) {
+		for (int i = 0; front != null && i < nthNode - 1; i++) {
 			front = front.next;
 		}
 		if (front == null) {
