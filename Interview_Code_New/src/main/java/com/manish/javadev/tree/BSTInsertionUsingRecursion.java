@@ -29,8 +29,17 @@ public class BSTInsertionUsingRecursion {
 		}
 		if (root.data > data) {
 			root.left = insertWithRecurtion(root.left, data);
-		} else {
+		}
+		if (root.data < data) {
 			root.right = insertWithRecurtion(root.right, data);
+		}
+		if (root.data == data) {
+			try {
+				throw new Exception("IllegalArgumentException");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return root;
 	}

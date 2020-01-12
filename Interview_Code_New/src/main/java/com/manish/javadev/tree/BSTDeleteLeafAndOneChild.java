@@ -1,6 +1,6 @@
 package com.manish.javadev.tree;
 
-public class BSTDeletion2 {
+public class BSTDeleteLeafAndOneChild {
 	static BSTNode crr;
 	static BSTNode current;
 

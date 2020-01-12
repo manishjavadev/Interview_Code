@@ -7,7 +7,7 @@ public class BSTSearch {
 	public static void main(String[] args) {
 		BSTSearch bstSearch = new BSTSearch();
 		BSTNode root = bstSearch.findWithOutRecursion(BSTDefaultTree2.getDefaultTree(), 45);
-		displayNodeData(root);
+		//displayNodeData(root);
 
 		root = bstSearch.findWithRecursion(BSTDefaultTree.getDefaultTree(), 45);
 		displayNodeData(root);
