@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class HeapSortWithMaxHeapify {
 
 	public static void main(String[] args) {
-		// int arr[] = { 11, 12, 13, 5, 6, 7 };
-		int arr[] = { 12, 11, 13, 5, 6, 7, 8, 4, 3 };
+		int arr[] = { 11, 12, 13, 5, 6, 7, 14 };
+		// int arr[] = { 12, 11, 13, 5, 6, 7, 8, 4, 3 };
 		HeapSortWithMaxHeapify hs = new HeapSortWithMaxHeapify();
 		hs.sort(arr);
 		System.out.println("Sorted array is");
