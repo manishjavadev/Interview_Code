@@ -10,7 +10,7 @@ public class DefaultLinkedList {
 		root.next.next.next.next = new Entity(50);
 		root.next.next.next.next.next = new Entity(60);
 		root.next.next.next.next.next.next = new Entity(70);
-		root.next.next.next.next.next.next.next = new Entity(80);
+		//root.next.next.next.next.next.next.next = new Entity(80);
 		return root;
 
 	}
