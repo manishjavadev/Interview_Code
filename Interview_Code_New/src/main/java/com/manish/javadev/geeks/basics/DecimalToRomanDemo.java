@@ -19,7 +19,7 @@ public class DecimalToRomanDemo {
 	public static void main(String arg[]) {
 		initializeMap();
 		DecimalToRomanDemo decimalToRomanDemo = new DecimalToRomanDemo();
-		int num = 149;
+		int num = 148;
 		String result = decimalToRomanDemo.decimalToRoman(num);
 		System.out.println("Entered Number " + num + "\nEquivalent roman number " + result);
 	}

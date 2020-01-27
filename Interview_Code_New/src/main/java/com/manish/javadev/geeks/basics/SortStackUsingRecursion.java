@@ -10,15 +10,13 @@ public class SortStackUsingRecursion {
 		// item is greater than top (more than all existing)
 		if (s.isEmpty() || x > s.peek()) {
 			s.push(x);
-			return;
+		} else {
+			// If top is greater, remove the top item and recur
+			int temp = s.pop();
+			sortedInsert(s, x);
+			// Put back the top item removed earlier
+			s.push(temp);
 		}
-
-		// If top is greater, remove the top item and recur
-		int temp = s.pop();
-		sortedInsert(s, x);
-
-		// Put back the top item removed earlier
-		s.push(temp);
 	}
 
 	// Method to sort stack
@@ -56,6 +54,7 @@ public class SortStackUsingRecursion {
 		Stack<Integer> s = new Stack<Integer>();
 		s.push(30);
 		s.push(-5);
+
 		s.push(18);
 		s.push(14);
 		s.push(-3);

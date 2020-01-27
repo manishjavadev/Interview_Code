@@ -10,7 +10,7 @@ package com.manish.javadev.geeks.basics;
  * 
  * Input: x = 4 Output: 2
  * 
- * Input: x = 11 Output: 3 
+ * Input: x = 11 Output: 3
  * 
  * There can be many ways to solve this problem. For example Babylonian Method
  * is one way.
@@ -22,8 +22,8 @@ package com.manish.javadev.geeks.basics;
  * 
  * 
  * 
- * =================================Best Way======================
- * A Better Solution to do Binary Search.
+ * =================================Best Way====================== A Better
+ * Solution to do Binary Search.
  * 
  * Let 's' be the answer. We know that 0 <= s <= x.
  * 
@@ -60,7 +60,7 @@ package com.manish.javadev.geeks.basics;
  */
 public class SquareRoot {
 	public static void main(String[] args) {
-		double result = findSqrt(26);
+		double result = findSqrt(10);
 		System.out.println(result);
 	}
 
@@ -70,9 +70,9 @@ public class SquareRoot {
 			return x;
 
 		// Do Binary Search for floor(sqrt(x))
-		int start = 1, end = x, ans = 0;
-		while (start <= end) {
-			int mid = (start + end) / 2;
+		int l = 1, h = x, ans = 0;
+		while (l <= h) {
+			int mid = (l + h) / 2;
 
 			// If x is a perfect square
 			if (mid * mid == x)
@@ -81,11 +81,11 @@ public class SquareRoot {
 			// Since we need floor, we update answer when mid*mid is
 			// smaller than x, and move closer to sqrt(x)
 			if (mid * mid < x) {
-				start = mid + 1;
+				l = mid + 1;
 				ans = mid;
 			} else
 				// If mid*mid is greater than x
-				end = mid - 1;
+				h = mid - 1;
 		}
 		return ans;
 	}

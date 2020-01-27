@@ -54,7 +54,8 @@ package com.manish.javadev.geeks.basics;
  */
 
 public class FindNextGreaterNumberWithSameDigit {
-	String number = "534976";
+	//String number = "534976";
+	String number = "671";
 	char[] digits = number.toCharArray();
 
 	public static void main(String[] args) {
@@ -92,7 +93,7 @@ public class FindNextGreaterNumberWithSameDigit {
 	}
 
 	private void sort(char[] digits2, int i) {
-		for (int j = i; j < digits2.length; j++) {
+		for (int j = i; j < digits2.length-1; j++) {
 			for (int j2 = j + 1; j2 < digits2.length; j2++) {
 				if (digits2[j] > digits2[j2]) {
 					char temp = digits2[j];
