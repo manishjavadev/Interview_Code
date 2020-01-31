@@ -21,7 +21,5 @@ public class CharCountUsingForLoopAndMap {
 				map.put(arr[low], 1);
 			}
 		}
-
 	}
-
 }

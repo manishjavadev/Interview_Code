@@ -41,7 +41,7 @@ public class InversionCountUsingMergSort {
 	static long mergeSort(int a[], int left, int right) {
 		int mid;
 		long count = 0;
-		if (right > left) {
+		if (left < right) {
 			mid = (right + left) / 2;
 			count = mergeSort(a, left, mid);
 			count += mergeSort(a, mid + 1, right);

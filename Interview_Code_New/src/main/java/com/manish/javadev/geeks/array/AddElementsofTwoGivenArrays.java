@@ -85,7 +85,7 @@ public class AddElementsofTwoGivenArrays {
 			sum = sum / 10;
 		}
 		Collections.reverse(reverseOut);
-		output.addAll(output.size(), reverseOut);
+		output.addAll(reverseOut);
 
 	}
 }

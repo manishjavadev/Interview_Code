@@ -16,7 +16,7 @@ public class FindSubArrayOfNumber {
 				sum = sum + seed[j];
 				str = str + seed[j] + ",";
 				if (sum == currSum) {
-					str = str.substring(0, str.length() - 1);
+					str = str.substring(0, str.length()-1);
 					System.out.println(" sum : " + sum + " array : " + str + "]");
 					System.out.println(" Index  : [" + i + " --- " + j + "]");
 				}

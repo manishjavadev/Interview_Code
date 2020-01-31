@@ -16,11 +16,13 @@ public class SubsetOfAnotherArray {
 		int i = 0;
 		int j = 0;
 		for (i = 0; i < arr2.length; i++) {
-			for (j = 0; j < arr1.length; j++)
+			for (j = 0; j < arr1.length; j++) {
 				if (arr2[i] == arr1[j])
 					break;
-			if (j == arr1.length)
+			}
+			if (j == arr1.length) {
 				return false;
+			}
 		}
 		return true;
 	}

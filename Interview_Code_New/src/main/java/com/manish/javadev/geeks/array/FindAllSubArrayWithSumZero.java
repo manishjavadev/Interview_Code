@@ -6,7 +6,19 @@ import java.util.List;
 
 /**
  * 
- * https://www.geeksforgeeks.org/find-if-there-is-a-subarray-with-0-sum/
+ * https://www.geeksforgeeks.org/print-all-subarrays-with-0-sum/
+ * 
+ * Input: arr = [6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7]
+ * 
+ * Output: Subarray found from Index 2 to 4
+ * 
+ * Subarray found from Index 2 to 6
+ * 
+ * Subarray found from Index 5 to 6
+ * 
+ * Subarray found from Index 6 to 9
+ * 
+ * Subarray found from Index 0 to 10
  * 
  * int[] arr={6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 }
  * 
@@ -67,7 +79,7 @@ import java.util.List;
  * 
  **/
 
-public class FindSubArrayWithSumZero {
+public class FindAllSubArrayWithSumZero {
 
 	public static void main(String[] args) {
 		displaySubarray();
