@@ -23,8 +23,9 @@ public class ArrayisSubarrayofAnotherArray {
 			if (arr1[i] == arr2[j]) {
 				i++;
 				j++;
-				if (j == arr2.length)
+				if (j == arr2.length) {
 					return true;
+				}
 			} else {
 				i++;
 				j = 0;

@@ -18,7 +18,7 @@ package com.manish.javadev.geeks.array;
  */
 public class SurparserOfArray {
 	public static void main(String[] args) {
-		int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
+		int arr[] = { 2, 7, 5, 3, 8, 1 };
 		findSurpasser(arr);
 
 	}

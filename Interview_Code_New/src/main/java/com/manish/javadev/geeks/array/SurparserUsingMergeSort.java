@@ -61,8 +61,8 @@ public class SurparserUsingMergeSort {
 		System.out.println(Arrays.toString(arr));
 		System.out.println(Arrays.toString(arrRef));
 		int n = arr.length;
-		for (int i = 0; i < arr.length; i++) {
-			int tempresult = ((arr.length - 1) - i);
+		for (int i = 0; i < arrRef.length; i++) {
+			int tempresult = ((arrRef.length - 1) - i);
 			Integer mapdata = map.get(arrRef[i]);
 			if (null == mapdata) {
 				mapdata = 0;

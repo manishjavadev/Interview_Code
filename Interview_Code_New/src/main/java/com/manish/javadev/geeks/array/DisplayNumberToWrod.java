@@ -17,7 +17,7 @@ public class DisplayNumberToWrod {
 	}
 
 	public static void main(String[] args) {
-		int num = 1276432;
+		int num = 820;
 		if (num <= 0)
 			System.out.println("Enter numbers should be greater than 0");
 		else {
