@@ -28,7 +28,6 @@ public class MaxOccurrenceOfChar {
 				result = String.valueOf(str.charAt(i));
 			}
 		}
-
 		return result;
 	}
 }

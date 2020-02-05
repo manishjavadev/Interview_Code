@@ -12,7 +12,8 @@ package com.manish.javadev.geeks.array;
 
 public class CountInversionsWith2ForLoop {
 	public static void main(String[] args) {
-		int arr[] = { 1, 20, 6, 4, 5 };
+		//int arr[] = { 1, 20, 6, 4, 5 };
+		int arr[] = { 2, 7, 1, 3, 5, 9 };
 		System.out.println(getInvCount(arr));
 	}
 

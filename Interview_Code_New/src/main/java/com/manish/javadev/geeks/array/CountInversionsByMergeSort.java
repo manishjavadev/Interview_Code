@@ -26,7 +26,8 @@ import java.util.Arrays;
  * 
  */
 public class CountInversionsByMergeSort {
-	int arr[] = { 2, 4, 1 };
+	int arr[] = { 2, 4, 1, 3, 5 };
+	//int arr[] = { 1, 20, 6, 4, 5 };
 	int temp[] = new int[arr.length];
 	int count = 0;
 

@@ -52,8 +52,7 @@ public class SwapNodeInLinkedList {
 		displayNodes();
 		int first = 20;
 		int second = 40;
-		System.out.println("\nWe are going to swap " + first + "  and "
-				+ second);
+		System.out.println("\nWe are going to swap " + first + "  and " + second);
 		swapNode(20, 40);
 		System.out.println("\nAfter Swap");
 		displayNodes();
@@ -110,7 +109,5 @@ public class SwapNodeInLinkedList {
 		Entity temEntity = currx.next;
 		currx.next = curry.next;
 		curry.next = temEntity;
-
 	}
-
 }
