@@ -8,7 +8,7 @@ package com.manish.javadev.tree;
  * 2) Balance factor (Height of left sub tree - Height of right sub tree should
  * be 1 0 -1)
  * 
- * 3) 
+ * 3) You can not insert duplicate element in BST
  * 
  * @author kmamani
  *
@@ -73,34 +73,34 @@ public class AVLTree {
 
 	private Node rightRotate(Node crr) {
 
-		Node tmpLeft = crr.left;
-		Node tmpLeftRight = tmpLeft.right;
+		Node tmp = crr.left;
+		Node tmpRight = tmp.right;
 
 		// rotate
-		tmpLeft.right = crr;
-		crr.left = tmpLeftRight;
+		tmp.right = crr;
+		crr.left = tmpRight;
 
 		// height update
 		crr.height = Math.max(height(crr.left), height(crr.right)) + 1;
-		tmpLeft.height = Math.max(height(tmpLeft.left), height(tmpLeft.right)) + 1;
+		tmp.height = Math.max(height(tmp.left), height(tmp.right)) + 1;
 
-		return tmpLeft;
+		return tmp;
 	}
 
 	private Node leftRotate(Node crr) {
 
-		Node tmpRight = crr.right;
-		Node tmpLeft = tmpRight.left;
+		Node tmp = crr.right;
+		Node tmpLeft = tmp.left;
 
 		// rotate
-		tmpRight.left = crr;
+		tmp.left = crr;
 		crr.right = tmpLeft;
 
 		// height update
 		crr.height = Math.max(height(crr.left), height(crr.right)) + 1;
-		tmpRight.height = Math.max(height(tmpRight.left), height(tmpRight.right)) + 1;
+		tmp.height = Math.max(height(tmp.left), height(tmp.right)) + 1;
 
-		return tmpRight;
+		return tmp;
 	}
 
 	public void display(Node crr) {

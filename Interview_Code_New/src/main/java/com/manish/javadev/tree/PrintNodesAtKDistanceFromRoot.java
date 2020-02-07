@@ -26,16 +26,20 @@ public class PrintNodesAtKDistanceFromRoot {
 	 * @param root
 	 * @param k
 	 */
-	void displayNodesAtKDistanceFromRoot(Node1 root, int k) {
-		if (root == null)
+	void printKDistanceNodeDown(Node1 node, int k) {
+		// Base Case
+		if (node == null || k < 0)
 			return;
+
+		// If we reach a k distant node, print it
 		if (k == 0) {
-			System.out.print(root.data + " ");
+			System.out.println(node.data);
 			return;
-		} else {
-			displayNodesAtKDistanceFromRoot(root.left, k - 1);
-			displayNodesAtKDistanceFromRoot(root.right, k - 1);
 		}
+
+		// Recur for left and right subtrees
+		printKDistanceNodeDown(node.left, k - 1);
+		printKDistanceNodeDown(node.right, k - 1);
 	}
 
 	/* Driver program to test above functions */
@@ -43,22 +47,27 @@ public class PrintNodesAtKDistanceFromRoot {
 		PrintNodesAtKDistanceFromRoot tree = new PrintNodesAtKDistanceFromRoot();
 		Node1 root = new Node1(10);
 
+		// Node is 10
 		root.left = new Node1(20);
 		root.right = new Node1(30);
 
+		// Node is 20
 		root.left.left = new Node1(40);
+		root.left.right = new Node1(50);
+
+		// Node is 50
+		root.left.right.left = new Node1(60);
+		root.left.right.right = new Node1(70);
+		root.left.right.right.right = new Node1(10);
+		root.left.right.right.right.left = new Node1(11);
+
+		// Node is 40
 		root.left.left.left = new Node1(90);
 
-		root.left.right = new Node1(50);
-		root.left.right.left = new Node1(60);
+		// Node is 30
+		root.right.right = new Node1(80);
 
-		root.left.right.right = new Node1(70);
-		root.left.right.right.right = new Node1(100);
-		root.left.right.right.right.left = new Node1(110);
 
-		root.right.right = new Node1(30);
-		root.right.left = new Node1(80);
-
-		tree.displayNodesAtKDistanceFromRoot(root, 2);
+		tree.printKDistanceNodeDown(root, 3);
 	}
 }
