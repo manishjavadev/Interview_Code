@@ -41,11 +41,11 @@ public class FindMaximumOfStackByO1 {
 
 	// Prints minimum element of MyStack
 	void getMax() {
-		// Get the minimum number in the entire stack
+		// Get the maximum number in the entire stack
 		if (s.isEmpty())
 			System.out.println("Stack is empty");
 
-		// variable minEle stores the minimum element
+		// variable maxEle stores the maximum element
 		// in the stack.
 		else
 			System.out.println("Minimum Element in the " + " stack is: " + maxEle);
@@ -62,7 +62,7 @@ public class FindMaximumOfStackByO1 {
 
 		System.out.print("Top Most Element is: ");
 
-		// If t < minEle means minEle stores
+		// If t < maxEle means maxEle stores
 		// value of t.
 		if (t > maxEle)
 			System.out.println(maxEle);

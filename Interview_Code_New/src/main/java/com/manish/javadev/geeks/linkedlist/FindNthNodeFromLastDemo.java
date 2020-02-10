@@ -1,12 +1,11 @@
 package com.manish.javadev.geeks.linkedlist;
 
 public class FindNthNodeFromLastDemo {
-	Entity entity = DefaultLinkedList.getDefaultLinkedList();
 
 	public static void main(String[] args) {
 		FindNthNodeFromLastDemo fnd = new FindNthNodeFromLastDemo();
 		// fnd.displayNodes();
-		Entity entity = fnd.getNthNodeFromLast(9);
+		Entity entity = fnd.getNthNodeFromLast(3);
 		if (null == entity) {
 			System.out.println("Linkedlist smaller than nth entered number");
 		} else {
@@ -16,7 +15,8 @@ public class FindNthNodeFromLastDemo {
 	}
 
 	public void displayNodes() {
-		Entity tNode = entity;
+		Entity tNode = DefaultLinkedList.getDefaultLinkedList();
+		;
 		while (tNode != null) {
 			System.out.print(tNode.data + " ");
 			tNode = tNode.next;
@@ -24,9 +24,9 @@ public class FindNthNodeFromLastDemo {
 	}
 
 	private Entity getNthNodeFromLast(int nthNode) {
-		Entity front = entity;
+		Entity front = DefaultLinkedList.getDefaultLinkedList();
 		int i = 0;
-		int len = getLength(entity);
+		int len = getLength(front);
 		// check if value of n is not more than length of the linked list
 		if (len < nthNode) {
 			return null;

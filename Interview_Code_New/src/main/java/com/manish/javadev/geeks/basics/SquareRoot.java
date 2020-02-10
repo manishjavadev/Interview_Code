@@ -60,7 +60,7 @@ package com.manish.javadev.geeks.basics;
  */
 public class SquareRoot {
 	public static void main(String[] args) {
-		double result = findSqrt(10);
+		int result = findSqrt(10);
 		System.out.println(result);
 	}
 
@@ -71,7 +71,7 @@ public class SquareRoot {
 
 		// Do Binary Search for floor(sqrt(x))
 		int l = 1, h = x, ans = 0;
-		while (l <= h) {
+		while (l < h) {
 			int mid = (l + h) / 2;
 
 			// If x is a perfect square

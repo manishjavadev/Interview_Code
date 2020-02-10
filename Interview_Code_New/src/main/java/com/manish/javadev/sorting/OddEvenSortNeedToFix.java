@@ -14,7 +14,7 @@ package com.manish.javadev.sorting;
  * @author kmamani
  *
  */
-public class OddEvenSort {
+public class OddEvenSortNeedToFix {
 	public static void oddEvenSort(int arr[], int n) {
 		boolean isSorted = false; // Initially array is unsorted
 
@@ -44,7 +44,7 @@ public class OddEvenSort {
 		temp = arr[i];
 		arr[i] = arr[i + 1];
 		arr[i + 1] = temp;
-		isSorted = false;
+		isSorted = true;
 		return isSorted;
 	}
 

@@ -34,13 +34,13 @@ public class FindNthNodeFromLastWithOnDemo {
 		if (nthNode == 0) {
 			return null;
 		}
-		for (int i = 0; front != null && i < nthNode; i++) {
+		for (int i = 0; front != null && i < nthNode - 1; i++) {
 			front = front.next;
 		}
 		if (front == null) {
 			return null;
 		}
-		while (front != null) {
+		while (front.next != null) {
 			front = front.next;
 			frontRef = frontRef.next;
 		}

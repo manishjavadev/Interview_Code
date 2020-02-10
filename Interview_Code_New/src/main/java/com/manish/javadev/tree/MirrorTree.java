@@ -25,19 +25,19 @@ public class MirrorTree {
 
 	}
 
-	private static BSTNode mirror(BSTNode tree) {
-		if (tree == null)
+	private static BSTNode mirror(BSTNode crr) {
+		if (crr == null)
 			return null;
 
 		/* do the subtrees */
-		BSTNode left = mirror(tree.left);
-		BSTNode right = mirror(tree.right);
+		BSTNode left = mirror(crr.left);
+		BSTNode right = mirror(crr.right);
 
 		/* swap the left and right pointers */
-		tree.left = right;
-		tree.right = left;
+		crr.left = right;
+		crr.right = left;
 
-		return tree;
+		return crr;
 
 	}
 }

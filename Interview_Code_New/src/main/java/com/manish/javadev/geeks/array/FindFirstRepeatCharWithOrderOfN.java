@@ -34,12 +34,10 @@ public class FindFirstRepeatCharWithOrderOfN {
 		for (i = 0; i < s.length(); i++) {
 			k = (int) s.charAt(i);
 			if (hash[k] == 0) {
-			hash[k]++;
-				// hash[k]++;
+				hash[k]++;
 				pos[k] = i;
 			} else if (hash[k] == 1) {
-				hash[k] = hash[k] + 1;
-				// hash[k]++;
+				hash[k]++;
 			}
 
 		}
@@ -57,7 +55,7 @@ public class FindFirstRepeatCharWithOrderOfN {
 
 	// Driver code
 	public static void main(String[] args) {
-		String str = "geegs";
+		String str = "MNNRRM";
 		// String str = "geeksforgeeks";
 		int pos = findRepeatFirst(str);
 		if (pos == -1)
