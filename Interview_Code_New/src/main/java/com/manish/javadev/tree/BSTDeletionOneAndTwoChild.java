@@ -38,8 +38,8 @@ public class BSTDeletionOneAndTwoChild {
 			}
 		}
 
-		// Delete node has 2 child
-		if (crr.left != null && crr.right != null) {
+		// Delete leaf Node
+		if (crr.left == null || crr.right == null) {
 			BSTNode y = crr.left;
 			prev = crr;
 			while (y.right != null) {
