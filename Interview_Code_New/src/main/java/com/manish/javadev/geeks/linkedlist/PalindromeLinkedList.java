@@ -32,8 +32,8 @@ public class PalindromeLinkedList {
 		}
 
 		while (head != null) {
-			int i = stack.pop();
-			if (head.data == i) {
+			int tmp = stack.pop();
+			if (head.data == tmp) {
 				ispalin = true;
 			} else {
 				ispalin = false;

@@ -47,7 +47,7 @@ public class DeletingNode {
 	public Entity deleteAtParticularPosition(Entity root, int position) {
 		Entity prev = null;
 		Entity front = root;
-		if (front != null || position == 1)
+		if (front != null && position == 1)
 			return front.next;
 		for (int i = 0; front != null && i < position - 1; i++) {
 			prev = front;

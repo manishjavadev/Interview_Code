@@ -27,12 +27,6 @@ public class InsertingNode {
 	public Entity insertAfterGivenPosition(Entity root, int data, int position) {
 		Entity entity = new Entity(data);
 		Entity front = root;
-		// Position start from 1
-		if (front != null && position == 1) {
-			entity.next = front.next;
-			front.next = entity;
-			return root;
-		}
 
 		for (int i = 0; front != null && i < position - 1; i++) {
 			front = front.next;
@@ -56,7 +50,7 @@ public class InsertingNode {
 			return entity;
 		}
 		for (int i = 0; front != null && i < position - 1; i++) {
-			prev =  front;
+			prev = front;
 			front = front.next;
 		}
 		if (front == null) {
