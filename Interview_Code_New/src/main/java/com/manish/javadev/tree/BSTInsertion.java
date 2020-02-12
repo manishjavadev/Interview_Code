@@ -53,9 +53,18 @@ public class BSTInsertion {
 			return new BSTNode(data);
 		}
 		if (root.data > data) {
-			root.left = insert(root.left, data);
-		} else {
-			root.right = insert(root.right, data);
+			root.left = insertWithRecurtion(root.left, data);
+		}
+		if (root.data < data) {
+			root.right = insertWithRecurtion(root.right, data);
+		}
+		if (root.data == data) {
+			try {
+				throw new Exception("IllegalArgumentException");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return root;
 	}

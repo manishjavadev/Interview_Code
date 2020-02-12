@@ -20,7 +20,6 @@ public class TreeTraversalDemo {
 		if (flag == 3) {
 			inOrder(root);
 		}
-
 	}
 
 	// Node, left, right

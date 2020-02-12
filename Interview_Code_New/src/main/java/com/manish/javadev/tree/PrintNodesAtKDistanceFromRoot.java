@@ -28,8 +28,9 @@ public class PrintNodesAtKDistanceFromRoot {
 	 */
 	void printKDistanceNodeDown(Node1 node, int k) {
 		// Base Case
-		if (node == null || k < 0)
+		if (node == null || k < 0) {
 			return;
+		}
 
 		// If we reach a k distant node, print it
 		if (k == 0) {
@@ -66,7 +67,6 @@ public class PrintNodesAtKDistanceFromRoot {
 
 		// Node is 30
 		root.right.right = new Node1(80);
-
 
 		tree.printKDistanceNodeDown(root, 3);
 	}

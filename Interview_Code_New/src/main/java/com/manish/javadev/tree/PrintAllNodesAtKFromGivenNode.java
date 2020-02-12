@@ -15,15 +15,15 @@ public class PrintAllNodesAtKFromGivenNode {
 
 	void printKDistanceNodeDown(Node1 node, int k) {
 		// Base Case
-		if (node == null || k < 0)
+		if (node == null || k < 0) {
 			return;
+		}
 
 		// If we reach a k distant node, print it
 		if (k == 0) {
 			System.out.println(node.data);
 			return;
 		}
-
 		// Recur for left and right subtrees
 		printKDistanceNodeDown(node.left, k - 1);
 		printKDistanceNodeDown(node.right, k - 1);

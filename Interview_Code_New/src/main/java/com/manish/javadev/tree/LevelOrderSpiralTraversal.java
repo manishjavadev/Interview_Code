@@ -16,23 +16,23 @@ public class LevelOrderSpiralTraversal {
 		s1.add(root);
 		while (!s1.isEmpty() || !s2.isEmpty()) {
 			while (!s1.isEmpty()) {
-				BSTNode p = s1.pop();
-				System.out.print(p.data + "\t");
-				if (p.left != null) {
-					s2.push(p.left);
+				BSTNode top = s1.pop();
+				System.out.print(top.data + "\t");
+				if (top.left != null) {
+					s2.push(top.left);
 				}
-				if (p.right != null) {
-					s2.push(p.right);
+				if (top.right != null) {
+					s2.push(top.right);
 				}
 			}
 			while (!s2.isEmpty()) {
-				BSTNode p = s2.pop();
-				System.out.print(p.data + "\t");
-				if (p.right != null) {
-					s1.push(p.right);
+				BSTNode top = s2.pop();
+				System.out.print(top.data + "\t");
+				if (top.right != null) {
+					s1.push(top.right);
 				}
-				if (p.left != null) {
-					s1.push(p.left);
+				if (top.left != null) {
+					s1.push(top.left);
 				}
 			}
 		}
