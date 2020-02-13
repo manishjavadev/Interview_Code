@@ -13,41 +13,42 @@ public class LargestSumContiguousSubarray {
 
 	static int maxSubArraySum(int a[]) {
 		int size = a.length;
-		int max_so_far = a[0];
-		int curr_max = a[0];
+		int max = a[0];
+		int sum = a[0];
 
 		for (int i = 0; i < size; i++) {
-			curr_max = curr_max + a[i];
-			if (max_so_far < curr_max)
-				max_so_far = curr_max;
-			if (curr_max < 0)
-				curr_max = 0;
+			sum = sum + a[i];
+			if (max < sum) {
+				max = sum;
+			}
+			if (sum < 0) {
+				sum = 0;
+			}
 		}
-		return max_so_far;
+		return max;
 	}
 
 	static void maxSubArraySumWithIndex(int a[], int size) {
-		int max_so_far = a[0];
-		int curr_max = a[0];
+		int max = a[0];
+		int sum = a[0];
 		int start = 0;
 		int end = 0;
 		int s = 0;
 
 		for (int i = 1; i < size; i++) {
-			curr_max += a[i];
+			sum += a[i];
 
-			if (max_so_far < curr_max) {
-				max_so_far = curr_max;
+			if (max < sum) {
+				max = sum;
 				start = s;
 				end = i;
 			}
-
-			if (curr_max < 0) {
-				curr_max = 0;
+			if (sum < 0) {
+				sum = 0;
 				s = i + 1;
 			}
 		}
-		System.out.println("Maximum contiguous sum is " + max_so_far);
+		System.out.println("Maximum contiguous sum is " + max);
 		System.out.println("Starting index " + start);
 		System.out.println("Ending index " + end);
 	}

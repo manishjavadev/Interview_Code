@@ -18,12 +18,12 @@ package com.manish.javadev.geeks.array.rotation;
  * manner. If the sum is greater than x, then to decrease sum move the right
  * pointer to next position by decrementing it in rotational manner. Repeat step
  * 3 and 4 until the left pointer is not equal to the right pointer or until the
- * left pointer is not equal to right pointer – 1. Print final count.
+ * left pointer is not equal to right pointer ï¿½ 1. Print final count.
  * 
  * @author kmamani
  *
  */
-public class AllPairInSortedRotated {
+public class FindAllPairWithGivenSumInSortedRotated {
 
 	// Driver Code
 	public static void main(String[] args) {
