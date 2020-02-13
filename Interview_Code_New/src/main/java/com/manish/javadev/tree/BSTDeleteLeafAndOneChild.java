@@ -1,5 +1,7 @@
 package com.manish.javadev.tree;
 
+import java.util.NoSuchElementException;
+
 public class BSTDeleteLeafAndOneChild {
 	static BSTNode crr;
 	static BSTNode current;
@@ -37,27 +39,40 @@ public class BSTDeleteLeafAndOneChild {
 				crr = crr.right;
 			}
 		}
-
-		// Delete node has 2 child
-		if (crr.left != null && crr.right != null) {
-			BSTNode y = crr.left;
-			prev = crr;
-			while (y.right != null) {
-				prev = y;
-				y = y.right;
+		if (crr == null) {
+			throw new NoSuchElementException("Searched Element is not there");
+		}
+		// Delete Leaf node
+		if (crr.left == null && crr.right == null) {
+			if (prev == null) {
+				return null;
 			}
-			crr.data = y.data;
-			crr = y;
+			if (prev.right == crr) {
+				prev.right = null;
+			} else {
+				prev.left = null;
+			}
 		}
-		// Delete leaf or 1 child
-		BSTNode tmp = crr.left != null ? crr.left : crr.right;
-		if (prev == null) {
-			return tmp;
-		}
-		if (prev.right == crr) {
-			prev.right = tmp;
-		} else {
-			prev.left = tmp;
+		// Delete Leaf node
+		if (crr.left != null && crr.right != null) {
+			if (prev == null) {
+				return null;
+			}
+			if (crr.left != null) {
+				if (prev.right == crr) {
+					prev.right = crr.left;
+				} else {
+					prev.left = crr.left;
+				}
+			}
+			if (crr.right != null) {
+				if (prev.right == crr) {
+					prev.right = crr.right;
+				} else {
+					prev.left = crr.right;
+				}
+			}
+
 		}
 		return root;
 	}

@@ -37,9 +37,8 @@ public class FindNthNodeFromLastDemo {
 		}
 		if (front == null) {
 			return null;
-		} else {
-			return front;
 		}
+		return front;
 	}
 
 	private int getLength(Entity root) {

@@ -31,7 +31,7 @@ public class FindNthNodeFromLastWithOnDemo {
 	private static Entity getNthNodeFromLast(Entity root, int nthNode) {
 		Entity frontRef = root;
 		Entity front = root;
-		if (nthNode == 0) {
+		if (root == null && nthNode < 1) {
 			return null;
 		}
 		for (int i = 0; front != null && i < nthNode - 1; i++) {

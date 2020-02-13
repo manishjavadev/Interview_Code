@@ -3,8 +3,7 @@ package com.manish.javadev.sorting;
 import java.util.Arrays;
 
 public class MergeSort {
-	int arr[] = { 5, 4, 3, 1, 2, 6 };
-	int temp[] = new int[arr.length];
+	int temp[];
 
 	public static void main(String[] args) {
 		MergeSort ms = new MergeSort();
@@ -12,21 +11,23 @@ public class MergeSort {
 	}
 
 	private void doSorting() {
+		int arr[] = { 5, 4, 3, 1, 2, 6 };
+		temp = new int[arr.length];
 		int len = arr.length - 1;
-		merge_sort(0, len);
+		merge_sort(arr, 0, len);
 		System.out.println("Sorted Array " + Arrays.toString(arr));
 	}
 
-	private void merge_sort(int low, int high) {
+	private void merge_sort(int[] arr, int low, int high) {
 		if (low != high) {
 			int mid = (low + high) / 2;
-			merge_sort(low, mid);
-			merge_sort(mid + 1, high);
-			mergePartOfArray(low, mid, high);
+			merge_sort(arr, low, mid);
+			merge_sort(arr, mid + 1, high);
+			mergePartOfArray(arr, low, mid, high);
 		}
 	}
 
-	private void mergePartOfArray(int low, int mid, int high) {
+	private void mergePartOfArray(int arr[], int low, int mid, int high) {
 		int i = low;
 		int j = mid + 1;
 		int k = low;

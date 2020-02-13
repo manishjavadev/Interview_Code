@@ -29,9 +29,10 @@ public class LongestPalindromSubstring {
 			low = i;
 			high = i + 1;
 			while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
-				if (high - low + 1 > maxLength) {
+				int crrLength = high - low + 1;
+				if (crrLength > maxLength) {
 					start = low;
-					maxLength = high - low + 1;
+					maxLength = crrLength;
 				}
 				low--;
 				high++;
@@ -42,9 +43,10 @@ public class LongestPalindromSubstring {
 			low = i;
 			high = i + 2;
 			while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
-				if (high - low + 1 > maxLength) {
+				int crrLength = high - low + 1;
+				if (crrLength > maxLength) {
 					start = low;
-					maxLength = high - low + 1;
+					maxLength = crrLength;
 				}
 				low--;
 				high++;
