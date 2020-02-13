@@ -2,7 +2,7 @@ package com.manish.javadev.geeks.array.rotation;
 
 import java.util.Arrays;
 
-public class PairSum1 {
+public class PairWithGivenSumInSortedRotated1 {
 	public static void main(String[] args) {
 		int arr[] = { 1, 4, 45, 6, 10, -8 };
 		int sum = 50;
