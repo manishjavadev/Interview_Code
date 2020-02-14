@@ -33,7 +33,7 @@ public class FindElementSortedAndRotatedUsingPivote {
 		// Let us search 3 in below array
 		int arr[] = { 5, 6, 7, 8, 9, 10, 1, 2, 3 };
 		int n = arr.length;
-		int key = 7;
+		int key = 1;
 		System.out.println("Index of the element is : " + pivotedBinarySearch(arr, n, key));
 	}
 
@@ -52,7 +52,7 @@ public class FindElementSortedAndRotatedUsingPivote {
 		// search in two sub arrays around pivot
 		if (arr[pivot] == key)
 			return pivot;
-		if (arr[pivot] > key)
+		if (arr[0] <= key)
 			return binarySearch(arr, 0, pivot - 1, key);
 		return binarySearch(arr, pivot + 1, n - 1, key);
 	}
@@ -62,7 +62,7 @@ public class FindElementSortedAndRotatedUsingPivote {
 			int mid = (low + high) / 2;
 			if (arr[mid] == key)
 				return mid;
-			if (arr[mid] > key)
+			if (arr[mid] >= key)
 				return binarySearch(arr, low, mid - 1, key);
 			return binarySearch(arr, mid + 1, high, key);
 		}
