@@ -52,6 +52,7 @@ public class FindElementSortedAndRotatedUsingPivote {
 		// search in two sub arrays around pivot
 		if (arr[pivot] == key)
 			return pivot;
+		// This condition means that key belong to first sorted array( 0 to pivot-1)
 		if (arr[0] <= key)
 			return binarySearch(arr, 0, pivot - 1, key);
 		return binarySearch(arr, pivot + 1, n - 1, key);

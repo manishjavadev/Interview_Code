@@ -22,7 +22,7 @@ public class FindMaxSubArraySumBasics {
 				// if we have found a sub-array with sum S
 				if (sum == baseSum) {
 					// update length & ending index of max length subarray
-					if (len < j - i + 1) {
+					if (j - i + 1 > len ) {
 						len = j - i + 1;
 						ending_index = j;
 					}

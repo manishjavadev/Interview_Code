@@ -1,7 +1,7 @@
 package com.manish.javadev.geeks.array.rotation;
 
 /**
- * Explanation: Simple idea of the Kadane’s algorithm is to look for all
+ * Explanation: Simple idea of the Kadaneï¿½s algorithm is to look for all
  * positive contiguous segments of the array (max_ending_here is used for this).
  * And keep track of maximum sum contiguous segment among all positive segments
  * (max_so_far is used for this). Each time we get a positive sum compare it
@@ -45,54 +45,51 @@ public class FindMaxSubArraySumKadane {
 
 	static int maxSubArraySum(int a[]) {
 		int size = a.length;
-		int max_so_far = Integer.MIN_VALUE, max_ending_here = 0;
+		int max = 0, crr_sum = 0;
 
 		for (int i = 0; i < size; i++) {
-			max_ending_here = max_ending_here + a[i];
-			if (max_so_far < max_ending_here)
-				max_so_far = max_ending_here;
-			if (max_ending_here < 0)
-				max_ending_here = 0;
+			crr_sum = crr_sum + a[i];
+			if (max < crr_sum)
+				max = crr_sum;
+			if (crr_sum < 0)
+				crr_sum = 0;
 		}
-		return max_so_far;
+		return max;
 	}
 
 	static int maxSubArraySum1(int a[]) {
 		int size = a.length;
-		int max_so_far = Integer.MIN_VALUE, max_ending_here = 0;
+		int max = Integer.MIN_VALUE, sum = 0;
 
 		for (int i = 0; i < size; i++) {
-			max_ending_here = max_ending_here + a[i];
-			if (max_so_far < max_ending_here)
-				max_so_far = max_ending_here;
-			if (max_ending_here < 0)
-				max_ending_here = 0;
+			sum = sum + a[i];
+			if (max < sum)
+				max = sum;
+			if (sum < 0)
+				sum = 0;
 		}
-		return max_so_far;
+		return max;
 	}
 
 	static void maxSubArraySum(int a[], int size) {
-		int max_so_far = a[0];
-		int max_ending_here = 0;
+		int max = a[0];
+		int sum = 0;
 		int start = 0;
 		int end = 0;
-		int s = 0;
-
 		for (int i = 0; i < size; i++) {
-			max_ending_here += a[i];
+			sum += a[i];
 
-			if (max_so_far < max_ending_here) {
-				max_so_far = max_ending_here;
-				start = s;
+			if (max < sum) {
+				max = sum;
 				end = i;
 			}
 
-			if (max_ending_here < 0) {
-				max_ending_here = 0;
-				s = i + 1;
+			if (sum < 0) {
+				sum = 0;
+				start = i + 1;
 			}
 		}
-		System.out.println("Maximum contiguous sum is " + max_so_far);
+		System.out.println("Maximum contiguous sum is " + max);
 		System.out.println("Starting index " + start);
 		System.out.println("Ending index " + end);
 	}
