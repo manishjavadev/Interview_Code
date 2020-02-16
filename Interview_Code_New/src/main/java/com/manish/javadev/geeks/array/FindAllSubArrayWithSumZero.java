@@ -88,26 +88,26 @@ public class FindAllSubArrayWithSumZero {
 	private static void displaySubarray() {
 		int[] input = new int[] { 6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 };
 		LinkedHashMap<Integer, List<Integer>> map = new LinkedHashMap<Integer, List<Integer>>();
-		List<Integer> newStart = null;
-		int keySum = 0;
+		List<Integer> list = null;
+		int sum = 0;
 		// Loop across all elements of the array
 		for (int i = 0; i < input.length; i++) {
-			keySum += input[i];
-			if (keySum == 0) {
+			sum += input[i];
+			if (sum == 0) {
 				System.out.println("SUM 0 Start: " + 0 + "-" + i);
 			}
 			// If preSum is present, it means that
 			// Sub array found
-			if (map.containsKey(keySum)) {
-				newStart = map.get(keySum);
-				for (int start : newStart) {
+			if (map.containsKey(sum)) {
+				list = map.get(sum);
+				for (int start : list) {
 					System.out.println("SUM 0 Start: " + (start + 1) + "-" + i);
 				}
 			} else {
-				newStart = new ArrayList<Integer>();
+				list = new ArrayList<Integer>();
 			}
-			newStart.add(i);
-			map.put(keySum, newStart);
+			list.add(i);
+			map.put(sum, list);
 		}
 	}
 }

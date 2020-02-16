@@ -50,7 +50,5 @@ public class RemoveDuplicatePrimeWithMergeSort {
 			doMergeSort(mid + 1, high);
 			arr = ArrayHelper.mergePartOfArray(arr, temp, low, mid, high);
 		}
-
 	}
-
 }

@@ -77,7 +77,7 @@ public class SurparserUsingMergeSort {
 	}
 
 	private void merge_sort(int low, int high) {
-		if (low < high) {
+		if (low != high) {
 			int mid = (low + high) / 2;
 			merge_sort(low, mid);
 			merge_sort(mid + 1, high);

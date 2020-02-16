@@ -1,6 +1,5 @@
 package com.manish.javadev.geeks.array;
 
-
 /**
  * Count Inversions in an array | Set 1 (Using Merge Sort) Inversion Count for
  * an array indicates – how far (or close) the array is from being sorted. If
@@ -23,7 +22,7 @@ package com.manish.javadev.geeks.array;
  */
 
 public class InversionCountUsingMergSort {
-	//static int arr[] = { 1, 20, 6, 4, 5 };
+	// static int arr[] = { 1, 20, 6, 4, 5 };
 	static int arr[] = { 2, 3, 6, 9, 1 };
 	static int temp[] = new int[arr.length];
 
@@ -41,7 +40,7 @@ public class InversionCountUsingMergSort {
 	static long mergeSort(int a[], int left, int right) {
 		int mid;
 		long count = 0;
-		if (left < right) {
+		if (left != right) {
 			mid = (right + left) / 2;
 			count = mergeSort(a, left, mid);
 			count += mergeSort(a, mid + 1, right);
