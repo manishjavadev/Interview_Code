@@ -12,8 +12,9 @@ public class LevelOrderTraversal {
 	}
 
 	void doLevelOrderTraversal(BSTNode root) {
-		if (root == null)
+		if (root == null){
 			return;
+		}
 		else {
 			Queue<BSTNode> pq = new LinkedList<BSTNode>();
 			pq.add(root);
