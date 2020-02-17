@@ -91,17 +91,16 @@ public class FindNextGreaterNumberWithSameDigit {
 
 	}
 
-	private void sort(char[] digits2, int i) {
-		for (int j = i; j < digits2.length - 1; j++) {
-			for (int j2 = j + 1; j2 < digits2.length; j2++) {
-				if (digits2[j] > digits2[j2]) {
-					char temp = digits2[j];
-					digits2[j] = digits2[j2];
-					digits2[j2] = temp;
+	private void sort(char[] arr, int i) {
+		for (int j = i; j < arr.length - 1; j++) {
+			for (int k = j + 1; k < arr.length; k++) {
+				if (arr[j] > arr[k]) {
+					char temp = arr[j];
+					arr[j] = arr[k];
+					arr[k] = temp;
 				}
 			}
 		}
-
 	}
 
 	private void swap(char[] digits2, int i, int smallest) {

@@ -43,36 +43,27 @@ public class BSTDeleteLeafAndOneChild {
 			throw new NoSuchElementException("Searched Element is not there");
 		}
 		// Delete Leaf node
+		BSTNode tmp = crr.left != null ? crr.left : crr.right;
 		if (crr.left == null && crr.right == null) {
 			if (prev == null) {
 				return null;
 			}
 			if (prev.right == crr) {
-				prev.right = null;
+				prev.right = tmp;
 			} else {
-				prev.left = null;
+				prev.left = tmp;
 			}
 		}
-		// Delete Leaf node
-		if (crr.left != null && crr.right != null) {
+		// Delete 1 child node
+		if (crr.left != null || crr.right != null) {
 			if (prev == null) {
 				return null;
 			}
-			if (crr.left != null) {
-				if (prev.right == crr) {
-					prev.right = crr.left;
-				} else {
-					prev.left = crr.left;
-				}
+			if (prev.right == crr) {
+				prev.right = tmp;
+			} else {
+				prev.left = tmp;
 			}
-			if (crr.right != null) {
-				if (prev.right == crr) {
-					prev.right = crr.right;
-				} else {
-					prev.left = crr.right;
-				}
-			}
-
 		}
 		return root;
 	}
