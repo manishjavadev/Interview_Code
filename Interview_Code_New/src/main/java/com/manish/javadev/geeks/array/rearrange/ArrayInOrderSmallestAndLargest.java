@@ -3,6 +3,8 @@ package com.manish.javadev.geeks.array.rearrange;
 import java.util.Arrays;
 
 /**
+ * https://www.geeksforgeeks.org/rearrange-array-order-smallest-largest-2nd-smallest-2nd-largest/
+ * 
  * Rearrange an array in order � smallest, largest, 2nd smallest, 2nd largest,
  * ..
  * 
@@ -59,14 +61,14 @@ public class ArrayInOrderSmallestAndLargest {
 		// Adding numbers from sorted array to
 		// new array accordingly
 		int k = 0;
-		int p = 0;
-		int l = tmp.length - 1;
+		int l = 0;
+		int h = tmp.length - 1;
 
 		for (int i = 0; i < tmp.length; i++) {
 			if (i % 2 == 0) {
-				tmp[k++] = arr[p++];
+				tmp[k++] = arr[h++];
 			} else {
-				tmp[k++] = arr[l--];
+				tmp[k++] = arr[h--];
 			}
 
 		}

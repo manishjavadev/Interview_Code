@@ -1,10 +1,12 @@
 package com.manish.javadev.geeks.array.rearrange;
 
 /**
- * Given an array of integers of size n. Assume ‘0’ as invalid number and all
+ * https://www.geeksforgeeks.org/double-first-element-move-zero-end/
+ * 
+ * Given an array of integers of size n. Assume ï¿½0ï¿½ as invalid number and all
  * other as valid number. Convert the array in such a way that if next valid
  * number is same as current number, double its value and replace the next
- * number with 0. After the modification, rearrange the array such that all 0’s
+ * number with 0. After the modification, rearrange the array such that all 0ï¿½s
  * are shifted to the end.
  * 
  * Examples:

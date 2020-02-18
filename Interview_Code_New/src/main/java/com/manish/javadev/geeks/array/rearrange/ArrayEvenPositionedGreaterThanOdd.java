@@ -3,6 +3,7 @@ package com.manish.javadev.geeks.array.rearrange;
 import java.util.Arrays;
 
 /**
+ * https://www.geeksforgeeks.org/rearrange-array-such-that-even-positioned-are-greater-than-odd/
  * 
  * Given an array A of n elements, sort the array according to the following
  * relations : A[i] >= A[i-1] , if i is even. A[i] <= A[i-1] , if i is odd.
@@ -46,14 +47,14 @@ public class ArrayEvenPositionedGreaterThanOdd {
 		Arrays.sort(arr);
 
 		int ans[] = new int[n];
-		int p = 0, q = n - 1;
+		int l = 0, h = n - 1;
 		for (int i = 0; i < n; i++) {
 			// Assign even indexes with maximum elements
 			if (i % 2 == 0)
-				ans[i] = arr[p++];
+				ans[i] = arr[l++];
 			// Assign odd indexes with remaining elements
 			else
-				ans[i] = arr[q--];
+				ans[i] = arr[h--];
 		}
 
 		// Print result

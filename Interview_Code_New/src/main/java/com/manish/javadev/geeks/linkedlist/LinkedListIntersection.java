@@ -34,17 +34,17 @@ public class LinkedListIntersection {
 	 */
 	private Node getIntersectionNode(int d, Node node1, Node node2) {
 		int i;
-		Node current1 = node1;
-		Node current2 = node2;
-		for (i = 0; i < d && current1 != null; i++) {
-			current1 = current1.next;
+		Node front1 = node1;
+		Node front2 = node2;
+		for (i = 0; i < d && front1 != null; i++) {
+			front1 = front1.next;
 		}
-		while (current1 != null && current2 != null) {
-			if (current1.data == current2.data) {
-				return current1;
+		while (front1 != null && front2 != null) {
+			if (front1.data == front2.data) {
+				return front1;
 			}
-			current1 = current1.next;
-			current2 = current2.next;
+			front1 = front1.next;
+			front2 = front2.next;
 		}
 		return null;
 	}

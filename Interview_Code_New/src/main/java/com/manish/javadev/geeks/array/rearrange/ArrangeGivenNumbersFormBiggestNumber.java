@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Vector;
 
 /**
+ * https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
+ * 
  * Given an array of numbers, arrange them in a way that yields the largest
  * value. For example, if the given numbers are {54, 546, 548, 60}, the
  * arrangement 6054854654 gives the largest value. And if the given numbers are
