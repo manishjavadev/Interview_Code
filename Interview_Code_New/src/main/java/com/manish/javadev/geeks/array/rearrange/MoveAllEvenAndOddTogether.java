@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 
- * Given an array of random numbers, Push all the zero�s of a given array to the
+ * Given an array of random numbers, Push all the zero's of a given array to the
  * end of the array. For example, if the given arrays is {1, 9, 8, 4, 0, 0, 2,
  * 7, 0, 6, 0}, it should be changed to {1, 9, 8, 4, 2, 7, 6, 0, 0, 0, 0}. The
  * order of all other elements should be same. Expected time complexity is O(n)
@@ -51,7 +51,7 @@ public class MoveAllEvenAndOddTogether {
 
 		int i = -1;
 		for (int j = 0; j < arr.length; j++) {
-			if ((arr[j] % 2== 0)) {
+			if ((arr[j] % 2 == 0)) {
 				i++;
 				swapData(arr, i, j);
 			}

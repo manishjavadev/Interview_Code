@@ -25,7 +25,7 @@ public class MaximumAndMinimum {
 
 		// Indexes of smallest and largest elements
 		// from remaining array.
-		int small = 0, large = n - 1;
+		int start = 0, end = n - 1;
 
 		// To indicate whether we need to copy rmaining
 		// largest or remaining smallest at next position
@@ -34,9 +34,9 @@ public class MaximumAndMinimum {
 		// Minimum maximum
 		for (int i = 0; i < n; i++) {
 			if (i % 2 == 0)
-				temp[i] = arr[large--];
+				temp[i] = arr[end--];
 			else
-				temp[i] = arr[small++];
+				temp[i] = arr[start++];
 
 		}
 		return arr = temp;

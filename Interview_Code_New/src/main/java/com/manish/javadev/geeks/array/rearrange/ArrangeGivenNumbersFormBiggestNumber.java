@@ -57,7 +57,7 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 
 				// then append X at the end of Y
 				String YX = Y + X;
-				//int result = "200999".compareTo("20");
+				// int result = "200999".compareTo("20");
 
 				// Now see which of the two formed numbers
 				// is greater
@@ -89,9 +89,9 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 		List<String> arr = new ArrayList();
 
 		// output should be 6054854654
-		arr.add("60");
-		arr.add("240");
-		arr.add("30");
+		arr.add("1");
+		arr.add("3");
+		arr.add("2");
 		// arr.add("548");
 		// arr.add("60");
 		printLargest(arr);

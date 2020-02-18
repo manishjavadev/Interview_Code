@@ -3,7 +3,7 @@ package com.manish.javadev.geeks.array.rearrange;
 /**
  * https://www.geeksforgeeks.org/double-first-element-move-zero-end/
  * 
- * Given an array of integers of size n. Assume �0� as invalid number and all
+ * Given an array of integers of size n. Assume 0 as invalid number and all
  * other as valid number. Convert the array in such a way that if next valid
  * number is same as current number, double its value and replace the next
  * number with 0. After the modification, rearrange the array such that all 0�s
