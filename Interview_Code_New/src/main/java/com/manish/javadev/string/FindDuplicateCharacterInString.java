@@ -22,6 +22,14 @@ import java.util.ArrayList;
 public class FindDuplicateCharacterInString {
 	char ch;
 
+	public static void main(String[] args) {
+		// Here i am creating the object of FindDuplicateCharacterInString
+		// and calling the method findDuplicateAndDisplayCounter
+		FindDuplicateCharacterInString findDuplicate = new FindDuplicateCharacterInString();
+		findDuplicate.findDuplicateAndDisplayCounter();
+
+	}
+
 	public void findDuplicateAndDisplayCounter() {
 		String str = "abccdeefffffffghhhhkkk";
 		char[] strArray = str.toCharArray();
@@ -55,15 +63,5 @@ public class FindDuplicateCharacterInString {
 			list.add(strArray[i]);
 		}
 		System.out.println("Total repeted char in string " + dopCounter);
-	}
-}
-
-class TestFindDuplicateChar {
-	public static void main(String[] args) {
-		// Here i am creating the object of FindDuplicateCharacterInString
-		// and calling the method findDuplicateAndDisplayCounter
-		FindDuplicateCharacterInString findDuplicate = new FindDuplicateCharacterInString();
-		findDuplicate.findDuplicateAndDisplayCounter();
-
 	}
 }

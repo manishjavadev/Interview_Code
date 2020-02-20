@@ -12,16 +12,16 @@ public class HeapSort {
 
 	private void heapSort(int[] array) {
 		for (int i = array.length - 1; i > 0; i--) {
+			swapNode(array, i, 0);
 			doSorting(array, i, 0);
 		}
 		System.out.println(Arrays.toString(array));
 	}
 
-	private void doSorting(int[] array, int n, int i) {
-		int large = i;
+	private void doSorting(int[] array, int n, int crr) {
+		int large = crr;
 		int left = 2 * large + 1;
 		int right = 2 * large + 2;
-		swapNode(array, n, 0);
 
 		while (right < n) {
 			if (array[large] >= array[left] && array[large] >= array[right]) {

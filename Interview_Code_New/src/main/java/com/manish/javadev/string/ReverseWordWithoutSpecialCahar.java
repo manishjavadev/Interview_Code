@@ -2,7 +2,7 @@ package com.manish.javadev.string;
 
 public class ReverseWordWithoutSpecialCahar {
 	public static void main(String[] args) {
-		String str = "#Manish#$Srivastava#$";
+		String str = "#Manish#$Kumar#$";
 		char[] ch = str.toCharArray();
 
 		System.out.println("Input string: " + str);

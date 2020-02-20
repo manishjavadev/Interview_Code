@@ -9,18 +9,24 @@ package com.manish.javadev.string;
  * This logic is also work for reverse the string only you remove the if
  * condition and simply print the reverse string.
  * 
+ * FOR ODD::=> If your entered string length is odd then mid-1 and mid+1 should
+ * be same and rest also will same(increasing and decreasing)
+ * 
+ * FOR EVEN::=> If your entered string length is even then mid-1 and mid should
+ * be same and rest also will same(increasing and decreasing)
+ * 
  */
 public class CheckStringIsPalindrome {
 	static String enteredString = "";
 
 	public static void main(String[] args) {
-		String enteredString = "MANINAM";
+		String enteredString = "MANNAM";
 		// 1st logic Method
-		boolean resultFlag = checkPalindrom(0, enteredString.length() - 1);
+		// boolean resultFlag = checkPalindrom(0, enteredString.length() - 1);
 
 		// 2nd logic Method
-		resultFlag = checkPalindrom(enteredString);
-		if (resultFlag) {
+		boolean result = checkPalindrom(enteredString);
+		if (result) {
 			System.out.println("Entered String '" + enteredString + "' is Palindrom");
 		} else {
 			System.out.println("Entered String is not a Palindrom");
@@ -52,7 +58,6 @@ public class CheckStringIsPalindrome {
 		}
 		while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
 			flag = true;
-
 			low--;
 			high++;
 		}
