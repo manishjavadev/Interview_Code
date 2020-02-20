@@ -47,11 +47,10 @@ public class HeapSortUpdated {
 		 * 
 		 * 29,10, 32,46,48 which is wrong
 		 * 
-		 * if you if condition at n==2 means size ==2, so left will equal to
-		 * size -1 (left == size - 1) and array[large] < array[left] swap it so
-		 * while process n==1 i mean size ==1, after swap our and will become
-		 * like below 10,29, 32,46,48 which is sorted array
-		 * 
+		 * if i==2, so left will equal to size -1 (left == size - 1) and
+		 * array[large] < array[left] swap it, so once u process i==1, mean size
+		 * ==1, after swap our and will become like below 10,29, 32,46,48 which
+		 * is sorted array
 		 * 
 		 */
 		if (left == size - 1 && array[large] < array[left]) {
