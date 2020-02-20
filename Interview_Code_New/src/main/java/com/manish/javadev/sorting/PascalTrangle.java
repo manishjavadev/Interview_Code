@@ -22,7 +22,6 @@ public class PascalTrangle {
 				System.out.print(combi(i, j));
 			}
 			System.out.println("");
-
 		}
 	}
 

@@ -2,7 +2,7 @@ package com.manish.javadev.tree;
 
 import java.util.NoSuchElementException;
 
-public class BSTDeletionOneAndTwoChild {
+public class BSTDeletionOneAndTwoChildCaseAreSame {
 	static BSTNode crr;
 	static BSTNode current;
 
@@ -42,11 +42,10 @@ public class BSTDeletionOneAndTwoChild {
 		if (crr == null) {
 			throw new NoSuchElementException("Searched Element is not there");
 		}
-		// Delete leaf Node or 1 child
+		// Delete 1 or leaf node are same
 		BSTNode tmp = crr.left != null ? crr.left : crr.right;
-		
 		if (prev == null) {
-			return tmp;
+			return null;
 		}
 		if (prev.right == crr) {
 			prev.right = tmp;
