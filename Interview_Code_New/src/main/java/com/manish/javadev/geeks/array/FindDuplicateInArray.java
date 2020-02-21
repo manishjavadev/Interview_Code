@@ -1,4 +1,4 @@
-package com.manish.javadev.array.test;
+package com.manish.javadev.geeks.array;
 
 //Java code Find duplicates in O(n) time and O(1) extra space
 /**
@@ -19,9 +19,9 @@ package com.manish.javadev.array.test;
  * @author kmamani
  *
  */
-public class FindDuplicate {
+public class FindDuplicateInArray {
 	public static void main(String[] args) {
-		FindDuplicate findDuplicate = new FindDuplicate();
+		FindDuplicateInArray findDuplicate = new FindDuplicateInArray();
 		int arr[] = { 1, 2, 3, 1, 2, 6, 6 };
 
 		findDuplicate.printRepeating(arr);

@@ -1,6 +1,6 @@
-package com.manish.javadev.array.test;
+package com.manish.javadev.geeks.array;
 
-public class FirstNonRepeating {
+public class FirstNonRepeatingUsingForLoop {
 	static final int NO_OF_CHARS = 256;
 	static char count[] = new char[NO_OF_CHARS];
 
