@@ -2,9 +2,26 @@ package com.manish.javadev.array;
 
 import java.util.Arrays;
 
+/**
+ * Problem Statement Given an unsorted array of integer numbers, write a
+ * function which returns the number that appears maximum times in the array.
+ * 
+ * Example: Let the array be 1, 2, 2, 3, 1, 3, 2. Mode of this array is 2.
+ * 
+ * Example: Let the array be 1, 2, 2, 3, 1, 3, 3, 2. Mode of this array is 2 if
+ * two number have same occurrence the lower one is the answer.
+ * 
+ * Note: Above one number 2 and 3 frequency are same then lower one is 2 so 2 is
+ * the answer
+ * 
+ * Keywords: Array mode, mode of the array, relative majority, plurality, array.
+ * 
+ * @author kmamani
+ *
+ */
 public class FindMode {
 
-	public int findPopular(int[] arr) {
+	public int findModeOfArray(int[] arr) {
 
 		if (arr == null || arr.length == 0)
 			return 0;
@@ -35,7 +52,7 @@ public class FindMode {
 	public static void main(String[] args) {
 		int[] a = { 1, 1, 2, 3, 3 };
 		FindMode findMode = new FindMode();
-		int result = findMode.findPopular(a);
+		int result = findMode.findModeOfArray(a);
 		System.out.println(result);
 	}
 
