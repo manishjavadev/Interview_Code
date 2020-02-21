@@ -8,7 +8,7 @@ package com.manish.javadev.array;
  * This program find biggest and smallest number in array
  * 
  */
-public class BiggestAndSmallestNumberInArray {
+public class SmallestAndHighestNumberInArray {
 
 	public static void main(String[] args) {
 

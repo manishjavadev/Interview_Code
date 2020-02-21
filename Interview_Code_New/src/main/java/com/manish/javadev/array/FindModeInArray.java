@@ -19,7 +19,7 @@ import java.util.Arrays;
  * @author kmamani
  *
  */
-public class FindMode {
+public class FindModeInArray {
 
 	public int findModeOfArray(int[] arr) {
 
@@ -51,7 +51,7 @@ public class FindMode {
 
 	public static void main(String[] args) {
 		int[] a = { 1, 1, 2, 3, 3 };
-		FindMode findMode = new FindMode();
+		FindModeInArray findMode = new FindModeInArray();
 		int result = findMode.findModeOfArray(a);
 		System.out.println(result);
 	}

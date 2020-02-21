@@ -1,6 +1,6 @@
 package com.manish.javadev.array;
 
-public class SecondSmallest {
+public class SecondSmallestNumberInArray {
 	/*
 	 * Function to print first smallest and second smallest elements
 	 */
