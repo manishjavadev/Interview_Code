@@ -27,10 +27,10 @@ public class CreateMaxHeapFromArray {
 
 	// To heapify a subtree rooted with node i which is
 	// an index in arr[]. n is size of heap
-	void build_maxheap(int arr[], int size, int curr) {
-		int largest = curr; // Initialize largest as root
-		int l = 2 * curr + 1; // left = 2*i + 1
-		int r = 2 * curr + 2; // right = 2*i + 2
+	void build_maxheap(int arr[], int size, int crr) {
+		int largest = crr; // Initialize largest as root
+		int l = 2 * crr + 1; // left = 2*i + 1
+		int r = 2 * crr + 2; // right = 2*i + 2
 
 		// If left child is larger than root
 		if (l < size && arr[l] > arr[largest])
@@ -41,8 +41,8 @@ public class CreateMaxHeapFromArray {
 			largest = r;
 
 		// If largest is not root
-		if (largest != curr) {
-			swapNode(arr, largest, curr);
+		if (largest != crr) {
+			swapNode(arr, largest, crr);
 			// Recursively heapify the affected sub-tree
 			build_maxheap(arr, size, largest);
 		}
