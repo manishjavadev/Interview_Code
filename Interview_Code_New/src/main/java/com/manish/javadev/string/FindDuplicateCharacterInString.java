@@ -33,35 +33,28 @@ public class FindDuplicateCharacterInString {
 	public void findDuplicateAndDisplayCounter() {
 		String str = "abccdeefffffffghhhhkkk";
 		char[] strArray = str.toCharArray();
-		ArrayList<Character> list = new ArrayList<Character>();
 		int counter = 0;
-		int dopCounter = 0;
 		System.out.println("Print char coours how many time and char it self ");
-		for (int i = 0; i < strArray.length; i++) {
-			boolean repeate = false;
-			counter = 0;
-			// In this for loop find duplicate char logic is there
-			for (int j = i + 1; j < strArray.length; j++) {
-				if (strArray[i] == strArray[j]) {
-					repeate = true;
-					ch = strArray[i];
-					counter++;
-				}
-			}
-			// Here we are trying to print the entire logic for code
-			// If list.contains is false then it will print the logic try to
-			// understand
-			if (repeate && counter > 0 && !list.contains(ch)) {
 
-				System.out.print(ch + " Occurs " + (counter + 1) + " time ");
-				for (int j = 0; j <= counter; j++) {
-					System.out.print(ch);
-				}
-				System.out.print("\n");
-				dopCounter++;
+		char tmp = ' ';
+		for (int i = 0; i < strArray.length; i++) {
+			if (counter == 0) {
+				tmp = strArray[i];
 			}
-			list.add(strArray[i]);
+			if (tmp == strArray[i]) {
+				counter += 1;
+			} else {
+				if (counter > 1) {
+					System.out.println(strArray[i - 1] + " Occurs " + (counter) + " time ");
+				}
+				tmp = strArray[i];
+				counter = 1;
+			}
+			if (i == strArray.length - 1) {
+				if (counter > 1) {
+					System.out.println(strArray[strArray.length - 1] + " Occurs " + (counter) + " time ");
+				}
+			}
 		}
-		System.out.println("Total repeted char in string " + dopCounter);
 	}
 }
