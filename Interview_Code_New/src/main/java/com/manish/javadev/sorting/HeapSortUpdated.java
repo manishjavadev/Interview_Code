@@ -29,9 +29,11 @@ public class HeapSortUpdated {
 			} else {
 				large = right;
 			}
-			swapNode(array, crr, large);
-			left = 2 * large + 1;
-			right = 2 * large + 2;
+			if (large != crr) {
+				swapNode(array, crr, large);
+				left = 2 * large + 1;
+				right = 2 * large + 2;
+			}
 		}
 		/**
 		 * Why this condition is required

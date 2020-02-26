@@ -37,8 +37,7 @@ public class BSTSearch {
 		return crr;
 	}
 
-	private BSTNode findWithRecursion(BSTNode root, int data) {
-		crr = root;
+	private BSTNode findWithRecursion(BSTNode crr, int data) {
 		if (crr == null) {
 			return crr;
 		}
