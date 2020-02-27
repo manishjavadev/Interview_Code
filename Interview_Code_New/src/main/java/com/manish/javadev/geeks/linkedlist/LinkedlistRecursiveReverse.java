@@ -31,9 +31,9 @@ public class LinkedlistRecursiveReverse {
 			return curr;
 		}
 		/* If last node mark it head */
-		/*if (curr.next == null) {
+		if (curr.next == null) {
 			return curr.next = prev;
-		}*/
+		}
 
 		/* Save curr->next node for recursive call */
 		Entity next = curr.next;
