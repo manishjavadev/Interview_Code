@@ -28,13 +28,13 @@ public class FindNthNodeFromLastWithOnDemo {
 
 	}
 
-	private static Entity getNthNodeFromLast(Entity root, int nthNode) {
+	private static Entity getNthNodeFromLast(Entity root, int nth) {
 		Entity frontRef = root;
 		Entity front = root;
-		if (root == null && nthNode < 1) {
+		if (root == null && nth < 1) {
 			return null;
 		}
-		for (int i = 0; front != null && i < nthNode; i++) {
+		for (int i = 0; front != null && i < nth; i++) {
 			front = front.next;
 		}
 		if (front == null) {
