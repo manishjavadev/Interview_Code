@@ -40,11 +40,11 @@ public class FindAllPairWithGivenSumInSortedRotated {
 		// Find the pivot element.
 		int pivot = findPivot(arr, 0, arr.length);
 
-		// l is index of smallest element.
-		int l = pivot;
-
 		// r is index of largest element.
-		int r = pivot - 1;
+		int r = pivot;
+
+		// l is index of smallest element.
+		int l = pivot + 1;
 
 		// Variable to store count of number of pairs.
 		int cnt = 0;
@@ -85,7 +85,7 @@ public class FindAllPairWithGivenSumInSortedRotated {
 			int mid = (low + high) / 2;
 
 			if (arr[mid] > arr[mid + 1])
-				return mid + 1;
+				return mid;
 
 			if (arr[low] <= arr[mid])
 				return findPivot(arr, mid + 1, high);

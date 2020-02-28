@@ -33,26 +33,32 @@ public class FindElementSortedAndRotatedUsingPivote {
 		// Let us search 3 in below array
 		int arr[] = { 5, 6, 7, 8, 9, 10, 1, 2, 3 };
 		int n = arr.length;
-		int key = 1;
+		int key = 8;
 		System.out.println("Index of the element is : " + pivotedBinarySearch(arr, n, key));
 	}
 
-	/*
+	/**
 	 * Searches an element key in a pivoted sorted array arrp[] of size n
 	 */
 	static int pivotedBinarySearch(int arr[], int n, int key) {
 		int pivot = findPivot(arr, 0, n - 1);
-		// If we didn't find a pivot, then
-		// array is not rotated at all
+		/**
+		 * findPivot will return -1 if array is sorted array
+		 */
 		if (pivot == -1)
 			return binarySearch(arr, 0, n - 1, key);
 
-		// If we found a pivot, then first
-		// compare with pivot and then
-		// search in two sub arrays around pivot
+		/**
+		 * If we found a pivot, then first compare with pivot and then search in
+		 * two sub arrays around pivot
+		 */
 		if (arr[pivot] == key)
 			return pivot;
-		// This condition means that key belong to first sorted array( 0 to pivot-1)
+		/**
+		 * This condition means that key belong to first sorted array( 0 to
+		 * pivot-1), need to check with zero only, otherwise less number in both
+		 * side of pivote
+		 */
 		if (arr[0] <= key)
 			return binarySearch(arr, 0, pivot - 1, key);
 		return binarySearch(arr, pivot + 1, n - 1, key);

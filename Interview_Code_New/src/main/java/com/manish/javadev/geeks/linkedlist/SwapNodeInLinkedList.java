@@ -106,8 +106,8 @@ public class SwapNodeInLinkedList {
 			prevy.next = currx;
 		}
 		// Swap next pointers
-		Entity temEntity = currx.next;
+		Entity tmp = currx.next;
 		currx.next = curry.next;
-		curry.next = temEntity;
+		curry.next = tmp;
 	}
 }
