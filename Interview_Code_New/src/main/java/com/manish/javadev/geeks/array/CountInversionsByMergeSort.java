@@ -45,7 +45,7 @@ public class CountInversionsByMergeSort {
 
 	private int merge_sort(int low, int high) {
 		int count = 0;
-		if (low != high) {
+		if (low < high) {
 			int mid = (low + high) / 2;
 			count = merge_sort(low, mid);
 			count += merge_sort(mid + 1, high);
