@@ -31,9 +31,9 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 	}
 
 	void rearrange(int arr[]) {
-		int outofplace = -1;
-		for (int index = 0; index < arr.length; index++) {
-			if (outofplace >= 0) {
+		int bad = -1;
+		for (int i = 0; i < arr.length; i++) {
+			if (bad >= 0) {
 				// find the item which must be moved into the out-of-place
 				// entry if out-of-place entry is positive and current
 				// entry is negative OR if out-of-place entry is negative
@@ -44,14 +44,14 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 				// | |
 				// outofplace --> outofplace
 				//
-				if (((arr[index] >= 0) && (arr[outofplace] < 0)) || ((arr[index] < 0) && (arr[outofplace] >= 0))) {
-					rightrotate(arr, outofplace, index);
+				if (((arr[i] >= 0) && (arr[bad] < 0)) || ((arr[i] < 0) && (arr[bad] >= 0))) {
+					rightrotate(arr, bad, i);
 
 					// the new out-of-place entry is now 2 steps ahead
-					if (index - outofplace > 2)
-						outofplace = outofplace + 2;
+					if (i - bad > 2)
+						bad = bad + 2;
 					else
-						outofplace = -1;
+						bad = -1;
 				}
 			}
 
@@ -59,9 +59,10 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 			// check if current entry is out-of-place
 			// if (((arr[index] >= 0) && ((index & 0x01) == 0)) ||
 			// ((arr[index] < 0) && (index & 0x01) == 1))
-			if (outofplace == -1) {
-				if (((arr[index] > 0) && (index % 2) == 0) || ((arr[index] < 0) && ((index % 2) != 0)))
-					outofplace = index;
+			if (bad == -1) {
+				if (((arr[i] > 0) && (i % 2) == 0) || ((arr[i] < 0) && ((i % 2) != 0))) {
+					bad = i;
+				}
 			}
 		}
 	}
