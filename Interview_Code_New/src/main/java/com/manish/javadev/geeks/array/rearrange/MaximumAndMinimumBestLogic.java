@@ -49,17 +49,17 @@ public class MaximumAndMinimumBestLogic {
 			// at even index : we have to put
 			// maximum elemlent
 			if (i % 2 == 0) {
-				arr[i] += (arr[max_idx] % mv) * mv;
+				arr[i] += (arr[max_idx] % 100) * 100;
 				max_idx--;
 			}
 			// at odd index : we have to put minimum element
 			else {
-				arr[i] += (arr[min_idx] % mv) * mv;
+				arr[i] += (arr[min_idx] % 100) * 100;
 				min_idx++;
 			}
 		}
 		// array elements back to it's original form
 		for (int i = 0; i < n; i++)
-			arr[i] = arr[i] / mv;
+			arr[i] = arr[i] / 100;
 	}
 }
