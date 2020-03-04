@@ -16,32 +16,33 @@ import java.util.Arrays;
 public class MergeTwoSortedArray {
 
 	public static void main(String[] args) {
-		int arr1[] = { 1, 3, 4, 6, 7, 9 };
-		int arr2[] = { 10, 11, 12, 13, 17 };
-		int index1 = 0;
-		int index2 = 0;
-		int index3 = 0;
-		int length = arr1.length + arr2.length;
-		int arr3[] = new int[length];
+		int a1[] = { 1, 3, 4, 6, 7, 9 };
+		int a2[] = { 10, 11, 12, 13, 17 };
+		int i = 0;
+		int j = 0;
+		int k = 0;
+		int length = a1.length + a2.length;
+		int a3[] = new int[length];
 		// Here we are iterating array and checking arr1 and arr2 value
 		// for merging in third array arr3
 
 		// Note: Suppose one array processed then other
-		// array iterate again in while loop 2nd and 3rd while managing those logic
-		while ((index1 < arr1.length) && (index2 < arr2.length)) {
-			if (arr1[index1] < arr2[index2])
-				arr3[index3++] = arr1[index1++];
+		// array iterate again in while loop 2nd and 3rd while managing those
+		// logic
+		while ((i < a1.length) && (j < a2.length)) {
+			if (a1[i] < a2[j])
+				a3[k++] = a1[i++];
 			else
-				arr3[index3++] = arr2[index2++];
+				a3[k++] = a2[j++];
 		}
-		while (index1 < arr1.length) {
-			arr3[index3++] = arr1[index1++];
+		while (i < a1.length) {
+			a3[k++] = a1[i++];
 		}
-		while (index2 < arr2.length) {
-			arr3[index3++] = arr2[index2++];
+		while (j < a2.length) {
+			a3[k++] = a2[j++];
 		}
 		System.out.println("After merging these two arrya is ");
-		System.out.println(Arrays.toString(arr3));
+		System.out.println(Arrays.toString(a3));
 		System.out.println("\nDone");
 	}
 }

@@ -23,11 +23,11 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 
 	// right rotate all elements between [outofplace, cur], so that all positive
 	// and negative element moved to end
-	void rightrotate(int arr[], int outofplace, int cur) {
+	void rightrotate(int arr[], int bad, int cur) {
 		int tmp = arr[cur];
-		for (int i = cur; i > outofplace; i--)
+		for (int i = cur; i > bad; i--)
 			arr[i] = arr[i - 1];
-		arr[outofplace] = tmp;
+		arr[bad] = tmp;
 	}
 
 	void rearrange(int arr[]) {
