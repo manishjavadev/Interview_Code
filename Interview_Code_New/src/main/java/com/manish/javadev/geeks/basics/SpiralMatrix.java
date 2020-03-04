@@ -37,9 +37,11 @@ public class SpiralMatrix {
 			} else if (col == base_row_col && row > base_row_col) {
 				row--;
 			}
-			// if arr[row][col] != 0 means particular arr[row][col] is
-			// processed, so manage row and column by increase and decreasing
-			// row and col
+			/**
+			 * if arr[row][col] != 0 means particular arr[row][col] is
+			 * processed, so manage row and column by increase and decreasing
+			 * row and col
+			 */
 			if (arr[row][col] != 0) {
 				row++;
 				col++;
