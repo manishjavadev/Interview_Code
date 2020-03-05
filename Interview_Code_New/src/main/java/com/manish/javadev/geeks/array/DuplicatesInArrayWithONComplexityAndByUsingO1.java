@@ -23,8 +23,8 @@ public class DuplicatesInArrayWithONComplexityAndByUsingO1 {
 		 * that values as indexes and increment by the size of array
 		 */
 		for (int i = 0; i < len; i++) {
-			int index = arr[i] % len;
-			arr[index] += len;
+			int index = arr[i] % 10;
+			arr[index] += 10;
 		}
 
 		/**
@@ -32,7 +32,7 @@ public class DuplicatesInArrayWithONComplexityAndByUsingO1 {
 		 * of array
 		 */
 		for (int i = 0; i < len; i++) {
-			if ((arr[i] / len) > 1)
+			if ((arr[i] / 10) > 1)
 				System.out.println(i + " ");
 		}
 	}

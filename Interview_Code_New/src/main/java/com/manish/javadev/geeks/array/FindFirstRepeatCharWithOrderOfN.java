@@ -21,7 +21,7 @@ package com.manish.javadev.geeks.array;
 public class FindFirstRepeatCharWithOrderOfN {
 	public static int findRepeatFirst(String s) {
 		// this is optimized method
-		int p = -1, i, k;
+		int p = 0, i, k;
 
 		// initialized counts of occurrences of
 		// elements as zero
@@ -44,10 +44,9 @@ public class FindFirstRepeatCharWithOrderOfN {
 
 		for (i = 0; i < MAX_CHAR; i++) {
 			if (hash[i] == 2) {
-				if (p == -1) // base case
+				if (p > pos[i]) {
 					p = pos[i];
-				else if (p > pos[i])
-					p = pos[i];
+				}
 			}
 		}
 		return p;

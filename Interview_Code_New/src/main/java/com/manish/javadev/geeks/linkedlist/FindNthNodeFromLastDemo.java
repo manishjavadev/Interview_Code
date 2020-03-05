@@ -16,7 +16,6 @@ public class FindNthNodeFromLastDemo {
 
 	public void displayNodes() {
 		Entity tNode = DefaultLinkedList.getDefaultLinkedList();
-		;
 		while (tNode != null) {
 			System.out.print(tNode.data + " ");
 			tNode = tNode.next;
