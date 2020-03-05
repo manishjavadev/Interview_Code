@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class MergeTwoSortedArrayWithO1ExtraSpace {
 	static int arr1[] = { 1, 5, 9, 10, 15, 20 };
-	static int arr2[] = { 2, 3, 8, 13 };//10,13,15,20
+	static int arr2[] = { 2, 3, 8, 13 };// 10,13,15,20
 
 	public static void main(String[] args) {
 		MergeTwoSortedArrayWithO1ExtraSpace mtsa = new MergeTwoSortedArrayWithO1ExtraSpace();
@@ -26,8 +26,9 @@ public class MergeTwoSortedArrayWithO1ExtraSpace {
 			 * one position ahead till the smallest greater element is not found
 			 */
 			int j, last = ar1[l1];
-			for (j = l1 - 1; ar2[i] < ar1[j] && j >= 0; j--)
+			for (j = l1 - 1; ar2[i] < ar1[j] && j >= 0; j--) {
 				ar1[j + 1] = ar1[j];
+			}
 			ar1[j + 1] = ar2[i];
 			ar2[i] = last;
 

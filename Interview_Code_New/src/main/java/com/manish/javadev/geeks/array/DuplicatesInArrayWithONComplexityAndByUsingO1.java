@@ -20,7 +20,8 @@ public class DuplicatesInArrayWithONComplexityAndByUsingO1 {
 		int len = arr.length;
 		/**
 		 * First check all the values that are present in an array, then go to
-		 * that values as indexes and increment by the size of array
+		 * that values as indexes and increment by the constant value may be 10
+		 * or 100
 		 */
 		for (int i = 0; i < len; i++) {
 			int index = arr[i] % 10;
@@ -28,8 +29,8 @@ public class DuplicatesInArrayWithONComplexityAndByUsingO1 {
 		}
 
 		/**
-		 * Now check which value exists more than once by dividing with the size
-		 * of array
+		 * Now check which value exists more than once by dividing constant
+		 * value may be 10 or 100 as per above logic
 		 */
 		for (int i = 0; i < len; i++) {
 			if ((arr[i] / 10) > 1)

@@ -28,7 +28,6 @@ public class FirstNonRepeatingUsingForLoop {
 				break;
 			}
 		}
-
 		return index;
 	}
 

@@ -1,6 +1,6 @@
 package com.manish.javadev.geeks.array;
 
-public class FindSubArrayOfNumber {
+public class FindSubArrayOfNumberWhoesSumZero {
 	public static void main(String[] args) {
 		printSubArrayOfRequiredSum();
 	}

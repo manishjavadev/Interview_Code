@@ -21,9 +21,9 @@ import java.util.Arrays;
  * @author kmamani
  *
  */
-public class RemoveDuplicate {
+public class RemoveDuplicate1 {
 	public static void main(String[] args) {
-		RemoveDuplicate rd = new RemoveDuplicate();
+		RemoveDuplicate1 rd = new RemoveDuplicate1();
 		String str = "geeksforgeeks";
 		char[] removeDuplicateChar = rd.removeDuplicateChar(str);
 		System.out.println(Arrays.toString(removeDuplicateChar));

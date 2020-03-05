@@ -7,7 +7,7 @@ import java.util.Set;
  * @author m.d.srivastava
  *
  */
-public class RemoveDuplicatePrime {
+public class RemoveDuplicatePrimeUsingHashSet {
 
 	public static void main(String[] args) {
 		int arr[] = { 3, 2, 5, 7, 13, 11, 5, 13, 29, 13 };

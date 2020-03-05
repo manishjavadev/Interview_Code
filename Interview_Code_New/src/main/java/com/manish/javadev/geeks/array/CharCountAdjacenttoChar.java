@@ -25,5 +25,4 @@ public class CharCountAdjacenttoChar {
 		}
 		System.out.println(ch = finalResult.toCharArray());
 	}
-
 }

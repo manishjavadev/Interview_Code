@@ -24,11 +24,12 @@ public class FindDuplicateWithONTime {
 		int numRay[] = { 0, 4, 3, 2, 7, 8, 2, 3, 1 };
 
 		for (int i = 0; i < numRay.length; i++) {
-			numRay[numRay[i] % 10] = numRay[numRay[i] % 10] + 10;
+			int index = numRay[i] % 10;
+			numRay[index] = numRay[index] + 10;
 		}
 		System.out.println("The repeating elements are : ");
 		for (int i = 0; i < numRay.length; i++) {
-			if (numRay[i] > 19) {
+			if (numRay[i]/10 > 1) {
 				System.out.println(i + " ");
 			}
 		}
