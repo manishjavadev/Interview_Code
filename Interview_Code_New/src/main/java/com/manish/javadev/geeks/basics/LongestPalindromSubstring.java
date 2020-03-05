@@ -24,6 +24,7 @@ public class LongestPalindromSubstring {
 	static int longestPalSubstr(String str) {
 		// str = "AXXA";
 		int maxLength = 1; // The result (length of LPS)
+		int crrLength = 0;
 
 		int start = 0;
 		int len = str.length();
@@ -38,7 +39,7 @@ public class LongestPalindromSubstring {
 			low = i;
 			high = i + 1;
 			while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
-				int crrLength = high - low + 1;
+				crrLength = high - low + 1;
 				if (crrLength > maxLength) {
 					start = low;
 					maxLength = crrLength;
@@ -52,7 +53,7 @@ public class LongestPalindromSubstring {
 			low = i;
 			high = i + 2;
 			while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
-				int crrLength = high - low + 1;
+				crrLength = high - low + 1;
 				if (crrLength > maxLength) {
 					start = low;
 					maxLength = crrLength;

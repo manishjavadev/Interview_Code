@@ -41,7 +41,7 @@ public class FindMinimumOfStackByUsingRefStack {
 
 		// If t < minEle means minEle stores
 		// value of t.
-		if (t < refstack.peek())
+		if (t == refstack.peek())
 			System.out.println(refstack.peek());
 		else
 			System.out.println(t);
