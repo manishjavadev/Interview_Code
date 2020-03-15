@@ -62,7 +62,6 @@ public class BSTInsertion {
 			try {
 				throw new Exception("IllegalArgumentException");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

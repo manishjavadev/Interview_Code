@@ -27,7 +27,6 @@ public class CabService implements Runnable {
 			}
 			System.out.println(Thread.currentThread().getName() + "  .." + "is going to board the cab");
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 	}
 

@@ -45,7 +45,6 @@ public class DisplayMatrix {
 	private static int findDuplicate(String[][] matrix1) {
 		int counter = 0;
 		List list = new ArrayList();
-		// TODO Auto-generated method stub
 		for (int i = 0; i < matrix1.length; i++) {
 			for (int j = 0; j < matrix1[i].length; j++) {
 				if (list.contains(matrix1[i][j]) && matrix1[i][j] != null) {

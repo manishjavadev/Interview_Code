@@ -14,7 +14,6 @@ public class CountDownLatchDemo {
 			countDownLatch.await();
 			System.out.println("Order is Processed successfuly and is ready to get dispatched");
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

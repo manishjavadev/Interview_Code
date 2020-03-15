@@ -13,7 +13,6 @@ public class DeadLockThread2 extends Thread {
 		try {
 			s2.test2(s1);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
