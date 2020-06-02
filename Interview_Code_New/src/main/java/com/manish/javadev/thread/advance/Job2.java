@@ -2,7 +2,6 @@ package com.manish.javadev.thread.advance;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 public class Job2 implements Runnable {
 	public int sum = 0;
