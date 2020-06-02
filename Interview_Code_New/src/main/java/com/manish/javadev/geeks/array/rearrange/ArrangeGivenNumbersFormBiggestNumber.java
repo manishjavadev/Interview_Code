@@ -49,7 +49,6 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 		Collections.sort(arr, new Comparator<String>() {
 			// A comparison function which is used by
 			// sort() in printLargest()
-			@Override
 			public int compare(String X, String Y) {
 
 				// first append Y at the end of X
@@ -63,8 +62,8 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 				// is greater
 
 				/**
-				 * If XY.compareTo(YX) return -1: XY placed before YX If
-				 * XY.compareTo(YX) return 1: XY placed After YX
+				 * If XY.compareTo(YX) return -1: XY placed before YX If XY.compareTo(YX) return
+				 * 1: XY placed After YX
 				 */
 				if (XY.compareTo(YX) > 0) {
 					return -1;
@@ -103,8 +102,8 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 
 		// output should be 998764543431
 		/*
-		 * arr.add("1"); arr.add("34"); arr.add("3"); arr.add("98");
-		 * arr.add("9"); arr.add("76"); arr.add("45"); arr.add("4");
+		 * arr.add("1"); arr.add("34"); arr.add("3"); arr.add("98"); arr.add("9");
+		 * arr.add("76"); arr.add("45"); arr.add("4");
 		 */
 	}
 }

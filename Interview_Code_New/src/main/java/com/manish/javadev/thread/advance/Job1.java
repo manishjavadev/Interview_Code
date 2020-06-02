@@ -1,6 +1,5 @@
 package com.manish.javadev.thread.advance;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class Job1 implements Runnable {
@@ -15,7 +14,7 @@ public class Job1 implements Runnable {
 		product = 2 * 3;
 		try {
 			barrier.await();
-		} catch (InterruptedException | BrokenBarrierException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

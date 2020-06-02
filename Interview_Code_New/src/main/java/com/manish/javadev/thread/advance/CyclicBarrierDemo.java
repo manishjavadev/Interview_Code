@@ -26,7 +26,7 @@ public class CyclicBarrierDemo {
 		try {
 			int await = brrier.await();
 			System.out.println("Number of Thread reached " + await);
-		} catch (InterruptedException | BrokenBarrierException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

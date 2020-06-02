@@ -7,7 +7,7 @@ import java.util.Map;
  * https://www.geeksforgeeks.org/longest-sub-array-sum-k/
  * 
  * Naive Approach: Consider the sum of all the sub-arrays and return the length
- * of the longest sub-array having sum ‘k’. Time Complexity is of O(n^2).
+ * of the longest sub-array having sum ï¿½kï¿½. Time Complexity is of O(n^2).
  * 
  * Efficient Approach: Following are the steps:
  * 
@@ -45,7 +45,7 @@ public class FindMaxSubArraySum {
 	public static void maxLengthSubArray(int[] arr, int keySum) {
 		// create an empty Hash Map to store ending index of first
 		// sub-array having some sum
-		Map<Integer, Integer> map = new HashMap<>();
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
 		// insert (0, -1) pair into the set to handle the case when
 		// sub-array with sum S starts from index 0

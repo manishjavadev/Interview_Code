@@ -1,6 +1,5 @@
 package com.manish.javadev.thread.advance;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -23,9 +22,7 @@ public class Job2 implements Runnable {
 			// number of parties waiting at the barrier
 			System.out.println(
 					"Number of parties waiting at the barrier " + "at this point = " + barrier.getNumberWaiting());
-		} catch (InterruptedException | BrokenBarrierException e) {
-			e.printStackTrace();
-		} catch (TimeoutException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
