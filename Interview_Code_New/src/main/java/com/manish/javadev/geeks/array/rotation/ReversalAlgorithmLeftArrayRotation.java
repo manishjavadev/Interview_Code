@@ -49,5 +49,4 @@ public class ReversalAlgorithmLeftArrayRotation {
 	static void printArray(int arr[]) {
 		System.out.println(Arrays.toString(arr));
 	}
-
 }

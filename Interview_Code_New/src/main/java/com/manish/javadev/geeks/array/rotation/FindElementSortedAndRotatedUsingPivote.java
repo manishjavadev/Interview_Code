@@ -31,9 +31,9 @@ public class FindElementSortedAndRotatedUsingPivote {
 	// main function
 	public static void main(String args[]) {
 		// Let us search 3 in below array
-		int arr[] = { 5, 6, 7, 8, 9, 10, 1, 2, 3 };
+		int arr[] = { 4, 5, 6, 7, 1, 2, 3 };
 		int n = arr.length;
-		int key = 8;
+		int key = 6;
 		System.out.println("Index of the element is : " + pivotedBinarySearch(arr, n, key));
 	}
 
@@ -49,15 +49,14 @@ public class FindElementSortedAndRotatedUsingPivote {
 			return binarySearch(arr, 0, n - 1, key);
 
 		/**
-		 * If we found a pivot, then first compare with pivot and then search in
-		 * two sub arrays around pivot
+		 * If we found a pivot, then first compare with pivot and then search in two sub
+		 * arrays around pivot
 		 */
 		if (arr[pivot] == key)
 			return pivot;
 		/**
-		 * This condition means that key belong to first sorted array( 0 to
-		 * pivot-1), need to check with zero only, otherwise less number in both
-		 * side of pivote
+		 * This condition means that key belong to first sorted array( 0 to pivot-1),
+		 * need to check with zero only, otherwise less number in both side of pivote
 		 */
 		if (arr[0] <= key)
 			return binarySearch(arr, 0, pivot - 1, key);
@@ -79,8 +78,7 @@ public class FindElementSortedAndRotatedUsingPivote {
 	/*
 	 * Pivote: means minimum element of array(index of 1) Pivote: means maximum
 	 * element of array(index of 6) implemented for minimum element of array
-	 * Function to get pivot. For array 3, 4, 5, 6, 1, 2 it returns 4 (index of
-	 * 1)
+	 * Function to get pivot. For array 3, 4, 5, 6, 1, 2 it returns 4 (index of 1)
 	 * 
 	 * Algorithm/Insights:
 	 * 
@@ -97,9 +95,9 @@ public class FindElementSortedAndRotatedUsingPivote {
 	 * 
 	 * b). If mid+1 is pivot, then break.
 	 * 
-	 * c). If array[start] <= array[mid], it means from start to mid, all
-	 * elements are in sorted order. Set start = mid+1, so that we look for
-	 * pivot in second half of the array.
+	 * c). If array[start] <= array[mid], it means from start to mid, all elements
+	 * are in sorted order. Set start = mid+1, so that we look for pivot in second
+	 * half of the array.
 	 * 
 	 * d). Else set end = mid-1, to look for pivot in first half.
 	 */

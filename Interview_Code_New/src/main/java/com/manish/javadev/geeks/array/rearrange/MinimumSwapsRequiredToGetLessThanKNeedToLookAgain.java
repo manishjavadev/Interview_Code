@@ -13,16 +13,16 @@ package com.manish.javadev.geeks.array.rearrange;
  * 
  * ####################################################################### A
  * simple solution is to first count all elements less than or equals to k(say
- * ‘good’). Now traverse for every sub-array and swap those elements whose value
+ * ï¿½goodï¿½). Now traverse for every sub-array and swap those elements whose value
  * is greater than k. Time complexity of this approach is O(n2)
  * 
  * A simple approach is to use two pointer technique and sliding window.
  * 
- * Find count of all elements which are less than or equals to ‘k’. Let’s say
- * the count is ‘cnt’ Using two pointer technique for window of length ‘cnt’,
- * each time keep track of how many elements in this range are greater than ‘k’.
- * Let’s say the total count is ‘bad’. Repeat step 2, for every window of length
- * ‘cnt’ and take minimum of count ‘bad’ among them. This will be the final
+ * Find count of all elements which are less than or equals to ï¿½kï¿½. Letï¿½s say
+ * the count is ï¿½cntï¿½ Using two pointer technique for window of length ï¿½cntï¿½,
+ * each time keep track of how many elements in this range are greater than ï¿½kï¿½.
+ * Letï¿½s say the total count is ï¿½badï¿½. Repeat step 2, for every window of length
+ * ï¿½cntï¿½ and take minimum of count ï¿½badï¿½ among them. This will be the final
  * answer.
  * 
  * @author kmamani
@@ -36,11 +36,13 @@ public class MinimumSwapsRequiredToGetLessThanKNeedToLookAgain {
 		 * 
 		 * System.out.print(minSwap(arr, n, k) + "\n");
 		 */
-		int arr[] = {2, 1, 5, 6, 3};
-		int n = arr.length;
-		int k = 3;
+		// int arr[] = {2, 1, 5, 6, 3};
+		// int n = arr.length;
+		// int k = 3;
 
-		// int arr1[] = { 2, 7, 9, 5, 8, 7, 4 };
+		int arr[] = { 2, 7, 9, 5, 8, 7, 4 };
+		int n = arr.length;
+		int k = 5;
 		// int arr2[] = { 7, 9, 8, 13, 5, 4, 3, 2 };
 		// int arr2[] = { 7, 9, 5, 8, 4, 13, 2 };
 		// int n = arr2.length;

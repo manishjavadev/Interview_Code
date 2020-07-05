@@ -18,7 +18,7 @@ package com.manish.javadev.geeks.array.rearrange;
 public class MaximumAndMinimumBestLogic {
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 		System.out.println("Original Array");
 		for (int i = 0; i < arr.length; i++)
@@ -42,24 +42,24 @@ public class MaximumAndMinimumBestLogic {
 		int min_idx = 0;
 
 		// store maximum element of array
-		int mv = arr[arr.length - 1] + 1;
+		int mv = arr[arr.length - 1] + 10;
 
 		// traverse array elements
 		for (int i = 0; i < n; i++) {
 			// at even index : we have to put
 			// maximum elemlent
 			if (i % 2 == 0) {
-				arr[i] += (arr[max_idx] % 100) * 100;
+				arr[i] += (arr[max_idx] % mv) * mv;
 				max_idx--;
 			}
 			// at odd index : we have to put minimum element
 			else {
-				arr[i] += (arr[min_idx] % 100) * 100;
+				arr[i] += (arr[min_idx] % mv) * mv;
 				min_idx++;
 			}
 		}
 		// array elements back to it's original form
 		for (int i = 0; i < n; i++)
-			arr[i] = arr[i] / 100;
+			arr[i] = arr[i] / mv;
 	}
 }

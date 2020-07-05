@@ -36,11 +36,11 @@ public class PairWithGivenSumInSortedRotated {
 		// int i = findPivotOrderOfN(arr, n);
 		int i = findPivotUsingBinarySearch(arr, 0, arr.length - 1);
 
-		int l = (i + 1) % n; // l is now index of
-								// smallest element
+		// r is now index of largest element
+		int r = i;
 
-		int r = i; // r is now index of largest
-					// element
+		// smallest element
+		int l = (i + 1) % n; // l is now index of
 
 		// Keep moving either l or r till they meet
 		while (l != r) {

@@ -36,26 +36,27 @@ package com.manish.javadev.geeks.array.rotation;
  */
 public class MaximumSumOfICrossAOfIMethod2 {
 	public static void main(String[] args) {
-		int arr[] = { 8, 3, 1, 2 };
+		int arr[] = { 10, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		// Output : Max sum is 330
 		int n = arr.length;
 		System.out.println(maxSum(arr, n));
 	}
 
 	static int maxSum(int arr[], int n) {
 		int arrSum = 0;
-		int arrValue = 0;
+		int currVal = 0;
 		int result = 0;
 		for (int i = 0; i < n; i++) {
 			arrSum += arr[i];
-			arrValue += i * arr[i];
+			currVal += i * arr[i];
 		}
 		/**
-		 * Compute values for other iterations Compute next value using previous
-		 * value in O(1) time
+		 * Compute values for other iterations Compute next value using previous value
+		 * in O(1) time
 		 */
 		for (int i = 1; i < n; i++) {
-			arrValue = arrValue - (arrSum - arr[i - 1]) + (n - 1) * arr[i - 1];
-			result = Math.max(result, arrValue);
+			currVal = currVal + arrSum - n * arr[n - i];
+			result = Math.max(result, currVal);
 		}
 
 		return result;

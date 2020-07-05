@@ -2,12 +2,18 @@ package com.manish.javadev.geeks.array.rearrange;
 
 import java.util.Arrays;
 
+/**
+ * https://www.geeksforgeeks.org/rearrange-array-alternating-positive-negative-items-o1-extra-space/
+ * 
+ * @author kmamani
+ *
+ */
 public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 
 	public static void main(String[] args) {
 		AlternatingPositiveAndNegativeWithO1ExtraSpace rearrange = new AlternatingPositiveAndNegativeWithO1ExtraSpace();
-		// int arr[n] = {-5, 3, 4, 5, -6, -2, 8, 9, -1, -4};
-		int arr[] = { -5, -3, -4, -5, -6, -2, 8, 9, -1, 4 };
+		int arr[] = { -5, 3, 4, 5, -6, -2, 8, 9, -1, -4 };
+		// int arr[] = { -5, -3, -4, -5, -6, -2, 8, 9, -1, 4 };
 		// int arr[] = {5, 3, 4, -2, -1, -2 , -8, -9, -1 , -4};
 		// int arr[] = {-5, 3, -4, -7, -1, -2 , -8, -9, 1 , -4};
 		// int arr[] = { -5, -2, 5, 2, 4, 7, 1, 8, 0, -8 };
@@ -34,33 +40,32 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 		int bad = -1;
 		for (int i = 0; i < arr.length; i++) {
 			if (bad >= 0) {
-				// find the item which must be moved into the out-of-place
-				// entry if out-of-place entry is positive and current
-				// entry is negative OR if out-of-place entry is negative
-				// and current entry is negative then right rotate
-				//
-				// [...-3, -4, -5, 6...] --> [...6, -3, -4, -5...]
-				// ^ ^
-				// | |
-				// outofplace --> outofplace
-				//
-				if (((arr[i] >= 0) && (arr[bad] < 0)) || ((arr[i] < 0) && (arr[bad] >= 0))) {
+
+				/**
+				 * Find bad Position, If arr[i] is greater than 0 then arr[bad] should be < 0
+				 * arr[i] >= 0 && arr[bad] < 0 OR If arr[i] is < 0 than then arr[bad] should be
+				 * > 0 || arr[i] < 0 && arr[bad] >= 0
+				 */
+				if (arr[i] >= 0 && arr[bad] < 0 || arr[i] < 0 && arr[bad] >= 0) {
 					rightrotate(arr, bad, i);
 
 					// the new out-of-place entry is now 2 steps ahead
-					if (i - bad > 2)
+					if (i - bad > 2) {
 						bad = bad + 2;
-					else
+					} else {
+						// We don't know how much need to move bad now so better start from beginning
 						bad = -1;
+					}
 				}
 			}
 
-			// if no entry has been flagged out-of-place
-			// check if current entry is out-of-place
-			// if (((arr[index] >= 0) && ((index & 0x01) == 0)) ||
-			// ((arr[index] < 0) && (index & 0x01) == 1))
+			/**
+			 * Find bad Position, means even position should not be +ve, if its positive
+			 * means bad position. odd position should not be -ve, if its a negative means
+			 * bad position.
+			 */
 			if (bad == -1) {
-				if (((arr[i] > 0) && (i % 2) == 0) || ((arr[i] < 0) && ((i % 2) != 0))) {
+				if (arr[i] >= 0 && i % 2 == 0 || arr[i] < 0 && i % 2 != 0) {
 					bad = i;
 				}
 			}
