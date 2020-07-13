@@ -30,12 +30,13 @@ public class DeletingNode {
 	public Entity deleteGivenKey(Entity root, int data) {
 		Entity prev = null, front;
 		front = root;
-		if (front != null && front.data == data) {
-			return front.next;
-		}
+
 		while (front != null && front.data != data) {
 			prev = front;
 			front = front.next;
+		}
+		if (prev == null) {
+			return root.next;
 		}
 		if (front == null) {
 			return null;
@@ -78,8 +79,8 @@ public class DeletingNode {
 		root = deletingNode.deleteAtEnd(DefaultLinkedList.getDefaultLinkedList());
 		display(root);
 
-		System.out.println("\nDelete at 0 position");
-		root = deletingNode.deleteAtParticularPosition(DefaultLinkedList.getDefaultLinkedList(), 0);
+		System.out.println("\nDelete at 1 position");
+		root = deletingNode.deleteAtParticularPosition(DefaultLinkedList.getDefaultLinkedList(), 1);
 		display(root);
 
 		System.out.println("\nDelete at 3 position");
@@ -95,7 +96,7 @@ public class DeletingNode {
 		display(root);
 
 		System.out.println("\nDelete particular key like 20");
-		root = deletingNode.deleteGivenKey(DefaultLinkedList.getDefaultLinkedList(), 20);
+		root = deletingNode.deleteGivenKey(DefaultLinkedList.getDefaultLinkedList(), 10);
 		display(root);
 
 	}

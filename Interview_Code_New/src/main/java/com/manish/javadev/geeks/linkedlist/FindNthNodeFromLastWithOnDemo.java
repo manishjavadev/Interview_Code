@@ -25,15 +25,14 @@ public class FindNthNodeFromLastWithOnDemo {
 		} else {
 			System.out.println("May be root is empty or nth node 0");
 		}
-
 	}
 
 	private static Entity getNthNodeFromLast(Entity root, int nth) {
 		Entity frontRef = root;
 		Entity front = root;
 		if (root == null && nth < 1) {
-			return null;
-		}
+			return null;		}
+		// Traverse from start
 		for (int i = 0; front != null && i < nth; i++) {
 			front = front.next;
 		}

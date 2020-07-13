@@ -12,21 +12,19 @@ public class LevelOrderTraversal {
 	}
 
 	void doLevelOrderTraversal(BSTNode root) {
-		if (root == null){
+		Queue<BSTNode> pq = new LinkedList<BSTNode>();
+		pq.add(root);
+		if (root == null) {
 			return;
 		}
-		else {
-			Queue<BSTNode> pq = new LinkedList<BSTNode>();
-			pq.add(root);
-			while (!pq.isEmpty()) {
-				root = pq.poll();
-				System.out.print(root.data + "\t");
-				if (root.left != null) {
-					pq.add(root.left);
-				}
-				if (root.right != null) {
-					pq.add(root.right);
-				}
+		while (!pq.isEmpty()) {
+			root = pq.poll();
+			System.out.print(root.data + "\t");
+			if (root.left != null) {
+				pq.add(root.left);
+			}
+			if (root.right != null) {
+				pq.add(root.right);
 			}
 		}
 	}

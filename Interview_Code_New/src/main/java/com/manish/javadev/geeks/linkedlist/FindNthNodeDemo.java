@@ -6,7 +6,7 @@ public class FindNthNodeDemo {
 	public static void main(String[] args) {
 		FindNthNodeDemo fnd = new FindNthNodeDemo();
 		// fnd.displayNodes();
-		Entity entity = fnd.getNthNode(8);
+		Entity entity = fnd.getNthNode(3);
 		if (entity == null) {
 			System.out.println("Linked List is smaller than searching node");
 		} else {

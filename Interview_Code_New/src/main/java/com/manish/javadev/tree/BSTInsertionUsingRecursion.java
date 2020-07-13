@@ -10,6 +10,7 @@ public class BSTInsertionUsingRecursion {
 		root = tree.insertWithRecurtion(root, 30);
 		root = tree.insertWithRecurtion(root, 10);
 		root = tree.insertWithRecurtion(root, 5);
+		
 
 		tree.display(root);
 	}

@@ -3,7 +3,11 @@ package com.manish.javadev.tree;
 /**
  * For example, in the below tree, 40, 50 & 80 are at distance 2 from root.
  * 
- * 10 / \ 20 30 / \ / 40 50 80
+ * 		 10 
+ *     / 	\ 
+ *    20	30 
+ *   / \    / 
+ *  40 50 80
  * 
  * @author kmamani
  *
