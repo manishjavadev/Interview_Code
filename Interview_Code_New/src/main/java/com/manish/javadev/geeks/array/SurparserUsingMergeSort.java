@@ -36,21 +36,20 @@ import java.util.HashMap;
  * 
  * Input: [2, 07, 5, 3, 0, 8, 1] Output: [4, 1, 1, 1, 2, 0, 0]
  * 
+ * Given array is 2 7 5 3 0 8 1
+ * 
+ * Ouput array is 4 1 1 1 2 0 0
+ * 
  * @author m.d.srivastava
  * 
  */
 public class SurparserUsingMergeSort {
-	// static int arr[] = { 1, 20, 6, 4, 5 };
-	// static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
-	// static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
-	// static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
-	// static int arrRef[] = { 2, 7, 5, 3, 0, 8, 1 };
-
-	// static int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
-	// static int arrRef[] = { 2, 7, 5, 3, 0, 8, 1 };
-
-	static int arr[] = { 2, 7, 5, 3 };
-	static int arrRef[] = { 2, 7, 5, 3 };
+	static int arr[] = { 4, 6, 3, 9, 7, 10 };
+	static int arrRef[] = { 4, 6, 3, 9, 7, 10 };
+	/*
+	 * static int arr[] = { 2, 7, 5, 3, 0, 8, 1 }; static int arrRef[] = { 2, 7, 5,
+	 * 3, 0, 8, 1 };
+	 */
 
 	int temp[] = new int[arr.length];
 	static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -96,33 +95,23 @@ public class SurparserUsingMergeSort {
 				temp[k++] = temArr[j++];
 				inversionCounter++;
 			} else {
-				if (map.containsKey(temArr[i])) {
-					map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
-
-				} else {
-					map.put(temArr[i], inversionCounter);
-				}
+				map.put(arr[i], map.getOrDefault(arr[i], 0) + inversionCounter);
 				temp[k++] = temArr[i++];
 			}
 		}
 
+		// copy remaining elements
 		while (i <= mid) {
-			if (map.containsKey(temArr[i])) {
-				map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
-
-			} else {
-				map.put(temArr[i], inversionCounter);
-			}
+			map.put(arr[i], map.getOrDefault(arr[i], 0) + inversionCounter);
 			temp[k++] = temArr[i++];
 		}
+
+		// copy second half
 		while (j <= high) {
-			if (map.containsKey(temArr[i])) {
-				map.put(temArr[i], map.get(temArr[i]) + inversionCounter);
-			} else {
-				map.put(temArr[i], inversionCounter);
-			}
 			temp[k++] = temArr[j++];
 		}
+
+		// copy back to the original array to reflect sorted order
 		for (i = low; i <= high; i++) {
 			temArr[i] = temp[i];
 		}

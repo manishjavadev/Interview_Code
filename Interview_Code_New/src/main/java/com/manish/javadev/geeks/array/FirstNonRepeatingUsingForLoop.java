@@ -14,8 +14,8 @@ public class FirstNonRepeatingUsingForLoop {
 	}
 
 	/*
-	 * The method returns index of first non-repeating character in a string. If
-	 * all characters are repeating then returns -1
+	 * The method returns index of first non-repeating character in a string. If all
+	 * characters are repeating then returns -1
 	 */
 	static int firstNonRepeating(String str) {
 		getCharCountArray(str);
@@ -23,7 +23,7 @@ public class FirstNonRepeatingUsingForLoop {
 
 		for (i = 0; i < str.length(); i++) {
 			System.out.println(count[str.charAt(i)]);
-			if (count[str.charAt(i)] == 1) {
+			if (count[str.charAt(i)] > 1) {
 				index = i;
 				break;
 			}
@@ -33,7 +33,7 @@ public class FirstNonRepeatingUsingForLoop {
 
 	// Driver method
 	public static void main(String[] args) {
-		String str = "geeksforgeeks";
+		String str = "kgeeksforkgeeks";
 		int index = firstNonRepeating(str);
 
 		System.out.println(index == -1 ? "Either all characters are repeating or string " + "is empty"

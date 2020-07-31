@@ -39,14 +39,14 @@ public class FindFirstRepeatCharWithOrderOfN {
 			} else if (hash[k] == 1) {
 				hash[k]++;
 			}
-
 		}
 
 		for (i = 0; i < MAX_CHAR; i++) {
 			if (hash[i] == 2) {
-				if (p > pos[i]) {
+				if (p == -1) // base case
 					p = pos[i];
-				}
+				else if (p > pos[i])
+					p = pos[i];
 			}
 		}
 		return p;
