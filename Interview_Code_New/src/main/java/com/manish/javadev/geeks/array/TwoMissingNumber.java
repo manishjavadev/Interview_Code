@@ -84,12 +84,12 @@ public class TwoMissingNumber {
 		// Find average of two elements
 		int avg = (sum / 2);
 
-		int sumSmallerHalf = 0, sumGreaterHalf = 0;
+		int sumFirstHalf = 0, sumSecondHalf = 0;
 		for (int i = 0; i < n - 2; i++) {
 			if (arr[i] <= avg)
-				sumSmallerHalf += arr[i];
+				sumFirstHalf += arr[i];
 			else
-				sumGreaterHalf += arr[i];
+				sumSecondHalf += arr[i];
 		}
 
 		// The first (smaller) element = (sum of natural
@@ -97,13 +97,13 @@ public class TwoMissingNumber {
 		// smaller than or equal to avg)
 		int totalSumOfFirstHalf = (avg * (avg + 1)) / 2;
 		System.out.println("First Number");
-		System.out.println(totalSumOfFirstHalf - sumSmallerHalf);
+		System.out.println(totalSumOfFirstHalf - sumFirstHalf);
 
 		// The first (smaller) element = (sum of natural
 		// numbers from avg+1 to n) - (sum of array elements
 		// greater than avg)
 		System.out.println("Second Number");
-		System.out.println((((n * (n + 1)) / 2) - totalSumOfFirstHalf) - sumGreaterHalf);
+		System.out.println((((n * (n + 1)) / 2) - totalSumOfFirstHalf) - sumSecondHalf);
 	}
 
 	private static int getSum(int arr[]) {

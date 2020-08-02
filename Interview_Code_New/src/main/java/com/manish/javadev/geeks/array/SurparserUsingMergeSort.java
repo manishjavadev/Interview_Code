@@ -21,24 +21,22 @@ import java.util.HashMap;
  * 
  * ================================================================
  * 
- * Method 2 Merge Sort ==================== For any element of the array, we can
- * easily find out number of elements to the right that are greater than that
- * element if we know number of elements to its right that are less than that
- * element. The idea is to count the number of inversions for each element of
- * the array using merge sort. So, surpasser count of an element at position i
- * will be equal to â€œn â€“ i â€“ inversion-countâ€� at that position where n
- * is the size of the array. We have already discussed how to find inversion
- * count of complete array here. We have modified the discussed approach to find
- * number of inversions for each element of the array instead of returning
- * inversion count of whole array. Also, as all elements of the array are
- * distinct, we maintain a map that stores inversion count for each element of
- * the array.
+ * Method 2 (Uses Merge Sort) For any element of the array, we can easily find
+ * out number of elements to the right that are greater than that element if we
+ * know number of elements to its right that are less than that element. The
+ * idea is to count the number of inversions for each element of the array using
+ * merge sort. So, surpasser count of an element at position i will be equal to
+ * “n – i – inversion-count” at that position where n is the size of the array.
  * 
- * Input: [2, 07, 5, 3, 0, 8, 1] Output: [4, 1, 1, 1, 2, 0, 0]
+ * We have already discussed how to find inversion count of complete array here.
+ * We have modified the discussed approach to find number of inversions for each
+ * element of the array instead of returning inversion count of whole array.
+ * Also, as all elements of the array are distinct, we maintain a map that
+ * stores inversion count for each element of the array.
  * 
- * Given array is 2 7 5 3 0 8 1
+ * Input: [2, 7, 5, 3, 0, 8, 1] Output: [4, 1, 1, 1, 2, 0, 0]
  * 
- * Ouput array is 4 1 1 1 2 0 0
+ * Input: [4, 6, 3, 9, 7, 10] Output: [4, 3, 3, 1, 1, 0]
  * 
  * @author m.d.srivastava
  * 
@@ -59,14 +57,9 @@ public class SurparserUsingMergeSort {
 		ms.doSorting();
 		System.out.println(Arrays.toString(arr));
 		System.out.println(Arrays.toString(arrRef));
-		int n = arr.length;
+		int n = arr.length - 1;
 		for (int i = 0; i < arrRef.length; i++) {
-			int tempresult = ((arrRef.length - 1) - i);
-			Integer mapdata = map.get(arrRef[i]);
-			if (null == mapdata) {
-				mapdata = 0;
-			}
-			System.out.println("Surparser Count of " + arrRef[i] + " is " + (tempresult - mapdata));
+			System.out.print((n - i) - (map.get(arrRef[i]) != null ? map.get(arrRef[i]) : 0) + "  ");
 		}
 	}
 
@@ -76,7 +69,7 @@ public class SurparserUsingMergeSort {
 	}
 
 	private void merge_sort(int low, int high) {
-		if (low != high) {
+		if (low < high) {
 			int mid = (low + high) / 2;
 			merge_sort(low, mid);
 			merge_sort(mid + 1, high);
@@ -88,21 +81,21 @@ public class SurparserUsingMergeSort {
 		int i = low;
 		int j = mid + 1;
 		int k = low;
-		int inversionCounter = 0;
+		int inverCount = 0;
 
 		while ((i <= mid) && (j <= high)) {
 			if (temArr[i] >= temArr[j]) {
 				temp[k++] = temArr[j++];
-				inversionCounter++;
+				inverCount++;
 			} else {
-				map.put(arr[i], map.getOrDefault(arr[i], 0) + inversionCounter);
+				map.put(arr[i], map.getOrDefault(arr[i], 0) + inverCount);
 				temp[k++] = temArr[i++];
 			}
 		}
 
 		// copy remaining elements
 		while (i <= mid) {
-			map.put(arr[i], map.getOrDefault(arr[i], 0) + inversionCounter);
+			map.put(arr[i], map.getOrDefault(arr[i], 0) + inverCount);
 			temp[k++] = temArr[i++];
 		}
 
