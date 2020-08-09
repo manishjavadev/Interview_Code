@@ -21,15 +21,15 @@ package com.manish.javadev.geeks.array;
  */
 public class FindDuplicateWithONTime {
 	public static void main(String args[]) {
-		int numRay[] = { 0, 4, 3, 2, 7, 8, 2, 3, 1 };
+		int arr[] = { 0, 4, 3, 2, 7, 8, 2, 3, 1 };
 
-		for (int i = 0; i < numRay.length; i++) {
-			int index = numRay[i] % 10;
-			numRay[index] = numRay[index] + 10;
+		for (int i = 0; i < arr.length; i++) {
+			int index = arr[i] % 10;
+			arr[index] = arr[index] + 10;
 		}
 		System.out.println("The repeating elements are : ");
-		for (int i = 0; i < numRay.length; i++) {
-			if (numRay[i]/10 > 1) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i]/10 > 1) {
 				System.out.println(i + " ");
 			}
 		}

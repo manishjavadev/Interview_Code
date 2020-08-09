@@ -1,5 +1,7 @@
 package com.manish.javadev.array;
 
+import java.util.Arrays;
+
 /**
  * @author Manish
  *
@@ -11,24 +13,19 @@ package com.manish.javadev.array;
  */
 public class SortStringOfArray {
 	public static void main(String[] args) {
-		String str[] = { "Manish", "Ashish", "Ravi", "Java", "Technology" };
+		String[] myArray = { "BB", "HH", "AA", "JJ", "NN", "MM" };
+		int size = myArray.length;
 
-		sortStringArray(str, 0, str.length - 1);
-
-		for (int i = 0; i < str.length; i++) {
-			System.out.print(str[i] + "\t");
-		}
-		System.out.println("\nDone");
-	}
-
-	private static void sortStringArray(String[] str, int low, int high) {
-		if (low < high) {
-			if ((str[low].compareTo(str[high]) > 0)) {
-				String temp = str[low];
-				str[low] = str[high];
-				str[high] = temp;
+		for (int i = 0; i < size - 1; i++) {
+			for (int j = i + 1; j < myArray.length; j++) {
+				if (myArray[i].compareTo(myArray[j]) > 0) {
+					String temp = myArray[i];
+					myArray[i] = myArray[j];
+					myArray[j] = temp;
+				}
 			}
-			sortStringArray(str, ++low, --high);
 		}
+		System.out.println(Arrays.toString(myArray));
+		System.out.println("\nDone");
 	}
 }

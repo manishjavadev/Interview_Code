@@ -75,7 +75,6 @@ public class AddElementsofTwoGivenArrays {
 				split(sum);
 			}
 		}
-
 	}
 
 	private static void split(int sum) {
@@ -86,6 +85,5 @@ public class AddElementsofTwoGivenArrays {
 		}
 		Collections.reverse(reverseOut);
 		output.addAll(reverseOut);
-
 	}
 }

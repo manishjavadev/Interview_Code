@@ -15,11 +15,7 @@ public class CharCountUsingForLoopAndMap {
 
 	private void getDuplicateCount(char[] ch) {
 		for (int low = 0; low < ch.length; low++) {
-			if (map.containsKey(arr[low])) {
-				map.put(arr[low], map.get(arr[low]) + 1);
-			} else {
-				map.put(arr[low], 1);
-			}
+			map.put(arr[low], map.getOrDefault(arr[low], 0) + 1);
 		}
 	}
 }

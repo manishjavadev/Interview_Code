@@ -19,12 +19,7 @@ public class CharCountAdjacenttoCharUsingMap {
 
 	private void findFrequecncy(int low, int high) {
 		if (arr[low] == arr[high]) {
-			if (map.containsKey(arr[low])) {
-				map.put(arr[low], map.get(arr[low]) + 1);
-			} else {
-				map.put(arr[low], 1);
-			}
-
+			map.put(arr[low], map.getOrDefault(arr[low], 0) + 1);
 		} else {
 			int mid = (low + high) / 2;
 			findFrequecncy(low, mid);
