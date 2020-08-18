@@ -10,7 +10,7 @@ package com.manish.javadev.geeks.array;
 public class ArrayisSubarrayofAnotherArray {
 	public static void main(String[] args) {
 		int arr1[] = { 2, 3, 0, 5, 1, 1, 2 };
-		int arr2[] = { 3, 0, 5, 2 };
+		int arr2[] = { 3, 0, 5, 1 };
 		if (isSubArray(arr1, arr2))
 			System.out.println("YES\n");
 		else
@@ -20,7 +20,9 @@ public class ArrayisSubarrayofAnotherArray {
 	private static boolean isSubArray(int[] arr1, int[] arr2) {
 		int i = 0, j = 0;
 		while (i < arr1.length && j < arr2.length) {
-			if (arr1[i++] == arr2[j++]) {
+			if (arr1[i] == arr2[j]) {
+				i++;
+				j++;
 				if (j == arr2.length) {
 					return true;
 				}

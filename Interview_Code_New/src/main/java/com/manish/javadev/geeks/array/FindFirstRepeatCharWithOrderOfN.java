@@ -52,6 +52,28 @@ public class FindFirstRepeatCharWithOrderOfN {
 		return p;
 	}
 
+	public static int findRepeatFirstWithOneForLoop(String s) {
+		// this is optimized method
+		int p = 0, i;
+
+		// initialized counts of occurrences of
+		// elements as zero
+		int MAX_CHAR = 256;
+		int hash[] = new int[MAX_CHAR];
+
+		for (i = 0; i < s.length(); i++) {
+			hash[s.charAt(i)]++;
+		}
+
+		for (i = 0; i < s.length(); i++) {
+			if (hash[s.charAt(i)] == 2) {
+				p = s.charAt(i);
+				break;
+			}
+		}
+		return p;
+	}
+
 	// Driver code
 	public static void main(String[] args) {
 		String str = "MNNRRM";
@@ -61,5 +83,11 @@ public class FindFirstRepeatCharWithOrderOfN {
 			System.out.println("Not found");
 		else
 			System.out.println(str.charAt(pos));
+		System.out.println("==========");
+		pos = findRepeatFirstWithOneForLoop(str);
+		if (pos == -1)
+			System.out.println("Not found");
+		else
+			System.out.println((char) pos);
 	}
 }

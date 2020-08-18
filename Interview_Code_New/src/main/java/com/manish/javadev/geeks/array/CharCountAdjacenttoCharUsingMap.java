@@ -2,9 +2,15 @@ package com.manish.javadev.geeks.array;
 
 import java.util.HashMap;
 
+/**
+ * Logic need to correct it, as of now its not working as expected
+ * 
+ * @author kmamani
+ *
+ */
 public class CharCountAdjacenttoCharUsingMap {
 
-	char arr[] = { 'a', 'b', 'c', 'd', 'c', 'c', 'd', 'd', 'd' };
+	char arr[] = { 'a', 'a', 'b', 'b', 'c', 'd', 'c', 'c', 'd', 'd', 'd' };
 	static HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
 	public static void main(String[] args) {

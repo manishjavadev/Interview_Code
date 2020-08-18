@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class CharCountUsingForLoopAndMap {
 
-	static char arr[] = { 'a', 'b', 'c', 'd', 'c', 'c', 'd', 'd', 'd' };
+	static char arr[] = { 'a', 'b', 'c', 'd', 'c', 'a', 'c', 'd', 'd', 'b', 'd' };
 	static HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
 	public static void main(String[] args) {
