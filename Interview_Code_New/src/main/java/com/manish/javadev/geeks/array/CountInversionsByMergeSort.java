@@ -60,7 +60,7 @@ public class CountInversionsByMergeSort {
 		int k = low;
 		int countInversion = 0;
 		while ((i <= mid) && (j <= high)) {
-			if (arr[i] >= arr[j]) {
+			if (arr[i] > arr[j]) {
 				temp[k++] = arr[j++];
 				countInversion += (mid + 1) - i;
 			} else

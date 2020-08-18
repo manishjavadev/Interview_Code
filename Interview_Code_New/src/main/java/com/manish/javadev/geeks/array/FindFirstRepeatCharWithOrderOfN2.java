@@ -19,21 +19,21 @@ package com.manish.javadev.geeks.array;
  *
  */
 public class FindFirstRepeatCharWithOrderOfN2 {
-	public static int findRepeatFirst(String s) {
+	public static int findRepeatFirst(String str) {
 		// this is optimized method
 		int p = 0;
 
 		int MAX_CHAR = 256;
 		int hash[] = new int[MAX_CHAR];
 
-		for (int i = 0; i < s.length(); i++) {
-			hash[s.charAt(i)]++;
+		for (int i = 0; i < str.length(); i++) {
+			hash[str.charAt(i)]++;
 		}
 
-		for (int i = 0; i < s.length(); i++) {
-			if (hash[s.charAt(i)] == 2) {
+		for (int i = 0; i < str.length(); i++) {
+			if (hash[str.charAt(i)] == 2) {
 				p = i;
-				System.out.println("First reapeted Char " + s.charAt(i));
+				System.out.println("First reapeted Char " + str.charAt(i));
 				break;
 			}
 		}
