@@ -8,7 +8,7 @@ import java.util.List;
  * @author m.d.srivastava
  * 
  */
-public class RemoveDuplicatePrimeWithMergeSort {
+public class RemoveDuplicatePrimeWithOrderOfN {
 	static int arr[] = { 3, 2, 5, 7, 13, 11, 5, 13, 29, 13 };
 	static int temp[] = new int[arr.length];
 
@@ -40,15 +40,5 @@ public class RemoveDuplicatePrimeWithMergeSort {
 			}
 		}
 		return list;
-	}
-
-	private static void doMergeSort(int low, int high) {
-
-		if (low != high) {
-			int mid = (low + high) / 2;
-			doMergeSort(low, mid);
-			doMergeSort(mid + 1, high);
-			arr = ArrayHelper.mergePartOfArray(arr, temp, low, mid, high);
-		}
 	}
 }
