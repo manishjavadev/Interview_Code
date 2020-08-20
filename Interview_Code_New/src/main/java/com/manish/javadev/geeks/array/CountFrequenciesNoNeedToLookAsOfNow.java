@@ -78,8 +78,8 @@ package com.manish.javadev.geeks.array;
  * i = 0, arr[i] = 3, arr[] = {3, -1, -1, 2, 5} Since arr[i] > 0, find
  * elementIndex. elementIndex = arr[i] – 1 = 3 – 1 = 2 arr[elementIndex] or
  * arr[2] is -1 Since arr[elementIndex] is negative arr[elementIndex] =
- * arr[elementIndex] – 1 = -2 // 3 is seen 2 times so far arr[i] = 0 // 1 is
- * not seen so far i is incremented
+ * arr[elementIndex] – 1 = -2 // 3 is seen 2 times so far arr[i] = 0 // 1 is not
+ * seen so far i is incremented
  * 
  * i = 1, arr[i] = -1, arr[] = {0, -1, -2, 2, 5} Since arr[i] is negative,
  * increment i
@@ -90,8 +90,8 @@ package com.manish.javadev.geeks.array;
  * i = 3, arr[i] = 2, arr[] = {0, -1, -2, 2, 5} Since arr[i] > 0, we find
  * elementIndex. elementIndex = arr[i] – 1 = 2 – 1 = 1 arr[elementIndex] or
  * arr[1] is -1 Since arr[elementIndex] is negative arr[elementIndex] =
- * arr[elementIndex] – 1 = -2 // 2 is seen 2 times so far arr[i] = 0 // 4 is
- * not seen so far i is incremented
+ * arr[elementIndex] – 1 = -2 // 2 is seen 2 times so far arr[i] = 0 // 4 is not
+ * seen so far i is incremented
  * 
  * i = 4, arr[i] = 5, arr[] = {0, -2, -2, 0, 5} Since arr[i] > 0, we find
  * elementIndex. elementIndex = arr[i] – 1 = 5 – 1 = 4 arr[elementIndex] or
@@ -105,10 +105,12 @@ package com.manish.javadev.geeks.array;
  * @author m.d.srivastava
  *
  */
-public class CountFrequencies {
-	// Function to find counts of all elements present in
-	// arr[0..n-1]. The array elements must be range from
-	// 1 to n
+
+public class CountFrequenciesNoNeedToLookAsOfNow {
+	/*
+	 * Function to find counts of all elements present in arr[0..n-1]. The array
+	 * elements must be range from // 1 to n
+	 */
 	void findCounts(int arr[], int n) {
 		// Traverse all array elements
 		int i = 0;
@@ -151,7 +153,7 @@ public class CountFrequencies {
 	}
 
 	public static void main(String[] args) {
-		CountFrequencies count = new CountFrequencies();
+		CountFrequenciesNoNeedToLookAsOfNow count = new CountFrequenciesNoNeedToLookAsOfNow();
 		int arr[] = { 2, 3, 3, 2, 2, 5 };
 		count.findCounts(arr, arr.length);
 		/*
@@ -162,17 +164,17 @@ public class CountFrequencies {
 		 * int arr1[] = { 1 }; count.findCounts(arr1, arr1.length);
 		 * 
 		 * 
-		 * int arr2[] = { 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1 };
-		 * count.findCounts(arr2, arr2.length);
+		 * int arr2[] = { 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1 }; count.findCounts(arr2,
+		 * arr2.length);
 		 * 
-		 * int arr4[] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
-		 * count.findCounts(arr4, arr4.length);
+		 * int arr4[] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 }; count.findCounts(arr4,
+		 * arr4.length);
 		 * 
-		 * int arr5[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-		 * count.findCounts(arr5, arr5.length);
+		 * int arr5[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }; count.findCounts(arr5,
+		 * arr5.length);
 		 * 
-		 * int arr6[] = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-		 * count.findCounts(arr6, arr6.length);
+		 * int arr6[] = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 }; count.findCounts(arr6,
+		 * arr6.length);
 		 */
 	}
 }
