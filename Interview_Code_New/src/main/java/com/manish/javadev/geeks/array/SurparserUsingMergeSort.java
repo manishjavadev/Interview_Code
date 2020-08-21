@@ -57,9 +57,9 @@ public class SurparserUsingMergeSort {
 		ms.doSorting();
 		System.out.println(Arrays.toString(arr));
 		System.out.println(Arrays.toString(arrRef));
-		int n = arr.length - 1;
+		int len = arr.length - 1;
 		for (int i = 0; i < arrRef.length; i++) {
-			System.out.print((n - i) - (map.get(arrRef[i]) != null ? map.get(arrRef[i]) : 0) + "  ");
+			System.out.print((len - i) - (map.get(arrRef[i]) != null ? map.get(arrRef[i]) : 0) + "  ");
 		}
 	}
 
