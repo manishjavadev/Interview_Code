@@ -1,9 +1,9 @@
 package com.manish.javadev.geeks.array;
 
-public class MaxSurpasserNeedTounderstandMore {
+public class MaxSurpasserNeedToUnderstandMore {
 	int[] a, b, c, tmp;
 
-	private MaxSurpasserNeedTounderstandMore(int[] a) {
+	private MaxSurpasserNeedToUnderstandMore(int[] a) {
 		this.a = a;
 		this.b = new int[a.length];
 		this.c = new int[a.length];
@@ -14,7 +14,7 @@ public class MaxSurpasserNeedTounderstandMore {
 	}
 
 	public static int find(int[] a) {
-		return new MaxSurpasserNeedTounderstandMore(a).search();
+		return new MaxSurpasserNeedToUnderstandMore(a).search();
 	}
 
 	private int search() {
