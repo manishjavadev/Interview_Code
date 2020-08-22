@@ -56,7 +56,18 @@ public class MergeTwoSortedArrayWithO1ExtraSpace {
 			for (j = l1 - 2; ar2[i] < ar1[j] && j >= 0; j--) {
 				ar1[j + 1] = ar1[j];
 			}
-			// If there was a greater element
+			/**
+			 * j != l1 - 2:
+			 * 
+			 * This means at-least one element is there which is greater than current
+			 * element
+			 * 
+			 * 2nd condition:
+			 * 
+			 * if last is greater than current element, then need to perform below logic
+			 * 
+			 * assume your arr1 ={1, 3, 5, 7, 11} and your arr2 ={2, 4, 8}
+			 */
 			if (j != l1 - 2 || last > ar2[i]) {
 				ar1[j + 1] = ar2[i];
 				ar2[i] = last;
