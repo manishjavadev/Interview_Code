@@ -25,7 +25,7 @@ import java.util.Arrays;
 public class ArrayRotationByJugglingAlgorithm {
 	public static void main(String[] args) {
 		ArrayRotationByJugglingAlgorithm rotate = new ArrayRotationByJugglingAlgorithm();
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		// int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 		rotate.leftRotate(arr, 2, arr.length);
 		rotate.printArray(arr);

@@ -84,5 +84,4 @@ public class InversionCountUsingMergSort {
 		}
 		return inversionCounter;
 	}
-
 }
