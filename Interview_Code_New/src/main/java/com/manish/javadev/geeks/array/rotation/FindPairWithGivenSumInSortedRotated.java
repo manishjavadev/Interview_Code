@@ -22,7 +22,7 @@ public class FindPairWithGivenSumInSortedRotated {
 		int sum = 18;
 		int n = arr.length;
 
-		if (pairInSortedRotated(arr, n, sum))
+		if (findPairSumInSortedRotatedArray(arr, n, sum))
 			System.out.print("Array has two elements" + " with sum " + sum);
 		else
 			System.out.print("Array doesn't have two" + " elements with sum  " + sum);
@@ -30,7 +30,7 @@ public class FindPairWithGivenSumInSortedRotated {
 
 	// This function returns true if arr[0..n-1]
 	// has a pair with sum equals to x.
-	static boolean pairInSortedRotated(int arr[], int n, int x) {
+	static boolean findPairSumInSortedRotatedArray(int arr[], int n, int sum) {
 		// Find the pivot element
 
 		// int i = findPivotOrderOfN(arr, n);
@@ -46,12 +46,12 @@ public class FindPairWithGivenSumInSortedRotated {
 		while (l != r) {
 			// If we find a pair with sum x, we
 			// return true
-			if (arr[l] + arr[r] == x)
+			if (arr[l] + arr[r] == sum)
 				return true;
 
 			// If current pair sum is less, move
 			// to the higher sum
-			if (arr[l] + arr[r] < x)
+			if (arr[l] + arr[r] < sum)
 				l = (l + 1) % n;
 
 			else // Move to the lower sum side
