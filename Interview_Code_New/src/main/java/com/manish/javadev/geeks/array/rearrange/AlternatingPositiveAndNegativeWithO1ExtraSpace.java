@@ -65,7 +65,7 @@ public class AlternatingPositiveAndNegativeWithO1ExtraSpace {
 			 * bad position.
 			 */
 			if (bad == -1) {
-				if (arr[i] >= 0 && i % 2 == 0 || arr[i] < 0 && i % 2 != 0) {
+				if (arr[i] < 0 && i % 2 == 0 || arr[i] >= 0 && i % 2 != 0) {
 					bad = i;
 				}
 			}
