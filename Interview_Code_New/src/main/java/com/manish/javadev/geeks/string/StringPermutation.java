@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
+ * https://www.youtube.com/watch?v=nYFd7VHKyWQ
+ * 
  * @author m.d.srivastava
  *
  *         Generate all permutations of string in lexicographically sorted order
@@ -60,7 +62,7 @@ public class StringPermutation {
 
 	public static void main(String args[]) {
 		StringPermutation sp = new StringPermutation();
-		List<String> result = sp.permute("ABC".toCharArray());
+		List<String> result = sp.permute("AABC".toCharArray());
 		result.forEach(s -> System.out.println(s));
 	}
 }
