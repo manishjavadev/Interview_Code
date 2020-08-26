@@ -3,10 +3,10 @@ package com.manish.javadev.geeks.string;
 /**
  * https://www.youtube.com/watch?v=GuTPwotSdYw
  * 
+ * TEST ONLINE: https://www.careerbless.com/calculators/word/list.php
+ * 
  * @author m.d.srivastava
  *
- *         Generate all permutations of string in lexicographically sorted order
- *         where repetitions of character is possible in string.
  */
 public class StringPermutation1 {
 
