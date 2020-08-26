@@ -20,37 +20,36 @@ public class OddEvenSortNeedToFix {
 
 		while (!isSorted) {
 			isSorted = true;
-			// Perform Bubble sort on odd indexed element
-			for (int i = 1; i <= n - 2; i = i + 2) {
-				if (arr[i] > arr[i + 1]) {
-					isSorted = SwapData(arr, i);
-				}
-			}
-
 			// Perform Bubble sort on even indexed element
 			for (int i = 0; i <= n - 2; i = i + 2) {
 				if (arr[i] > arr[i + 1]) {
-					isSorted = SwapData(arr, i);
+					isSorted = swapData(arr, i);
 				}
 			}
+
+			// Perform Bubble sort on odd indexed element
+			for (int i = 1; i <= n - 2; i = i + 2) {
+				if (arr[i] > arr[i + 1]) {
+					isSorted = swapData(arr, i);
+				}
+			}
+
 		}
 
 		return;
 	}
 
-	private static boolean SwapData(int[] arr, int i) {
-		boolean isSorted;
+	private static boolean swapData(int[] arr, int i) {
 		int temp;
 		temp = arr[i];
 		arr[i] = arr[i + 1];
 		arr[i + 1] = temp;
-		isSorted = true;
-		return isSorted;
+		return false;
 	}
 
 	public static void main(String[] args) {
-		// int arr[] = { 34, 2, 10, -9 };
-		int arr[] = { 3, 2, 3, 8, 5, 6, 4, 1 };
+		int arr[] = { 34, 2, 10, -9 };
+		// int arr[] = { 3, 2, 3, 8, 5, 6, 4, 1 };
 		int n = arr.length;
 
 		oddEvenSort(arr, n);
