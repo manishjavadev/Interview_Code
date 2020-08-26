@@ -3,7 +3,7 @@ package com.manish.javadev.geeks.array;
 import java.util.Scanner;
 
 /**
- * @author Manish
+ * @author Manish Srivastava
  * 
  */
 public class PascalTrangle {
