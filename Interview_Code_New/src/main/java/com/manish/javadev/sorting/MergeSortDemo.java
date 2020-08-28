@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 
  * https://www.youtube.com/watch?v=TzeBrDU-JaY
  * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 public class MergeSortDemo {

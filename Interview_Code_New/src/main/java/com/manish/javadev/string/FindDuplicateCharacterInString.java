@@ -1,10 +1,6 @@
 package com.manish.javadev.string;
 
 /**
- * @author Manish
- *
- */
-/**
  * This program finding duplicate char in string, and also printing the
  * Occurrence of duplicate char, and also counting how many char repeated Note:
  * dopCounter is variable which count how many char is repeated Best way to
@@ -15,6 +11,8 @@ package com.manish.javadev.string;
  * Print char occurs how many time and char it self c Occurs 2 time cc e Occurs
  * 2 time ee f Occurs 7 time fffffff h Occurs 4 time hhhh k Occurs 3 time kkk
  * Total repeated char in string 5
+ * 
+ * @author Manish Srivastava
  * 
  */
 public class FindDuplicateCharacterInString {

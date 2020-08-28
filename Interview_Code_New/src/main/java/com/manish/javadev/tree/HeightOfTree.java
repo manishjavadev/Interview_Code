@@ -10,7 +10,7 @@ package com.manish.javadev.tree;
  * 
  * 3) You can not insert duplicate element in BST
  * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 public class HeightOfTree {
@@ -36,7 +36,7 @@ public class HeightOfTree {
 		} else {
 			int left = height(root.left);
 			int right = height(root.right);
-			return Math.max(left,right) + 1;
+			return Math.max(left, right) + 1;
 		}
 	}
 

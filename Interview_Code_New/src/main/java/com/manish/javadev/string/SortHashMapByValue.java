@@ -9,6 +9,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class SortHashMapByValue {
 
 	public List<Entry<String, Integer>> sortByValue(Map<String, Integer> wordMap) {

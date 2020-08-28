@@ -1,5 +1,10 @@
 package com.manish.javadev.sorting;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 //Java program to implement Max Heap 
 public class MaxHeap {
 	private int[] Heap;

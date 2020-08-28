@@ -6,6 +6,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class SingletonDemo {
 
 	public static void main(String[] args) {

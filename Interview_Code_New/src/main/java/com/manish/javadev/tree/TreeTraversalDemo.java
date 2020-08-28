@@ -5,6 +5,11 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class TreeTraversalDemo {
 	public static void main(String[] args) {
 		BSTNode root = BSTDefaultTree.getDefaultTree();
@@ -70,8 +75,8 @@ public class TreeTraversalDemo {
 	}
 
 	/**
-	 * Post order we can not handle using one stack, so we need to use two stack
-	 * to manage output
+	 * Post order we can not handle using one stack, so we need to use two stack to
+	 * manage output
 	 * 
 	 * @param root
 	 */

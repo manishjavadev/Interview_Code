@@ -2,6 +2,11 @@ package com.manish.javadev.thread.advance;
 
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class Job1 implements Runnable {
 	public int product = 0;
 	private CyclicBarrier barrier;

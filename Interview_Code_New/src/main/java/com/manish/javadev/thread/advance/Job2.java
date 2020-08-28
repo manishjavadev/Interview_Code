@@ -3,6 +3,11 @@ package com.manish.javadev.thread.advance;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class Job2 implements Runnable {
 	public int sum = 0;
 	private CyclicBarrier barrier;

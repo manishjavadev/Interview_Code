@@ -2,6 +2,11 @@ package com.manish.javadev.thread.advance;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class FoodProcessor implements Runnable {
 	CountDownLatch countDownLatch;
 	String[] items;

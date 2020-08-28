@@ -1,5 +1,10 @@
 package com.manish.javadev.tree;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class BSTNode {
 	int data;
 	BSTNode left;

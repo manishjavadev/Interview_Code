@@ -1,12 +1,10 @@
 package com.manish.javadev.string;
 
 /**
- * @author Manish
- *
- */
-/**
  * This program reversing the word of String at same place for Ex: java
  * development blog reverse String avaj tnempoleved golb
+ * 
+ * @author Manish Srivastava
  */
 public class ReverseStringOfWord {
 	String finlaString = "";

@@ -1,13 +1,10 @@
 package com.manish.javadev.string;
 
 /**
- * @author Manish
- *
- */
-/**
  * This program act as immutable class because, if you try to set same object
  * again the it not creating the object and returning the same instance it self
  *
+ * @author Manish Srivastava
  */
 public class MyImmutableClass {
 	private final String str;

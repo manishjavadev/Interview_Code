@@ -1,7 +1,7 @@
 package com.manish.javadev.string;
 
 /**
- * @author Priyanka Sep 19, 2013 12:25:20 AM
+ * @author Manish Srivastava
  */
 public class FindSubStringInString {
 	public boolean contains() {

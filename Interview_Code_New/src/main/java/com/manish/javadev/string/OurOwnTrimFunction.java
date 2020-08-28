@@ -1,5 +1,10 @@
 package com.manish.javadev.string;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class OurOwnTrimFunction {
 	public static void main(String[] args) {
 		String str = "   Manish kumar     Srivastva    ";

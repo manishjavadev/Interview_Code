@@ -11,7 +11,7 @@ package com.manish.javadev.sorting;
  * In the odd phase, we perform a bubble sort on odd indexed elements and in the
  * even phase, we perform a bubble sort on even indexed elements.
  * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 public class OddEvenSortNeedToFix {

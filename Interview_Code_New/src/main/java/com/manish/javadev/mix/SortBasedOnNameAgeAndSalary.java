@@ -3,15 +3,12 @@ package com.manish.javadev.mix;
 import java.util.*;
 
 /**
- * @author Manish
- *
- */
-
-/**
  * Note: This code sort the employee record based on name age and salary but
  * first it will sort based on name if two employee name is equal then sort with
  * based on age suppose if age is also smiler then it will sort with based on
  * salary
+ * 
+ * @author Manish Srivastava
  * 
  */
 public class SortBasedOnNameAgeAndSalary implements Comparator<Employee> {
@@ -96,7 +93,6 @@ class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [ename=" + ename + ", age=" + age + ", salary="
-				+ salary + "]";
+		return "Employee [ename=" + ename + ", age=" + age + ", salary=" + salary + "]";
 	}
 }

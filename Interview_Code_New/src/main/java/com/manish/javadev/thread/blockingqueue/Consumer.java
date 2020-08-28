@@ -2,6 +2,11 @@ package com.manish.javadev.thread.blockingqueue;
 
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class Consumer implements Runnable {
 	protected BlockingQueue<Integer> queue = null;
 

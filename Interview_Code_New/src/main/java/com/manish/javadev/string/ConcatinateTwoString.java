@@ -3,12 +3,9 @@ package com.manish.javadev.string;
 import java.util.Scanner;
 
 /**
- * @author Manish
+ * This program simply adding two String
  *
- */
-/**
- * This program simply adding two String 
- *
+ * @author Manish Srivastava
  */
 public class ConcatinateTwoString {
 	static String finalString;
@@ -19,7 +16,7 @@ public class ConcatinateTwoString {
 		String fName = sc.next();
 		System.out.println("Enter your sir name");
 		String sirName = sc.next();
-		//Here i am trying to add two String
+		// Here i am trying to add two String
 		finalString = fName + sirName;
 		System.out.println("Your full name is\t" + finalString);
 	}

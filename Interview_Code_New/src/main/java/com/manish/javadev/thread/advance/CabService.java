@@ -3,6 +3,10 @@ package com.manish.javadev.thread.advance;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * @author Manish Srivastava
+ *
+ */
 public class CabService implements Runnable {
 	private CyclicBarrier cyclicBarrier;
 
@@ -16,7 +20,7 @@ public class CabService implements Runnable {
 			System.out.println("Number of parties required to trip the barrier = " + cyclicBarrier.getParties());
 
 			try {
-				
+
 				// number of parties waiting at the barrier
 				System.out.println("Number of parties waiting at the barrier " + "at this point = "
 						+ cyclicBarrier.getNumberWaiting());

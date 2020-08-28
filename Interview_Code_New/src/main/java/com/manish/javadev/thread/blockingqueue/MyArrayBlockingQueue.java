@@ -10,6 +10,8 @@ package com.manish.javadev.thread.blockingqueue;
  * A thread trying to enqueue an item in a full queue is blocked until some other thread
  * makes space in the queue,
  * either by dequeuing one or more items or clearing the queue completely. 
+ * 
+ * @author Manish Srivastava
  */
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

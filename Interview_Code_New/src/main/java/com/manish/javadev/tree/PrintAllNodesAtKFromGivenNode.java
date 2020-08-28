@@ -7,7 +7,7 @@ package com.manish.javadev.tree;
  * 
  * https://algorithms.tutorialhorizon.com/print-all-the-nodes-which-are-x-distance-from-the-given-node/
  * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 

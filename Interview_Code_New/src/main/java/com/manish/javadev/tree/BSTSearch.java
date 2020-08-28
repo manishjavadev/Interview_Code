@@ -1,5 +1,10 @@
 package com.manish.javadev.tree;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class BSTSearch {
 	static BSTNode start;
 	static BSTNode crr;

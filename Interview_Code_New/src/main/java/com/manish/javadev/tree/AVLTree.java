@@ -10,7 +10,7 @@ package com.manish.javadev.tree;
  * 
  * 3) You can not insert duplicate element in BST
  * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 public class AVLTree {
@@ -25,6 +25,7 @@ public class AVLTree {
 
 		tree.display(root);
 	}
+
 	public Node insertNode(Node root, int data) {
 		Node node = root;
 		return insert(node, data);

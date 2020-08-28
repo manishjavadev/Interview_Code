@@ -4,15 +4,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * @author Manish
- *
- */
-
-/**
  * This program take number form user and insert in array at proper place In
  * this program last element of array should blank because of moving one index
  * in right so arr={1,2,3,4,5,}; like that and array should be in sorted order
  * if not sorted the first sort the array and insert it
+ * 
+ * @author Manish Srivastava
  */
 public class InsertNumberAtProperPlace {
 	public static void main(String[] args) {

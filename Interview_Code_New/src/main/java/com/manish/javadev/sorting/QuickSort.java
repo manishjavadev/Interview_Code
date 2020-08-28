@@ -3,6 +3,12 @@ package com.manish.javadev.sorting;
 
 import java.util.Arrays;
 
+/**
+ * Quick Sort using last element of array as pivot
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class QuickSort {
 
 	public static void main(String[] args) {

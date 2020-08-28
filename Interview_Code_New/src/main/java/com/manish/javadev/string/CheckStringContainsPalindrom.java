@@ -1,5 +1,10 @@
 package com.manish.javadev.string;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class CheckStringContainsPalindrom {
 	// static String str = "abmalayalamc";
 	static String str = "xLMNMRC";

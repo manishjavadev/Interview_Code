@@ -2,12 +2,18 @@ package com.manish.javadev.sorting;
 
 import java.util.Arrays;
 
+/**
+ * You have a max heap now sort the array using heap sort
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class HeapSort {
 
 	public static void main(String[] args) {
-		 int[] array = { 48, 32, 46, 29, 10 };
+		int[] array = { 48, 32, 46, 29, 10 };
 		// int array[] = { 11, 12, 13, 5, 6, 7, 14 };
-		//int array[] = { 72, 64, 65, 56, 32, 46, 54, 29, 48 };
+		// int array[] = { 72, 64, 65, 56, 32, 46, 54, 29, 48 };
 		HeapSort hs = new HeapSort();
 		hs.heapSort(array);
 	}

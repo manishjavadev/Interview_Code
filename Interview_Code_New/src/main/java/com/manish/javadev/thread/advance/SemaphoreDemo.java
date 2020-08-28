@@ -1,10 +1,15 @@
 package com.manish.javadev.thread.advance;
 
-//java program to demonstrate 
-//use of semaphores Locks
 import java.util.concurrent.Semaphore;
 
-//A shared resource/class.
+/**
+ * A shared resource/class.
+ * 
+ * java program to demonstrate the use of semaphores Locks
+ * 
+ * @author Manish Srivastava
+ *
+ */
 class Shared {
 	static int count = 0;
 }
