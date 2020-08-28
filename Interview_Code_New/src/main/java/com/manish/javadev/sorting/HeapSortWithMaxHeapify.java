@@ -2,6 +2,13 @@ package com.manish.javadev.sorting;
 
 import java.util.Arrays;
 
+/**
+ * This Program will take array as input first will construct a max heap and
+ * then will start heap sort
+ * 
+ * @author kmamani
+ *
+ */
 public class HeapSortWithMaxHeapify {
 
 	public static void main(String[] args) {
