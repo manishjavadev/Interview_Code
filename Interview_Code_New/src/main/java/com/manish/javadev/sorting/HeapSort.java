@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class HeapSort {
 
 	public static void main(String[] args) {
-		// int[] array = { 48, 32, 46, 29, 10 };
+		 int[] array = { 48, 32, 46, 29, 10 };
 		// int array[] = { 11, 12, 13, 5, 6, 7, 14 };
-		int array[] = { 72, 64, 65, 56, 32, 46, 54, 29, 48 };
+		//int array[] = { 72, 64, 65, 56, 32, 46, 54, 29, 48 };
 		HeapSort hs = new HeapSort();
 		hs.heapSort(array);
 	}
@@ -19,13 +19,13 @@ public class HeapSort {
 		System.out.println(Arrays.toString(array));
 	}
 
-	private void heapify(int[] array, int curr) {
+	private void heapify(int[] array, int last) {
 		int start = 0;
-		swapNode(array, start, curr);
+		swapNode(array, start, last);
 		int left = 2 * start + 1;
 		int right = 2 * start + 2;
 
-		while (right < curr) {
+		while (last > right) {
 			if (array[start] >= array[left] && array[start] >= array[right]) {
 				return;
 			}
@@ -39,7 +39,7 @@ public class HeapSort {
 			left = 2 * start + 1;
 			right = 2 * start + 2;
 		}
-		if (left == curr - 1 && array[start] < array[left]) {
+		if (left == last - 1 && array[start] < array[left]) {
 			swapNode(array, start, left);
 		}
 	}
