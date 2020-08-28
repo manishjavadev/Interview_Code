@@ -14,32 +14,33 @@ public class HeapSort {
 
 	private void heapSort(int[] array) {
 		for (int i = array.length - 1; i >= 0; i--) {
-			swapNode(array, i, 0);
-			heapify(array, i, 0);
+			heapify(array, i);
 		}
 		System.out.println(Arrays.toString(array));
 	}
 
-	private void heapify(int[] array, int size, int crr) {
-		int left = 2 * crr + 1;
-		int right = 2 * crr + 2;
+	private void heapify(int[] array, int curr) {
+		int start = 0;
+		swapNode(array, start, curr);
+		int left = 2 * start + 1;
+		int right = 2 * start + 2;
 
-		while (right < size) {
-			if (array[crr] >= array[left] && array[crr] >= array[right]) {
+		while (right < curr) {
+			if (array[start] >= array[left] && array[start] >= array[right]) {
 				return;
 			}
 			if (array[right] <= array[left]) {
-				swapNode(array, crr, left);
-				crr = left;
+				swapNode(array, start, left);
+				start = left;
 			} else {
-				swapNode(array, crr, right);
-				crr = right;
+				swapNode(array, start, right);
+				start = right;
 			}
-			left = 2 * crr + 1;
-			right = 2 * crr + 2;
+			left = 2 * start + 1;
+			right = 2 * start + 2;
 		}
-		if (left == size - 1 && array[crr] < array[left]) {
-			swapNode(array, crr, left);
+		if (left == curr - 1 && array[start] < array[left]) {
+			swapNode(array, start, left);
 		}
 	}
 
