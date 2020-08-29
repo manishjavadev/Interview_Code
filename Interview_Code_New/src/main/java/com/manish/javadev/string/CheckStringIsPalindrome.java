@@ -56,10 +56,16 @@ public class CheckStringIsPalindrome {
 			low = len / 2 - 1;
 			high = len / 2 + 1;
 		}
-		while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
-			flag = true;
-			low--;
-			high++;
+		while (low >= 0 && high < len) {
+			if (str.charAt(low) == str.charAt(high)) {
+				flag = true;
+				low--;
+				high++;
+			} else {
+				flag = false;
+				low--;
+				high++;
+			}
 		}
 		return flag;
 	}
