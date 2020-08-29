@@ -15,11 +15,10 @@ public class OurOwnTrimFunction {
 	private static void myTrim(String str) {
 		char ch = ' ';
 		boolean charFound = false;
-		boolean added = false;
 		String finalString = "";
 		for (int i = 0; i < str.length(); i++) {
 			ch = str.charAt(i);
-			if (ch != ' ' && !added) {
+			if (ch != ' ') {
 				if (charFound && str.charAt(i - 1) == ' ') {
 					finalString = finalString + str.charAt(i - 1) + ch;
 				} else {
