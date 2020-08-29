@@ -7,42 +7,53 @@ package com.manish.javadev.string;
  * @author Manish Srivastava
  */
 public class ReverseStringOfWord {
-	String finlaString = "";
-	String getStr = "";
 
-	public void doReverse() {
+	public static void main(String[] args) {
 		String inputString = "java development blog";
+		ReverseStringOfWord rsw = new ReverseStringOfWord();
+		String resultString = rsw.doReverse(inputString);
+		System.out.println();
+		System.out.println(resultString);
+	}
+
+	public String doReverse(String inputString) {
+		String finlaString = "";
+		String getStr = "";
+
 		char ch[] = new char[inputString.length()];
 		ch = inputString.toCharArray();
 		for (int i = 0; i < ch.length; i++) {
 
-			if (ch[i] == ' ')
-				reverse(getStr);
-			else {
+			if (ch[i] == ' ') {
+				finlaString += reverse(getStr);
+				finlaString = finlaString + " ";
+				getStr = "";
+			} else {
 				getStr = getStr + ch[i];
 			}
 
 			if (i == ch.length - 1)
-				reverse(getStr);
+				finlaString += reverse(getStr);
 		}
-		System.out.println(inputString);
-		System.out.println("reverse String");
-
+		return finlaString;
 	}
 
-	private void reverse(String str) {
-		for (int i = str.length() - 1; i >= 0; i--) {
-			finlaString = finlaString + str.charAt(i);
+	private String reverse(String str) {
+		return reverse(str.toCharArray(), 0, str.length() - 1);
+	}
+
+	private static String reverse(char[] chr, int l, int h) {
+		if (l < h) {
+			swapData(chr, l, h);
+			reverse(chr, l + 1, h - 1);
 		}
-		finlaString = finlaString + " ";
-		getStr = "";
+		return new String(chr);
 	}
 
-	public static void main(String[] args) {
-		ReverseStringOfWord rsw = new ReverseStringOfWord();
-		rsw.doReverse();
-		System.out.println();
-		System.out.println(rsw.finlaString.trim());
+	private static void swapData(char[] chr, int l, int h) {
+		char tmp = ' ';
+		tmp = chr[l];
+		chr[l] = chr[h];
+		chr[h] = tmp;
 	}
-
 }
