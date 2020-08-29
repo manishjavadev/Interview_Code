@@ -7,36 +7,28 @@ package com.manish.javadev.string;
  */
 public class OurOwnTrimFunction {
 	public static void main(String[] args) {
-		String str = "   Manish kumar     Srivastva    ";
+		String str = "   Manisha Shivani   . kumar     Srivastva    ";
 		System.out.println("Base Length  " + str.length());
 		myTrim(str);
 	}
 
 	private static void myTrim(String str) {
 		char ch = ' ';
-		boolean chFlag = false;
+		boolean charFound = false;
 		boolean added = false;
-		String fStr = "";
+		String finalString = "";
 		for (int i = 0; i < str.length(); i++) {
 			ch = str.charAt(i);
-			added = false;
-			// Here i am checking space, but flag for space in between of String
-
-			if (ch != ' ' && chFlag) {
-				if (str.charAt(i - 1) == ' ') {
-					fStr = fStr + str.charAt(i - 1) + ch;
-					added = true;
-				}
-			}
-
-			if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') {
-				if (!added) {
-					fStr = fStr + ch;
-					chFlag = true;
+			if (ch != ' ' && !added) {
+				if (charFound && str.charAt(i - 1) == ' ') {
+					finalString = finalString + str.charAt(i - 1) + ch;
+				} else {
+					finalString = finalString + ch;
+					charFound = true;
 				}
 			}
 		}
-		System.out.println("Final String lentgh " + fStr.length());
-		System.out.println("Final String  " + fStr);
+		System.out.println("Final String lentgh " + finalString.length());
+		System.out.println("Final String  " + finalString);
 	}
 }

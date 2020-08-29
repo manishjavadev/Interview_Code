@@ -17,13 +17,19 @@ package com.manish.javadev.string;
  * 
  */
 public class CheckStringIsPalindrome {
-	static String enteredString = "";
+	static String enteredString = "MANNAM";
 
 	public static void main(String[] args) {
-		String enteredString = "MANNAM";
-		// 1st logic Method
-		// boolean resultFlag = checkPalindrom(0, enteredString.length() - 1);
 
+		// 1st logic Method
+		boolean resultFlag = checkPalindrom(0, enteredString.length() - 1);
+
+		if (resultFlag) {
+			System.out.println("Entered String '" + enteredString + "' is Palindrom");
+		} else {
+			System.out.println("Entered String is not a Palindrom");
+		}
+		System.out.println("========2nd logic Method========");
 		// 2nd logic Method
 		boolean result = checkPalindrom(enteredString);
 		if (result) {
@@ -37,8 +43,10 @@ public class CheckStringIsPalindrome {
 		if (i < j) {
 			if (enteredString.charAt(i++) != enteredString.charAt(j--)) {
 				return false;
+			} else {
+				checkPalindrom(i, j);
 			}
-			checkPalindrom(i, j);
+
 		}
 		return true;
 	}
@@ -57,15 +65,9 @@ public class CheckStringIsPalindrome {
 			high = len / 2 + 1;
 		}
 		while (low >= 0 && high < len) {
-			if (str.charAt(low) == str.charAt(high)) {
-				flag = true;
-				low--;
-				high++;
-			} else {
-				flag = false;
-				low--;
-				high++;
-			}
+			flag = str.charAt(low) == str.charAt(high) ? true : false;
+			low--;
+			high++;
 		}
 		return flag;
 	}
