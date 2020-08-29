@@ -16,7 +16,7 @@ public class ReverseWordWithoutSpecialCahar {
 		System.out.println("Output string: " + resultStr);
 	}
 
-	public static void reverse(char str[], int high, int low) {
+	public static void reverse(char str[], int low, int high) {
 		while (low < high) {
 			if (!Character.isAlphabetic(str[low]))
 				low++;
