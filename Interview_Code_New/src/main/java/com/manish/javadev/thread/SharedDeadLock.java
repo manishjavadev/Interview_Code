@@ -1,5 +1,10 @@
 package com.manish.javadev.thread;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class SharedDeadLock {
 
 	public synchronized void test1(SharedDeadLock s2) throws InterruptedException {

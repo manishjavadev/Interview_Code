@@ -2,6 +2,11 @@ package com.manish.javadev.thread.blockingqueue;
 
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class Producer implements Runnable {
 	int number = 0;
 	int index = 0;

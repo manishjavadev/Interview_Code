@@ -2,6 +2,16 @@ package com.manish.javadev.sorting;
 
 import java.util.Arrays;
 
+/**
+ * https://www.youtube.com/watch?v=e5ik2UGjHBk
+ * 
+ * OR
+ * 
+ * https://www.youtube.com/watch?v=TzeBrDU-JaY
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class MergeSortDemo {
 	int[] arr = { 4, 6, 3, 9, 7, 10 };
 	// int arr[] = { 5, 4, 3, 1, 2, 6 };

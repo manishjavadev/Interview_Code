@@ -6,24 +6,34 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
+ * https://www.youtube.com/watch?v=nYFd7VHKyWQ
+ * 
+ * TEST ONLINE: https://www.careerbless.com/calculators/word/list.php
+ * 
+ * Generate all permutations of string in lexicographically sorted order where
+ * repetitions of character is possible in string.
+ * 
  * @author m.d.srivastava
  *
- *         Generate all permutations of string in lexicographically sorted order
- *         where repetitions of character is possible in string.
  */
 public class StringPermutation {
 
 	public List<String> permute(char input[]) {
 		Map<Character, Integer> countMap = new TreeMap<>();
 		for (char ch : input) {
-			countMap.compute(ch, (key, val) -> {
-				if (val == null) {
-					return 1;
-				} else {
-					return val + 1;
-				}
-			});
+			countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+
+			/*
+			 * OR
+			 * 
+			 * Above code you can also write
+			 * 
+			 * countMap.compute(ch, (key, val) -> { if (val == null) { return 1; } else {
+			 * return val + 1; } });
+			 */
 		}
+		System.out.println(countMap);
+		System.out.println("===========");
 		char str[] = new char[countMap.size()];
 		int count[] = new int[countMap.size()];
 		int index = 0;
@@ -40,7 +50,8 @@ public class StringPermutation {
 
 	public void permuteUtil(char str[], int count[], int level, char result[], List<String> finalResultList) {
 		if (level == result.length) {
-			finalResultList.add(new String(result));
+			// finalResultList.add(new String(result)); OR
+			System.out.println(new String(result));
 			return;
 		}
 
@@ -52,7 +63,7 @@ public class StringPermutation {
 			count[i]--;
 			permuteUtil(str, count, level + 1, result, finalResultList);
 			/**
-			 * count[i]++ means restore count at previous level
+			 * count[i]++ means restore count at previous level(just for backtracking)
 			 */
 			count[i]++;
 		}

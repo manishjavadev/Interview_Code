@@ -1,8 +1,12 @@
 package com.manish.javadev.thread.advance;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class CyclicBarrierDemo {
 
 	public static void main(String[] args) {

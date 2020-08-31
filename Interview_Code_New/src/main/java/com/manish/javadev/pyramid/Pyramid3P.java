@@ -1,5 +1,9 @@
 package com.manish.javadev.pyramid;
-
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class Pyramid3P {
 	public static void main(String[] args) {
 		int n = 5;

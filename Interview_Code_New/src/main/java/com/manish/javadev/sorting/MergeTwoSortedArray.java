@@ -3,15 +3,12 @@ package com.manish.javadev.sorting;
 import java.util.Arrays;
 
 /**
- * @author Manish
- *
- */
-
-/**
  * 1. Take two array in sorted order for this program arr1, arr2 2. Take one
  * more array arr3 for merging two array 3. Take 3 indices for iterating for
  * loop, here index1, index2, index3 4. Here index1 and index2 for arr1 and arr2
  * and index3 for arr3 5. Then While loop
+ * 
+ * @author Manish Srivastava
  */
 public class MergeTwoSortedArray {
 

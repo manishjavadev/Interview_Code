@@ -1,5 +1,10 @@
 package com.manish.javadev.thread;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class OddThread extends Thread {
 	SharedEvenAndOdd s1 = null;
 	int index = 0;

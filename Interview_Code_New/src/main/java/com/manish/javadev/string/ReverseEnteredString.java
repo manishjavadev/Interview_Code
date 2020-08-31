@@ -1,42 +1,32 @@
 package com.manish.javadev.string;
 
-import java.util.Scanner;
-
-/**
- * @author Manish
- *
- */
-
 /**
  * This program simply reverse the String
  * 
+ * @author Manish Srivastava
  */
 public class ReverseEnteredString {
 	public static void main(String[] args) {
-		String enteredString = "";
-		String reverseString = "";
 
 		System.out.println("Please enter String");
-		
-		Scanner sc = new Scanner(System.in);
-		enteredString = sc.next();
+
+		String enteredString = "Manish";
 		char[] chr = enteredString.toCharArray();
-
-		//reverse(enteredString, 0, enteredString.length() - 1);
-
-		for (int i = chr.length - 1; i >= 0; i--) {
-			reverseString = reverseString + enteredString.charAt(i);
-		}
-
-		System.out.println("Reverse String is this " + reverseString);
+		reverse(chr, 0, chr.length - 1);
+		System.out.println("Reverse String is this " + new String(chr));
 	}
 
-	private static void reverse(String enteredString, int i, int j) {
-		char local;
-		if (i < j) {
-			char temp = enteredString.charAt(i);
-			local=enteredString.charAt(j);
+	private static void reverse(char[] chr, int l, int h) {
+		if (l < h) {
+			swapData(chr, l, h);
+			reverse(chr, l + 1, h - 1);
 		}
 	}
 
+	private static void swapData(char[] chr, int l, int h) {
+		char tmp = ' ';
+		tmp = chr[l];
+		chr[l] = chr[h];
+		chr[h] = tmp;
+	}
 }

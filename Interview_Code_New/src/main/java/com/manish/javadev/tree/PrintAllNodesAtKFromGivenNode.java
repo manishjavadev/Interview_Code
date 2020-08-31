@@ -7,7 +7,7 @@ package com.manish.javadev.tree;
  * 
  * https://algorithms.tutorialhorizon.com/print-all-the-nodes-which-are-x-distance-from-the-given-node/
  * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 
@@ -113,12 +113,12 @@ public class PrintAllNodesAtKFromGivenNode {
 		// Node is 30
 		root.right.right = new Node1(80);
 
-		Node1 target = root.left.right;
-		
-		//Node1 target = root.left;// and  int distance = 1; for base case 
+		Node1 target = root.left.right;// root.left
+
+		// Node1 target = root.left;// and int distance = 1; for base case
 
 		// target node 50, find all node from given node at distance 3
-		int distance = 3;
+		int distance = 3;// 1
 		tree.findNodeAtKDistanceFromTarget(root, target, distance);
 	}
 }

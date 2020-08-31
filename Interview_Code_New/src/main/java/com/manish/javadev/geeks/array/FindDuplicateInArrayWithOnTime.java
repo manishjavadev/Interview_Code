@@ -19,7 +19,7 @@ package com.manish.javadev.geeks.array;
  * @author kmamani
  *
  */
-public class FindDuplicateWithONTime {
+public class FindDuplicateInArrayWithOnTime {
 	public static void main(String args[]) {
 		int arr[] = { 0, 4, 3, 2, 7, 8, 2, 3, 1 };
 

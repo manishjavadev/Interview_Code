@@ -3,13 +3,9 @@ package com.manish.javadev.sorting;
 import java.util.Arrays;
 
 /**
- * @author Manish
- *
- */
-
-/**
  * This java program sorting a number using insertion sort
  * 
+ * @author Manish Srivastava
  */
 public class InsertionSort {
 

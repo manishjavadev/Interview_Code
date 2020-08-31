@@ -1,16 +1,9 @@
 package com.manish.javadev.tree;
 
 /**
- * Rule for AVL Tree
+ * Height of tree is equal to number of row in BST
  * 
- * 1) It is a BST
- * 
- * 2) Balance factor (Height of left sub tree - Height of right sub tree should
- * be 1 0 -1)
- * 
- * 3) You can not insert duplicate element in BST
- * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 public class HeightOfTree {
@@ -36,8 +29,7 @@ public class HeightOfTree {
 		} else {
 			int left = height(root.left);
 			int right = height(root.right);
-			return Math.max(left,right) + 1;
+			return Math.max(left, right) + 1;
 		}
 	}
-
 }

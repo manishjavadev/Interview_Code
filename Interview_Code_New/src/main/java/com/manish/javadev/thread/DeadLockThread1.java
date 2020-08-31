@@ -1,10 +1,15 @@
 package com.manish.javadev.thread;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class DeadLockThread1 extends Thread {
 	SharedDeadLock s1 = null;
 	SharedDeadLock s2 = null;
 
-	public DeadLockThread1(SharedDeadLock s1,SharedDeadLock s2) {
+	public DeadLockThread1(SharedDeadLock s1, SharedDeadLock s2) {
 		this.s1 = s1;
 		this.s2 = s2;
 	}

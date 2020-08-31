@@ -3,12 +3,9 @@ package com.manish.javadev.sorting;
 import java.util.*;
 
 /**
- * @author Manish
- *
- */
-
-/**
  * This program sorting the array
+ * 
+ * @author Manish Srivastava
  * 
  */
 public class SelectionSort {

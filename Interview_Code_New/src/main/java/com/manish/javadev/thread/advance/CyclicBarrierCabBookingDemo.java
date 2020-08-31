@@ -2,6 +2,11 @@ package com.manish.javadev.thread.advance;
 
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class CyclicBarrierCabBookingDemo {
 	public static void main(String[] args) throws InterruptedException {
 		CyclicBarrier cyclicBarrier = new CyclicBarrier(3);

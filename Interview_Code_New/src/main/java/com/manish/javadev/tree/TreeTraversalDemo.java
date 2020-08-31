@@ -5,10 +5,15 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class TreeTraversalDemo {
 	public static void main(String[] args) {
 		BSTNode root = BSTDefaultTree.getDefaultTree();
-		System.out.println("Enter For Pre-Order 1\nEnter For Post-Order 2\n Enter For In-Order 3\n ");
+		System.out.println("Enter For Pre-Order 1\nEnter For Post-Order 2\nEnter For In-Order 3\n ");
 		Scanner sc = new Scanner(System.in);
 		int flag = sc.nextInt();
 		if (flag == 1) {
@@ -38,7 +43,7 @@ public class TreeTraversalDemo {
 				stack.push(cur.left);
 			}
 		}
-		System.out.println("Display from Queue");
+		System.out.println("Display for preOrder from Queue");
 		for (BSTNode node : queue) {
 			System.out.println(node.data);
 		}
@@ -63,15 +68,15 @@ public class TreeTraversalDemo {
 				}
 			}
 		}
-		System.out.println("Display from Queue");
+		System.out.println("Display for inOrder from Queue");
 		for (BSTNode node : queue) {
 			System.out.println(node.data);
 		}
 	}
 
 	/**
-	 * Post order we can not handle using one stack, so we need to use two stack
-	 * to manage output
+	 * Post order we can not handle using one stack, so we need to use two stack to
+	 * manage output
 	 * 
 	 * @param root
 	 */
@@ -89,7 +94,7 @@ public class TreeTraversalDemo {
 				stack.push(cur.right);
 			}
 		}
-		System.out.println("Display from Queue");
+		System.out.println("Display for postOrder from Queue");
 		while (!out.empty()) {
 			System.out.println(out.pop().data);
 		}

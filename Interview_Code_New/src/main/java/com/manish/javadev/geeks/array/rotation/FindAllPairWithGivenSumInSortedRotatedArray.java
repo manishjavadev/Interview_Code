@@ -23,7 +23,7 @@ package com.manish.javadev.geeks.array.rotation;
  * @author kmamani
  *
  */
-public class FindAllPairWithGivenSumInSortedRotated {
+public class FindAllPairWithGivenSumInSortedRotatedArray {
 
 	// Driver Code
 	public static void main(String[] args) {

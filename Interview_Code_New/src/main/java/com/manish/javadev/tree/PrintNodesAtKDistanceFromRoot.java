@@ -9,7 +9,7 @@ package com.manish.javadev.tree;
  *   / \    / 
  *  40 50 80
  * 
- * @author kmamani
+ * @author Manish Srivastava
  *
  */
 class Node1 {

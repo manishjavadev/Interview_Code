@@ -1,8 +1,13 @@
 package com.manish.javadev.sorting;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 //Java program to implement Max Heap 
 public class MaxHeap {
-	private int[] Heap;
+	private int[] heap;
 	private int size;
 	private int maxsize;
 
@@ -12,8 +17,8 @@ public class MaxHeap {
 	public MaxHeap(int maxsize) {
 		this.maxsize = maxsize;
 		this.size = 0;
-		Heap = new int[this.maxsize + 1];
-		Heap[0] = Integer.MAX_VALUE;
+		heap = new int[this.maxsize + 1];
+		heap[0] = Integer.MAX_VALUE;
 	}
 
 	// Returns position of parent
@@ -41,9 +46,9 @@ public class MaxHeap {
 
 	private void swap(int fpos, int spos) {
 		int tmp;
-		tmp = Heap[fpos];
-		Heap[fpos] = Heap[spos];
-		Heap[spos] = tmp;
+		tmp = heap[fpos];
+		heap[fpos] = heap[spos];
+		heap[spos] = tmp;
 	}
 
 	// A recursive function to max heapify the given
@@ -54,9 +59,9 @@ public class MaxHeap {
 		if (isLeaf(pos))
 			return;
 
-		if (Heap[pos] < Heap[leftChild(pos)] || Heap[pos] < Heap[rightChild(pos)]) {
+		if (heap[pos] < heap[leftChild(pos)] || heap[pos] < heap[rightChild(pos)]) {
 
-			if (Heap[leftChild(pos)] > Heap[rightChild(pos)]) {
+			if (heap[leftChild(pos)] > heap[rightChild(pos)]) {
 				swap(pos, leftChild(pos));
 				maxHeapify(leftChild(pos));
 			} else {
@@ -68,11 +73,11 @@ public class MaxHeap {
 
 	// Inserts a new element to max heap
 	public void insert(int element) {
-		Heap[++size] = element;
+		heap[++size] = element;
 
 		// Traverse up and fix violated property
 		int current = size;
-		while (Heap[current] > Heap[parent(current)]) {
+		while (heap[current] > heap[parent(current)]) {
 			swap(current, parent(current));
 			current = parent(current);
 		}
@@ -81,15 +86,15 @@ public class MaxHeap {
 	public void print() {
 		for (int i = 1; i <= size / 2; i++) {
 			System.out.print(
-					" PARENT : " + Heap[i] + " LEFT CHILD : " + Heap[2 * i] + " RIGHT CHILD :" + Heap[2 * i + 1]);
+					" PARENT : " + heap[i] + " LEFT CHILD : " + heap[2 * i] + " RIGHT CHILD :" + heap[2 * i + 1]);
 			System.out.println();
 		}
 	}
 
 	// Remove an element from max heap
 	public int extractMax() {
-		int popped = Heap[1];
-		Heap[1] = Heap[size--];
+		int popped = heap[1];
+		heap[1] = heap[size--];
 		maxHeapify(1);
 		return popped;
 	}

@@ -3,6 +3,11 @@ package com.manish.javadev.thread.blockingqueue;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class MyBlockingQueue {
 	private List queue = new LinkedList();
 	private int limit = 10;

@@ -1,5 +1,7 @@
 package com.manish.javadev.geeks.array;
 
+import java.util.Arrays;
+
 /**
  * https://www.geeksforgeeks.org/counting-inversions/
  * 
@@ -31,7 +33,8 @@ package com.manish.javadev.geeks.array;
 
 public class InversionCountUsingMergSort {
 	// static int arr[] = { 1, 20, 6, 4, 5 };
-	static int arr[] = { 2, 3, 6, 9, 1 };
+	static int arr[] = { 2, 4, 1, 3, 5 };
+	// static int arr[] = { 2, 3, 6, 9, 1 };
 	static int temp[] = new int[arr.length];
 
 	public static void main(String... v) {
@@ -42,13 +45,14 @@ public class InversionCountUsingMergSort {
 	private void doSorting() {
 		int len = arr.length - 1;
 		long counter = mergeSort(arr, 0, len);
-		System.out.println("\nNumber of Inversion = " + counter);
+		System.out.println("Sorted Array " + Arrays.toString(arr));
+		System.out.println("Count = " + counter);
 	}
 
 	static long mergeSort(int a[], int left, int right) {
 		int mid;
 		long count = 0;
-		if (left != right) {
+		if (left < right) {
 			mid = (right + left) / 2;
 			count = mergeSort(a, left, mid);
 			count += mergeSort(a, mid + 1, right);
@@ -80,5 +84,4 @@ public class InversionCountUsingMergSort {
 		}
 		return inversionCounter;
 	}
-
 }

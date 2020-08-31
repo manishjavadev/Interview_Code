@@ -76,17 +76,17 @@ public class FindNextGreaterNumberWithSameDigit {
 			return;
 		}
 
-		char flNumber = number[currIndex - 1];
+		char flagValue = number[currIndex - 1];
 		int fgIndex = currIndex;
 		for (j = currIndex; j < number.length; j++) {
-			if (number[j] > flNumber && number[j] < number[fgIndex])
+			if (number[j] > flagValue && number[j] < number[fgIndex])
 				fgIndex = j;
 		}
 
 		swap(digits, currIndex - 1, fgIndex);
 		sort(digits, currIndex);
 		for (int k = 0; k < digits.length; k++) {
-			System.out.print(digits[k] + "\t");
+			System.out.print(digits[k] + " ");
 		}
 
 	}

@@ -2,11 +2,18 @@ package com.manish.javadev.sorting;
 
 import java.util.Arrays;
 
+/**
+ * This Program will take array as input, first will construct a max heap and
+ * then will use heap sort
+ * 
+ * @author kmamani
+ *
+ */
 public class HeapSortWithMaxHeapify {
 
 	public static void main(String[] args) {
-		int arr[] = { 11, 12, 13, 5, 6, 7, 14 };
-		// int arr[] = { 12, 11, 13, 5, 6, 7, 8, 4, 3 };
+		// int arr[] = { 11, 12, 13, 5, 6, 7, 14 };
+		int arr[] = { 12, 11, 13, 5, 6, 7, 8, 4, 3 };
 		HeapSortWithMaxHeapify hs = new HeapSortWithMaxHeapify();
 		hs.sort(arr);
 		System.out.println("Sorted array is");
@@ -22,7 +29,7 @@ public class HeapSortWithMaxHeapify {
 		// One by one extract an element from heap
 		for (int i = n - 1; i >= 0; i--) {
 			// Move current root to end
-			swapNode(arr, 0, i);
+			swapNode(arr, i, 0);
 			// call max heapify on the reduced heap
 			heapify(arr, i, 0);
 		}

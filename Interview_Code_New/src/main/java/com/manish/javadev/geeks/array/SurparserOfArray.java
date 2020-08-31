@@ -36,5 +36,4 @@ public class SurparserOfArray {
 			System.out.println("For element " + arr[i] + " Count is :: " + count + "\t");
 		}
 	}
-
 }

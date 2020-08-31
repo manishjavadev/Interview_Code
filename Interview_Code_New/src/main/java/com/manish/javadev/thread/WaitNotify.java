@@ -1,5 +1,10 @@
 package com.manish.javadev.thread;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class WaitNotify {
 	public synchronized void test1() {
 		System.out.println("Test1 begin");

@@ -26,7 +26,7 @@ package com.manish.javadev.geeks.array.rotation;
  * @author kmamani
  *
  */
-public class FindElementSortedAndRotatedUsingPivote {
+public class FindElementInSortedRotatedUsingPivote {
 
 	// main function
 	public static void main(String args[]) {

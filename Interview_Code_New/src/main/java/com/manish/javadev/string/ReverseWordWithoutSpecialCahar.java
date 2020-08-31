@@ -1,5 +1,10 @@
 package com.manish.javadev.string;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class ReverseWordWithoutSpecialCahar {
 	public static void main(String[] args) {
 		String str = "#Manish#$Kumar#$";
@@ -11,7 +16,7 @@ public class ReverseWordWithoutSpecialCahar {
 		System.out.println("Output string: " + resultStr);
 	}
 
-	public static void reverse(char str[], int high, int low) {
+	public static void reverse(char str[], int low, int high) {
 		while (low < high) {
 			if (!Character.isAlphabetic(str[low]))
 				low++;

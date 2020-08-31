@@ -3,13 +3,13 @@ package com.manish.javadev.geeks.stack;
 import java.util.Stack;
 
 /**
- * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+ * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmax-in-o1-time-and-o1-extra-space/
  * 
- * Design a stack that supports getMin() in O(1) time and O(1) extra space
+ * Design a stack that supports getMax() in O(1) time and O(1) extra space
  * 
  * Question: Design a Data Structure SpecialStack that supports all the stack
  * operations like push(), pop(), isEmpty(), isFull() and an additional
- * operation getMin() which should return minimum element from the SpecialStack.
+ * operation getMax() which should return maximum element from the SpecialStack.
  *
  * All these operations of SpecialStack must be O(1). To implement SpecialStack,
  * you should only use standard Stack data structure and no other data structure
@@ -19,12 +19,12 @@ import java.util.Stack;
  * 
  * Consider the following SpecialStack 16 --> TOP 15 29 19 18
  * 
- * When getMin() is called it should return 15, which is the minimum element in
+ * When getMax() is called it should return 15, which is the maximum element in
  * the current stack.
  * 
  * If we do pop two times on stack, the stack becomes 29 --> TOP 19 18
  * 
- * When getMin() is called, it should return 18 which is the minimum in the
+ * When getMax() is called, it should return 18 which is the maximum in the
  * current stack.
  * 
  * @author kmamani
@@ -39,7 +39,7 @@ public class FindMaximumOfStackByO1 {
 		s = new Stack<Integer>();
 	}
 
-	// Prints minimum element of MyStack
+	// Prints maximum element of MyStack
 	void getMax() {
 		// Get the maximum number in the entire stack
 		if (s.isEmpty())
@@ -48,7 +48,7 @@ public class FindMaximumOfStackByO1 {
 		// variable maxEle stores the maximum element
 		// in the stack.
 		else
-			System.out.println("Minimum Element in the " + " stack is: " + maxEle);
+			System.out.println("Maximum Element in the " + " stack is: " + maxEle);
 	}
 
 	// prints top element of MyStack
@@ -80,7 +80,7 @@ public class FindMaximumOfStackByO1 {
 		System.out.print("Top Most Element Removed: ");
 		Integer tmp = s.pop();
 
-		// Minimum will change as the minimum element
+		// Maximum will change as the maximum element
 		// of the stack is being removed.
 		if (tmp > maxEle) {
 			System.out.println(maxEle);
@@ -98,7 +98,7 @@ public class FindMaximumOfStackByO1 {
 			return;
 		}
 
-		// If new number is less than original minEle
+		// If new number is less than original maxEle
 		if (x > maxEle) {
 			s.push(2 * x - maxEle);
 			maxEle = x;

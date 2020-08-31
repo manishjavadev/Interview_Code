@@ -16,30 +16,31 @@ package com.manish.javadev.geeks.array.rotation;
  * @author kmamani
  *
  */
-public class PairWithGivenSumInSortedRotated2 {
+public class FindPairWithGivenSumInSortedRotated {
 	public static void main(String[] args) {
-		int arr[] = {11, 15, 26, 38, 9, 10};
-		int sum = 35;
+		int arr[] = { 11, 15, 6, 8, 9, 10 };
+		int sum = 18;
 		int n = arr.length;
 
-		if (pairInSortedRotated(arr, n, sum))
+		if (findPairSumInSortedRotatedArray(arr, n, sum))
 			System.out.print("Array has two elements" + " with sum " + sum);
 		else
-			System.out.print("Array doesn't have two" + " elements with sum " + sum);
+			System.out.print("Array doesn't have two" + " elements with sum  " + sum);
 	}
 
 	// This function returns true if arr[0..n-1]
 	// has a pair with sum equals to x.
-	static boolean pairInSortedRotated(int arr[], int n, int sum) {
+	static boolean findPairSumInSortedRotatedArray(int arr[], int n, int sum) {
 		// Find the pivot element
 
-		int mid = findPivot(arr, 0, arr.length - 1);
+		// int i = findPivotOrderOfN(arr, n);
+		int i = findPivotUsingBinarySearch(arr, 0, arr.length - 1);
 
-		int l = mid; // l is now index of
-						// smallest element
+		// r is now index of largest element
+		int r = i;
 
-		int r = mid - 1; // r is now index of largest
-							// element
+		// smallest element
+		int l = (i + 1) % n; // l is now index of
 
 		// Keep moving either l or r till they meet
 		while (l != r) {
@@ -59,19 +60,25 @@ public class PairWithGivenSumInSortedRotated2 {
 		return false;
 	}
 
-	private static int findPivot(int[] arr, int low, int high) {
+	private static int findPivotOrderOfN(int[] arr, int n) {
+		int i;
+		for (i = 0; i < n - 1; i++)
+			if (arr[i] > arr[i + 1])
+				break;
+		return i;
+	}
+
+	private static int findPivotUsingBinarySearch(int[] arr, int low, int high) {
 		if (arr[0] < arr[arr.length - 1]) {
 			return -1;
 		}
 		if (low <= high) {
 			int mid = (low + high) / 2;
-
 			if (arr[mid] > arr[mid + 1])
 				return mid + 1;
-
 			if (arr[low] <= arr[mid])
-				return findPivot(arr, mid + 1, high);
-			return findPivot(arr, low, mid - 1);
+				return findPivotUsingBinarySearch(arr, mid + 1, high);
+			return findPivotUsingBinarySearch(arr, low, mid - 1);
 		}
 		return -1;
 	}

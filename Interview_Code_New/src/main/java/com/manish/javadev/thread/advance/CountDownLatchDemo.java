@@ -2,6 +2,11 @@ package com.manish.javadev.thread.advance;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class CountDownLatchDemo {
 	public static void main(String[] args) {
 		String[] item = { "Mashroom", "Paneer Tikka", "Gril Chiken" };

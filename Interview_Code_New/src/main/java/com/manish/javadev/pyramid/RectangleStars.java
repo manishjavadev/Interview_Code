@@ -1,5 +1,10 @@
 package com.manish.javadev.pyramid;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class RectangleStars {
 	public static void main(String[] args) {
 		int rows = 5;

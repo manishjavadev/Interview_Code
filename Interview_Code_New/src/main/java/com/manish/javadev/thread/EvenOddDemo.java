@@ -1,5 +1,10 @@
 package com.manish.javadev.thread;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class EvenOddDemo {
 	public static void main(String[] args) {
 		SharedEvenAndOdd s1 = new SharedEvenAndOdd();

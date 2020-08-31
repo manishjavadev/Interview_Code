@@ -1,5 +1,10 @@
 package com.manish.javadev.thread;
 
+/**
+ * 
+ * @author Manish Srivastava
+ *
+ */
 public class SharedEvenAndOdd {
 	boolean evenOddFlag = false;
 	int number = 0;

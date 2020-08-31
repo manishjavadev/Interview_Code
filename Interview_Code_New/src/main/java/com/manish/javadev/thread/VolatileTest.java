@@ -97,7 +97,7 @@ package com.manish.javadev.thread;
  * 
  * 
  * 
- * @author m.d.srivastava
+ * @author Manish Srivastava
  * 
  */
 public class VolatileTest {

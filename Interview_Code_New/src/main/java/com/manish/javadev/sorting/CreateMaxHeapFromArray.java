@@ -3,6 +3,8 @@ package com.manish.javadev.sorting;
 import java.util.Arrays;
 
 /**
+ * https://www.geeksforgeeks.org/building-heap-from-array/
+ * 
  * @author Manish Srivastava
  *
  */
@@ -20,8 +22,9 @@ public class CreateMaxHeapFromArray {
 		int n = arr.length;
 
 		// Build heap (rearrange array)
-		for (int i = n / 2 - 1; i >= 0; i--)
+		for (int i = n / 2 - 1; i >= 0; i--) {
 			build_maxheap(arr, n, i);
+		}
 
 	}
 
