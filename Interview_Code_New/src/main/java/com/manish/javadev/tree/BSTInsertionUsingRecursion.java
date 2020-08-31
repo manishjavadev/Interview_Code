@@ -10,11 +10,11 @@ public class BSTInsertionUsingRecursion {
 	public static void main(String[] args) {
 		BSTNode root = null;
 		BSTInsertionUsingRecursion tree = new BSTInsertionUsingRecursion();
-		root = tree.insertWithRecurtion(root, 20);
-		root = tree.insertWithRecurtion(root, 25);
-		root = tree.insertWithRecurtion(root, 30);
-		root = tree.insertWithRecurtion(root, 10);
-		root = tree.insertWithRecurtion(root, 5);
+		root = tree.insert(root, 20);
+		root = tree.insert(root, 25);
+		root = tree.insert(root, 30);
+		root = tree.insert(root, 10);
+		root = tree.insert(root, 5);
 
 		tree.display(root);
 	}
@@ -28,15 +28,15 @@ public class BSTInsertionUsingRecursion {
 
 	}
 
-	private BSTNode insertWithRecurtion(BSTNode root, int data) {
+	private BSTNode insert(BSTNode root, int data) {
 		if (root == null) {
 			return new BSTNode(data);
 		}
 		if (root.data > data) {
-			root.left = insertWithRecurtion(root.left, data);
+			root.left = insert(root.left, data);
 		}
 		if (root.data < data) {
-			root.right = insertWithRecurtion(root.right, data);
+			root.right = insert(root.right, data);
 		}
 		if (root.data == data) {
 			try {

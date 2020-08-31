@@ -15,7 +15,7 @@ package com.manish.javadev.tree;
  */
 public class AVLTree {
 	public static void main(String[] args) {
-		Node root = null;
+		BSTNode root = null;
 		AVLTree tree = new AVLTree();
 		root = tree.insert(root, 20);
 		root = tree.insert(root, 25);
@@ -26,67 +26,67 @@ public class AVLTree {
 		tree.display(root);
 	}
 
-	public Node insertNode(Node root, int data) {
-		Node node = root;
+	public BSTNode insertNode(BSTNode root, int data) {
+		BSTNode node = root;
 		return insert(node, data);
 	}
 
-	public Node insert(Node crr, int data) {
+	public BSTNode insert(BSTNode root, int data) {
 
-		if (crr == null) {
-			return new Node(data);
+		if (root == null) {
+			return new BSTNode(data);
 		}
-		if (crr.data > data) {
-			crr.left = insert(crr.left, data);
+		if (root.data > data) {
+			root.left = insert(root.left, data);
 		} else {
-			crr.right = insert(crr.right, data);
+			root.right = insert(root.right, data);
 		}
-		crr.height = Math.max(height(crr.left), height(crr.right)) + 1;
+		root.height = Math.max(height(root.left), height(root.right)) + 1;
 
-		int bf = balanceFactor(crr);
+		int bf = balanceFactor(root);
 
 		// LL Case
-		if (bf > 1 && data < crr.left.data) {
-			return rightRotate(crr);
+		if (bf > 1 && data < root.left.data) {
+			return rightRotate(root);
 		}
 
 		// RR Case
-		if (bf < -1 && data > crr.right.data) {
-			return leftRotate(crr);
+		if (bf < -1 && data > root.right.data) {
+			return leftRotate(root);
 		}
 
 		// LR Case
-		if (bf > 1 && data > crr.left.data) {
-			crr.left = leftRotate(crr.left);
-			return rightRotate(crr);
+		if (bf > 1 && data > root.left.data) {
+			root.left = leftRotate(root.left);
+			return rightRotate(root);
 		}
 
 		// RL Case
-		if (bf < -1 && data < crr.right.data) {
-			crr.right = rightRotate(crr.right);
-			return leftRotate(crr);
+		if (bf < -1 && data < root.right.data) {
+			root.right = rightRotate(root.right);
+			return leftRotate(root);
 		}
-		return crr;
+		return root;
 	}
 
-	private int height(Node node) {
+	private int height(BSTNode node) {
 		if (node == null) {
 			return 0;
 		}
 		return node.height;
 	}
 
-	private int balanceFactor(Node node) {
+	private int balanceFactor(BSTNode node) {
 		if (node == null) {
 			return 0;
 		}
 		return height(node.left) - height(node.right);
 	}
 
-	private Node rightRotate(Node crr) {
+	private BSTNode rightRotate(BSTNode crr) {
 
-		Node tmp = crr.left;
-		Node tmpRight = tmp.right;
+		BSTNode tmp = crr.left;
+		BSTNode tmpRight = tmp.right;
 
 		// rotate
 		tmp.right = crr;
@@ -99,10 +99,10 @@ public class AVLTree {
 		return tmp;
 	}
 
-	private Node leftRotate(Node crr) {
+	private BSTNode leftRotate(BSTNode crr) {
 
-		Node tmp = crr.right;
-		Node tmpLeft = tmp.left;
+		BSTNode tmp = crr.right;
+		BSTNode tmpLeft = tmp.left;
 
 		// rotate
 		tmp.left = crr;
@@ -115,7 +115,7 @@ public class AVLTree {
 		return tmp;
 	}
 
-	public void display(Node crr) {
+	public void display(BSTNode crr) {
 		if (crr != null) {
 			System.out.print(crr.data + "\t");
 			display(crr.left);

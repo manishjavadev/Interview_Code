@@ -9,6 +9,7 @@ public class BSTNode {
 	int data;
 	BSTNode left;
 	BSTNode right;
+	int height;
 
 	public BSTNode() {
 
@@ -16,6 +17,6 @@ public class BSTNode {
 
 	public BSTNode(int data) {
 		this.data = data;
+		this.height = 1;
 	}
-
 }
