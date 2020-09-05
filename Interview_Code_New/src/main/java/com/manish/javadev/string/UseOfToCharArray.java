@@ -16,5 +16,4 @@ public class UseOfToCharArray {
 			System.out.println(ch);
 		}
 	}
-
 }

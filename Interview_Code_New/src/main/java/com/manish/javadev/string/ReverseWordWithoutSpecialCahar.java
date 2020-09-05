@@ -11,7 +11,7 @@ public class ReverseWordWithoutSpecialCahar {
 		char[] ch = str.toCharArray();
 
 		System.out.println("Input string: " + str);
-		reverse(ch, ch.length - 1, 0);
+		reverse(ch, 0, ch.length - 1);
 		String resultStr = new String(ch);
 		System.out.println("Output string: " + resultStr);
 	}

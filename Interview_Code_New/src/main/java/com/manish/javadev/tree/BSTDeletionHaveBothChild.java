@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
  * @author Manish Srivastava
  *
  */
-public class BSTDeletion {
+public class BSTDeletionHaveBothChild {
 	static BSTNode crr;
 	static BSTNode current;
 

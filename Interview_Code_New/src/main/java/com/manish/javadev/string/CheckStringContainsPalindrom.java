@@ -6,31 +6,32 @@ package com.manish.javadev.string;
  *
  */
 public class CheckStringContainsPalindrom {
-	// static String str = "abmalayalamc";
-	static String str = "xLMNMRC";
+	static String str = "abmalayalamc";
+	// static String str = "abmalRayWaRlamc";
+	// static String str = "SrABA";
 
 	public static void main(String[] args) {
 		boolean result = testPalindrome(str.toCharArray());
-		System.out.println("String Containes palindrome ::: " + result);
-
+		if (result) {
+			System.out.println("String Containes palindrome ::: " + result);
+		} else {
+			System.out.println("String Does Not Containes palindrome ::: " + result);
+		}
 	}
 
 	private static boolean testPalindrome(char[] ch) {
-		boolean palindromeFlag = false;
 		for (int i = 0; i < ch.length; i++) {
 			int l = i;
 			int k = l + 1;
 			if (l >= 0 && k < ch.length && ch[l] == ch[k]) {
-				palindromeFlag = true;
-				break;
+				return true;
 			}
 			l = i;
 			k = l + 2;
 			if (l >= 0 && k < ch.length && ch[l] == ch[k]) {
-				palindromeFlag = true;
-				break;
+				return true;
 			}
 		}
-		return palindromeFlag;
+		return false;
 	}
 }

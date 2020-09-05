@@ -24,12 +24,12 @@ public class ReverseStringOfWord {
 		ch = inputString.toCharArray();
 		for (int i = 0; i < ch.length; i++) {
 
-			if (ch[i] == ' ') {
+			if (ch[i] != ' ') {
+				getStr = getStr + ch[i];
+			} else {
 				finlaString += reverse(getStr);
 				finlaString = finlaString + " ";
 				getStr = "";
-			} else {
-				getStr = getStr + ch[i];
 			}
 
 			if (i == ch.length - 1)
