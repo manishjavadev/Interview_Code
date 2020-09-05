@@ -1,5 +1,15 @@
 package com.manish.javadev.geeks.array;
 
+/**
+ * Display Number to Word
+ * 
+ * Input 1217810
+ * 
+ * Output: twelve lakh seventeen thousand eight hundred ten
+ * 
+ * @author kmamani
+ *
+ */
 public class DisplayNumberToWrod {
 	String one[] = { " ", " one", " two", " three", " four", " five", " six", " seven", " eight", " Nine", " ten",
 			" eleven", " twelve", " thirteen", " fourteen", "fifteen", " sixteen", " seventeen", " eighteen",
@@ -17,7 +27,7 @@ public class DisplayNumberToWrod {
 	}
 
 	public static void main(String[] args) {
-		int num = 820;
+		int num = 1217810;
 		if (num <= 0)
 			System.out.println("Enter numbers should be greater than 0");
 		else {

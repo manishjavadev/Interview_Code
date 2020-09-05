@@ -17,7 +17,7 @@ package com.manish.javadev.string;
  * 
  */
 public class CheckStringIsPalindrome {
-	static String enteredString = "MANNAM";
+	static String enteredString = "AMANNAMN";
 
 	public static void main(String[] args) {
 

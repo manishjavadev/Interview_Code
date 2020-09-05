@@ -1,5 +1,11 @@
 package com.manish.javadev.geeks.array;
 
+/**
+ * Binary Search of array
+ * 
+ * @author kmamani
+ *
+ */
 public class BinarySearch {
 	public static void main(String[] args) {
 		BinarySearch binarySearch = new BinarySearch();

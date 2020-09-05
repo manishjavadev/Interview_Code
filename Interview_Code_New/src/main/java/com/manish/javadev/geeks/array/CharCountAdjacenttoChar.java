@@ -1,5 +1,13 @@
 package com.manish.javadev.geeks.array;
 
+/**
+ * Count Adjacent Char in array
+ * 
+ * Input abcccdd and OutPut a1b1c3d2
+ * 
+ * @author kmamani
+ *
+ */
 public class CharCountAdjacenttoChar {
 	public static void main(String[] args) {
 		char ch[] = { 'a', 'b', 'c', 'c', 'c', 'd', 'd' };

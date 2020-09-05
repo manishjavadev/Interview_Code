@@ -1,6 +1,9 @@
 package com.manish.javadev.geeks.array;
 
 /**
+ * Find arr2 is a sub array of arr1
+ * 
+ * 
  * Time Complexity: O(N) Auxiliary Space: O(1)
  * https://www.geeksforgeeks.org/check-whether-an-array-is-subarray-of-another-array/
  * 
