@@ -1,5 +1,9 @@
 package com.manish.javadev.geeks.linkedlist;
-
+/**
+ * Reverse The LinkedList
+ * @author Manish Servistava
+ *
+ */
 public class ReverseLinkedlist {
 
 	public static void main(String[] args) {

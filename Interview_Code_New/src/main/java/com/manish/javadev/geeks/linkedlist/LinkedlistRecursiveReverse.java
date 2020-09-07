@@ -1,5 +1,11 @@
 package com.manish.javadev.geeks.linkedlist;
 
+/**
+ * Reverse The LinkedList Using Recursion
+ * 
+ * @author Manish Servistava
+ *
+ */
 public class LinkedlistRecursiveReverse {
 	static Entity head;
 

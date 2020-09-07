@@ -31,7 +31,7 @@ public class FindFirstRepeatCharWithOrderOfN2 {
 		}
 
 		for (int i = 0; i < str.length(); i++) {
-			if (hash[str.charAt(i)] == 2) {
+			if (hash[str.charAt(i)] == 1) {
 				p = i;
 				System.out.println("First reapeted Char " + str.charAt(i));
 				break;

@@ -1,5 +1,11 @@
 package com.manish.javadev.geeks.linkedlist;
 
+/**
+ * Check The LinkedList has Intersection
+ * 
+ * @author Manish Servistava
+ *
+ */
 public class LinkedListIntersection {
 	static Node head1, head2;
 
@@ -29,8 +35,8 @@ public class LinkedListIntersection {
 	}
 
 	/*
-	 * function to get the intersection point of two linked lists head1 and
-	 * head2 where head1 has d more nodes than head2
+	 * function to get the intersection point of two linked lists head1 and head2
+	 * where head1 has d more nodes than head2
 	 */
 	private Node getIntersectionNode(int d, Node node1, Node node2) {
 		int i;
@@ -50,8 +56,8 @@ public class LinkedListIntersection {
 	}
 
 	/*
-	 * Takes head pointer of the linked list and returns the count of nodes in
-	 * the list
+	 * Takes head pointer of the linked list and returns the count of nodes in the
+	 * list
 	 */
 	int getCount(Node node) {
 		Node current = node;

@@ -2,6 +2,12 @@ package com.manish.javadev.geeks.linkedlist;
 
 import java.util.Stack;
 
+/**
+ * Check The LinkedList is Palindrome or not
+ * 
+ * @author Manish Servistava
+ *
+ */
 public class PalindromeLinkedList {
 
 	public static void main(String[] args) {

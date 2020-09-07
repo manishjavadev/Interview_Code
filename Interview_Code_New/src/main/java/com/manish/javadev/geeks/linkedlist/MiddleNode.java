@@ -1,5 +1,10 @@
 package com.manish.javadev.geeks.linkedlist;
-
+/**
+ * Find The Middle of LinkedList
+ * 
+ * @author Manish Servistava
+ *
+ */
 public class MiddleNode {
 
 	public static void main(String[] args) {
