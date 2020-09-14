@@ -103,7 +103,7 @@ public class TwoMissingNumber {
 		// numbers from avg+1 to n) - (sum of array elements
 		// greater than avg)
 		System.out.println("Second Number");
-		System.out.println((((n * (n + 1)) / 2) - totalSumOfFirstHalf) - sumSecondHalf);
+		System.out.println(n * (n + 1) / 2 - totalSumOfFirstHalf - sumSecondHalf);
 	}
 
 	private static int getSum(int arr[]) {

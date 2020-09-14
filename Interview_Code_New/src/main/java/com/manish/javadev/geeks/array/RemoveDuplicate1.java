@@ -24,7 +24,7 @@ import java.util.Arrays;
 public class RemoveDuplicate1 {
 	public static void main(String[] args) {
 		RemoveDuplicate1 rd = new RemoveDuplicate1();
-		String str = "aaaaabbbbbb";
+		String str = "aaaaabbbbbbccdee";
 		char[] removeDuplicateChar = rd.removeDuplicateChar(str);
 		System.out.println(Arrays.toString(removeDuplicateChar));
 	}
