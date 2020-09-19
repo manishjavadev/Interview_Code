@@ -26,7 +26,7 @@ public class DisplayDate {
 		// Local With Out Format 1609372800000
 		// ENV With Format 1609459199000
 		Long millsStartDate = new Long("1577836800000");
-		Long millsEndDate = new Long("1609372800000");
+		Long millsEndDate = new Long("1672444800000");
 
 		calStartDate.set(Calendar.HOUR_OF_DAY, 0);
 		calStartDate.set(Calendar.MINUTE, 0);
