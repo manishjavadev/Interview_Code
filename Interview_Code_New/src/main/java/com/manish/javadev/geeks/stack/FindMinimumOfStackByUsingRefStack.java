@@ -8,13 +8,13 @@ import java.util.Stack;
  */
 public class FindMinimumOfStackByUsingRefStack {
 	Stack<Integer> stack;
-	Stack<Integer> refstack;
+	Stack<Integer> minStack;
 	Integer minEle;
 
 	// Constructor
 	FindMinimumOfStackByUsingRefStack() {
 		stack = new Stack<Integer>();
-		refstack = new Stack<Integer>();
+		minStack = new Stack<Integer>();
 	}
 
 	// Prints minimum element of MyStack
@@ -26,7 +26,7 @@ public class FindMinimumOfStackByUsingRefStack {
 		// variable minEle stores the minimum element
 		// in the stack.
 		else
-			System.out.println("Minimum Element in the " + " stack is: " + refstack.peek());
+			System.out.println("Minimum Element in the " + " stack is: " + minStack.peek());
 	}
 
 	// prints top element of MyStack
@@ -41,8 +41,8 @@ public class FindMinimumOfStackByUsingRefStack {
 
 		// If t < minEle means minEle stores
 		// value of t.
-		if (t == refstack.peek())
-			System.out.println(refstack.peek());
+		if (t == minStack.peek())
+			System.out.println(minStack.peek());
 		else
 			System.out.println(t);
 	}
@@ -59,9 +59,9 @@ public class FindMinimumOfStackByUsingRefStack {
 
 		// Minimum will change as the minimum element
 		// of the stack is being removed.
-		if (t == refstack.peek()) {
-			System.out.println(refstack.peek());
-			refstack.pop();
+		if (t == minStack.peek()) {
+			System.out.println(minStack.peek());
+			minStack.pop();
 		} else
 			System.out.println(t);
 	}
@@ -70,15 +70,15 @@ public class FindMinimumOfStackByUsingRefStack {
 	void push(Integer x) {
 		if (stack.isEmpty()) {
 			stack.push(x);
-			refstack.push(x);
+			minStack.push(x);
 			System.out.println("Number Inserted: " + x);
 			return;
 		}
 
 		// If new number is less than original minEle
-		if (x < refstack.peek()) {
+		if (x < minStack.peek()) {
 			stack.push(x);
-			refstack.push(x);
+			minStack.push(x);
 		} else
 			stack.push(x);
 		System.out.println("Number Inserted: " + x);

@@ -18,6 +18,21 @@ public class HeapSortWithMaxHeapify {
 		hs.sort(arr);
 		System.out.println("Sorted array is");
 		System.out.println(Arrays.toString(arr));
+		
+	}
+
+	/**
+	 * Display Max Heap
+	 * 
+	 * @param heap
+	 */
+	public static void print(int[] heap) {
+		int size = heap.length;
+		for (int i = 0; i < size / 2; i++) {
+			System.out.print(
+					" PARENT : " + heap[i] + " LEFT CHILD : " + heap[2 * i + 1] + " RIGHT CHILD :" + heap[2 * i + 2]);
+			System.out.println();
+		}
 	}
 
 	public void sort(int arr[]) {
@@ -26,6 +41,7 @@ public class HeapSortWithMaxHeapify {
 		// Build heap (rearrange array)
 		for (int i = n / 2 - 1; i >= 0; i--)
 			heapify(arr, n, i);
+		print(arr);
 		// One by one extract an element from heap
 		for (int i = n - 1; i >= 0; i--) {
 			// Move current root to end

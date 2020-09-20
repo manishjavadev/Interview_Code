@@ -29,16 +29,14 @@ public class FindDuplicateCharacterInString {
 	public void findDuplicateAndDisplayCounter() {
 		String str = "abccdeefffffffghhhhkkk";
 		char[] strArray = str.toCharArray();
-		int counter = 0;
+		int counter = 1;
 		System.out.println("Print char coours how many time and char it self ");
 
-		char tmp = ' ';
-		for (int i = 0; i < strArray.length; i++) {
-			if (counter == 0) {
-				tmp = strArray[i];
-			}
+		char tmp = strArray[0];
+		for (int i = 1; i < strArray.length; i++) {
+			
 			if (tmp == strArray[i]) {
-				counter += 1;
+				counter ++;
 			} else {
 				if (counter > 1) {
 					System.out.println(strArray[i - 1] + " Occurs " + (counter) + " time ");

@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmax-in-o1-time-and-o1-extra-space/
- * 
+ * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
  * Design a stack that supports getMax() in O(1) time and O(1) extra space
  * 
  * Question: Design a Data Structure SpecialStack that supports all the stack

@@ -16,6 +16,7 @@ public class CreateMaxHeapFromArray {
 		hs.max_heap(arr);
 		System.out.println("Sorted array is");
 		System.out.println(Arrays.toString(arr));
+		print(arr);
 	}
 
 	public void max_heap(int arr[]) {
@@ -25,7 +26,21 @@ public class CreateMaxHeapFromArray {
 		for (int i = n / 2 - 1; i >= 0; i--) {
 			build_maxheap(arr, n, i);
 		}
+		System.out.println("");
+	}
 
+	/**
+	 * Display Max Heap
+	 * 
+	 * @param heap
+	 */
+	public static void print(int[] heap) {
+		int size = heap.length;
+		for (int i = 0; i < size / 2; i++) {
+			System.out.print(
+					" PARENT : " + heap[i] + " LEFT CHILD : " + heap[2 * i + 1] + " RIGHT CHILD :" + heap[2 * i + 2]);
+			System.out.println();
+		}
 	}
 
 	// To heapify a subtree rooted with node i which is

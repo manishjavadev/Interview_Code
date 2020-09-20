@@ -71,7 +71,7 @@ public class StringPermutation {
 
 	public static void main(String args[]) {
 		StringPermutation sp = new StringPermutation();
-		List<String> result = sp.permute("ABC".toCharArray());
+		List<String> result = sp.permute("AABC".toCharArray());
 		result.forEach(s -> System.out.println(s));
 	}
 }
