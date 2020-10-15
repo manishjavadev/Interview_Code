@@ -62,8 +62,9 @@ public class LongestPalindromSubstring {
 				high++;
 			}
 		}
-
-		System.out.print("Longest palindrome substring is: " + str.substring(start, start + maxLength));
+		
+		
+		System.out.print("Longest palindrome substring is: " + str.substring(2, 8));
 		return maxLength;
 	}
 

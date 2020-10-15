@@ -27,7 +27,7 @@ public class DecimalToRomanDemo {
 	public String decimalToRoman(int num) {
 		String result = new String();
 		for (int baseData : bases) {
-			while (num >= baseData) {
+			if (num >= baseData) {
 				result = result + map.get(baseData);
 				num = num - baseData;
 			}
