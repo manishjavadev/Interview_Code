@@ -34,8 +34,7 @@ public class BSTInsertionUsingRecursion {
 		}
 		if (root.data > data) {
 			root.left = insert(root.left, data);
-		}
-		if (root.data < data) {
+		} else {
 			root.right = insert(root.right, data);
 		}
 		if (root.data == data) {

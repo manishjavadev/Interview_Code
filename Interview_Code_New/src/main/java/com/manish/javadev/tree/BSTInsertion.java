@@ -59,8 +59,7 @@ public class BSTInsertion {
 		}
 		if (root.data > data) {
 			root.left = insertWithRecurtion(root.left, data);
-		}
-		if (root.data < data) {
+		} else {
 			root.right = insertWithRecurtion(root.right, data);
 		}
 		if (root.data == data) {

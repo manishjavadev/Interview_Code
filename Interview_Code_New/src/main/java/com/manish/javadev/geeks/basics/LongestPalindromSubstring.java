@@ -14,12 +14,12 @@ public class LongestPalindromSubstring {
 		// String str = "forgeeksskeegfor";
 		// String str = "BNMLMANISHSINAMRTYI";
 		String str = "XSMANINAMTX";
-		System.out.println("Length is: " + longestPalSubstr(str));
+		System.out.println("\nLength is: " + longestPalSubstr(str));
 	}
 
 	/**
-	 * This function prints the longest palindrome substring (LPS) of str[]. It
-	 * also returns the length of the longest palindrome
+	 * This function prints the longest palindrome substring (LPS) of str[]. It also
+	 * returns the length of the longest palindrome
 	 */
 	static int longestPalSubstr(String str) {
 		// str = "AXXA";
@@ -62,10 +62,7 @@ public class LongestPalindromSubstring {
 				high++;
 			}
 		}
-		
-		
-		System.out.print("Longest palindrome substring is: " + str.substring(2, 8));
+		System.out.print("Longest palindrome substring is: " + str.substring(start, start + maxLength));
 		return maxLength;
 	}
-
 }
