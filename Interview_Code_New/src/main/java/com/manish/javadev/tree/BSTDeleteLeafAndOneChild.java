@@ -63,7 +63,7 @@ public class BSTDeleteLeafAndOneChild {
 		// Delete 1 child node
 		if (crr.left != null || crr.right != null) {
 			if (prev == null) {
-				return null;
+				return tmp;
 			}
 			if (prev.right == crr) {
 				prev.right = tmp;

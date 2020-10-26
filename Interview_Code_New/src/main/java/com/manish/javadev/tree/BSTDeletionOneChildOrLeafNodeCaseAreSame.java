@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  * @author Manish Srivastava
  *
  */
-public class BSTDeletionOneChildAndLeafNodeCaseAreSame {
+public class BSTDeletionOneChildOrLeafNodeCaseAreSame {
 	static BSTNode crr;
 	static BSTNode current;
 
