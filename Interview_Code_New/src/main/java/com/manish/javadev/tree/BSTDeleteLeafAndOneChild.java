@@ -52,7 +52,7 @@ public class BSTDeleteLeafAndOneChild {
 		BSTNode tmp = crr.left != null ? crr.left : crr.right;
 		if (crr.left == null && crr.right == null) {
 			if (prev == null) {
-				return null;
+				return tmp;
 			}
 			if (prev.right == crr) {
 				prev.right = tmp;
