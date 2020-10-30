@@ -22,13 +22,16 @@ public class ReverseTheElementOfArray {
 	}
 
 	private int[] reverseArray(int[] arr, int low, int high) {
-		int temp = 0;
 		if (low < high) {
-			temp = arr[low];
-			arr[low++] = arr[high];
-			arr[high--] = temp;
-			reverseArray(arr, low, high);
+			swapData(arr, low, high);
+			reverseArray(arr, low + 1, high - 1);
 		}
 		return arr;
+	}
+
+	private void swapData(int[] arr, int low, int high) {
+		int temp = arr[low];
+		arr[low] = arr[high];
+		arr[high] = temp;
 	}
 }
