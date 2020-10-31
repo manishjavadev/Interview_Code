@@ -1,6 +1,7 @@
 package com.manish.javadev.tree;
 
 import java.util.NoSuchElementException;
+
 /**
  * 
  * @author Manish Srivastava
@@ -57,7 +58,10 @@ public class BSTDeletionHaveBothChild {
 			crr.data = y.data;
 			crr = y;
 		}
-		// Delete leaf or 1 child
+		/**
+		 * After above logic our both child deletion case become leaf or 1 child
+		 * deletion program
+		 */
 		BSTNode tmp = crr.left != null ? crr.left : crr.right;
 		if (prev == null) {
 			return tmp;
