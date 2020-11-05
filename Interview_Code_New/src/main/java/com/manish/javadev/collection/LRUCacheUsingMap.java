@@ -52,24 +52,24 @@ public class LRUCacheUsingMap {
 		if (start == null)
 			start = node;
 		else {
-			end.next = node;
-			node.prev = end;
+			end.right = node;
+			node.left = end;
 		}
 		end = node;
 	}
 
 	public void removeNode(Entry node) {
 
-		if (node.prev != null) {
-			node.prev.next = node.next;
+		if (node.left != null) {
+			node.left.right = node.right;
 		} else {
-			start = node.next;
+			start = node.right;
 		}
 
-		if (node.next != null) {
-			node.next.prev = node.prev;
+		if (node.right != null) {
+			node.right.left = node.left;
 		} else {
-			end = node.prev;
+			end = node.left;
 		}
 	}
 
@@ -94,8 +94,8 @@ public class LRUCacheUsingMap {
 class Entry {
 	int value;
 	int key;
-	Entry prev;
-	Entry next;
+	Entry left;
+	Entry right;
 
 	public Entry(int key, int value) {
 		this.key = key;

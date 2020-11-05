@@ -25,7 +25,7 @@ public class MyOwnStack {
 	}
 
 	public void addObject(Object obj) {
-		if (size == 10) {
+		if (size == capacity) {
 			alterCapacity();
 		}
 		elements[size++] = obj;
@@ -51,7 +51,7 @@ public class MyOwnStack {
 
 	public Object removeObjectFromQueue() {
 		Object obj = elements[0];
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size-1; i++) {
 			elements[i] = elements[i + 1];
 		}
 		size--;
@@ -61,7 +61,7 @@ public class MyOwnStack {
 	public String toString() {
 		StringBuffer sb = new StringBuffer("[");
 		for (int i = 0; i < size; i++) {
-			sb.append(elements[i] + ",");
+			sb.append(elements[i] + "\t");
 		}
 		return sb.substring(0, sb.length() - 1) + "]";
 
