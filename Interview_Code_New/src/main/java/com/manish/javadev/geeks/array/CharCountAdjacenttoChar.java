@@ -13,13 +13,11 @@ public class CharCountAdjacenttoChar {
 		char ch[] = { 'a', 'b', 'c', 'c', 'c', 'd', 'd' };
 		System.out.println(ch);
 
-		int count = 0;
-		char temp = ' ';
+		int count = 1;
+		char temp = ch[0];
 		String finalResult = "";
-		for (int i = 0; i < ch.length; i++) {
-			if (count == 0) {
-				temp = ch[i];
-			}
+		for (int i = 1; i < ch.length; i++) {
+			
 			if (temp == ch[i]) {
 				count++;
 			} else {

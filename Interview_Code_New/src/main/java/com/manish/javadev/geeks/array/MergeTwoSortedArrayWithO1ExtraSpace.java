@@ -33,8 +33,8 @@ import java.util.Arrays;
  * 
  */
 public class MergeTwoSortedArrayWithO1ExtraSpace {
-	static int arr1[] = { 1, 5, 9, 10, 15, 20 };
-	static int arr2[] = { 2, 3, 8, 13 };// 10,13,15,20
+	static int arr2[] = { 2,3,5,7};
+	static int arr1[] = { 1,2,3,4,6,8 };// 10,13,15,20
 
 	public static void main(String[] args) {
 		MergeTwoSortedArrayWithO1ExtraSpace mtsa = new MergeTwoSortedArrayWithO1ExtraSpace();
