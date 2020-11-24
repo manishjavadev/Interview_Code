@@ -33,8 +33,8 @@ import java.util.Arrays;
  * 
  */
 public class MergeTwoSortedArrayWithO1ExtraSpace {
-	static int arr2[] = { 2,3,5,7};
-	static int arr1[] = { 1,2,3,4,6,8 };// 10,13,15,20
+	static int arr2[] = { 2, 3, 5, 7 };
+	static int arr1[] = { 1, 2, 3, 4, 6, 8 };// 10,13,15,20
 
 	public static void main(String[] args) {
 		MergeTwoSortedArrayWithO1ExtraSpace mtsa = new MergeTwoSortedArrayWithO1ExtraSpace();
@@ -43,7 +43,7 @@ public class MergeTwoSortedArrayWithO1ExtraSpace {
 		System.out.println("AfterSorting = " + Arrays.toString(arr2));
 	}
 
-	void merge(int ar1[], int ar2[], int l1, int l2) {
+	void merge(int a1[], int a2[], int l1, int l2) {
 		/*
 		 * Iterate through all elements of ar2[] starting from the last element
 		 */
@@ -52,9 +52,9 @@ public class MergeTwoSortedArrayWithO1ExtraSpace {
 			 * Find the smallest element greater than ar2[i]. Move all elements one position
 			 * ahead off ar1 till the smallest element is not found
 			 */
-			int j, last = ar1[l1 - 1];
-			for (j = l1 - 2; ar2[i] < ar1[j] && j >= 0; j--) {
-				ar1[j + 1] = ar1[j];
+			int j, last = a1[l1 - 1];
+			for (j = l1 - 2; a1[j] > a2[i] && j >= 0; j--) {
+				a1[j + 1] = a1[j];
 			}
 			/**
 			 * j != l1 - 2:
@@ -68,9 +68,9 @@ public class MergeTwoSortedArrayWithO1ExtraSpace {
 			 * 
 			 * assume your arr1 ={1, 3, 5, 7, 11} and your arr2 ={2, 4, 8}
 			 */
-			if (j != l1 - 2 || last > ar2[i]) {
-				ar1[j + 1] = ar2[i];
-				ar2[i] = last;
+			if (j != l1 - 2 || last > a2[i]) {
+				a1[j + 1] = a2[i];
+				a2[i] = last;
 			}
 		}
 	}

@@ -26,7 +26,7 @@ public class SurparserOfArray {
 	// Function to find surpasser count of each element
 	// in array
 	private static void findSurpasser(int arr[]) {
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length-1; i++) {
 			// stores surpasser count for element arr[i]
 			int count = 0;
 			for (int j = i + 1; j < arr.length; j++) {

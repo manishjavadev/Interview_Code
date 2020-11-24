@@ -14,7 +14,7 @@ public class FindSubArrayOfNumberWhoesSumZero {
 			int sum = 0;
 			for (int j = i; j < seed.length; j++) {
 				sum = sum + seed[j];
-				str = str + seed[j] + ",";
+				str = str + seed[j] + "\t";
 				if (sum == currSum) {
 					str = str.substring(0, str.length()-1);
 					System.out.println(" sum : " + sum + " array : " + str + "]");
