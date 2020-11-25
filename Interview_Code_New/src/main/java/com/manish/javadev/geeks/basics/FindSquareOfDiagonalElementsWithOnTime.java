@@ -1,4 +1,4 @@
-package com.manish.javadev.geeks.array;
+package com.manish.javadev.geeks.basics;
 
 /**
  * Time Complexity O(n)
