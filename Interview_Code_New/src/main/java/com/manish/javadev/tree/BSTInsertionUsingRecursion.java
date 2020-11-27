@@ -32,11 +32,6 @@ public class BSTInsertionUsingRecursion {
 		if (root == null) {
 			return new BSTNode(data);
 		}
-		if (root.data > data) {
-			root.left = insert(root.left, data);
-		} else {
-			root.right = insert(root.right, data);
-		}
 		if (root.data == data) {
 			try {
 				throw new Exception("IllegalArgumentException");
@@ -44,6 +39,12 @@ public class BSTInsertionUsingRecursion {
 				e.printStackTrace();
 			}
 		}
+		if (root.data > data) {
+			root.left = insert(root.left, data);
+		} else {
+			root.right = insert(root.right, data);
+		}
+
 		return root;
 	}
 }

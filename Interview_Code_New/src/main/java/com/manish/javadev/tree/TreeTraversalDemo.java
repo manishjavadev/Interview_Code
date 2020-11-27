@@ -23,7 +23,8 @@ public class TreeTraversalDemo {
 			postOrder(root);
 		}
 		if (flag == 3) {
-			inOrder(root);
+			boolean inOrder = inOrder(root);
+			System.out.println("Result ::" + inOrder);
 		}
 	}
 
@@ -49,7 +50,8 @@ public class TreeTraversalDemo {
 		}
 	}
 
-	public static void inOrder(BSTNode root) {
+	public static boolean inOrder(BSTNode root) {
+		int prev = Integer.MIN_VALUE;
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		Queue<BSTNode> queue = new LinkedList<BSTNode>();
 		boolean done = false;
@@ -63,15 +65,17 @@ public class TreeTraversalDemo {
 					done = true;
 				} else {
 					BSTNode top = stack.pop();
+					if (top.data <= prev) {
+						return false;
+					}
+					prev = top.data;
 					queue.add(top);
 					cur = top.right;
 				}
 			}
 		}
-		System.out.println("Display for inOrder from Queue");
-		for (BSTNode node : queue) {
-			System.out.println(node.data);
-		}
+		return true;
+
 	}
 
 	/**

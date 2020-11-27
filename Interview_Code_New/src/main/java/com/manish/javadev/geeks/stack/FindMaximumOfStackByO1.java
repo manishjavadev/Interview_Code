@@ -62,7 +62,7 @@ public class FindMaximumOfStackByO1 {
 
 		System.out.print("Top Most Element is: ");
 
-		// If t < maxEle means maxEle stores
+		// If t > maxEle means maxEle stores
 		// value of t.
 		if (t > maxEle)
 			System.out.println(maxEle);
