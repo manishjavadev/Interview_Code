@@ -68,7 +68,7 @@ public class FindElementInSortedRotatedUsingPivote {
 			int mid = (low + high) / 2;
 			if (arr[mid] == key)
 				return mid;
-			if (arr[mid] >= key)
+			if (arr[mid] > key)
 				return binarySearch(arr, low, mid - 1, key);
 			return binarySearch(arr, mid + 1, high, key);
 		}
@@ -109,7 +109,7 @@ public class FindElementInSortedRotatedUsingPivote {
 			int mid = (low + high) / 2;
 			if (arr[mid] > arr[mid + 1])
 				return mid;
-			if (arr[low] <= arr[mid])
+			if (arr[low] < arr[mid])
 				return findPivot(arr, mid + 1, high);
 			return findPivot(arr, low, mid - 1);
 		}

@@ -7,20 +7,15 @@ package com.manish.javadev.tree;
  */
 public class TreeTraversalRecursionDemo {
 	public static void main(String[] args) {
-		int prev = Integer.MIN_VALUE;
 		BSTNode root = BSTDefaultTree.getDefaultTree();
 		System.out.println("Pre-Order");
 		preOrder(root);
-		System.out.println("");
 
 		System.out.println("Post-Order");
 		postOrder(root);
 
-		System.out.println("");
 		System.out.println("In-Order");
-		boolean inOrder = inOrder(root, prev);
-		System.out.println("");
-		System.out.println("Result  ::: " + inOrder);
+		inOrder(root);
 
 	}
 
@@ -32,17 +27,12 @@ public class TreeTraversalRecursionDemo {
 		}
 	}
 
-	public static boolean inOrder(BSTNode root, int prev) {
+	public static void inOrder(BSTNode root) {
 		if (root != null) {
-			inOrder(root.left, prev);
+			inOrder(root.left);
 			System.out.print(root.data + "\t");
-			if (root.data <= prev) {
-				return false;
-			}
-			prev = root.data;
-			inOrder(root.right, prev);
+			inOrder(root.right);
 		}
-		return true;
 	}
 
 	public static void postOrder(BSTNode root) {

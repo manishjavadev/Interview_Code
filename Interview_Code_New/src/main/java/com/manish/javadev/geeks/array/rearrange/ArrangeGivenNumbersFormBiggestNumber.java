@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
@@ -65,13 +64,7 @@ public class ArrangeGivenNumbersFormBiggestNumber {
 				 * If XY.compareTo(YX) return -1: XY placed before YX If XY.compareTo(YX) return
 				 * 1: XY placed After YX
 				 */
-				if (XY.compareTo(YX) > 0) {
-					return -1;
-				} else {
-					return 1;
-				}
-				// result = XY.compareTo(YX) > 0 ? -1 : 1;
-				// return result;
+				return XY.compareTo(YX) > 0 ? -1 : 1;
 			}
 		});
 
