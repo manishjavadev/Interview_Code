@@ -19,12 +19,10 @@ public class CircularLinkedList {
 		cll.createList(40);
 		cll.createList(50);
 		cll.createList(60);
-
 	}
 
 	private void createList(Object data) {
 		Node e = new Node(data);
-		e.data = data;
 		if (last == null) {
 			e.next = last;
 		} else {
@@ -47,17 +45,18 @@ public class CircularLinkedList {
 
 	public void addAfter(Object data, int pos) {
 		Node e = new Node(data);
-		Node em = last.next;
-		for (int i = 0; i < pos - 1; i++) {
-			if (em.next == last.next) {
-				return;
-			}
-			em = em.next;
+		Node frontLast = last.next;
+		for (int i = 0; frontLast != null && i < pos - 1; i++) {
+			frontLast = frontLast.next;
 		}
 
-		e.next = em.next;
-		em.next = e;
-		if (em == last) {
+		if (frontLast == null) {
+			return;
+		}
+
+		e.next = frontLast.next;
+		frontLast.next = e;
+		if (frontLast == last) {
 			last = e;
 		}
 	}

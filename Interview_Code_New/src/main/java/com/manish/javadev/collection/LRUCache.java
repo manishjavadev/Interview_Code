@@ -10,7 +10,7 @@ public class LRUCache {
 	int capacity;
 
 	public LRUCache(int capacity) {
-		this.cache = new LinkedHashSet<Integer>(capacity);
+		cache = new LinkedHashSet<Integer>(capacity);
 		this.capacity = capacity;
 	}
 

@@ -19,7 +19,7 @@ public class SortHashMapByValueUsingLambda {
 	public List<Entry<Integer, Employee>> sortByValue(Map<Integer, Employee> wordMap) {
 
 		Set<Map.Entry<Integer, Employee>> set = wordMap.entrySet();
-		List<Map.Entry<Integer, Employee>> list = new ArrayList<Map.Entry<Integer, Employee>>();
+		List<Map.Entry<Integer, Employee>> list = new ArrayList<Map.Entry<Integer, Employee>>(set);
 		Collections.sort(list, new Comparator<Map.Entry<Integer, Employee>>() {
 			@Override
 			public int compare(Entry<Integer, Employee> o1, Entry<Integer, Employee> o2) {

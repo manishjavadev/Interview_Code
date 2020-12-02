@@ -10,39 +10,7 @@ package com.manish.javadev.collection;
  */
 public class MyDoubleLinkedList {
 
-	Element front, back;
-
-	// createNode(Object data)
-	public void createNode(Object data) {
-		Element e = new Element(data);
-		if (front == null)
-			front = e;
-		else
-			back.next = e;
-		e.pre = back;
-		back = e;
-	}
-
-	// Iterate the double linked list
-	public void iterate() {
-		Element e = front;
-		while (e != null) {
-			System.out.println(e.data);
-			e = e.next;
-		}
-	}
-}
-
-class Element {
-	public Element pre, next;
-	Object data;
-
-	public Element(Object data) {
-		this.data = data;
-	}
-}
-
-class MyDoubleLinkedListManager {
+	Element start, end;
 
 	public static void main(String[] args) {
 		// Here i am creating the object of MyDoubleLinkedList
@@ -52,5 +20,35 @@ class MyDoubleLinkedListManager {
 		mdl.createNode(30);
 		mdl.createNode(40);
 		mdl.iterate();
+	}
+
+	// createNode(Object data)
+	public void createNode(Object data) {
+		Element node = new Element(data);
+		if (start == null)
+			start = node;
+		else {
+			end.right = node;
+			node.left = end;
+		}
+		end = node;
+	}
+
+	// Iterate the double linked list
+	public void iterate() {
+		Element e = start;
+		while (e != null) {
+			System.out.println(e.data);
+			e = e.right;
+		}
+	}
+}
+
+class Element {
+	public Element left, right;
+	Object data;
+
+	public Element(Object data) {
+		this.data = data;
 	}
 }
