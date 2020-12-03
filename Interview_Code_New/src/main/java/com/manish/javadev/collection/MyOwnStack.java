@@ -45,13 +45,13 @@ public class MyOwnStack {
 	}
 
 	// Here is a removing element from stack
-	public Object pop() {
+	public Object removeObjectFromStack() {
 		return elements[--size];
 	}
 
-	public Object peek() {
+	public Object removeObjectFromQueue() {
 		Object obj = elements[0];
-		for (int i = 0; i < size - 1; i++) {
+		for (int i = 0; i < size-1; i++) {
 			elements[i] = elements[i + 1];
 		}
 		size--;
@@ -69,20 +69,20 @@ public class MyOwnStack {
 
 	public static void main(String[] args) {
 
-		MyOwnStack stack = new MyOwnStack();
-		stack.addObject("abc");
-		stack.addObject("123");
-		stack.addObject("bcd");
-		System.out.println(stack);
+		MyOwnStack s1 = new MyOwnStack();
+		s1.addObject("abc");
+		s1.addObject("123");
+		s1.addObject("bcd");
+		System.out.println(s1);
 		// Here i am calling remove method of Stack
-		//System.out.println(stack.pop());
-		System.out.println(stack);
-		stack.addObject("433");
-		stack.addObject("hello");
+		// System.out.println(s1.removeObjectFromStack());
+		System.out.println(s1);
+		s1.addObject("433");
+		s1.addObject("hello");
 		// Here i am again calling remove method of Stack
 		// after adding new object
-		System.out.println(stack);
-		System.out.println(stack.peek());
-		System.out.println(stack);
+		System.out.println(s1);
+		System.out.println(s1.removeObjectFromQueue());
+		System.out.println(s1);
 	}
 }

@@ -64,12 +64,14 @@ public class LRUCacheUsingMap {
 			node.left.right = node.right;
 		} else {
 			start = node.right;
+			node.right.left = null;
 		}
 
 		if (node.right != null) {
 			node.right.left = node.left;
 		} else {
 			end = node.left;
+			end.right = null;
 		}
 	}
 
