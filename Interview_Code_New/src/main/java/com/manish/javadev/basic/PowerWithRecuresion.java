@@ -11,7 +11,11 @@ import java.util.Scanner;
  * This program printing Power Of Number using Recuresion till entered number
  * Power Of number
  * 
- * = 1 n=0 a^n = a*power(a,n-1) n>1
+ * 			   1 n=0 
+ * 
+ * a^n  = 
+ * 			
+ * 			   a*power(a,n-1) n>1
  */
 public class PowerWithRecuresion {
 

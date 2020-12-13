@@ -52,10 +52,14 @@ public class PrimeNumberLessThanEnteredNumber {
 		// IN side while we are calling a function which will check for prime
 		// prime logic is in method what i am calling from here
 		for (int i = 1; i <= number; i++) {
-			if (isPrimeDivideBy2(i)) {
+			if (isPrime(i)) {
 				System.out.print(i + "\t");
 			}
 		}
+		/**
+		 * for (int i = 1; i <= number; i++) { if (isPrimeDivideBy2(i)) {
+		 * System.out.print(i + "\t"); } }
+		 */
 	}
 
 	/**

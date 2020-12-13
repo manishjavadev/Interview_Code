@@ -2,7 +2,6 @@ package com.manish.javadev.basic;
 
 public class GCDOFNNumberDemo {
 	public static void main(String[] args) {
-		GCDOFNNumberDemo gcdDemo = new GCDOFNNumberDemo();
 		int arr[] = { 1, 2, 3 };
 		int resultGcd = findGcd(arr);
 		System.out.println("Result :: " + resultGcd);

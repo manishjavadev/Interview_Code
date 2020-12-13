@@ -30,7 +30,7 @@ public class SecondSmallestNumberInArray {
 
 	/* Driver program to test above functions */
 	public static void main(String[] args) {
-		int arr[] = { 10, 3, 5, 7, 0, 9 };
+		int arr[] = { 10, 3 };
 		print2Smallest(arr);
 	}
 }

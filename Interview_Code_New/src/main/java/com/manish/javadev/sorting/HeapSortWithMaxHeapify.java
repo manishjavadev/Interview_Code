@@ -39,6 +39,43 @@ public class HeapSortWithMaxHeapify {
 		int n = arr.length;
 
 		// Build heap (rearrange array)
+		/**
+		 * Array = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17}
+
+Corresponding Complete Binary Tree is:
+*/
+		/**
+                
+                 1
+             
+              /     \
+          
+            3         5
+        
+         /    \     /  \
+       
+        4      6   13  10
+       / \    / \
+     
+      9   8  15 17
+
+
+The task to build a Max-Heap from above array.
+
+Total Nodes = 11.
+Last Non-leaf node index = (11/2) - 1 = 4.
+Therefore, last non-leaf node = 6.
+
+To build the heap, heapify only the nodes:
+[1, 3, 5, 4, 6] in reverse order.
+
+Why n/2 to see explanation here
+https://www.geeksforgeeks.org/building-heap-from-array/
+		 */
+		
+		/**
+		 * n/2 position is having left and right child, that is why we have int i = n / 2 - 1
+		 */
 		for (int i = n / 2 - 1; i >= 0; i--)
 			heapify(arr, n, i);
 		print(arr);

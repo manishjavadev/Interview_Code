@@ -1,21 +1,44 @@
 package com.manish.javadev.tree;
 
+import java.util.Scanner;
+
 /**
  * 
  * @author Manish Srivastava
  *
  */
 public class TreeTraversalRecursionDemo {
+	static int prev = -1;
+
 	public static void main(String[] args) {
 		BSTNode root = BSTDefaultTree.getDefaultTree();
-		System.out.println("Pre-Order");
-		preOrder(root);
 
-		System.out.println("Post-Order");
-		postOrder(root);
+		System.out.println("For \nPre-Order : 1\nPost-Order : 2 \nIn-Order :3 \nTo Check is BST or Not :4");
+		Scanner sc = new Scanner(System.in);
+		String data = sc.next();
+		if (data.equals("1")) {
+			System.out.println("Pre-Order");
+			preOrder(root);
+		}
 
-		System.out.println("In-Order");
-		inOrder(root);
+		if (data.equals("2")) {
+			System.out.println("Post-Order");
+			postOrder(root);
+		}
+
+		if (data.equals("3")) {
+			System.out.println("In-Order");
+			inOrder(root);
+		}
+		if (data.equals("4")) {
+			System.out.println("In-Order");
+			boolean result = isBstUsingInOrder(root);
+			if (result) {
+				System.out.println("Is BST");
+			} else {
+				System.out.println("Is Not A BST");
+			}
+		}
 
 	}
 
@@ -33,6 +56,18 @@ public class TreeTraversalRecursionDemo {
 			System.out.print(root.data + "\t");
 			inOrder(root.right);
 		}
+	}
+
+	public static boolean isBstUsingInOrder(BSTNode root) {
+		if (root != null) {
+			inOrder(root.left);
+			if (root.data < prev) {
+				return false;
+			}
+			prev = root.data;
+			inOrder(root.right);
+		}
+		return true;
 	}
 
 	public static void postOrder(BSTNode root) {

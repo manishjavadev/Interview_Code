@@ -54,12 +54,12 @@ public class CheckArmstrongNumber {
 	}
 
 	private static int getNumberOfDigit(int number) {
-		int digitCounter = 0;
+		int cnt = 0;
 		while (number > 0) {
-			digitCounter++;
+			cnt++;
 			number = number / 10;
 		}
-		return digitCounter;
+		return cnt;
 	}
 
 }

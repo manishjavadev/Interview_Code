@@ -21,6 +21,13 @@ import java.util.Arrays;
  */
 public class FindModeInArray {
 
+	public static void main(String[] args) {
+		int[] a = { 1, 1, 2, 3, 3 };
+		FindModeInArray findMode = new FindModeInArray();
+		int result = findMode.findModeOfArray(a);
+		System.out.println(result);
+	}
+
 	public int findModeOfArray(int[] arr) {
 
 		if (arr == null || arr.length == 0)
@@ -47,13 +54,6 @@ public class FindModeInArray {
 		}
 
 		return count > maxCount ? arr[arr.length - 1] : mode;
-	}
-
-	public static void main(String[] args) {
-		int[] a = { 1, 1, 2, 3, 3 };
-		FindModeInArray findMode = new FindModeInArray();
-		int result = findMode.findModeOfArray(a);
-		System.out.println(result);
 	}
 
 }

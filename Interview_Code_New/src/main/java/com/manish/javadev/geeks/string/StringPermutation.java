@@ -22,15 +22,6 @@ public class StringPermutation {
 		Map<Character, Integer> countMap = new TreeMap<>();
 		for (char ch : input) {
 			countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
-
-			/*
-			 * OR
-			 * 
-			 * Above code you can also write
-			 * 
-			 * countMap.compute(ch, (key, val) -> { if (val == null) { return 1; } else {
-			 * return val + 1; } });
-			 */
 		}
 		System.out.println(countMap);
 		System.out.println("===========");
@@ -50,7 +41,7 @@ public class StringPermutation {
 
 	public void permuteUtil(char str[], int count[], int level, char result[], List<String> finalResultList) {
 		if (level == result.length) {
-			// finalResultList.add(new String(result)); OR
+			//finalResultList.add(new String(result)); //OR
 			System.out.println(new String(result));
 			return;
 		}

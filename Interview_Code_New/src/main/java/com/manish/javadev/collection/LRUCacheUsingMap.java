@@ -60,18 +60,20 @@ public class LRUCacheUsingMap {
 
 	public void removeNode(Entry node) {
 
-		if (node.left != null) {
-			node.left.right = node.right;
-		} else {
+		if (node.left == null) {
 			start = node.right;
 			node.right.left = null;
+			
+		} else {
+			node.left.right = node.right;
 		}
 
-		if (node.right != null) {
-			node.right.left = node.left;
-		} else {
+		if (node.right == null) {
 			end = node.left;
 			end.right = null;
+			
+		} else {
+			node.right.left = node.left;
 		}
 	}
 
