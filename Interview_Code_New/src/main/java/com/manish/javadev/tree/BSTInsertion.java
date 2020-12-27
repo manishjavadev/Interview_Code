@@ -11,7 +11,7 @@ public class BSTInsertion {
 
 		BSTNode root = BSTDefaultTree.getDefaultTree();
 		BSTInsertion bstInsertion = new BSTInsertion();
-		bstInsertion.insert(root, 28);
+		bstInsertion.insertWithRecurtion(root, 40);
 		System.out.println("manishjavadev.com – Binary Tree Inorder Traversal");
 		preOrder(root);
 	}

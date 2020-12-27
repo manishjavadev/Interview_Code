@@ -23,8 +23,7 @@ public class TreeTraversalDemo {
 			postOrder(root);
 		}
 		if (flag == 3) {
-			boolean inOrder = inOrder(root);
-			System.out.println("Result ::" + inOrder);
+			inOrder(root);
 		}
 	}
 
@@ -35,7 +34,7 @@ public class TreeTraversalDemo {
 		stack.push(root);
 		while (!stack.isEmpty()) {
 			BSTNode cur = stack.pop();
-			System.out.println(cur.data);
+			System.out.print(cur.data + "\t");
 			queue.add(cur);
 			if (cur.right != null) {
 				stack.push(cur.right);
@@ -44,14 +43,13 @@ public class TreeTraversalDemo {
 				stack.push(cur.left);
 			}
 		}
-		System.out.println("Display for preOrder from Queue");
+		System.out.println("\nDisplay for preOrder from Queue");
 		for (BSTNode node : queue) {
-			System.out.println(node.data);
+			System.out.print(node.data + "\t");
 		}
 	}
 
-	public static boolean inOrder(BSTNode root) {
-		int prev = Integer.MIN_VALUE;
+	public static void inOrder(BSTNode root) {
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		Queue<BSTNode> queue = new LinkedList<BSTNode>();
 		boolean done = false;
@@ -65,17 +63,11 @@ public class TreeTraversalDemo {
 					done = true;
 				} else {
 					BSTNode top = stack.pop();
-					if (top.data <= prev) {
-						return false;
-					}
-					prev = top.data;
 					queue.add(top);
 					cur = top.right;
 				}
 			}
 		}
-		return true;
-
 	}
 
 	/**
@@ -100,7 +92,7 @@ public class TreeTraversalDemo {
 		}
 		System.out.println("Display for postOrder from Queue");
 		while (!out.empty()) {
-			System.out.println(out.pop().data);
+			System.out.print(out.pop().data + "\t");
 		}
 	}
 

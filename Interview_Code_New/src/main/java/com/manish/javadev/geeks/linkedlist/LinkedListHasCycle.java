@@ -1,12 +1,22 @@
 package com.manish.javadev.geeks.linkedlist;
 
 public class LinkedListHasCycle {
-	public boolean hashCycle(Entity rootNode) {
+	static class Node {
+
+		int data;
+		Node next;
+
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+	public boolean hashCycle(Node rootNode) {
 		// list is empty.
 		if (rootNode == null)
 			return false;
 		// create two references.
-		Entity slow, fast;
+		Node slow, fast;
 
 		// make both refer to the start of the list.
 		slow = fast = rootNode;
@@ -28,14 +38,14 @@ public class LinkedListHasCycle {
 	}
 
 	public static void main(String[] args) {
-		Entity rootNode = new Entity(1);
-		rootNode.next = new Entity(2);
-		rootNode.next.next = new Entity(3);
-		Entity cycleNode = new Entity(4);
+		Node rootNode = new Node(1);
+		rootNode.next = new Node(2);
+		rootNode.next.next = new Node(3);
+		Node cycleNode = new Node(4);
 		rootNode.next.next.next = cycleNode;
-		rootNode.next.next.next.next = new Entity(5);
-		rootNode.next.next.next.next.next = new Entity(6);
-		rootNode.next.next.next.next.next.next = new Entity(7);
+		rootNode.next.next.next.next = new Node(5);
+		rootNode.next.next.next.next.next = new Node(6);
+		rootNode.next.next.next.next.next.next = new Node(7);
 		rootNode.next.next.next.next.next.next.next = cycleNode;
 		LinkedListHasCycle llhc = new LinkedListHasCycle();
 		boolean result = llhc.hashCycle(rootNode);

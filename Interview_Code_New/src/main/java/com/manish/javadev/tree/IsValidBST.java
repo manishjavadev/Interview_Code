@@ -57,7 +57,19 @@ public class IsValidBST {
 		}
 		return true;
 	}
-
+	
+	public static boolean isBSTUsingInOrder1(BSTNode root) {
+		if (root != null) {
+			isBSTUsingInOrder1(root.left);
+			if (root.data < prev) {
+				return false;
+			}
+			prev = root.data;
+			return isBSTUsingInOrder1(root.right);
+		}
+		return true;
+	}
+	
 	public static boolean isBSTUsingInOrder(BSTNode root) {
 		int prev = Integer.MIN_VALUE;
 		Stack<BSTNode> stack = new Stack<BSTNode>();

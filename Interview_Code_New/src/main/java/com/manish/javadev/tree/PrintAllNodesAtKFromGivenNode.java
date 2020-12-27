@@ -97,6 +97,7 @@ public class PrintAllNodesAtKFromGivenNode {
 		root.left = new Node1(20);
 		root.right = new Node1(30);
 
+		/**
 		// Node is 20
 		root.left.left = new Node1(40);
 		root.left.right = new Node1(50);
@@ -112,13 +113,13 @@ public class PrintAllNodesAtKFromGivenNode {
 
 		// Node is 30
 		root.right.right = new Node1(80);
-
-		Node1 target = root.left.right;// root.left
+*/
+		Node1 target = root.left;// root.left
 
 		// Node1 target = root.left;// and int distance = 1; for base case
 
 		// target node 50, find all node from given node at distance 3
-		int distance = 3;// 1
+		int distance = 1;// 1
 		tree.findNodeAtKDistanceFromTarget(root, target, distance);
 	}
 }

@@ -20,8 +20,8 @@ public class BSTDefaultTree {
 		 */
 		root.left = leftRoot;
 
-		rightRoot.left = new BSTNode(55);
-		rightRoot.right = new BSTNode(52);
+		rightRoot.left = new BSTNode(52);
+		rightRoot.right = new BSTNode(55);
 
 		/*
 		 * rightRoot.left.left = new BSTNode(46); rightRoot.left.right = new
