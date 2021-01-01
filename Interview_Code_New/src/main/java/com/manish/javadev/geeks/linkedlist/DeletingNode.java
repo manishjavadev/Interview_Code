@@ -28,20 +28,18 @@ public class DeletingNode {
 	}
 
 	public Entity deleteGivenKey(Entity root, int data) {
-		Entity prev = null, front;
+		Entity front = null;
 		front = root;
 
 		while (front != null && front.data != data) {
-			prev = front;
 			front = front.next;
-		}
-		if (prev == null) {
-			return root.next;
 		}
 		if (front == null) {
 			return null;
 		}
-		prev.next = front.next;
+		Entity temp = front.next;
+		front.data = temp.data;
+		front.next = temp.next;
 		return root;
 	}
 

@@ -33,21 +33,21 @@ public class LinkedListHasLoopUsingHashSet {
 
 	// Returns true if there is a loop in linked
 	// list else returns false.
-	static boolean detectLoop(Node h) {
+	static boolean detectLoop(Node crr) {
 		HashSet<Node> s = new HashSet<Node>();
-		while (h != null) {
+		while (crr != null) {
 			// If we have already has this node
 			// in hashmap it means their is a cycle
 			// (Because you we encountering the
 			// node second time).
-			if (s.contains(h))
+			if (s.contains(crr))
 				return true;
 
 			// If we are seeing the node for
 			// the first time, insert it in hash
-			s.add(h);
+			s.add(crr);
 
-			h = h.next;
+			crr = crr.next;
 		}
 
 		return false;

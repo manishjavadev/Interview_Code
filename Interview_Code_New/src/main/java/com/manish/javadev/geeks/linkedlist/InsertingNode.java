@@ -23,23 +23,6 @@ public class InsertingNode {
 		front.next = node;
 		return root;
 	}
-
-	public Entity insertAfterGivenPosition(Entity root, int data, int position) {
-		Entity entity = new Entity(data);
-		Entity front = root;
-
-		for (int i = 0; front != null && i < position - 1; i++) {
-			front = front.next;
-		}
-		if (front == null) {
-			return null;
-		}
-		entity.next = front.next;
-		front.next = entity;
-
-		return root;
-	}
-
 	public Entity insertAtGivenPosition(Entity root, int data, int position) {
 		Entity entity = new Entity(data);
 		Entity prev = null;
@@ -61,6 +44,23 @@ public class InsertingNode {
 
 		return root;
 	}
+	public Entity insertAfterGivenPosition(Entity root, int data, int position) {
+		Entity entity = new Entity(data);
+		Entity front = root;
+
+		for (int i = 0; front != null && i < position - 1; i++) {
+			front = front.next;
+		}
+		if (front == null) {
+			return null;
+		}
+		entity.next = front.next;
+		front.next = entity;
+
+		return root;
+	}
+
+	
 
 	public Entity updateAtGivenKey(Entity root, int oldValue, int newValue) {
 		Entity front = null;
