@@ -23,14 +23,11 @@ public class RemoveDuplicatePrimeWithOrderOfN {
 	private static List<Integer> removeDups(int[] inputArray) {
 		int temp = inputArray[0];
 		List<Integer> list = new ArrayList<Integer>();
+		list.add(temp);
 		for (int i = 1; i < inputArray.length; i++) {
-			if (temp == inputArray[i]) {
-			} else {
-				list.add(temp);
+			if (temp != inputArray[i]) {
+				list.add(inputArray[i]);
 				temp = inputArray[i];
-			}
-			if (i == inputArray.length - 1) {
-				list.add(temp);
 			}
 		}
 		return list;

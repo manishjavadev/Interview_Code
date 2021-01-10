@@ -6,18 +6,18 @@ public class LRUCacheUsingMap {
 
 	// Here i am setting 4 to test the LRU cache implementation, it can make be
 	// dynamic
-	HashMap<Integer, Entry> hashmap;
-	Entry start, end;
+	HashMap<Integer, Node> hashmap;
+	Node start, end;
 	int LRU_SIZE = 4;
 
 	public LRUCacheUsingMap() {
-		hashmap = new HashMap<Integer, Entry>();
+		hashmap = new HashMap<Integer, Node>();
 	}
 
 	// Key Already Exist, just update the
 	public int getEntry(int key) {
 		if (hashmap.containsKey(key)) {
-			Entry entry = hashmap.get(key);
+			Node entry = hashmap.get(key);
 			removeNode(entry);
 			addAtTop(entry);
 			return entry.value;
@@ -28,12 +28,12 @@ public class LRUCacheUsingMap {
 	public void putEntry(int key, int value) {
 		// Key Already Exist, just update the value and move it to top
 		if (hashmap.containsKey(key)) {
-			Entry entry = hashmap.get(key);
+			Node entry = hashmap.get(key);
 			entry.value = value;
 			removeNode(entry);
 			addAtTop(entry);
 		} else {
-			Entry newnode = new Entry(key, value);
+			Node newnode = new Node(key, value);
 			// We have reached maxium size so need to make room for new element.
 			if (hashmap.size() > LRU_SIZE) {
 				hashmap.remove(start.key);
@@ -47,33 +47,33 @@ public class LRUCacheUsingMap {
 		}
 	}
 
-	public void addAtTop(Entry node) {
+	public void addAtTop(Node node) {
 
 		if (start == null)
 			start = node;
 		else {
+			node.right = end.right;
 			end.right = node;
 			node.left = end;
 		}
 		end = node;
 	}
 
-	public void removeNode(Entry node) {
+	public void removeNode(Node node) {
 
 		if (node.left == null) {
 			start = node.right;
 			node.right.left = null;
-			
+
 		} else {
 			node.left.right = node.right;
+			node.right.left = node.left;
 		}
 
 		if (node.right == null) {
 			end = node.left;
 			end.right = null;
-			
-		} else {
-			node.right.left = node.left;
+
 		}
 	}
 
@@ -88,21 +88,32 @@ public class LRUCacheUsingMap {
 		lrucache.putEntry(18, 10);
 		lrucache.putEntry(13, 16);
 
-		System.out.println(lrucache.getEntry(1));
-		System.out.println(lrucache.getEntry(10));
-		System.out.println(lrucache.getEntry(15));
+		// System.out.println(lrucache.getEntry(1));
+		// System.out.println(lrucache.getEntry(10));
+		// System.out.println(lrucache.getEntry(15));
 
+		lrucache.iterate();
 	}
-}
 
-class Entry {
-	int value;
-	int key;
-	Entry left;
-	Entry right;
-
-	public Entry(int key, int value) {
-		this.key = key;
-		this.value = value;
+	// Iterate the double linked list
+	public void iterate() {
+		Node e = start;
+		while (e != null) {
+			System.out.println("KEY :: " + e.key + " VALUE :: " + e.value);
+			e = e.right;
+		}
 	}
+
+	static class Node {
+		int value;
+		int key;
+		Node left;
+		Node right;
+
+		public Node(int key, int value) {
+			this.key = key;
+			this.value = value;
+		}
+	}
+
 }

@@ -67,7 +67,7 @@ public class InversionCountUsingMergSort {
 		while (i <= mid && j <= high) {
 			if (arr[i] >= arr[j]) {
 				temp[k++] = arr[j++];
-				inversionCounter += (mid + 1) - i;
+				inversionCounter += (j - i);
 			} else {
 				temp[k++] = arr[i++];
 			}
