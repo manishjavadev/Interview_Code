@@ -32,8 +32,8 @@ import java.util.Arrays;
  */
 
 public class InversionCountUsingMergSort {
-	// static int arr[] = { 1, 20, 6, 4, 5 };
-	static int arr[] = { 2, 4, 1, 3, 5 };
+	 static int arr[] = { 1, 20, 6, 4, 5 };
+	//static int arr[] = { 2, 4, 1, 3, 5 };
 	// static int arr[] = { 2, 3, 6, 9, 1 };
 	static int temp[] = new int[arr.length];
 
@@ -67,7 +67,7 @@ public class InversionCountUsingMergSort {
 		while (i <= mid && j <= high) {
 			if (arr[i] >= arr[j]) {
 				temp[k++] = arr[j++];
-				inversionCounter += (j - i);
+				inversionCounter += (mid + 1) - i;
 			} else {
 				temp[k++] = arr[i++];
 			}

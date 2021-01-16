@@ -28,6 +28,13 @@ public class MyDoubleLinkedList {
 		if (start == null)
 			start = node;
 		else {
+
+			/**
+			 * This is not required here but, If same logic used in LRU cache then our top
+			 * node right reference should be null, but this <<node.right = end.right;>> is
+			 * not have any meaning here
+			 */
+			// node.right = end.right;
 			end.right = node;
 			node.left = end;
 		}
