@@ -20,7 +20,6 @@ public class DeadLockDemo {
 		thread2.start();
 		System.out.println("Done");
 	}
-
 }
 
 class Shared {

@@ -9,13 +9,13 @@ public class EvenOddDemo {
 	public static void main(String[] args) {
 		SharedEvenAndOdd s1 = new SharedEvenAndOdd();
 
-		EvenThread et = new EvenThread(s1);
-		OddThread ot = new OddThread(s1);
-		et.start();
-		ot.start();
+		EvenThread even = new EvenThread(s1);
+		OddThread odd = new OddThread(s1);
+		even.start();
+		odd.start();
 		try {
-			et.join();
-			ot.join();
+			even.join();
+			odd.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -53,4 +53,39 @@ class OddThread extends Thread {
 			s1.printOdd();
 		}
 	}
+}
+
+class SharedEvenAndOdd {
+	boolean evenOddFlag = false;
+	int number = 1;
+	// char ch = 'A';
+
+	public synchronized void printEven() {
+		if (!evenOddFlag) {
+			try {
+				this.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		// System.out.println("Even Thread = " + (char) (ch + number++));
+		System.out.println("Even Thread = " + number++);
+		evenOddFlag = false;
+		notify();
+	}
+
+	public synchronized void printOdd() {
+		if (evenOddFlag) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		// System.out.println("Odd Thread = " + (char) (ch + number++));
+		System.out.println("Odd Thread = " + number++);
+		evenOddFlag = true;
+		notify();
+	}
+
 }
