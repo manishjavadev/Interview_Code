@@ -19,7 +19,7 @@ import java.util.TreeMap;
 public class StringPermutation {
 
 	public List<String> permute(char input[]) {
-		Map<Character, Integer> countMap = new TreeMap<>();
+		Map<Character, Integer> countMap = new TreeMap<Character, Integer>();
 		for (char ch : input) {
 			countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
 		}
@@ -33,7 +33,7 @@ public class StringPermutation {
 			count[index] = entry.getValue();
 			index++;
 		}
-		List<String> finalResultList = new ArrayList<>();
+		List<String> finalResultList = new ArrayList<String>();
 		char result[] = new char[input.length];
 		permuteUtil(str, count, 0, result, finalResultList);
 		return finalResultList;
@@ -41,7 +41,7 @@ public class StringPermutation {
 
 	public void permuteUtil(char str[], int count[], int level, char result[], List<String> finalResultList) {
 		if (level == result.length) {
-			//finalResultList.add(new String(result)); //OR
+			// finalResultList.add(new String(result)); //OR
 			System.out.println(new String(result));
 			return;
 		}

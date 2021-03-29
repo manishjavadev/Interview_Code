@@ -23,11 +23,5 @@
 		</dependency>
 	</dependencies>
 
-	<repositories>
-		<repository>
-			<id>centralRepo</id>
-			<name>centralRepo</name>
-			<url>http://cgbu-nexus-dev.us.oracle.com:8081/nexus/repository/central/</url>
-		</repository>
-	</repositories>
+	
 </project>
