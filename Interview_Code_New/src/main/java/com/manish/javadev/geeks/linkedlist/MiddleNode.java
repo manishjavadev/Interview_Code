@@ -21,7 +21,7 @@ public class MiddleNode {
 		if (root == null) {
 			return null;
 		}
-		while (entity.next != null) {
+		while (entity!= null) {
 			counter++;
 			if (counter % 2 == 0) {
 				middle = middle.next;

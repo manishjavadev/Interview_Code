@@ -40,8 +40,7 @@ public class PalindromeLinkedList {
 		while (head != null) {
 			int tmp = stack.pop();
 			if (head.data != tmp) {
-				ispalin = false;
-				break;
+				return false;
 			}
 			head = head.next;
 		}

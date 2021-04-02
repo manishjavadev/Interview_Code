@@ -13,7 +13,7 @@ public class HeapSortWithMaxHeapify {
 
 	public static void main(String[] args) {
 		// int arr[] = { 11, 12, 13, 5, 6, 7, 14 };
-		int arr[] = { 12, 11, 13, 5, 6, 7, 8, 4, 3 };
+		int arr[] = { 14, 12, 13, 5, 6, 7, 11 };
 		HeapSortWithMaxHeapify hs = new HeapSortWithMaxHeapify();
 		hs.sort(arr);
 		System.out.println("Sorted array is");
@@ -74,7 +74,7 @@ https://www.geeksforgeeks.org/building-heap-from-array/
 		 */
 		
 		/**
-		 * n/2 position is having left and right child, that is why we have int i = n / 2 - 1
+		 * n/2-1 position is last root have left, right child
 		 */
 		for (int i = n / 2 - 1; i >= 0; i--)
 			heapify(arr, n, i);

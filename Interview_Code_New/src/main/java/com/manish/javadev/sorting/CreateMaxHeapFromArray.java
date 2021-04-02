@@ -22,7 +22,11 @@ public class CreateMaxHeapFromArray {
 	public void max_heap(int arr[]) {
 		int n = arr.length;
 
-		// Build heap (rearrange array)
+		/**
+		 * Build heap (rearrange array) why for loop started from i=n/2-1
+		 * 
+		 * n/2-1 is the last root node of tree, we  started heapyfy from last node
+		 */
 		for (int i = n / 2 - 1; i >= 0; i--) {
 			build_maxheap(arr, n, i);
 		}

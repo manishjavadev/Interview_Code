@@ -12,7 +12,9 @@ public class TreeTraversalRecursionDemo {
 
 	public static void main(String[] args) {
 		BSTNode root = BSTDefaultTree.getDefaultTree();
-
+		TreeTraversalRecursionDemo obj = new TreeTraversalRecursionDemo();
+		boolean inOrderIsValidTree = obj.inOrderIsValidTree(root);
+		System.out.println("IS Valid Tree :: " + inOrderIsValidTree);
 		System.out.println("For \nPre-Order : 1\nPost-Order : 2 \nIn-Order :3");
 		Scanner sc = new Scanner(System.in);
 		String data = sc.next();
@@ -46,6 +48,19 @@ public class TreeTraversalRecursionDemo {
 			System.out.print(root.data + "\t");
 			inOrder(root.right);
 		}
+	}
+
+	public boolean inOrderIsValidTree(BSTNode root) {
+		if (root != null) {
+			inOrderIsValidTree(root.left);
+			System.out.print(root.data + "\t");
+			if (root.data <= prev) {
+				return false;
+			}
+			prev = root.data;
+			inOrderIsValidTree(root.right);
+		}
+		return true;
 	}
 
 	public static void postOrder(BSTNode root) {

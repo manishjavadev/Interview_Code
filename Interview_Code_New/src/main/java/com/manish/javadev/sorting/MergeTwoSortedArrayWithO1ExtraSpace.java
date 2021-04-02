@@ -71,7 +71,8 @@ public class MergeTwoSortedArrayWithO1ExtraSpace {
 			 * 
 			 * 2nd condition:
 			 * 
-			 * if last is greater than current element, then need to perform below logic
+			 * if 2nd last of a1[j] is smaller than current element(a2[i]), then need to
+			 * perform below logic assume that for loop for j is not executed at all
 			 * 
 			 * assume your arr1 ={1, 3, 5, 7, 11} and your arr2 ={2, 4, 8}
 			 */
