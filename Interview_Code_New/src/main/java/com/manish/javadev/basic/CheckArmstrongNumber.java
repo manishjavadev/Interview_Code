@@ -32,7 +32,7 @@ public class CheckArmstrongNumber {
 		
 		while (numberTest > 0) {
 			rem = numberTest % 10;
-			sum = sum + getPowerSum(rem, power);// here we are making power of digit
+			sum += getPowerSum(rem, power);// here we are making power of digit
 			numberTest = numberTest / 10;
 		}
 		

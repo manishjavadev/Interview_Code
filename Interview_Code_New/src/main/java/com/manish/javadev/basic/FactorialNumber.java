@@ -48,7 +48,7 @@ public class FactorialNumber {
 		if (number == 0) {
 			return 1;
 		} else {
-			return (number * fact(number - 1));
+			return number * fact(number - 1);
 		}
 
 	}
