@@ -26,7 +26,7 @@ public class FirstNonRepeatingUsingForLoop {
 	// Driver method
 	public static void main(String[] args) {
 		//String str = "kgeeksforkgeeks";
-		String str = "LMANANMS";
+		String str = "CLMANNMS";
 		int index = findFirstNonRepeatingChar(str);
 
 		System.out.println(index == -1 ? "Either all characters are repeating or string " + "is empty"

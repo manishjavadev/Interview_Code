@@ -68,7 +68,7 @@ package com.manish.javadev.geeks.array;
  * @author m.d.srivastava
  * 
  */
-public class TwoMissingNumber {
+public class FindTwoMissingNumber {
 	public static void main(String[] args) {
 		int arrLength = 6;
 		int arr[] = { 1, 3, 5, 6 };

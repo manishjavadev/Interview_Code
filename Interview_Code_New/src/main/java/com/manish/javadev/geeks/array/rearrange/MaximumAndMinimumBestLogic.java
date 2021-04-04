@@ -6,7 +6,13 @@ package com.manish.javadev.geeks.array.rearrange;
  * 
  * The idea is to use multiplication and modular trick to store,
  * 
- * two number at one array location
+ * two element at one array index using the formula
+ * 
+ * arr[i] = arr[max_idx] % mv * mv;
+ * 
+ * mv = is max element value + 10
+ * 
+ * int mv = arr[arr.length - 1] + 10;
  * 
  * You tub link
  * 
@@ -18,7 +24,7 @@ package com.manish.javadev.geeks.array.rearrange;
 public class MaximumAndMinimumBestLogic {
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		int arr[] = { 1, 2, 3, 4, 5 };
 
 		System.out.println("Original Array");
 		for (int i = 0; i < arr.length; i++)
@@ -42,14 +48,14 @@ public class MaximumAndMinimumBestLogic {
 		int min_idx = 0;
 
 		// store maximum element of array
-		int mv = arr[arr.length - 1] + 10;
+		int mv = arr[arr.length - 1] + 1;
 
 		// traverse array elements
 		for (int i = 0; i < n; i++) {
 			// at even index : we have to put
 			// maximum elemlent
 			if (i % 2 == 0) {
-				arr[i] += (arr[max_idx] % mv) * mv;
+				arr[i] += arr[max_idx] % mv * mv;
 				max_idx--;
 			}
 			// at odd index : we have to put minimum element

@@ -8,6 +8,7 @@ public class SpiralMatrix2 {
 		System.out.println(Arrays.toString(arr));
 		System.out.println("Entered Matrix");
 		int num = 5;
+		System.out.println("For "+ num +" * " + num + " Matrix Spiral is ");
 		for (int i = 0; i < num; i++) {
 			for (int j = 0; j < num; j++) {
 				System.out.print(i + "," + j + "\t");
