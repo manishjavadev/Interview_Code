@@ -5,6 +5,9 @@ import java.util.Stack;
 /**
  * https://java-questions.com/valid-parentheses.html
  * 
+ * More Complex Link https://www.youtube.com/watch?v=KuE_Cn3xhxI
+ * 
+ * 
  * Q) Given a string containing just the characters '(', ')', '{', '}', '[' and
  * ']', determine if the input string is valid. The brackets must close in the
  * correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
@@ -30,26 +33,21 @@ public class ValidParentheses {
 	}
 
 	public static boolean isValid(String s) {
-		char arr[] = s.toCharArray();
-		Stack<Character> set = new Stack();
-		for (Character ch : arr) {
+		if (s.length() % 2 != 0) {
+			return false;
+		}
+		Stack<Character> set = new Stack<Character>();
+		for (Character ch : s.toCharArray()) {
 			if (ch == '{' || ch == '[' || ch == '(') {
 				set.push(ch);
-			} else if (ch == ']') {
-				if (set.isEmpty() || set.peek() != '[') {
-					return false;
-				}
+			} else if (ch == '}' && !set.isEmpty() && set.peek() == '{') {
 				set.pop();
-			} else if (ch == ')') {
-				if (set.isEmpty() || set.peek() != '(')
-					return false;
+			} else if (ch == ']' && !set.isEmpty() && set.peek() == '[') {
 				set.pop();
-			} else if (ch == '}') {
-				if (set.isEmpty() || set.peek() != '{')
-					return false;
+			} else if (ch == ')' && !set.isEmpty() && set.peek() == '(') {
 				set.pop();
 			}
 		}
-		return set.size() == 0;
+		return set.isEmpty();
 	}
 }
