@@ -39,30 +39,30 @@ public class MakeMiddleNodeHeadInlinkedList {
 
 		// To traverse list nodes one
 		// by one
-		Node one_node = head;
+		Node slow = head;
 
 		// To traverse list nodes by
 		// skipping one.
-		Node two_node = head;
+		Node fast = head;
 
 		// To keep track of previous of middle
 		Node prev = null;
-		while (two_node != null && two_node.next != null) {
+		while (fast != null && fast.next != null) {
 
 			/* for previous node of middle node */
-			prev = one_node;
-
+			prev = slow;
 			/* move one node each time */
-			two_node = two_node.next.next;
+			slow = slow.next;
 
 			/* move two node each time */
-			one_node = one_node.next;
+			fast = fast.next.next;
+
 		}
 
 		/* set middle node at head */
 		prev.next = prev.next.next;
-		one_node.next = head;
-		head = one_node;
+		slow.next = head;
+		head = slow;
 	}
 
 	// To insert a node at the beginning of
