@@ -15,7 +15,7 @@ public class MakeMiddleNodeHeadInlinkedList {
 		// Create a list of 5 nodes
 		head = null;
 		int i;
-		for (i = 5; i > 0; i--)
+		for (i = 6; i > 0; i--)
 			push(i);
 
 		System.out.print(" list before: ");
@@ -60,7 +60,7 @@ public class MakeMiddleNodeHeadInlinkedList {
 		}
 
 		/* set middle node at head */
-		prev.next = prev.next.next;
+		prev.next = slow.next;
 		slow.next = head;
 		head = slow;
 	}

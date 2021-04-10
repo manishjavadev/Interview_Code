@@ -1,4 +1,5 @@
 package com.manish.javadev.geeks.linkedlist;
+
 /**
  * Find The Middle of LinkedList
  * 
@@ -14,21 +15,17 @@ public class MiddleNode {
 	}
 
 	private static Entity getMiddleNode(Entity root) {
-		int counter = 0;
-		Entity entity = root;
-		Entity middle = root;
+		Entity fast = root;
+		Entity slow = root;
 
 		if (root == null) {
 			return null;
 		}
-		while (entity!= null) {
-			counter++;
-			if (counter % 2 == 0) {
-				middle = middle.next;
-			}
-			entity = entity.next;
+		while (fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
 		}
-		return middle;
+		return slow;
 	}
 
 }
