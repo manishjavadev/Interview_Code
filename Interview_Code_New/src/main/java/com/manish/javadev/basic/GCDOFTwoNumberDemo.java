@@ -3,7 +3,7 @@ package com.manish.javadev.basic;
 public class GCDOFTwoNumberDemo {
 	public static void main(String[] args) {
 		GCDOFTwoNumberDemo gcdDemo = new GCDOFTwoNumberDemo();
-		int result = gcdDemo.findGcd(12, 4);
+		int result = gcdDemo.findGcd(10, 45);
 		System.out.println("Result :: " + result);
 	}
 

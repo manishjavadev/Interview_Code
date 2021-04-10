@@ -7,11 +7,13 @@ package com.manish.javadev.string;
  */
 public class ReverseWordWithoutSpecialCahar {
 	public static void main(String[] args) {
-		String str = "#Manish#$Kumar#$";
+		// String str = "#Manish#$Kumar#$";
+		String str = "A,B.C";
 		char[] ch = str.toCharArray();
 
 		System.out.println("Input string: " + str);
-		reverse(ch, 0, ch.length - 1);
+		reverse1(ch, 0, ch.length - 1);
+
 		String resultStr = new String(ch);
 		System.out.println("Output string: " + resultStr);
 	}
@@ -27,6 +29,19 @@ public class ReverseWordWithoutSpecialCahar {
 				low++;
 				high--;
 			}
+		}
+	}
+
+	static void reverse1(char[] ch, int low, int high) {
+		if (low < high) {
+			if (!Character.isAlphabetic(ch[low])) {
+				low++;
+			}
+			if (!Character.isAlphabetic(ch[high])) {
+				high--;
+			}
+			swapData(ch, low, high);
+			reverse1(ch, low + 1, high - 1);
 		}
 	}
 

@@ -28,6 +28,7 @@ public class StringPermutation {
 		char str[] = new char[countMap.size()];
 		int count[] = new int[countMap.size()];
 		int index = 0;
+		
 		for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
 			str[index] = entry.getKey();
 			count[index] = entry.getValue();
