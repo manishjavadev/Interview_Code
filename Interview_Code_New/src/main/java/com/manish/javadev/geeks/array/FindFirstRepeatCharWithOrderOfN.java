@@ -76,7 +76,7 @@ public class FindFirstRepeatCharWithOrderOfN {
 
 	// Driver code
 	public static void main(String[] args) {
-		String str = "MNNRRM";
+		String str = "MANAARRMA";
 		// String str = "geeksforgeeks";
 		int pos = findRepeatFirst(str);
 		if (pos == -1)

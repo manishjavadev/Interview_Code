@@ -17,7 +17,7 @@ public class CharCountAdjacenttoChar {
 		char temp = ch[0];
 		String finalResult = "";
 		for (int i = 1; i < ch.length; i++) {
-			
+
 			if (temp == ch[i]) {
 				count++;
 			} else {

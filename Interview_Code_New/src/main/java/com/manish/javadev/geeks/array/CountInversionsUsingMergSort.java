@@ -31,14 +31,14 @@ import java.util.Arrays;
  * 
  */
 
-public class InversionCountUsingMergSort {
+public class CountInversionsUsingMergSort {
 	 static int arr[] = { 1, 20, 6, 4, 5 };
 	//static int arr[] = { 2, 4, 1, 3, 5 };
 	// static int arr[] = { 2, 3, 6, 9, 1 };
 	static int temp[] = new int[arr.length];
 
 	public static void main(String... v) {
-		InversionCountUsingMergSort ms = new InversionCountUsingMergSort();
+		CountInversionsUsingMergSort ms = new CountInversionsUsingMergSort();
 		ms.doSorting();
 	}
 

@@ -53,7 +53,7 @@ public class MaximumAndMinimumBestLogic {
 		// traverse array elements
 		for (int i = 0; i < n; i++) {
 			// at even index : we have to put
-			// maximum elemlent
+			// maximum element
 			if (i % 2 == 0) {
 				arr[i] += arr[max_idx] % mv * mv;
 				max_idx--;
