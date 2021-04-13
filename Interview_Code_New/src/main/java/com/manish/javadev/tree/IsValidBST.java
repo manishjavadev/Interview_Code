@@ -12,8 +12,11 @@ public class IsValidBST {
 		root.right = new BSTNode(40);
 		root.left.left = new BSTNode(10);
 		root.left.right = new BSTNode(20);
+		
+		root.right.left = new BSTNode(35);
+		root.right.right = new BSTNode(50);
 
-		if (isBSTUsingInOrder(root))
+		if (isBSTUsingInOrder1(root))
 			System.out.print("Is BST");
 		else
 			System.out.print("Not a BST");

@@ -34,25 +34,25 @@ public class MaximumSumOfICrossAOfIMethod1 {
 	// Returns maximum value of i*arr[i]
 	static int maxSum(int arr[], int n) {
 		// Initialize result
-		int max = arr[0];
+		int mamaxSum = arr[0];
 
 		// Consider rotation beginning with i
 		// for all possible values of i.
 		for (int i = 0; i < n; i++) {
 			// Initialize sum of current rotation
-			int sum = 0;
+			int currSum = 0;
 			// Compute sum of all values. We don't
 			// acutally rotation the array, but compute
 			// sum by finding ndexes when arr[i] is
 			// first element
 			for (int j = 0; j < n; j++) {
 				int index = (i + j) % n;
-				sum += j * arr[index];
+				currSum += j * arr[index];
 			}
-			if (max < sum) {
-				max = sum;
+			if (currSum > mamaxSum) {
+				mamaxSum = currSum;
 			}
 		}
-		return max;
+		return mamaxSum;
 	}
 }

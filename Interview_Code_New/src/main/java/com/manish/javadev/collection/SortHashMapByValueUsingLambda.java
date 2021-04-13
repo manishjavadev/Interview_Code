@@ -2,7 +2,6 @@ package com.manish.javadev.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,12 +19,7 @@ public class SortHashMapByValueUsingLambda {
 
 		Set<Map.Entry<Integer, Employee>> set = wordMap.entrySet();
 		List<Map.Entry<Integer, Employee>> list = new ArrayList<Map.Entry<Integer, Employee>>(set);
-		Collections.sort(list, new Comparator<Map.Entry<Integer, Employee>>() {
-			@Override
-			public int compare(Entry<Integer, Employee> o1, Entry<Integer, Employee> o2) {
-				return o2.getValue().getName().compareTo(o1.getValue().getName());
-			}
-		});
+		Collections.sort(list, (o1, o2) -> o1.getValue().getName().compareTo(o2.getValue().getName()));
 		return list;
 	}
 

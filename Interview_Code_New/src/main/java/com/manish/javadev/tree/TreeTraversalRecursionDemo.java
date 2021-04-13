@@ -30,7 +30,8 @@ public class TreeTraversalRecursionDemo {
 
 		if (data.equals("3")) {
 			System.out.println("In-Order");
-			inOrder(root);
+			boolean inOrderIsValidTree2 = inOrderIsValidTree(root);
+			System.out.println(inOrderIsValidTree2);
 		}
 	}
 
@@ -50,7 +51,7 @@ public class TreeTraversalRecursionDemo {
 		}
 	}
 
-	public boolean inOrderIsValidTree(BSTNode root) {
+	public static boolean inOrderIsValidTree(BSTNode root) {
 		if (root != null) {
 			inOrderIsValidTree(root.left);
 			System.out.print(root.data + "\t");
@@ -58,7 +59,7 @@ public class TreeTraversalRecursionDemo {
 				return false;
 			}
 			prev = root.data;
-			inOrderIsValidTree(root.right);
+			return inOrderIsValidTree(root.right);
 		}
 		return true;
 	}
