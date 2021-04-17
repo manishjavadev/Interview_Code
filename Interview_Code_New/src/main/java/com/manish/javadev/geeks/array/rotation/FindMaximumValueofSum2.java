@@ -21,7 +21,7 @@ public class FindMaximumValueofSum2 {
 		int arrSum = 0; // Stores sum of arr[i]
 		int resultValue = 0;
 		for (int i = 0; i < arr.length; i++) {
-
+			arrSum = 0;
 			for (int j = 0; j < arr.length; j++) {
 				int index = (i + j) % arr.length;
 				arrSum += j * arr[index];
