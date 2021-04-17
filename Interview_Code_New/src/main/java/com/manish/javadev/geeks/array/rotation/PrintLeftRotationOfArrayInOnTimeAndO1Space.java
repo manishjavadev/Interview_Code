@@ -16,15 +16,13 @@ public class PrintLeftRotationOfArrayInOnTimeAndO1Space {
 	}
 
 	static void leftRotate(int arr[], int len, int k) {
-		/**
-		 * To get the starting point of rotated array
-		 */
-		int startIndex = k % len;
+
 		/**
 		 * Prints the rotated array from start position
 		 */
 		for (int i = 0; i < len; ++i) {
-			int index = (i + startIndex) % len;
+			// To get the starting point of rotated array
+			int index = (i + k) % len;
 			System.out.print(arr[index] + " ");
 		}
 
