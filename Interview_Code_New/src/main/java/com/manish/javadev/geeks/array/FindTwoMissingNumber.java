@@ -85,7 +85,7 @@ public class FindTwoMissingNumber {
 		int avg = (sum / 2);
 
 		int sumFirstHalf = 0, sumSecondHalf = 0;
-		for (int i = 0; i < n - 2; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] <= avg)
 				sumFirstHalf += arr[i];
 			else

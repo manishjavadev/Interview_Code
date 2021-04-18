@@ -17,6 +17,8 @@ package com.manish.javadev.geeks.array;
  * 
  * if a[i-1]< max_from_right Do nothing
  * 
+ * For example int the array {16, 17, 4, 3, 5, 2}, leaders are 17, 5 and 2.
+ * 
  * https://www.geeksforgeeks.org/leaders-in-an-array/
  * 
  * 
