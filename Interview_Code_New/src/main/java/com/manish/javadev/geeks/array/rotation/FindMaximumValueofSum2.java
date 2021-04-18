@@ -14,7 +14,7 @@ public class FindMaximumValueofSum2 {
 		System.out.println("Max sum is " + maxSum());
 	}
 
-	static int arr[] = {1, 20, 2, 10};
+	static int arr[] = {1, 20, 2, 10}; 
 
 	// Returns max possible value of i*arr[i]
 	static int maxSum() {

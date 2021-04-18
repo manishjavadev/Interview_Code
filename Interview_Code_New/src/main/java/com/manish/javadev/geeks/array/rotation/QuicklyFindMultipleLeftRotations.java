@@ -34,9 +34,10 @@ public class QuicklyFindMultipleLeftRotations {
 		 * Print array after k rotations
 		 */
 
-		for (int i = k; i < n + k; i++) {
-			System.out.print(arr[i % n] + " ");
+		for (int i = 0; i < n; i++) {
+			System.out.print(arr[(i + k) % n] + " ");
 		}
+		System.out.println("==== ");
 
 	}
 }
