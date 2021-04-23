@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-public class Employee2 {
+public class DistinctEmployeeDemo {
 	public static void main(String[] args) {
 
 		List<Employee> list = new ArrayList();
@@ -14,7 +14,7 @@ public class Employee2 {
 		list.add(emp1);
 		list.add(emp2);
 		list.add(emp3);
-		Employee2 employee2 = new Employee2();
+		DistinctEmployeeDemo employee2 = new DistinctEmployeeDemo();
 		HashSet<Employee> removeDuplicate = employee2.removeDuplicate(list);
 		removeDuplicate.forEach(emp -> {
 			System.out.println(emp.getName());
