@@ -6,7 +6,7 @@ package com.manish.javadev.geeks.linkedlist;
  * @author Manish Servistava
  *
  */
-public class LinkedlistRecursiveReverse {
+public class ReverseLinkedlistRecursive {
 	static Entity head;
 
 	public static void main(String[] args) {

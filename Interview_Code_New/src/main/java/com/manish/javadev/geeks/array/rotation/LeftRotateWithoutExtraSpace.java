@@ -18,12 +18,9 @@ public class LeftRotateWithoutExtraSpace {
 
 	// Function to leftRotate array multiple times
 	static void leftRotate(int arr[], int n, int k) {
-		// To get the starting point of rotated array
-		int mod = k % n;
-
 		// Prints the rotated array from start position
 		for (int i = 0; i < n; i++) {
-			int index = ((i + mod) % n);
+			int index = ((i + k) % n);
 			System.out.print(arr[index] + " ");
 		}
 
