@@ -87,6 +87,7 @@ public class PrimeNumberLessThanEnteredNumber {
 	 * @param number
 	 * @return
 	 */
+	
 	private static boolean isPrimeDivideBy2(int number) {// is Prime is there
 		boolean flag = false;
 		// Corner case
