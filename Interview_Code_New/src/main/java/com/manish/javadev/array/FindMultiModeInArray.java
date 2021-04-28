@@ -39,11 +39,11 @@ public class FindMultiModeInArray {
 				count++;
 			else {
 				if (count > maxModeCount) {
-					mode = arr[i - 1];
+					mode = temp;
 					maxModeCount = count;
 				}
 				if (count > preModeCount && count < maxModeCount) {
-					prevMode = arr[i - 1];
+					prevMode = temp;
 					preModeCount = count;
 				}
 				temp = arr[i];

@@ -6,8 +6,11 @@ import java.util.Arrays;
  * Given arrival and departure times of all trains, find the minimum no of
  * platforms required for the railway station so that no train waits.
  * 
- * Input: int arr[] = {9:00,9:40,9:50,11:00,15:00,18:00} int dep[] =
- * {9:10,12:00,11:20,11:30,19:00,20:00}
+ * Input:
+ * 
+ * int arr[] = {9:00,9:40,9:50,11:00,15:00,18:00}
+ * 
+ * int dep[] = {9:10,12:00,11:20,11:30,19:00,20:00}
  * 
  * Output: There are at-most three trains at a time(time b/w 11:00 and 11:20).
  * 
@@ -19,26 +22,35 @@ public class MinimumPlateforms {
 		double arr[] = { 9.00, 9.40, 9.50, 11.00, 15.00, 18.00 };
 		double dep[] = { 9.10, 12.00, 11.20, 11.30, 19.00, 20.00 };
 		// method1(arr, dep);
-		method2(arr, dep);
+		findPlatform(arr, dep);
 
 	}
 
-	private static void method1(double[] arr, double[] dep) {
-		int usedPlateForms = 0;
-		int neededPlateForm = 1;
-		for (int i = 0; i < arr.length; i++) {
-			usedPlateForms = 0;
-			for (int j = 0; j <= i; j++) {
+// Case-1
 
-				if (arr[i] < dep[j]) {
-					usedPlateForms++;
-					if (usedPlateForms > neededPlateForm) {
-						neededPlateForm = usedPlateForms;
-					}
-				}
+//9-----------8
+
+//9.40--------11
+
+// Case-2
+
+// 8 ----------9
+
+// 11 ---------9.45
+	// Returns minimum number of platforms reqquired
+	public static int findPlatform(double arr[], double dep[]) {
+		int plat_needed = 0;
+		int result = 1;
+		int i = 1, j = 0;
+		for (i = 0; i < arr.length; i++) {
+			plat_needed = 1;
+			for (j = i + 1; j < arr.length; j++) {
+				if ((arr[i] >= arr[j] && arr[i] <= dep[j]) || (arr[j] >= arr[i] && arr[j] <= dep[i]))
+					plat_needed++;
 			}
+			result = Math.max(result, plat_needed);
 		}
-		System.out.println("Minimum Plateforms Needded :: \n" + neededPlateForm);
+		return result;
 	}
 
 	private static void method2(double[] arr, double[] dep) {
@@ -54,13 +66,13 @@ public class MinimumPlateforms {
 
 			if (arr[i] < dep[j]) {
 				usedPlateForms++;
-				if (usedPlateForms > neededPlateForm) {
-					neededPlateForm = usedPlateForms;
-				}
 				i++;
 			} else if (arr[i] > dep[j]) {
 				usedPlateForms--;// = 0;
 				j++;
+			}
+			if (usedPlateForms > neededPlateForm) {
+				neededPlateForm = usedPlateForms;
 			}
 		}
 

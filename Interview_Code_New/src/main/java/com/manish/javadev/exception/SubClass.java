@@ -1,5 +1,7 @@
 package com.manish.javadev.exception;
 
+import java.io.FileNotFoundException;
+
 public class SubClass implements Super {
 	public static void main(String[] args) {
 		Super sc = new SubClass();
@@ -10,9 +12,9 @@ public class SubClass implements Super {
 		}
 	}
 
-	public void test1() throws Exception {
+	public void test1() throws FileNotFoundException {
 		try {
-			throw new Exception();
+			throw new FileNotFoundException();
 		} catch (NullPointerException ex) {
 			System.out.println("StackOverflowError");
 		}
