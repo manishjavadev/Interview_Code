@@ -16,24 +16,25 @@ public class QuickSelectUsingQuickSort {
 	public static void main(String[] args) {
 		// int arr[] = { 9, 0, 5, 2, 6, 1, 3, 4 };
 		int arr[] = { 12, 3, 5, 7, 4, 19, 26 };
-		int k = 3;
-		int quickSort = quickSort(arr, 0, arr.length - 1, k);
+		int k = 7;
+		int quickSort = quickSort(arr, 0, arr.length - 1, k - 1);
 		System.out.println(Arrays.toString(arr));
-		System.out.println("Result : " + quickSort);
+		System.out.println("Result : " + arr[quickSort + 1]);
 	}
 
 	private static int quickSort(int arr[], int low, int high, int k) {
 		if (low < high) {
 			int q = partition(arr, low, high);
 			if (q + 1 == k) {
-				return quickSort(arr, low, q - 1, q);
-			} else if (q + 1 == k) {
-				return quickSort(arr, q + 1, high, q);
-			} else {
 				return q;
 			}
+			if (q > k) {
+				return quickSort(arr, low, q - 1, k);
+			} else {
+				return quickSort(arr, q + 1, high, k);
+			}
 		}
-		return k;
+		return -1;
 	}
 
 	private static int partition(int[] arr, int low, int high) {
