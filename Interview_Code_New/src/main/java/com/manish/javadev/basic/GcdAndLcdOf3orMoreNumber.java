@@ -40,6 +40,13 @@ public class GcdAndLcdOf3orMoreNumber {
 		}
 		return result;
 	}
+	/* Fuction to get gcd of a and b */
+	int gcd(int a, int b) {
+		if (b == 0)
+			return a;
+		else
+			return gcd(b, a % b);
+	}
 
 	// This function called by lcdOfArray for every array element and returning a
 	// result

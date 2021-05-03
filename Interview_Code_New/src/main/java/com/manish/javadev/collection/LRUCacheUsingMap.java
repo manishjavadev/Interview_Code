@@ -2,6 +2,21 @@ package com.manish.javadev.collection;
 
 import java.util.HashMap;
 
+/**
+ * 2.
+ * 
+ * Optimized Approach:
+ * 
+ * The key to solve this problem is using a double linked list which enables us
+ * to quickly move nodes. The LRU cache is a hash map of keys and double linked
+ * nodes. The hash map makes the time of get() to be O(1). The list of double
+ * linked nodes make the nodes adding/removal operations O(1).
+ * 
+ * Code using Doubly Linked List and HashMap:
+ * 
+ * @author kmamani
+ *
+ */
 public class LRUCacheUsingMap {
 
 	// Here i am setting 4 to test the LRU cache implementation, it can make be

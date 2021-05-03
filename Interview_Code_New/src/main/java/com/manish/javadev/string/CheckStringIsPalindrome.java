@@ -17,7 +17,7 @@ package com.manish.javadev.string;
  * 
  */
 public class CheckStringIsPalindrome {
-	static String enteredString = "AMANNAMN";
+	static String enteredString = "NMANAMNOO";
 
 	public static void main(String[] args) {
 
@@ -41,10 +41,10 @@ public class CheckStringIsPalindrome {
 
 	private static boolean checkPalindrom(int i, int j) {
 		if (i < j) {
-			if (enteredString.charAt(i++) != enteredString.charAt(j--)) {
+			if (enteredString.charAt(i) != enteredString.charAt(j)) {
 				return false;
 			} else {
-				checkPalindrom(i, j);
+				checkPalindrom(i + 1, j - 1);
 			}
 
 		}
@@ -52,7 +52,7 @@ public class CheckStringIsPalindrome {
 	}
 
 	private static boolean checkPalindrom(String str) {
-		boolean flag = false;
+		boolean flag = true;
 		int low = 0;
 		int high = 0;
 		int len = str.length();
@@ -64,7 +64,7 @@ public class CheckStringIsPalindrome {
 			low = len / 2 - 1;
 			high = len / 2 + 1;
 		}
-		while (low >= 0 && high < len) {
+		while (low >= 0 && high < len && flag) {
 			flag = str.charAt(low) == str.charAt(high) ? true : false;
 			low--;
 			high++;

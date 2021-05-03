@@ -83,10 +83,8 @@ public class FindAllPairWithGivenSumInSortedRotatedArray {
 		}
 		if (low <= high) {
 			int mid = (low + high) / 2;
-
 			if (arr[mid] > arr[mid + 1])
 				return mid;
-
 			if (arr[low] <= arr[mid])
 				return findPivot(arr, mid + 1, high);
 			return findPivot(arr, low, mid - 1);

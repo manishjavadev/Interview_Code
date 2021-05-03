@@ -5,33 +5,28 @@ public class FindMaxSubArraySumBasics {
 	// in the given array
 	public static void maxLengthSubArray(int[] arr, int baseSum) {
 		// len stores the maximum length of sub-array with sum S
-		int len = 0;
+		int maxLen = 0;
 
 		// stores ending index of maximum length sub-array having sum S
-		int ending_index = -1;
+		int end = -1;
 
 		// consider all sub-arrays starting from i
 		for (int i = 0; i < arr.length; i++) {
 			int sum = 0;
-
-			// consider all sub-arrays ending at j
 			for (int j = i; j < arr.length; j++) {
-				// sum of elements in current sub-array
 				sum += arr[j];
-
-				// if we have found a sub-array with sum S
 				if (sum == baseSum) {
 					// update length & ending index of max length subarray
-					if (j - i + 1 > len ) {
-						len = j - i + 1;
-						ending_index = j;
+					if (j - i + 1 > maxLen) {
+						maxLen = j - i + 1;
+						end = j;
 					}
 				}
 			}
 		}
 
 		// print the sub-array
-		System.out.println("[" + (ending_index - len + 1) + ", " + ending_index + "]");
+		System.out.println("[" + (end - maxLen + 1) + ", " + end + "]");
 	}
 
 	// main function

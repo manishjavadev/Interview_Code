@@ -12,12 +12,12 @@ import java.util.Scanner;
  * For more detail lease visit Wiki page
  * https://en.wikipedia.org/wiki/Fibonacci_number Sample FibonacciSeries like
  * this (1 1 2 3 5 8)
- * 			
- * 				1 					    n=0 or n=1  
- * 			
- * fib(n) = 
  * 
- * 				fib(n-1) + fib(b-2) 	n>1
+ * 1 n=0 or n=1
+ * 
+ * fib(n) =
+ * 
+ * fib(n-1) + fib(b-2) n>1
  */
 public class FibonacciSeriesWithRecuresion {
 
@@ -35,7 +35,7 @@ public class FibonacciSeriesWithRecuresion {
 		if (n == 0 || n == 1)
 			return 1;
 		else {
-			return (fib(n - 1) + fib(n - 2));
+			return fib(n - 1) + fib(n - 2);
 		}
 	}
 }
