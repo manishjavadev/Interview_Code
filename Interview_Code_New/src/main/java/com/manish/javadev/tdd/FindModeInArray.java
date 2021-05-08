@@ -1,4 +1,4 @@
-package com.manish.javadev.array;
+package com.manish.javadev.tdd;
 
 import java.util.Arrays;
 
@@ -22,7 +22,7 @@ import java.util.Arrays;
 public class FindModeInArray {
 
 	public static void main(String[] args) {
-		int[] a = { 1, 2, 2, 3, 1, 3, 2 };
+		int[] a = { 1, 1, 2, 3, 3 };
 		FindModeInArray findMode = new FindModeInArray();
 		int result = findMode.findModeOfArray(a);
 		System.out.println(result);
@@ -35,20 +35,20 @@ public class FindModeInArray {
 
 		Arrays.sort(arr);
 
-		int tmep = arr[0];
+		int previous = arr[0];
 		int mode = arr[0];
 		int count = 1;
 		int maxCount = 1;
 
 		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] == tmep)
+			if (arr[i] == previous)
 				count++;
 			else {
-				if (count >= maxCount) {
-					mode = tmep;
+				if (count > maxCount) {
+					mode = arr[i - 1];
 					maxCount = count;
 				}
-				tmep = arr[i];
+				previous = arr[i];
 				count = 1;
 			}
 		}

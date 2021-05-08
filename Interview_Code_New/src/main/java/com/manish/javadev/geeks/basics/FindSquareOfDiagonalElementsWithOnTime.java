@@ -45,13 +45,19 @@ public class FindSquareOfDiagonalElementsWithOnTime {
 		// This loop is for finding of square of
 		// the first side of diagonal elements
 		System.out.print(" Diagonal one : ");
+		int sum1 = 0;
+		int sum2 = 0;
 		for (int i = 0; i < row; i++) {
 
 			// printing direct square of diagonal
 			// element there is no need to check
 			// condition
 			System.out.print(mat[i][i] * mat[i][i] + " ");
+			sum1 += mat[i][i] * mat[i][i];
+			sum2 += mat[i][row - i - 1] * mat[i][row - i - 1];
 		}
+		System.out.println("Diagonal 1 :: " + sum1);
+		System.out.println("Diagonal 2 :: " + sum2);
 		System.out.println();
 
 		// This loop is for finding square of the

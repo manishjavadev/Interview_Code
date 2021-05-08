@@ -17,24 +17,24 @@ public class MyBlockingQueue {
 	}
 
 	public synchronized void enqueue(Object item) throws InterruptedException {
-		while (this.queue.size() == this.limit) {
+		while (queue.size() == limit) {
 			wait();
 		}
-		if (this.queue.size() == 0) {
+		if (queue.size() == 0) {
 			notifyAll();
 		}
-		this.queue.add(item);
+		queue.add(item);
 	}
 
 	public synchronized Object dequeue() throws InterruptedException {
-		while (this.queue.size() == 0) {
+		while (queue.size() == 0) {
 			wait();
 		}
-		if (this.queue.size() == this.limit) {
+		if (queue.size() == limit) {
 			notifyAll();
 		}
 
-		return this.queue.remove(0);
+		return queue.remove(0);
 	}
 
 }

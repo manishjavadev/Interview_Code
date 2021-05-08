@@ -8,7 +8,7 @@ import java.util.concurrent.BlockingQueue;
  *
  */
 public class Producer implements Runnable {
-	int number = 0;
+	int number = 1;
 	int index = 0;
 	private BlockingQueue<Integer> bq = null;
 
@@ -21,7 +21,7 @@ public class Producer implements Runnable {
 		try {
 			while (index++ <= 15) {
 				produce();
-				Thread.sleep(100);
+				// ßThread.sleep(100);
 			}
 
 		} catch (InterruptedException e) {
@@ -30,7 +30,7 @@ public class Producer implements Runnable {
 	}
 
 	private void produce() throws InterruptedException {
-		System.out.println("Producer Produced Number" + number);
+		System.out.println("Producer Produced Number  ::: " + number);
 		bq.put(number++);
 
 	}

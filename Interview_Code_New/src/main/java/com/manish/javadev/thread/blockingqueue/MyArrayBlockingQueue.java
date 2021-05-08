@@ -20,7 +20,7 @@ public class MyArrayBlockingQueue {
 
 	public static void main(String[] args) throws Exception {
 
-		BlockingQueue<Integer> bq = new ArrayBlockingQueue<Integer>(10);
+		BlockingQueue<Integer> bq = new ArrayBlockingQueue<Integer>(9);
 
 		Producer producer = new Producer(bq);
 		Consumer consumer = new Consumer(bq);

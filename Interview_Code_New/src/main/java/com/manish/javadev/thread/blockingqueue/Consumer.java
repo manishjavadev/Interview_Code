@@ -18,6 +18,7 @@ public class Consumer implements Runnable {
 		try {
 			while (true) {
 				System.out.println("Consumed: " + queue.take());
+				System.out.println("Done");
 			}
 
 		} catch (InterruptedException e) {

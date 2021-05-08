@@ -50,7 +50,7 @@ public class LRUCacheUsingMap {
 		} else {
 			Node newnode = new Node(key, value);
 			// We have reached maxium size so need to make room for new element.
-			if (hashmap.size() > LRU_SIZE) {
+			if (hashmap.size() >= LRU_SIZE) {
 				hashmap.remove(start.key);
 				removeNode(start);
 				addAtTop(newnode);
