@@ -3,7 +3,8 @@ package com.manish.javadev.exception;
 import java.io.IOException;
 
 public class B extends A {
-	protected void m1(int a) {
+
+	public void m1(int a) throws Exception{
 		System.out.println("m1 of B() throws IOException");
 	}
 

@@ -6,10 +6,10 @@ package com.manish.javadev.tree;
  *
  */
 public class BSTNode {
-	int data;
-	BSTNode left;
-	BSTNode right;
-	int height;
+	public int data;
+	public BSTNode left;
+	public BSTNode right;
+	public int height;
 
 	public BSTNode() {
 

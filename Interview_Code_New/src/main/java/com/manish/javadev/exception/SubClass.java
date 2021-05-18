@@ -12,7 +12,7 @@ public class SubClass implements Super {
 		}
 	}
 
-	public void test1() throws Exception {
+	public void test1() throws FileNotFoundException {
 		try {
 			throw new FileNotFoundException();
 		} catch (NullPointerException ex) {

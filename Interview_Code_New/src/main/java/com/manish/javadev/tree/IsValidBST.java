@@ -12,7 +12,7 @@ public class IsValidBST {
 		root.right = new BSTNode(40);
 		root.left.left = new BSTNode(10);
 		root.left.right = new BSTNode(20);
-		
+
 		root.right.left = new BSTNode(35);
 		root.right.right = new BSTNode(50);
 
@@ -46,11 +46,10 @@ public class IsValidBST {
 		// traverse the tree in inorder fashion and
 		// keep track of prev node
 		if (root != null) {
-			if (!isBSTUtil(root.left))
-				return false;
+			isBSTUtil(root.left);
 
 			// Allows only distinct valued nodes
-			if (root.data <= prev)
+			if (root.data < prev)
 				return false;
 
 			// Initialize prev to current
@@ -60,7 +59,7 @@ public class IsValidBST {
 		}
 		return true;
 	}
-	
+
 	public static boolean isBSTUsingInOrder1(BSTNode root) {
 		if (root != null) {
 			isBSTUsingInOrder1(root.left);
@@ -72,7 +71,7 @@ public class IsValidBST {
 		}
 		return true;
 	}
-	
+
 	public static boolean isBSTUsingInOrder(BSTNode root) {
 		int prev = Integer.MIN_VALUE;
 		Stack<BSTNode> stack = new Stack<BSTNode>();
