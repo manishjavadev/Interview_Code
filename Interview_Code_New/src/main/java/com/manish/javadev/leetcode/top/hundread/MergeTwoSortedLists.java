@@ -24,10 +24,20 @@ public class MergeTwoSortedLists {
 		node1.right = new Node(2);
 		node1.right.right = new Node(3);
 		node1.right.right.right = new Node(4);
-		Node node2 = new Node(1);
+		Node node2 = new Node(0);
 		node2.right = new Node(2);
 		node2.right.right = new Node(3);
-		mergeTwoLists(node1, node2);
+		Node mergeTwoLists1 = mergeTwoLists1(node1, node2);
+		display(mergeTwoLists1);
+	}
+
+	private static void display(Node mergeTwoLists1) {
+		while (mergeTwoLists1 != null) {
+			System.out.println(mergeTwoLists1.data);
+			mergeTwoLists1 = mergeTwoLists1.right;
+
+		}
+
 	}
 
 	public static Node mergeTwoLists(Node l1, Node l2) {
@@ -51,12 +61,12 @@ public class MergeTwoSortedLists {
 		return dummy.right;
 	}
 
-	public Node mergeTwoLists1(Node l1, Node l2) {
+	public static Node mergeTwoLists1(Node l1, Node l2) {
 		if (l1 == null)
 			return l2;
 		if (l2 == null)
 			return l1;
-		if (l1.data < l2.data) {
+		if (l1.data <= l2.data) {
 			l1.right = mergeTwoLists(l1.right, l2);
 			return l1;
 		} else {

@@ -18,10 +18,15 @@ package com.manish.javadev.leetcode.top.hundread;
  */
 public class MajorityOfElement {
 	public static void main(String[] args) {
-
+			// int arr[] = { 2, 2, 1, 1, 1};
+			int arr[] = { 2, 2, 1, 1, 1, 2, 2, 3 };
+	
+			// int arr[] = { 3, 2, 3 };
+		int result = majorityElement(arr);
+		System.out.println(result);
 	}
 
-	public int majorityElement(int[] num) {
+	public static int majorityElement(int[] num) {
 
 		int major = num[0], count = 1;
 		for (int i = 1; i < num.length; i++) {

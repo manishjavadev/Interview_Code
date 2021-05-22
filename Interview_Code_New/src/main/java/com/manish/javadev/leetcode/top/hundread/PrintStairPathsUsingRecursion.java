@@ -2,31 +2,24 @@ package com.manish.javadev.leetcode.top.hundread;
 
 import java.util.Scanner;
 
-public class ClimbingStairs {
+public class PrintStairPathsUsingRecursion {
 	public static void main(String[] args) {
 		System.out.println("Enter climb stairs");
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int result = countPaths(n, new int[n + 1]);
-		System.out.println("Climb stairs path ::: " + result);
-
-		System.out.println("===============");
-
-		int result1 = countPathsWithoutRecursion(n);
-		System.out.println("Climb stairs path ::: " + result1);
+		countPaths(n, "");
 	}
 
-	private static int countPaths(int n, int dp[]) {
+	private static void countPaths(int n, String path) {
 		if (n == 0) {
-			return 1;
+			System.out.println(path);
+			return;
 		} else if (n < 0) {
-			return 0;
+			return;
 		}
-		int one = countPaths(n - 1, dp);
-		int two = countPaths(n - 2, dp);
-		int three = countPaths(n - 3, dp);
-		int result = one + two + three;
-		return result;
+		countPaths(n - 1, path + 1);
+		countPaths(n - 2, path + 2);
+		countPaths(n - 3, path + 3);
 
 	}
 

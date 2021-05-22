@@ -23,8 +23,8 @@ public class MergeTwoBinaryTrees {
 		leftRoot2.left = new BSTNode(4);
 		leftRoot2.right = new BSTNode(5);
 
-		rightRoot2.left = new BSTNode(6);
-		rightRoot2.right = new BSTNode(7);
+		// rightRoot2.left = new BSTNode(6);
+		// rightRoot2.right = new BSTNode(7);
 		root2.left = leftRoot1;
 		root2.right = rightRoot2;
 		BSTNode mergeTwoTree = mergeTwoTree(root1, root2);
@@ -41,16 +41,17 @@ public class MergeTwoBinaryTrees {
 
 	}
 
-	private static BSTNode mergeTwoTree(BSTNode t1, BSTNode t2) {
-		if (t1 == null && t2 == null)
+	private static BSTNode mergeTwoTree(BSTNode n1, BSTNode n2) {
+
+		if (n1 == null && n2 == null)
 			return null;
-		else if (t1 == null) {
-			return t2;
-		} else if (t2 == null)
-			return t1;
-		BSTNode newNode = new BSTNode(t1.data + t2.data);
-		newNode.left = mergeTwoTree(t1.left, t2.left);
-		newNode.right = mergeTwoTree(t1.right, t2.right);
+		else if (n1 == null) {
+			return n2;
+		} else if (n2 == null)
+			return n1;
+		BSTNode newNode = new BSTNode(n1.data + n2.data);
+		newNode.left = mergeTwoTree(n1.left, n2.left);
+		newNode.right = mergeTwoTree(n1.right, n2.right);
 		return newNode;
 	}
 

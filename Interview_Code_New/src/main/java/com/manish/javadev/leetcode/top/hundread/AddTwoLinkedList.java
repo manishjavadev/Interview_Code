@@ -3,8 +3,23 @@ package com.manish.javadev.leetcode.top.hundread;
 import com.manish.javadev.geeks.linkedlist.Entity;
 
 /**
+ * https://leetcode.com/problems/add-two-numbers/
  * 
+ * Input:
  * 
+ * l1 = [2,4,3],
+ * 
+ * l2 = [5,6,4]
+ * 
+ * Output: [7,0,8]
+ * 
+ * Explanation: 342 + 465 = 807.
+ * 
+ * Example 2:
+ * 
+ * Input: l1 = [0], l2 = [0] Output: [0] Example 3:
+ * 
+ * Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9] Output: [8,9,9,9,0,0,0,1]
  * 
  * @author kmamani
  *
@@ -23,10 +38,10 @@ public class AddTwoLinkedList {
 
 	}
 
-	private static void display(Entity addTwoNumbers) {
-		while (addTwoNumbers != null) {
-			System.out.println(addTwoNumbers.data);
-			addTwoNumbers = addTwoNumbers.next;
+	private static void display(Entity root) {
+		while (root != null) {
+			System.out.println(root.data);
+			root = root.next;
 		}
 
 	}
@@ -44,12 +59,12 @@ public class AddTwoLinkedList {
 			} else {
 				result.next = en;
 			}
+			result = en;
+			
 			carry = resVal / 10;
 			l1 = (l1 == null ? l1 : l1.next);
 			l2 = (l2 == null ? l2 : l2.next);
-			result = en;
 		}
-
 		return head;
 	}
 }
