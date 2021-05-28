@@ -22,18 +22,22 @@ public class ClimbingStairs {
 		} else if (n < 0) {
 			return 0;
 		}
+		if(dp[n] > 0) {
+			return dp[n];
+		}
 		int one = countPaths(n - 1, dp);
 		int two = countPaths(n - 2, dp);
 		int three = countPaths(n - 3, dp);
 		int result = one + two + three;
+		dp[n] = result;
 		return result;
 
 	}
 
 	private static int countPathsWithoutRecursion(int n) {
 		/**
-		 * Why taken n+1 length array, because if you want to store 2 element in array
-		 * then length should be 3 if you want to store 5 element then length should be
+		 * Why taken n+1 length array, because, if you want to store 2 index in array
+		 * then length should be 3 if you want to store 5 index then length should be
 		 * 6, look last line we are returning last element so length be greater than by
 		 * 1 of n, otherwise will get IndexOutOfBoundException
 		 */

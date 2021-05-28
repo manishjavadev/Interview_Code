@@ -21,6 +21,9 @@ public class DiameterOfBinaryTree {
 		root.right = rightRoot;
 		int result = getDiameterOfBinaryTree(root);
 		System.out.println("Diameter Of Binary Tree ::: " + result);
+		
+		int result1 = height(root);
+		System.out.println("Diameter Of Binary Tree ::: " + result1);
 
 	}
 

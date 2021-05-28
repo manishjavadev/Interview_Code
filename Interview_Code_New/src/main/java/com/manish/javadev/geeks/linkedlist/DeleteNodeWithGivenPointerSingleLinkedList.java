@@ -22,8 +22,14 @@ public class DeleteNodeWithGivenPointerSingleLinkedList {
 	}
 
 	private static void deleteGivenNode(Entity node) {
-		Entity tmp = node.next;
-		node.data = tmp.data;
-		node.next = tmp.next;
+		System.out.println("\nDeleting node ::" + node.data);
+		if (node == null) {
+			return;
+		}
+		if (node.next != null) {
+			Entity temp = node.next;
+			node.data = temp.data;
+			node.next = temp.next;
+		}
 	}
 }

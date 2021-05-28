@@ -6,7 +6,7 @@ package com.manish.javadev.geeks.array;
  * @author kmamani
  *
  */
-public class FindUniqueNumberInArray {
+public class FindNonRepeatingNumberInArray {
 
 	public static void main(String[] args) {
 		int result[] = new int[256];

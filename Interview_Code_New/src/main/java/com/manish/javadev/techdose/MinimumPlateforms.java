@@ -45,7 +45,7 @@ public class MinimumPlateforms {
 		for (i = 0; i < arr.length; i++) {
 			plat_needed = 1;
 			for (j = i + 1; j < arr.length; j++) {
-				if ((arr[i] >= arr[j] && arr[i] <= dep[j]) || (arr[j] >= arr[i] && arr[j] <= dep[i]))
+				if ((arr[i] >= arr[j] && dep[j] >= arr[i] ) || (arr[j] >= arr[i] && arr[j] <= dep[i]))
 					plat_needed++;
 			}
 			result = Math.max(result, plat_needed);

@@ -1,7 +1,5 @@
 package com.manish.javadev.tree;
 
-import com.manish.javadev.tree.BSTNode;
-
 public class SymmetricTree {
 	/* testing for example BSTNodes */
 	public static void main(String args[]) {
