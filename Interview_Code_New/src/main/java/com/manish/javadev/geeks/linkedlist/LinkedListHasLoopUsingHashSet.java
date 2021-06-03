@@ -1,7 +1,6 @@
 package com.manish.javadev.geeks.linkedlist;
 
 import java.util.HashSet;
-import java.util.LinkedList;
 
 public class LinkedListHasLoopUsingHashSet {
 	static Node head; // head of list

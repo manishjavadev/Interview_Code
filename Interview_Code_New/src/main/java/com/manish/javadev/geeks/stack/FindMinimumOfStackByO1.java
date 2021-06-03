@@ -85,8 +85,7 @@ public class FindMinimumOfStackByO1 {
 		if (t < minEle) {
 			System.out.println(minEle);
 			minEle = 2 * minEle - t;
-		}
-		else
+		} else
 			System.out.println(t);
 	}
 
@@ -112,13 +111,14 @@ public class FindMinimumOfStackByO1 {
 		FindMinimumOfStackByO1 s = new FindMinimumOfStackByO1();
 		s.push(3);
 		s.push(5);
-		s.getMin();
+		// s.getMin();
 		s.push(2);
 		s.push(1);
 		s.getMin();
+		s.peek();
 		s.pop();
 		s.getMin();
 		s.pop();
-		s.peek();
+
 	}
 }

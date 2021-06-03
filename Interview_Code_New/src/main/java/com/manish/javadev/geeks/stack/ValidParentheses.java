@@ -1,5 +1,7 @@
 package com.manish.javadev.geeks.stack;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -27,12 +29,15 @@ import java.util.Stack;
 public class ValidParentheses {
 
 	public static void main(String[] args) {
-		System.out.println(isValid("{}[]"));
-		System.out.println(isValid("{[}]"));
-		System.out.println(isValid("[{}]"));
+		ValidParentheses test = new ValidParentheses();
+		System.out.println(test.isValid("{}[]"));
+		System.out.println(test.isValid("{[}]"));
+		System.out.println(test.isValid("[}]"));
+		System.out.println(test.isValid1("(])"));
+		System.out.println(test.isValid1("({[})"));
 	}
 
-	public static boolean isValid(String s) {
+	public boolean isValid(String s) {
 		if (s.length() % 2 != 0) {
 			return false;
 		}
@@ -49,5 +54,35 @@ public class ValidParentheses {
 			}
 		}
 		return set.isEmpty();
+	}
+
+	private Map<Character, Character> getMapping() {
+		Map<Character, Character> map = new HashMap();
+		map.put('}', '{');
+		map.put(']', '[');
+		map.put(')', '(');
+
+		return map;
+	}
+
+	public boolean isValid1(String s) {
+		if (s.length() % 2 != 0) {
+			return false;
+		}
+		Map<Character, Character> mapping = getMapping();
+
+		Stack<Character> stack = new Stack<>();
+		stack.push(s.charAt(0));
+
+		for (int i = 1; i < s.length(); i++) {
+			char ch = s.charAt(i);
+
+			if (ch == '(' || ch == '{' || ch == '[') {
+				stack.push(ch);
+			} else if (!stack.isEmpty() && stack.peek() == mapping.get(ch)) {
+				stack.pop();
+			}
+		}
+		return stack.isEmpty();
 	}
 }

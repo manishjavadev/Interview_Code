@@ -47,7 +47,7 @@ public class SwapNodeInLinkedList {
 		swapNodeList.doSwap();
 	}
 
-	private void doSwap() {
+	void doSwap() {
 		System.out.println("Before Swap");
 		displayNodes();
 		int first = 20;

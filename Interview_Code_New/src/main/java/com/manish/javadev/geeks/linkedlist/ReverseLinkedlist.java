@@ -1,6 +1,8 @@
 package com.manish.javadev.geeks.linkedlist;
+
 /**
  * Reverse The LinkedList
+ * 
  * @author Manish Servistava
  *
  */
@@ -23,17 +25,14 @@ public class ReverseLinkedlist {
 		}
 	}
 
-	private static Entity reverseNodes(Entity root) {
+	private static Entity reverseNodes(Entity curr) {
 		Entity prev = null;
-		Entity curr = root;
-		Entity next = null;
-
 		while (curr != null) {
-			next = curr.next;
+			Entity next = curr.next;
 			curr.next = prev;
 			prev = curr;
 			curr = next;
 		}
-		return root = prev;
+		return prev;
 	}
 }

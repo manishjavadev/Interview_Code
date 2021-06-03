@@ -43,18 +43,12 @@ public class IsValidBST {
 
 	// Utility function to check if Binary Tree is BST
 	static boolean isBSTUtil(BSTNode root) {
-		// traverse the tree in inorder fashion and
-		// keep track of prev node
+		
 		if (root != null) {
 			isBSTUtil(root.left);
-
-			// Allows only distinct valued nodes
 			if (root.data < prev)
 				return false;
-
-			// Initialize prev to current
 			prev = root.data;
-
 			return isBSTUtil(root.right);
 		}
 		return true;
