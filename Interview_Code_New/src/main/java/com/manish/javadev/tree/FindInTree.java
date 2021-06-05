@@ -30,41 +30,21 @@ public class FindInTree {
 		rightRoot.right = new BSTNode(45);
 		root.right = rightRoot;
 		boolean result = find(root, path1, 225);
-		
 
 		result = find(root, path2, 17);
-		
+
 		System.out.println("Paths1 :: " + path1);
 		System.out.println("Paths2 :: " + path2);
-		int i = path1.size()-1;
-		int j = path2.size()-1;
-		while (i>=0 && j >=0 && path1.get(i)==path2.get(j)) {
+		int i = path1.size() - 1;
+		int j = path2.size() - 1;
+		while (i >= 0 && j >= 0 && path1.get(i) == path2.get(j)) {
 			i--;
 			j--;
 		}
 		i++;
 		j++;
 		System.out.println(path1.get(i));
-			
-		
 
-	}
-
-	private static int checkCommonAnsyster(ArrayList<Integer> path1, ArrayList<Integer> path2) {
-		for (int i = path1.size()-1; i >= 0; i--) {
-			if(i==path2.size()) {
-				
-			}
-		}
-		return 0;
-	}
-
-	private static void displayNodeData(BSTNode root) {
-		if (root == null) {
-			System.out.println("requested data is not there");
-		} else {
-			System.out.println(root.data);
-		}
 	}
 
 	private static boolean find(BSTNode crr, ArrayList<Integer> path, int data) {
