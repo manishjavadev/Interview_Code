@@ -22,7 +22,7 @@ import junit.extensions.ActiveTestSuite;
  */
 public class ValidParentheses {
 	public static void main(String[] args) {
-		String str = "{[]{";
+		String str = "{]}";
 		boolean result = isValidParentheses(str);
 		if (result) {
 			System.out.println("ValidParentheses " + result);
@@ -33,6 +33,9 @@ public class ValidParentheses {
 	}
 
 	private static boolean isValidParentheses(String str) {
+		if (str.length() % 2 != 0) {
+			return false;
+		}
 		Stack<Character> stack = new Stack<Character>();
 		for (int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);

@@ -1,5 +1,11 @@
 package com.manish.javadev.tree;
 
+/**
+ * https://www.youtube.com/watch?v=py3R23aAPCA
+ * 
+ * @author kmamani
+ *
+ */
 public class FindLCA {
 
 	// Root of the Binary Tree
@@ -9,17 +15,12 @@ public class FindLCA {
 		return findLCA(root, n1, n2);
 	}
 
-	// This function returns pointer to LCA of two given
-	// values n1 and n2. This function assumes that n1 and
-	// n2 are present in Binary Tree
 	Node findLCA(Node node, int n1, int n2) {
 		// Base case
 		if (node == null)
 			return null;
 
-		// If either n1 or n2 matches with root's key, report
-		// the presence by returning root (Note that if a key is
-		// ancestor of other, then the ancestor key becomes LCA
+		// If either n1 or n2 matches with root's key
 		if (node.data == n1 || node.data == n2)
 			return node;
 
@@ -27,8 +28,8 @@ public class FindLCA {
 		Node left_lca = findLCA(node.left, n1, n2);
 		Node right_lca = findLCA(node.right, n1, n2);
 
-		// If both of the above calls return Non-NULL, then one key
-		// is present in once subtree and other is present in other,
+		// If both of the above calls return Non-NULL,
+		// then one key is present in once subtree and other is present in other,
 		// So this node is the LCA
 		if (left_lca != null && right_lca != null)
 			return node;
@@ -50,6 +51,6 @@ public class FindLCA {
 		System.out.println("LCA(4, 5) = " + tree.findLCA(4, 5).data);
 		System.out.println("LCA(4, 6) = " + tree.findLCA(4, 6).data);
 		System.out.println("LCA(3, 4) = " + tree.findLCA(3, 4).data);
-		System.out.println("LCA(2, 4) = " + tree.findLCA(2, 4).data);
+		System.out.println("LCA(2, 4) = " + tree.findLCA(2, 5).data);
 	}
 }

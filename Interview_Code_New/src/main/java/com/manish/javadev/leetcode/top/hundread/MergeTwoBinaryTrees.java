@@ -43,9 +43,7 @@ public class MergeTwoBinaryTrees {
 
 	private static BSTNode mergeTwoTree(BSTNode n1, BSTNode n2) {
 
-		if (n1 == null && n2 == null)
-			return null;
-		else if (n1 == null) {
+		if (n1 == null) {
 			return n2;
 		} else if (n2 == null)
 			return n1;

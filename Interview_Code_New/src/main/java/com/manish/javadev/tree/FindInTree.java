@@ -29,7 +29,7 @@ public class FindInTree {
 		rightRoot.left = new BSTNode(35);
 		rightRoot.right = new BSTNode(45);
 		root.right = rightRoot;
-		boolean result = find(root, path1, 225);
+		boolean result = find(root, path1, 25);
 
 		result = find(root, path2, 17);
 

@@ -1,7 +1,11 @@
 package com.manish.javadev.leetcode.top.hundread;
 
 import java.util.Scanner;
-
+/**
+ * https://www.youtube.com/watch?v=A6mOASLl2Dg
+ * @author kmamani
+ *
+ */
 public class ClimbingStairs {
 	public static void main(String[] args) {
 		System.out.println("Enter climb stairs");

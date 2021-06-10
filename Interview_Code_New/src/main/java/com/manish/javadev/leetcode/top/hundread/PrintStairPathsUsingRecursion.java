@@ -18,7 +18,7 @@ public class PrintStairPathsUsingRecursion {
 			return;
 		}
 		countPaths(n - 1, path + 1);
-		countPaths(n - 2, path + 2);
+		countPaths(n - 2, path + 2); 
 		countPaths(n - 3, path + 3);
 
 	}
