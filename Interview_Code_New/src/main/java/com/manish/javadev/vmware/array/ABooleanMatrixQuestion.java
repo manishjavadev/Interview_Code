@@ -66,7 +66,7 @@ public class ABooleanMatrixQuestion {
 
 		printMatrix(mat, 3, 4);
 
-		modifyMatrix(mat, 3, 4);
+		modifyMatrix(mat, mat.length, mat[0].length);
 		System.out.println("Matrix after modification n");
 		printMatrix(mat, 3, 4);
 

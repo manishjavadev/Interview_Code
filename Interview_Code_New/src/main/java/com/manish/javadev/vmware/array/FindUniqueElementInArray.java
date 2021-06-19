@@ -1,30 +1,21 @@
 package com.manish.javadev.vmware.array;
 
-public class CountFrequencies {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class FindUniqueElementInArray {
 	public static void main(String[] args) {
-		CountFrequencies count = new CountFrequencies();
+		FindUniqueElementInArray count = new FindUniqueElementInArray();
 		int arr[] = { 2, 3, 3, 2, 5 };
 		count.findCounts(arr);
 
 		int arr1[] = { 1 };
 		count.findCounts(arr1);
 
-		// int arr3[] = { 4, 4, 4, 4 };
 		int arr3[] = { 4, 1, 2, 1, 2 };
-
 		count.findCounts(arr3);
 
-		int arr2[] = { 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1 };
-		count.findCounts(arr2);
-
-		int arr4[] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
-		count.findCounts(arr4);
-
-		int arr5[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-		count.findCounts(arr5);
-
-		int arr6[] = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-		count.findCounts(arr6);
 	}
 
 	private void findCounts(int[] arr) {
@@ -36,13 +27,23 @@ public class CountFrequencies {
 		System.out.println("=====");
 		for (int i = 0; i < arr.length; i++) {
 
-			if (arr[i] / 10 > 1) {
-				System.out.println(i + 1 + " Occour " + arr[i] / 10 + " times");
-			} else {
+			if (arr[i] / 10 == 1) {
 				System.out.println(i + 1 + " Occour " + arr[i] / 10 + " times");
 			}
 		}
 		System.out.println("=============");
+
+	}
+	private void findCounts1(int[] arr) {
+		List<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			if(list.contains(new Integer(arr[i]))){
+				list.remove(new Integer(arr[i]));
+			}else {
+				list.add(new Integer(arr[i]));
+				
+			}
+		}
 
 	}
 }

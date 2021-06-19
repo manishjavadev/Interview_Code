@@ -4,6 +4,8 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * 
+ * https://ishaanone.blogspot.com/2018/07/what-do-you-know-about-cyclicbarrier-in.html
+ * 
  * https://www.geeksforgeeks.org/java-util-concurrent-cyclicbarrier-java/#:~:text=CyclicBarrier%20is%20used%20to%20make,combined%20in%20the%20parent%20thread.
  * 
  * getParties: Returns the number of parties required to trip this barrier.
@@ -39,6 +41,23 @@ import java.util.concurrent.CyclicBarrier;
  * and zero indicates the last to arrive
  * 
  * 
+ * CyclicBarrier is one of the Java Concurrency Utility.
+ * 
+ * It was introduced in java 5 It falls under java.util.concurrency package
+ * 
+ * Using this we can synchronised the threads which are processing through some
+ * algorithm
+ * 
+ * Using this we can make threads wait at a point of code until specific number
+ * of threads have reached that point of code.
+ * 
+ * Threads will be ordered to wait on call of await() method CyclicBarrier can
+ * be instantiated as:
+ * 
+ * CyclicBarrier obj = new CyclicBarrier(n) where n is an integer and also that
+ * specific number.
+ * 
+ * 
  * @author Manish Srivastava
  *
  */
@@ -51,10 +70,10 @@ public class CyclicBarrierCabBookingDemo {
 		Thread t2 = new Thread(new CabService(cyclicBarrier), "Passenger2");
 		t2.start();
 		Thread.sleep(7000);
-
 		Thread t3 = new Thread(new CabService(cyclicBarrier), "Passenger3");
 		t3.start();
 		Thread.sleep(7000);
+
 	}
 
 }

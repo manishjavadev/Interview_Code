@@ -22,8 +22,12 @@ public class MinimumPlateforms {
 		double arr[] = { 9.00, 9.40, 9.50, 11.00, 15.00, 18.00 };
 		double dep[] = { 9.10, 12.00, 11.20, 11.30, 19.00, 20.00 };
 		// method1(arr, dep);
-		findPlatform(arr, dep);
+		int findPlatform = findPlatform(arr, dep, arr.length);
+		System.out.println("Minimum platform needed : " + findPlatform);
 
+		// method2(arr, dep);
+		int findPlatform1 = method2(arr, dep);
+		System.out.println("Minimum platform needed : " + findPlatform1);
 	}
 
 // Case-1
@@ -37,15 +41,15 @@ public class MinimumPlateforms {
 // 8 ----------9
 
 // 11 ---------9.45
+
 	// Returns minimum number of platforms reqquired
-	public static int findPlatform(double arr[], double dep[]) {
-		int plat_needed = 0;
-		int result = 1;
+	public static int findPlatform(double[] arr, double[] dep, int n) {
+		int plat_needed = 1, result = 1;
 		int i = 1, j = 0;
-		for (i = 0; i < arr.length; i++) {
+		for (i = 0; i < n; i++) {
 			plat_needed = 1;
-			for (j = i + 1; j < arr.length; j++) {
-				if ((arr[i] >= arr[j] && dep[j] >= arr[i] ) || (arr[j] >= arr[i] && arr[j] <= dep[i]))
+			for (j = i + 1; j < n; j++) {
+				if ((arr[i] >= arr[j] && arr[i] <= dep[j]) || (arr[j] >= arr[i] && arr[j] <= dep[i]))
 					plat_needed++;
 			}
 			result = Math.max(result, plat_needed);
@@ -53,30 +57,29 @@ public class MinimumPlateforms {
 		return result;
 	}
 
-	private static void method2(double[] arr, double[] dep) {
+	private static int method2(double[] arr, double[] dep) {
 		Arrays.sort(arr);
 		Arrays.sort(dep);
 		// arr = [9.0, 9.4, 9.5, 11.0, 15.0, 18.0]
 		// dep = [9.1, 11.2, 11.3, 12.0, 19.0, 20.0]
 		int usedPlateForms = 1;
-		int neededPlateForm = 1;
+		int result = 1;
 		int i = 1;
 		int j = 0;
 		while (i < arr.length && j < dep.length) {
 
-			if (arr[i] < dep[j]) {
+			if (arr[i] <= dep[j]) {
 				usedPlateForms++;
 				i++;
-			} else if (arr[i] > dep[j]) {
+			} else if (arr[i] >= dep[j]) {
 				usedPlateForms--;// = 0;
 				j++;
 			}
-			if (usedPlateForms > neededPlateForm) {
-				neededPlateForm = usedPlateForms;
-			}
+			result = Math.max(result, usedPlateForms);
 		}
 
-		System.out.println("Minimum Plateforms required to no tarin has to wait :: \n" + neededPlateForm);
+		System.out.println("Minimum Plateforms required to no tarin has to wait :: \n" + result);
+		return result;
 	}
 
 }
