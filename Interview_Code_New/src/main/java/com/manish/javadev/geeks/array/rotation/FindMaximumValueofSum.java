@@ -64,16 +64,16 @@ public class FindMaximumValueofSum {
 		}
 
 		// Initialize result as 0 rotation sum
-		int resultValue = currVal;
+		int maxValue = currVal;
 		// Try all rotations one by one and find
 		// the maximum rotation sum.
 		for (int j = 1; j < arr.length; j++) {
 			currVal = currVal + arrSum - arr.length * arr[arr.length - j];
-			if (currVal > resultValue)
-				resultValue = currVal;
+			if (currVal > maxValue)
+				maxValue = currVal;
 		}
 		// Return result
-		return resultValue;
+		return maxValue;
 	}
 
 }

@@ -51,6 +51,6 @@ public class FindLCA {
 		System.out.println("LCA(4, 5) = " + tree.findLCA(4, 5).data);
 		System.out.println("LCA(4, 6) = " + tree.findLCA(4, 6).data);
 		System.out.println("LCA(3, 4) = " + tree.findLCA(3, 4).data);
-		System.out.println("LCA(2, 5) = " + tree.findLCA(2, 5).data);
+		System.out.println("LCA(2, 5) = " + tree.findLCA(2, 9).data);
 	}
 }

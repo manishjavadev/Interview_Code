@@ -67,27 +67,27 @@ public class LRUCacheUsingMap {
 		if (start == null)
 			start = node;
 		else {
-			node.right = end.right;
-			end.right = node;
-			node.left = end;
+			node.next = end.next;
+			end.next = node;
+			node.prev = end;
 		}
 		end = node;
 	}
 
 	public void removeNode(Node node) {
 
-		if (node.left == null) {
-			start = node.right;
-			node.right.left = null;
+		if (node.prev == null) {
+			start = node.next;
+			node.next.prev = null;
 
 		} else {
-			node.left.right = node.right;
-			node.right.left = node.left;
+			node.prev.next = node.next;
+			node.next.prev = node.prev;
 		}
 
-		if (node.right == null) {
-			end = node.left;
-			end.right = null;
+		if (node.next == null) {
+			end = node.prev;
+			end.next = null;
 
 		}
 	}
@@ -115,15 +115,15 @@ public class LRUCacheUsingMap {
 		Node e = start;
 		while (e != null) {
 			System.out.println("KEY :: " + e.key + " VALUE :: " + e.value);
-			e = e.right;
+			e = e.next;
 		}
 	}
 
 	static class Node {
 		int value;
 		int key;
-		Node left;
-		Node right;
+		Node prev;
+		Node next;
 
 		public Node(int key, int value) {
 			this.key = key;

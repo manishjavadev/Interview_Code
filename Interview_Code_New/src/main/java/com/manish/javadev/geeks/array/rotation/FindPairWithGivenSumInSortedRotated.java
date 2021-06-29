@@ -51,7 +51,7 @@ public class FindPairWithGivenSumInSortedRotated {
 
 			// If current pair sum is less, move
 			// to the higher sum
-			if (arr[l] + arr[r] < sum)
+			else if (arr[l] + arr[r] < sum)
 				l = (l + 1) % n;
 
 			else // Move to the lower sum side

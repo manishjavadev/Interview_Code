@@ -2,6 +2,7 @@ package com.manish.javadev.geeks.array;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -88,7 +89,7 @@ public class FindAllSubArrayWithSumZero {
 
 	private static void displaySubarray() {
 		int[] input = new int[] { 6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 };
-		Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
+		Map<Integer, List<Integer>> map = new LinkedHashMap<Integer, List<Integer>>();
 		List<Integer> list = null;
 		int sum = 0;
 		// Loop across all elements of the array

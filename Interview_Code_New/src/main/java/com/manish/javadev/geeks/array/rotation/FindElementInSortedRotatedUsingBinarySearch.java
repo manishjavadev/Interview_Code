@@ -26,7 +26,7 @@ package com.manish.javadev.geeks.array.rotation;
  * @author kmamani
  *
  */
-public class FindElementInSortedRotatedUsingPivote {
+public class FindElementInSortedRotatedUsingBinarySearch {
 
 	// main function
 	public static void main(String args[]) {

@@ -1,6 +1,6 @@
 package com.manish.javadev.leetcode.top.hundread;
 
-public class MaximumSubarray {
+public class MaximumSumSubarray {
 	public static void main(String[] args) {
 		int arr[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
 		int result = findMaxSum(arr);

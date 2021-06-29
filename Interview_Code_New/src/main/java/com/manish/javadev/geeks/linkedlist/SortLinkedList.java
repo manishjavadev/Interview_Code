@@ -70,9 +70,14 @@ public class SortLinkedList {
 		return start.next;
 	}
 
-	static Node findMid(Node head) {
-		Node slow = head, fast = head.next;
-		while (fast != null && fast.next != null) {
+	static Node findMid(Node root) {
+		Node fast = root;
+		Node slow = root;
+
+		if (root == null) {
+			return null;
+		}
+		while (fast.next != null && fast.next.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
 		}
