@@ -32,21 +32,15 @@ public class MinimumSwapsRequiredToGetLessThanKNeedToLookAgain {
 
 	// Driver code
 	public static void main(String[] args) {
-		/*
-		 * 
-		 * System.out.print(minSwap(arr, n, k) + "\n");
-		 */
-		// int arr[] = {2, 1, 5, 6, 3};
-		// int n = arr.length;
-		// int k = 3;
+		
+		int arr[] = {2, 1, 5, 6, 3};
+		int n = arr.length;
+		int k = 3;
 
-		int arr[] = { 2, 7, 9, 5, 8, 7, 4 };
+		/**int arr[] = { 2, 7, 9, 5, 8, 7, 4 };
 		int n = arr.length;
 		int k = 5;
-		// int arr2[] = { 7, 9, 8, 13, 5, 4, 3, 2 };
-		// int arr2[] = { 7, 9, 5, 8, 4, 13, 2 };
-		// int n = arr2.length;
-		// int k = 8;*/
+		*/
 		System.out.print(minSwap(arr, n, k));
 
 	}
@@ -54,41 +48,27 @@ public class MinimumSwapsRequiredToGetLessThanKNeedToLookAgain {
 	// Utility function to find minimum swaps
 	// required to club all elements less than
 	// or equals to k together
-	static int minSwap(int arr[], int n, int k) {
+	static int minSwap(int arr[], int n, int pivot) {
 
 		// Find count of elements which are
 		// less than equals to k
+		int j = -1;
 		int count = 0;
-		for (int i = 0; i < n; ++i)
-			if (arr[i] <= k)
-				count++;
-
-		// Find unwanted elements in current
-		// window of size 'count'
-		int bad = 0;
-		for (int i = 0; i < count; ++i)
-			if (arr[i] > k)
-				bad++;
-
-		// Initialize answer with 'bad' value of
-		// current window
-		int ans = bad;
-		for (int i = 0, j = count; j < n; i++, j++) {
-
-			// Decrement count of previous window ;
-			if (arr[i] > k) {
-				bad--;
+		int ans = 0;
+		for (int i = 0; i < n; i++) {
+			if (arr[i] > pivot) {
+				j++;
+				ans++;
+				swapData(arr, i, j);
 			}
-			// Increment count of current window
-			if (arr[j] > k) {
-				bad++;
-			}
-
-			// Update ans if count of 'bad'
-			// is less in current window
-			ans = Math.min(ans, bad);
 		}
 		return ans;
+	}
+
+	private static void swapData(int[] arr, int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
 	}
 
 }

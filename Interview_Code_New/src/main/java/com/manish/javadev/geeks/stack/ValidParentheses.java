@@ -29,60 +29,32 @@ import java.util.Stack;
 public class ValidParentheses {
 
 	public static void main(String[] args) {
-		ValidParentheses test = new ValidParentheses();
-		System.out.println(test.isValid("{}[]"));
-		System.out.println(test.isValid("{[}]"));
-		System.out.println(test.isValid("[}]"));
-		System.out.println(test.isValid1("(])"));
-		System.out.println(test.isValid1("({[})"));
+
+		System.out.println(isValid("{}[]"));// true
+		System.out.println(isValid("{[}]"));// false
+		System.out.println(isValid("[}]"));// false
+		System.out.println(isValid("(])"));// false
+		System.out.println(isValid("({[})"));// false
+		System.out.println(isValid("([}}])"));// false
+		System.out.println(isValid("([{}])"));// true
+		System.out.println(isValid("[{}]"));// true
+
 	}
 
-	public boolean isValid(String s) {
-		if (s.length() % 2 != 0) {
-			return false;
-		}
-		Stack<Character> set = new Stack<Character>();
-		for (Character ch : s.toCharArray()) {
-			if (ch == '{' || ch == '[' || ch == '(') {
-				set.push(ch);
-			} else if (ch == '}' && !set.isEmpty() && set.peek() == '{') {
-				set.pop();
-			} else if (ch == ']' && !set.isEmpty() && set.peek() == '[') {
-				set.pop();
-			} else if (ch == ')' && !set.isEmpty() && set.peek() == '(') {
-				set.pop();
-			}
-		}
-		return set.isEmpty();
-	}
-
-	private Map<Character, Character> getMapping() {
-		Map<Character, Character> map = new HashMap();
-		map.put('}', '{');
-		map.put(']', '[');
-		map.put(')', '(');
-
-		return map;
-	}
-
-	public boolean isValid1(String s) {
-		if (s.length() % 2 != 0) {
-			return false;
-		}
-		Map<Character, Character> mapping = getMapping();
-
-		Stack<Character> stack = new Stack<>();
-		stack.push(s.charAt(0));
-
-		for (int i = 1; i < s.length(); i++) {
-			char ch = s.charAt(i);
-
-			if (ch == '(' || ch == '{' || ch == '[') {
-				stack.push(ch);
-			} else if (!stack.isEmpty() && stack.peek() == mapping.get(ch)) {
+	public static boolean isValid(String s) {
+		Stack<Character> stack = new Stack<Character>();
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{')
+				stack.push(s.charAt(i));
+			else if (s.charAt(i) == ')' && !stack.empty() && stack.peek() == '(')
 				stack.pop();
-			}
+			else if (s.charAt(i) == ']' && !stack.empty() && stack.peek() == '[')
+				stack.pop();
+			else if (s.charAt(i) == '}' && !stack.empty() && stack.peek() == '{')
+				stack.pop();
+			else
+				return false;
 		}
-		return stack.isEmpty();
+		return stack.empty();
 	}
 }
