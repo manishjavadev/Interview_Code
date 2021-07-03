@@ -35,12 +35,12 @@ public class BinaryTreeDiameterDemo2 {
 		DiaPair ld = diameter(root.left);
 		DiaPair rd = diameter(root.right);
 
-		DiaPair dp1 = new DiaPair();
-		dp1.h = Math.max(ld.h, rd.h) + 1;
+		DiaPair mdp = new DiaPair();
+		mdp.h = Math.max(ld.h, rd.h) + 1;
 
 		int fes = ld.h + rd.h + 2;
-		dp1.dai = Math.max(fes, Math.max(ld.dai, rd.dai));
-		return dp1;
+		mdp.dai = Math.max(fes, Math.max(ld.dai, rd.dai));
+		return mdp;
 
 	}
 

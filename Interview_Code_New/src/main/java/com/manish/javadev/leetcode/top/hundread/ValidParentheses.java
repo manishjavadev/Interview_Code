@@ -29,13 +29,10 @@ public class ValidParentheses {
 		} else {
 			System.out.println("Not A Valid Parentheses " + result);
 		}
-
 	}
 
 	private static boolean isValidParentheses(String str) {
-		if (str.length() % 2 != 0) {
-			return false;
-		}
+
 		Stack<Character> stack = new Stack<Character>();
 		for (int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);
@@ -47,6 +44,8 @@ public class ValidParentheses {
 				stack.pop();
 			} else if (ch == ']' && !stack.isEmpty() && stack.peek() == '[') {
 				stack.pop();
+			} else {
+				return false;
 			}
 
 		}

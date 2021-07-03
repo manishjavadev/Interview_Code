@@ -32,8 +32,8 @@ public class BinaryTreeDiameterDemo {
 		int ld = diameter(root.left);
 		int rd = diameter(root.right);
 
-		int h = Math.max(height(root.left), height(root.right)) + 2;
-		return Math.max(h, Math.max(ld, rd));
+		int fes = Math.max(height(root.left), height(root.right)) + 2;
+		return Math.max(fes, Math.max(ld, rd));
 
 	}
 

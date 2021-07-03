@@ -2,6 +2,7 @@ package com.manish.javadev.leetcode.top.hundread;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class LastStoneWeight {
 	public static void main(String[] args) {
@@ -13,16 +14,16 @@ public class LastStoneWeight {
 
 	public int lastStoneWeight(int[] stones) {
 
-		PriorityQueue<Integer> result = new PriorityQueue<>(Collections.reverseOrder());
+		Queue<Integer> result = new PriorityQueue<>(Collections.reverseOrder());
 
 		for (int val : stones) {
-			result.offer(val);
+			result.add(val);
 		}
 
 		while (result.size() >= 2) {
 			int k = result.poll();
 			int l = result.poll();
-			result.offer(Math.abs(l - k));
+			result.add(Math.abs(l - k));
 		}
 
 		return result.peek();
