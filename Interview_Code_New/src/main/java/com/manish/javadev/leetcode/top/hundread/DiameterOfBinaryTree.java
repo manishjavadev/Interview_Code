@@ -24,12 +24,12 @@ public class DiameterOfBinaryTree {
 		root.right = new Node(50);
 
 		root.left.left = new Node(20);
-		//root.left.left.left = new Node(10);
-		//root.left.left.right = new Node(25);
+		// root.left.left.left = new Node(10);
+		// root.left.left.right = new Node(25);
 
 		root.left.right = new Node(35);
-		//root.left.right.left = new Node(32);
-		//root.left.right.right = new Node(37);
+		// root.left.right.left = new Node(32);
+		// root.left.right.right = new Node(37);
 
 		root.right.left = new Node(45);
 		root.right.right = new Node(60);
@@ -42,8 +42,8 @@ public class DiameterOfBinaryTree {
 		}
 		int ld = getDiameterOfBinaryTree(root.left);
 		int rd = getDiameterOfBinaryTree(root.right);
-		int h = Math.max(height(root.left), height(root.right)) + 2;
-		return Math.max(h, Math.max(ld, rd));
+		int fes = Math.max(height(root.left), height(root.right)) + 2;
+		return Math.max(fes, Math.max(ld, rd));
 
 	}
 
@@ -56,6 +56,7 @@ public class DiameterOfBinaryTree {
 		}
 		DiaPair ld = getDiameter(root.left);
 		DiaPair rd = getDiameter(root.right);
+
 		DiaPair mdp = new DiaPair();
 		mdp.h = Math.max(ld.h, rd.h) + 1;
 		int fes = ld.h + rd.h + 2;
@@ -71,6 +72,11 @@ public class DiameterOfBinaryTree {
 		} else {
 			return Math.max(height(root.left), height(root.right)) + 1;
 		}
+	}
+
+	static class DiaPair {
+		int h;
+		int dia;
 	}
 
 }

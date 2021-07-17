@@ -1,5 +1,6 @@
 package com.manish.javadev.exception;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class B extends A {

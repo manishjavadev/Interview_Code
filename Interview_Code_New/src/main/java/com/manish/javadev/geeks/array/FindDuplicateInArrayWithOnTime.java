@@ -29,7 +29,7 @@ public class FindDuplicateInArrayWithOnTime {
 		}
 		System.out.println("The repeating elements are : ");
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i]/10 > 1) {
+			if (arr[i]/10 >= 2) {
 				System.out.println(i + " ");
 			}
 		}

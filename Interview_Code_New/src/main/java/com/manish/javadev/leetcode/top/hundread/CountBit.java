@@ -39,6 +39,11 @@ import java.util.Arrays;
  * 15 = > 1110
  * 
  * 
+ * Even ans is x/2 + 0
+ * 
+ * 
+ * ODD Ans X/2 + 1
+ * 
  * @author kmamani
  *
  */

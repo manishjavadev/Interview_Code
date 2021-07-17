@@ -18,7 +18,8 @@ public class KthHigestNumberInArray {
 		for (int i = arr.length / 2 - 1; i >= 0; i--) {
 			build_maxheap(arr, i, 0);
 		}
-		for (int i = arr.length - 1; i >= arr.length - 3 + 1; i--) {
+		int kth = 3;
+		for (int i = arr.length - 1; i >= arr.length - kth + 1; i--) {
 			swap(arr, i, 0);
 			build_maxheap(arr, i, 0);
 		}

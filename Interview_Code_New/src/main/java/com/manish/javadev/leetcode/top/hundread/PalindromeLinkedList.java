@@ -1,7 +1,5 @@
 package com.manish.javadev.leetcode.top.hundread;
 
-import java.util.Iterator;
-
 public class PalindromeLinkedList {
 	Node head;
 	Node slow_ptr, fast_ptr, second_half;
@@ -16,11 +14,19 @@ public class PalindromeLinkedList {
 		}
 	}
 
+	/**
+	 * STEP-1 : Get the middle element
+	 * 
+	 * STEP-2 : Reverse the middle element
+	 * 
+	 * STEP-3 : Compare first and second half
+	 * 
+	 * @param head
+	 * @return
+	 */
 	boolean isPalindrome(Node head) {
 		slow_ptr = head;
 		fast_ptr = head;
-		Node prev_of_slow_ptr = head;
-		Node midnode = null;
 		boolean res = true;
 
 		Node middile = getMiddile(head);
@@ -29,32 +35,21 @@ public class PalindromeLinkedList {
 		Node second = middile.next;
 		middile.next = null;
 		second = reverse(second, null);
-		System.out.println("Second ::" + second);
+		System.out.println("Second ::" + second.data);
 
-		if (head != null && head.next != null) {
-			while (fast_ptr != null && fast_ptr.next != null) {
-				fast_ptr = fast_ptr.next.next;
-				prev_of_slow_ptr = slow_ptr;
-				slow_ptr = slow_ptr.next;
-			}
+		res = compareLists(head, second); // compare
 
-			if (fast_ptr != null) {
-				midnode = slow_ptr;
-				slow_ptr = slow_ptr.next;
-			}
-			second_half = slow_ptr;
-			prev_of_slow_ptr.next = null; // NULL terminate first half
-			reverse(); // Reverse the second half
-			res = compareLists(head, second_half); // compare
-			reverse(); // Reverse the second half again
-
-			if (midnode != null) {
-				prev_of_slow_ptr.next = midnode;
-				midnode.next = second_half;
-			} else
-				prev_of_slow_ptr.next = second_half;
-		}
 		return res;
+	}
+
+	private Node getMiddile(Node crr) {
+		Node slow = crr;
+		Node fast = crr;
+		while (fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow;
 	}
 
 	private Node reverse(Node root, Node prev) {
@@ -63,22 +58,13 @@ public class PalindromeLinkedList {
 			return root;
 		}
 		if (root.next == null) {
-			return root.next = prev;
+			root.next = prev;
+			return root;
 		}
 		Node next = root.next;
 		root.next = prev;
 		prev = root;
 		return reverse(next, prev);
-	}
-
-	private Node getMiddile(Node crr) {
-		Node slow = crr;
-		Node fast = crr;
-		while (crr != null && crr.next != null) {
-			slow = slow.next;
-			fast = fast.next.next;
-		}
-		return slow;
 	}
 
 	void reverse() {
@@ -107,7 +93,7 @@ public class PalindromeLinkedList {
 				return false;
 		}
 
-		if (temp1 == null && temp2 == null)
+		if (temp2 == null)
 			return true;
 		return false;
 	}
@@ -132,17 +118,17 @@ public class PalindromeLinkedList {
 		PalindromeLinkedList llist = new PalindromeLinkedList();
 
 		char str[] = { 'a', 'b', 'a', 'c', 'a', 'b', 'a' };
-		String string = new String(str);
+
 		for (int i = 0; i < 7; i++) {
 			llist.push(str[i]);
 			llist.printList(llist.head);
-			if (llist.isPalindrome(llist.head) != false) {
-				System.out.println("Is Palindrome");
-				System.out.println("");
-			} else {
-				System.out.println("Not Palindrome");
-				System.out.println("");
-			}
+		}
+		if (llist.isPalindrome(llist.head) != false) {
+			System.out.println("Is Palindrome");
+			System.out.println("");
+		} else {
+			System.out.println("Not Palindrome");
+			System.out.println("");
 		}
 	}
 }

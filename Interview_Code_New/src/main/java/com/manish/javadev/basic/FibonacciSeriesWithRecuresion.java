@@ -25,17 +25,24 @@ public class FibonacciSeriesWithRecuresion {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Number");
 		int number = sc.nextInt();
+		int dp[] = new int[number + 1];
 		for (int i = 0; i < number; i++) {
-			int result = fib(i);
+			int result = fib(i, dp);
 			System.out.print(result + "\t");
 		}
 	}
 
-	private static int fib(int n) {
+	private static int fib(int n, int dp[]) {
 		if (n == 0 || n == 1)
 			return 1;
 		else {
-			return fib(n - 1) + fib(n - 2);
+			if (dp[n] > 0) {
+				return dp[n];
+			}
+			System.out.println("called");
+			int result = fib(n - 1, dp) + fib(n - 2, dp);
+			dp[n] = result;
+			return result;
 		}
 	}
 }

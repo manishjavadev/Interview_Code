@@ -15,7 +15,7 @@ public class SymmetricTree {
 		rootRight.right = new BSTNode(30);
 		root.right = rootRight;
 
-		boolean resultTree = mirror(root, root);
+		boolean resultTree = isSymmetric(root, root);
 		if (resultTree) {
 			System.out.println("Symmetric Tree");
 		} else {
@@ -25,12 +25,12 @@ public class SymmetricTree {
 
 	}
 
-	private static boolean mirror(BSTNode left, BSTNode right) {
+	private static boolean isSymmetric(BSTNode left, BSTNode right) {
 		if (left == null || right == null)
 			return left == right;
 		if (left.data != right.data)
 			return false;
-		return mirror(left.left, right.right) && mirror(left.right, right.left);
+		return isSymmetric(left.left, right.right) && isSymmetric(left.right, right.left);
 
 	}
 }
