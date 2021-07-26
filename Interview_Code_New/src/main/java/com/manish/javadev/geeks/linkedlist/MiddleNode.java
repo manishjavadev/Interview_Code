@@ -9,8 +9,15 @@ package com.manish.javadev.geeks.linkedlist;
 public class MiddleNode {
 
 	public static void main(String[] args) {
-		Entity entity = DefaultLinkedList.getDefaultLinkedList();
-		Entity result = getMiddleNode(entity);
+		Entity root = new Entity(10);
+		root.next = new Entity(20);
+		root.next.next = new Entity(30);
+		root.next.next.next = new Entity(40);
+		root.next.next.next.next = new Entity(50);
+		root.next.next.next.next.next = new Entity(60);
+		root.next.next.next.next.next.next = new Entity(70);
+		// root.next.next.next.next.next.next.next = new Entity(80);
+		Entity result = getMiddleNode(root);
 		System.out.println("Middle Node of inkedlist " + result.data);
 	}
 

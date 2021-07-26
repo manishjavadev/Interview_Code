@@ -1,7 +1,7 @@
 package com.manish.javadev.leetcode.top.hundread;
 
 public class PalindromeLinkedList {
-	Node head;
+	public Node head;
 	Node slow_ptr, fast_ptr, second_half;
 
 	class Node {
@@ -45,7 +45,7 @@ public class PalindromeLinkedList {
 	private Node getMiddile(Node crr) {
 		Node slow = crr;
 		Node fast = crr;
-		while (fast != null && fast.next != null) {
+		while (fast.next != null && fast.next.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
 		}
@@ -85,17 +85,15 @@ public class PalindromeLinkedList {
 		Node temp1 = head1;
 		Node temp2 = head2;
 
-		while (temp1 != null && temp2 != null) {
-			if (temp1.data == temp2.data) {
+		while (temp2 != null) {
+			if (temp1.data != temp2.data) {
+				return false;
+			} else {
 				temp1 = temp1.next;
 				temp2 = temp2.next;
-			} else
-				return false;
+			}
 		}
-
-		if (temp2 == null)
-			return true;
-		return false;
+		return true;
 	}
 
 	public void push(char new_data) {
@@ -104,7 +102,7 @@ public class PalindromeLinkedList {
 		head = new_node;
 	}
 
-	void printList(Node ptr) {
+	public void printList(Node ptr) {
 		while (ptr != null) {
 			System.out.print(ptr.data + "->");
 			ptr = ptr.next;

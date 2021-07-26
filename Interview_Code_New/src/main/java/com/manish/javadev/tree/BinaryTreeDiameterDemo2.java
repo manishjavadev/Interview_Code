@@ -9,7 +9,7 @@ public class BinaryTreeDiameterDemo2 {
 
 		root.right = new Node(50);
 
-		root.left.left = new Node(20);
+		/**root.left.left = new Node(20);
 		root.left.left.left = new Node(10);
 		root.left.left.right = new Node(25);
 
@@ -18,10 +18,11 @@ public class BinaryTreeDiameterDemo2 {
 		root.left.right.right = new Node(37);
 
 		root.right.left = new Node(45);
-		root.right.right = new Node(60);
+		root.right.right = new Node(60);*/
 
 		DiaPair result = diameter(root);
 		System.out.println(result.dai);
+		
 
 	}
 

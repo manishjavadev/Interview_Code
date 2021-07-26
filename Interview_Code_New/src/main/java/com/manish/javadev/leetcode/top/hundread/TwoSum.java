@@ -22,8 +22,8 @@ public class TwoSum {
 	private static int[] calculatetwoSum(int[] arr, int target) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < arr.length; i++) {
-			if (map.containsKey(target - arr[1])) {
-				return new int[] { map.get(target - arr[1]), i };
+			if (map.containsKey(target - arr[i])) {
+				return new int[] { map.get(target - arr[i]), i };
 			} else {
 				map.put(arr[i], i);
 			}

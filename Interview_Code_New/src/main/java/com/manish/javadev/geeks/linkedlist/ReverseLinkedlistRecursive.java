@@ -38,7 +38,8 @@ public class ReverseLinkedlistRecursive {
 		}
 		/* If last node mark it head */
 		if (curr.next == null) {
-			return curr.next = prev;
+			curr.next = prev;
+			return curr;
 		}
 
 		/* Save curr->next node for recursive call */
